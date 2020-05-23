@@ -7,9 +7,10 @@ button.addEventListener('click', function addTarefa() {
   const itensNovos = document.createElement('li');
   itensNovos.innerHTML = intensParaALista;
   listaTarefas.appendChild(itensNovos);
-  itensNovos.addEventListener('click', function(){
-    itensNovos.className = "li";
-  })
+  itensNovos.addEventListener('click', function changeBackgroundColor() {
+      itensNovos.className = 'li';
+    });
+    itensNovos.addEventListener('dblclick', function resetBackground() {
+        itensNovos.classList.remove('li');
+    });
 });
-
-

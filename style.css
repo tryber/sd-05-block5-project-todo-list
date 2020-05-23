@@ -2,10 +2,6 @@
   float: left;
 }
 
-.li {
-  background-color: grey;
-}
-
 .criar-tarefa {
   background-color: white;
   margin-left: 15px;
@@ -13,6 +9,10 @@
 
 .funcionamento {
   margin-left: 15px;
+}
+
+.li {
+  background-color: rgb(128, 128, 128);
 }
 
 .lista-tarefas {
