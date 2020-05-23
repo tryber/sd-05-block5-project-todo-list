@@ -7,4 +7,9 @@ button.addEventListener('click', function addTarefa() {
   const itensNovos = document.createElement('li');
   itensNovos.innerHTML = intensParaALista;
   listaTarefas.appendChild(itensNovos);
+  itensNovos.addEventListener('click', function(){
+    itensNovos.className = "li";
+  })
 });
+
+

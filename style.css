@@ -2,6 +2,10 @@
   float: left;
 }
 
+.li {
+  background-color: grey;
+}
+
 .criar-tarefa {
   background-color: white;
   margin-left: 15px;
