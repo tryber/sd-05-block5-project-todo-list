@@ -1,4 +1,4 @@
-.add-lista {
+.criar-tarefa {
   background-color: white;
   margin-left: 15px;
 }
@@ -7,11 +7,19 @@
   margin-left: 15px;
 }
 
+.lista-tarefas {
+  margin-left: 30px;
+}
+
 .texto-tarefa {
   float: left;
   margin-left: 15px;
 }
 
 h1 {
+  margin-left: 15px;
+}
+
+h2 {
   margin-left: 15px;
 }
