@@ -1,0 +1,12 @@
+body {
+  margin: auto;
+}
+
+li {
+  cursor: pointer;
+  width: 25%;
+}
+
+.grayBg {
+  background-color: rgb(128, 128, 128);
+}
