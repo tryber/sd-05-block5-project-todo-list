@@ -2,7 +2,8 @@
 const ol = document.getElementById('lista-tarefas');
 const addTask = document.getElementById('criar-tarefa');
 const taskText = document.getElementById('texto-tarefa');
-let target;
+let target = '';
+let selected = '';
 // funcoes
 function adicionarTarefa() {
   const li = document.createElement('li');
@@ -12,15 +13,25 @@ function adicionarTarefa() {
   taskText.value = '';
 }
 
-function trocaBg() {
+function riscaTarefa() {
   target = event.target;
-  console.log(event.target);
-  if (target.classList.length === 1) {
-    target.classList.add('grayBg');
+  if (target.classList.contains('completed')) {
+    target.classList.remove('completed');
   } else {
-    target.classList.remove('grayBg');
+    target.classList.add('completed');
   }
 }
+
+function trocaSelecao() {
+  target = event.target;
+  if (selected.classList !== undefined) {
+    selected.classList.remove('selected');
+  }
+  target.classList.add('selected');
+  selected = document.getElementsByClassName('selected')[0];
+}
+
 // eventListeners
 addTask.addEventListener('click', adicionarTarefa);
-ol.addEventListener('click', trocaBg);
+ol.addEventListener('click', trocaSelecao);
+ol.addEventListener('dblclick', riscaTarefa);
