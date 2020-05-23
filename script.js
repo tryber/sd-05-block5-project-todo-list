@@ -1,12 +1,10 @@
 const button = document.getElementById('criar-tarefa');
-const listaOrdenada = document.getElementById('lista-tarefas');
-const input = document.getElementById('texto-tarefa');
+const listaTarefas = document.getElementById('lista-tarefas');
+const tarefas = document.getElementById('texto-tarefa');
 
-button.addEventListener ('click', addTarefa);
-
-function addTarefa () {
-  let elementosDaLista = input.value;
-  let itensNovos = document.createElement('li');
-  itensNovos.innerHTML = elementosDaLista;
-  listaOrdenana.appendChild(itensNovos);
-}
+button.addEventListener('click', function addTarefa() {
+  const intensParaALista = tarefas.value;
+  const itensNovos = document.createElement('li');
+  itensNovos.innerHTML = intensParaALista;
+  listaTarefas.appendChild(itensNovos);
+});

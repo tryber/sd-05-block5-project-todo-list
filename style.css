@@ -1,3 +1,7 @@
+.apaga-tudo {
+  float: left;
+}
+
 .criar-tarefa {
   background-color: white;
   margin-left: 15px;
@@ -9,6 +13,22 @@
 
 .lista-tarefas {
   margin-left: 30px;
+}
+
+.mover-baixo {
+  float: left;
+}
+
+.mover-cima {
+  float: left;
+}
+
+.remover-finalizados {
+  float: left;
+}
+
+.salvar-tarefa {
+  float: left;
 }
 
 .texto-tarefa {
