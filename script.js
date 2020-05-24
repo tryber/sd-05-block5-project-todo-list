@@ -22,11 +22,7 @@ function adicionarTarefa() {
 
 function adicionarTarefaEnter(tecla) {
   if (tecla.key === 'Enter') {
-    const li = document.createElement('li');
-    ol.appendChild(li);
-    li.innerText = taskText.value;
-    li.className = 'task';
-    taskText.value = '';
+   adicionarTarefa();
   }
 }
 
