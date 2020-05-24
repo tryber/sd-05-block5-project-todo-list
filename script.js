@@ -22,7 +22,7 @@ function adicionarTarefa() {
 
 function adicionarTarefaEnter(tecla) {
   if (tecla.key === 'Enter') {
-   adicionarTarefa();
+    adicionarTarefa();
   }
 }
 
