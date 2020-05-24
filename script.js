@@ -3,19 +3,7 @@ let clearButton;
 let checkoutButton;
 let taskList;
 let taskInput;
-function initializeAll () {
-  // Define add button
-  addButton = this.document.querySelector('#criar-tarefa');
-  // Define clear button
-  clearButton = this.document.querySelector('#apaga-tudo');
-  // Define checkout button
-  checkoutButton = this.document.querySelector('#remover-finalizados');
-  // Define input list
-  taskInput = this.document.querySelector('#texto-tarefa');
-  // Define task list
-  taskList = this.document.querySelector('#lista-tarefas');
-}
-function updateList (text) {
+function updateList(text) {
   const li = document.createElement('li');
   const newItem = taskList.appendChild(li);
   newItem.innerHTML = text;
@@ -37,7 +25,16 @@ function updateList (text) {
   });
 }
 window.onload = function () {
-  this.initializeAll();
+  // Define add button
+  addButton = this.document.querySelector('#criar-tarefa');
+  // Define clear button
+  clearButton = this.document.querySelector('#apaga-tudo');
+  // Define checkout button
+  checkoutButton = this.document.querySelector('#remover-finalizados');
+  // Define input list
+  taskInput = this.document.querySelector('#texto-tarefa');
+  // Define task list
+  taskList = this.document.querySelector('#lista-tarefas');
   // Functions
   addButton.addEventListener('click', function () {
     const text = taskInput.value;
