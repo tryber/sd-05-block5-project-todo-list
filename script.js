@@ -28,13 +28,8 @@ function apagaTodos() {
 }
 
 function recuperaLocal() {
-  for (let i = 0; i < localStorage.length; i += 1) {
-    let key = localStorage.key(i);
-    const li = document.createElement('li');
-    ol.appendChild(li);
-    li.innerText = localStorage[key];
-    li.className = 'task';
-  }
+  let savedList = localStorage.getItem('saved tasks');
+  ol.innerHTML = savedList;
 }
 
 function riscaTarefa() {
@@ -48,9 +43,7 @@ function riscaTarefa() {
 
 function saveList() {
   localStorage.clear();
-  for (let index = 0; index < ol.children.length; index += 1) {
-    localStorage.setItem('task ' + (index + 1), ol.children[index].innerText);
-  }
+  localStorage.setItem('saved tasks', ol.innerHTML);
 }
 
 function trocaSelecao() {
