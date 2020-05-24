@@ -2,6 +2,8 @@
 const ol = document.getElementById('lista-tarefas');
 const addTask = document.getElementById('criar-tarefa');
 const taskText = document.getElementById('texto-tarefa');
+const limpaTudo = document.getElementById('apaga-tudo');
+const limpaFin = document.getElementById('remover-finalizados');
 let target = '';
 let selected = '';
 // funcoes
@@ -11,6 +13,19 @@ function adicionarTarefa() {
   li.innerText = taskText.value;
   li.className = 'task';
   taskText.value = '';
+}
+
+function apagaFIn() {
+  for (let index = 0; index < ol.children.length; index += 1) {
+    console.log(ol.children[index]);
+    if (ol.children[index].classList.contains('completed')) {
+      ol.removeChild(ol.children[index]);
+    }
+  }
+}
+
+function apagaTodos() {
+  ol.innerText = '';
 }
 
 function riscaTarefa() {
@@ -35,3 +50,5 @@ function trocaSelecao() {
 addTask.addEventListener('click', adicionarTarefa);
 ol.addEventListener('click', trocaSelecao);
 ol.addEventListener('dblclick', riscaTarefa);
+limpaTudo.addEventListener('click', apagaTodos);
+limpaFin.addEventListener('click', apagaFIn);
