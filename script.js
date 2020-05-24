@@ -8,17 +8,20 @@ const limpaFin = document.getElementById('remover-finalizados');
 const salvaLista = document.getElementById('salvar-tarefas');
 const moveBaixo = document.getElementById('mover-baixo');
 const moveCima = document.getElementById('mover-cima');
+let altura = 0;
 let target = '';
 let selected = '';
 
 // funcoes
 function adicionarTarefa() {
   if (taskText.value.length !== 0) {
+    const linhas = document.getElementById('linhas');
     const li = document.createElement('li');
     ol.appendChild(li);
     li.innerText = taskText.value;
     li.className = 'task';
     taskText.value = '';
+    refazLinha();
   }
 }
 
@@ -33,15 +36,18 @@ function apagaFIn() {
   for (let index = completos.length - 1; index >= 0; index -= 1) {
     completos[index].remove();
   }
+  refazLinha();
 }
 
 function apagaTodos() {
   ol.innerText = '';
+  refazLinha();
 }
 
 function apagaSel() {
   const selecionado = document.getElementsByClassName('selected');
   selecionado[0].remove();
+  refazLinha();
 }
 
 function recuperaLocal() {
@@ -49,6 +55,14 @@ function recuperaLocal() {
   ol.innerHTML = savedList;
 }
 
+function refazLinha() {
+  altura = 0;
+  for (let i = 0; i < ol.children.length; i += 1) {
+    altura += 46;
+  }
+  const novaAltura = `height: ${altura}px !important`;
+  linhas.style = novaAltura;
+}
 function riscaTarefa() {
   target = event.target;
   if (target.classList.contains('completed')) {
@@ -112,3 +126,4 @@ limpaSel.addEventListener('click', apagaSel);
 moveBaixo.addEventListener('click', trocaBaixo);
 moveCima.addEventListener('click', trocaCima);
 recuperaLocal();
+refazLinha();

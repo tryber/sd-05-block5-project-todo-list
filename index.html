@@ -7,21 +7,24 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      Minha Lista de Tarefas
-      <p id="funcionamento">
-        Clique duas vezes em um item para marcá-lo como completo
-      </p>
-      <input id="texto-tarefa" />
-      <button id="criar-tarefa">Adicionar</button>
-    </header>
-    <ol id="lista-tarefas"></ol>
-    <button id="mover-cima">^</button>
-    <button id="mover-baixo">v</button>
-    <button id="apaga-tudo">Limpar Tudo</button>
-    <button id="remover-finalizados">Limpa Finalizados</button>
-    <button id="remover-selecionado">Remove Selecionado</button>
-    <button id="salvar-tarefas">Salvar Lista</button>
+    <div class="corpo">
+      <header>
+        <h1>Minha Lista de Tarefas</h1>
+        <p id="funcionamento">
+          <em>Clique duas vezes em um item para marcá-lo como completo</em>
+        </p>
+        <input id="texto-tarefa" class="tasks" />
+        <button class="button blue" id="criar-tarefa">Adicionar</button>
+      </header>
+      <div id="linhas" class="lines"></div>
+      <ol id="lista-tarefas"></div></ol>
+      <button class="button button--small red" id="remover-selecionado">X</button>
+      <button class="button button--small orange" id="mover-cima"><span class="arrow arrow-top"></span></button>
+      <button class="button button--small orange" id="mover-baixo"><span class="arrow arrow-bottom"></button>
+      <button class="button red" id="apaga-tudo">Limpar Lista</button>
+      <button class="button blue" id="remover-finalizados">Limpar Completos</button>
+      <button class="button green" id="salvar-tarefas">Salvar Lista</button>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
