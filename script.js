@@ -6,8 +6,11 @@ const limpaTudo = document.getElementById('apaga-tudo');
 const limpaSel = document.getElementById('remover-selecionado');
 const limpaFin = document.getElementById('remover-finalizados');
 const salvaLista = document.getElementById('salvar-tarefas');
+const moveBaixo = document.getElementById('mover-baixo');
+const moveCima = document.getElementById('mover-cima');
 let target = '';
 let selected = '';
+
 // funcoes
 function adicionarTarefa() {
   const li = document.createElement('li');
@@ -52,6 +55,30 @@ function saveList() {
   localStorage.setItem('saved tasks', ol.innerHTML);
 }
 
+function trocaBaixo() {
+  if (selected.classList !== undefined) {
+    const quemTroca = document.getElementsByClassName('selected')[0];
+    const aux = quemTroca.nextElementSibling.innerText;
+    quemTroca.nextElementSibling.innerText = quemTroca.innerText;
+    quemTroca.innerText = aux;
+    quemTroca.classList.remove('selected');
+    quemTroca.nextElementSibling.classList.add('selected');
+    selected = document.getElementsByClassName('selected')[0];
+  }
+}
+
+function trocaCima() {
+  if (selected.classList !== undefined) {
+    const quemTroca = document.getElementsByClassName('selected')[0];
+    const aux = quemTroca.previousElementSibling.innerText;
+    quemTroca.previousElementSibling.innerText = quemTroca.innerText;
+    quemTroca.innerText = aux;
+    quemTroca.classList.remove('selected');
+    quemTroca.previousElementSibling.classList.add('selected');
+    selected = document.getElementsByClassName('selected')[0];
+  }
+}
+
 function trocaSelecao() {
   target = event.target;
   if (selected.classList !== undefined) {
@@ -69,4 +96,6 @@ limpaTudo.addEventListener('click', apagaTodos);
 limpaFin.addEventListener('click', apagaFIn);
 salvaLista.addEventListener('click', saveList);
 limpaSel.addEventListener('click', apagaSel);
+moveBaixo.addEventListener('click', trocaBaixo);
+moveCima.addEventListener('click', trocaCima);
 recuperaLocal();
