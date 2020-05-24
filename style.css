@@ -20,9 +20,9 @@ li {
 }
 
 ol {
-  border: 1px solid rgb(218, 217, 217);
   background-color: honeydew;
-  color: rgb(80 , 80 , 80);
+  border: 1px solid rgb(218, 217, 217);
+  color: rgb(80, 80, 80);
   font-family: courier, monospace;
   font-size: 22px;
   margin-left: 5%;
@@ -69,8 +69,8 @@ p {
   width: 60px;
 }
 
-.button.button--small.red {
-  margin-left: 10%;
+.bbox {
+  text-align: center;
 }
 
 .completed {
@@ -113,5 +113,5 @@ p {
 }
 
 .tasks {
-  margin-left: 25%;
+  text-align: center;
 }
