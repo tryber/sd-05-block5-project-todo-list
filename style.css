@@ -10,7 +10,7 @@ h1 {
 }
 
 li {
-  border-bottom: 1px dotted rgb(175, 175, 175);
+  border-bottom: 1px dotted rgb(175 , 175 , 175);
   cursor: pointer;
   height: auto;
   list-style: none;
@@ -21,8 +21,8 @@ li {
 
 ol {
   background-color: honeydew;
-  border: 1px solid rgb(218, 217, 217);
-  color: rgb(80, 80, 80);
+  border: 1px solid rgb(218 , 217 , 217);
+  color: rgb(80 , 80 , 80);
   font-family: courier, monospace;
   font-size: 22px;
   margin-left: 5%;
@@ -54,7 +54,7 @@ p {
 }
 
 .blue {
-  background-color: rgb(0, 140, 255);
+  background-color: rgb(0 , 140 , 255);
 }
 
 .button {
@@ -87,12 +87,12 @@ p {
 }
 
 .green {
-  background-color: rgb(69, 173, 64);
+  background-color: rgb(69 , 173 , 64);
 }
 
 .lines {
-  border-left: 1px solid rgb(255, 170, 159);
-  border-right: 1px solid rgb(255, 170, 159);
+  border-left: 1px solid rgb(255 , 170 , 159);
+  border-right: 1px solid rgb(255 , 170 , 159);
   height: 0;
   margin-left: 50px;
   margin-top: 22px;
@@ -101,11 +101,11 @@ p {
 }
 
 .orange {
-  background-color: rgb(251, 130, 63);
+  background-color: rgb(251 , 130 , 63);
 }
 
 .red {
-  background-color: rgb(104, 31, 31);
+  background-color: rgb(104 , 31 , 31);
 }
 
 .selected {
