@@ -3,6 +3,7 @@ const ol = document.getElementById('lista-tarefas');
 const addTask = document.getElementById('criar-tarefa');
 const taskText = document.getElementById('texto-tarefa');
 const limpaTudo = document.getElementById('apaga-tudo');
+const limpaSel = document.getElementById('remover-selecionado');
 const limpaFin = document.getElementById('remover-finalizados');
 const salvaLista = document.getElementById('salvar-tarefas');
 let target = '';
@@ -27,8 +28,13 @@ function apagaTodos() {
   ol.innerText = '';
 }
 
+function apagaSel() {
+  const selecionado = document.getElementsByClassName('selected');
+  selecionado[0].remove();
+}
+
 function recuperaLocal() {
-  let savedList = localStorage.getItem('saved tasks');
+  const savedList = localStorage.getItem('saved tasks');
   ol.innerHTML = savedList;
 }
 
@@ -62,4 +68,5 @@ ol.addEventListener('dblclick', riscaTarefa);
 limpaTudo.addEventListener('click', apagaTodos);
 limpaFin.addEventListener('click', apagaFIn);
 salvaLista.addEventListener('click', saveList);
+limpaSel.addEventListener('click', apagaSel);
 recuperaLocal();
