@@ -16,6 +16,7 @@ li {
   list-style: none;
   margin-left: 0;
   padding: 10px;
+  padding-left: 7%;
   text-indent: 25px;
 }
 
@@ -94,7 +95,7 @@ p {
   border-left: 1px solid rgb(255 , 170 , 159);
   border-right: 1px solid rgb(255 , 170 , 159);
   height: 0;
-  margin-left: 50px;
+  margin-left: 8%;
   margin-top: 22px;
   position: absolute;
   width: 2px;
