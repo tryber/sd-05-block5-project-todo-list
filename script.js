@@ -58,24 +58,28 @@ function saveList() {
 function trocaBaixo() {
   if (selected.classList !== undefined) {
     const quemTroca = document.getElementsByClassName('selected')[0];
-    const aux = quemTroca.nextElementSibling.innerText;
-    quemTroca.nextElementSibling.innerText = quemTroca.innerText;
-    quemTroca.innerText = aux;
-    quemTroca.classList.remove('selected');
-    quemTroca.nextElementSibling.classList.add('selected');
-    selected = document.getElementsByClassName('selected')[0];
+    if (quemTroca.nextElementSibling !== null) {
+      const aux = quemTroca.nextElementSibling.innerText;
+      quemTroca.nextElementSibling.innerText = quemTroca.innerText;
+      quemTroca.innerText = aux;
+      quemTroca.classList.remove('selected');
+      quemTroca.nextElementSibling.classList.add('selected');
+      selected = document.getElementsByClassName('selected')[0];
+    }
   }
 }
 
 function trocaCima() {
   if (selected.classList !== undefined) {
     const quemTroca = document.getElementsByClassName('selected')[0];
-    const aux = quemTroca.previousElementSibling.innerText;
-    quemTroca.previousElementSibling.innerText = quemTroca.innerText;
-    quemTroca.innerText = aux;
-    quemTroca.classList.remove('selected');
-    quemTroca.previousElementSibling.classList.add('selected');
-    selected = document.getElementsByClassName('selected')[0];
+    if (quemTroca.previousElementSibling !== null) {
+      const aux = quemTroca.previousElementSibling.innerText;
+      quemTroca.previousElementSibling.innerText = quemTroca.innerText;
+      quemTroca.innerText = aux;
+      quemTroca.classList.remove('selected');
+      quemTroca.previousElementSibling.classList.add('selected');
+      selected = document.getElementsByClassName('selected')[0];
+    }
   }
 }
 
