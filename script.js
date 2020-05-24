@@ -4,6 +4,7 @@ const addTask = document.getElementById('criar-tarefa');
 const taskText = document.getElementById('texto-tarefa');
 const limpaTudo = document.getElementById('apaga-tudo');
 const limpaFin = document.getElementById('remover-finalizados');
+
 let target = '';
 let selected = '';
 // funcoes
@@ -16,11 +17,10 @@ function adicionarTarefa() {
 }
 
 function apagaFIn() {
-  for (let index = 0; index < ol.children.length; index += 1) {
-    console.log(ol.children[index]);
-    if (ol.children[index].classList.contains('completed')) {
-      ol.removeChild(ol.children[index]);
-    }
+  const completos = document.getElementsByClassName('completed');
+  console.log(completos)
+  for (let index = completos.length - 1; index >= 0; index -= 1) {
+    completos[index].remove();
   }
 }
 
