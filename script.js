@@ -1,5 +1,6 @@
 let ordenedList = document.getElementById('lista-tarefas');
 let buttonTask = document.getElementById('criar-tarefa');
+let buttonClear = document.getElementById('apaga-tudo')
 let textTask = document.getElementById('texto-tarefa');
 
 function addTask() {
@@ -14,10 +15,15 @@ function addTask() {
 }
 
 
-function mouseChangeButton(){
-  let buttons =  document.getElementsByClassName('button')[0];
-  buttons.style.cursor = 'pointer';
+
+function clearAllTask() {
+  let allItems = document.querySelector('#lista-tarefas');
+  let listLength = allItems.children.length;
+  
+  for( let i = 0; i < listLength; i += 1) {
+    allItems.removeChild(allItems.children[0]);
+  }
 }
 
+buttonClear.addEventListener('click', clearAllTask);
 buttonTask.addEventListener('click', addTask);
-window.addEventListener('load', mouseChangeButton);
