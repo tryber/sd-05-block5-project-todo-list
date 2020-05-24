@@ -10,19 +10,19 @@ h1 {
 }
 
 li {
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted rgb(175, 175, 175);
   cursor: pointer;
   height: auto;
   list-style: none;
   margin-left: 0;
   padding: 10px;
   text-indent: 25px;
-  text-transform: capitalize;
 }
 
 ol {
-  border: 1px solid #dedede;
-  color: rgb(80, 80, 80);
+  border: 1px solid rgb(218, 217, 217);
+  background-color: honeydew;
+  color: rgb(80 , 80 , 80);
   font-family: courier, monospace;
   font-size: 22px;
   margin-left: 5%;
@@ -58,8 +58,8 @@ p {
 }
 
 .button {
-  border-radius: 60px;
   border: solid 1px transparent;
+  border-radius: 60px;
   color: white;
   font-weight: 700;
   padding: 0.3% 2%;
@@ -79,7 +79,7 @@ p {
 
 .corpo {
   align-content: center;
-  background-color: honeydew;
+  background-color: white;
   border-radius: 30px;
   display: block;
   margin: 10% 10% 1%;
@@ -90,11 +90,11 @@ p {
   background-color: rgb(69, 173, 64);
 }
 
-#linhas {
-  border-left: 1px solid #ffaa9f;
-  border-right: 1px solid #ffaa9f;
+.lines {
+  border-left: 1px solid rgb(255, 170, 159);
+  border-right: 1px solid rgb(255, 170, 159);
   height: 0;
-  margin-left: 40px;
+  margin-left: 50px;
   margin-top: 22px;
   position: absolute;
   width: 2px;

@@ -8,11 +8,21 @@ const limpaFin = document.getElementById('remover-finalizados');
 const salvaLista = document.getElementById('salvar-tarefas');
 const moveBaixo = document.getElementById('mover-baixo');
 const moveCima = document.getElementById('mover-cima');
+const linhas = document.getElementById('linhas');
 let altura = 0;
 let target = '';
 let selected = '';
 
 // funcoes
+function refazLinha() {
+  altura = 0;
+  for (let i = 0; i < ol.children.length; i += 1) {
+    altura += 46;
+  }
+  const novaAltura = `height: ${altura}px !important`;
+  linhas.style = novaAltura;
+}
+
 function adicionarTarefa() {
   if (taskText.value.length !== 0) {
     const li = document.createElement('li');
@@ -54,14 +64,6 @@ function recuperaLocal() {
   ol.innerHTML = savedList;
 }
 
-function refazLinha() {
-  altura = 0;
-  for (let i = 0; i < ol.children.length; i += 1) {
-    altura += 46;
-  }
-  const novaAltura = `height: ${altura}px !important`;
-  linhas.style = novaAltura;
-}
 function riscaTarefa() {
   target = event.target;
   if (target.classList.contains('completed')) {
