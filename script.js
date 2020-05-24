@@ -18,7 +18,7 @@ function adicionarTarefa() {
 
 function apagaFIn() {
   const completos = document.getElementsByClassName('completed');
-  console.log(completos)
+  console.log(completos);
   for (let index = completos.length - 1; index >= 0; index -= 1) {
     completos[index].remove();
   }
