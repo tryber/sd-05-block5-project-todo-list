@@ -21,15 +21,14 @@ function updateList (text) {
   newItem.innerHTML = text;
   newItem.classList.add('nohighlight');
 
-  newItem.addEventListener('dblclick', function(element) {
-    console.log("asd")
+  newItem.addEventListener('dblclick', function (element) {
     if (element.target.className.includes('completed')) {
       element.target.classList.remove('completed');
     } else {
       element.target.classList.add('completed');
     }
   });
-  newItem.addEventListener('click', function(element) {
+  newItem.addEventListener('click', function (element) {
     if (element.target.className.includes('selected')) {
       element.target.classList.remove('selected');
     } else {
