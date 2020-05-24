@@ -13,11 +13,13 @@ let selected = '';
 
 // funcoes
 function adicionarTarefa() {
-  const li = document.createElement('li');
-  ol.appendChild(li);
-  li.innerText = taskText.value;
-  li.className = 'task';
-  taskText.value = '';
+  if (taskText.value.length !== 0) {
+    const li = document.createElement('li');
+    ol.appendChild(li);
+    li.innerText = taskText.value;
+    li.className = 'task';
+    taskText.value = '';
+  }
 }
 
 function adicionarTarefaEnter(tecla) {
