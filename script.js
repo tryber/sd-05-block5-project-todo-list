@@ -9,10 +9,11 @@ window.onload = function () {
   taskList = this.document.querySelector('#lista-tarefas');
   // Functions
   addButton.addEventListener('click', function () {
-    let text = taskInput.value;
-    if(text === "") return;
-    let li = document.createElement("li");
-    let newItem = taskList.appendChild(li);
+    const text = taskInput.value;
+    if (text === '') return;
+    taskInput.value = '';
+    const li = document.createElement('li');
+    const newItem = taskList.appendChild(li);
     newItem.innerHTML = text;
   });
 };
