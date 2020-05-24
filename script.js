@@ -20,6 +20,16 @@ function adicionarTarefa() {
   taskText.value = '';
 }
 
+function adicionarTarefaEnter(tecla) {
+  if (tecla.key === 'Enter') {
+    const li = document.createElement('li');
+    ol.appendChild(li);
+    li.innerText = taskText.value;
+    li.className = 'task';
+    taskText.value = '';
+  }
+}
+
 function apagaFIn() {
   const completos = document.getElementsByClassName('completed');
   for (let index = completos.length - 1; index >= 0; index -= 1) {
@@ -93,6 +103,7 @@ function trocaSelecao() {
 }
 
 // eventListeners
+taskText.addEventListener('keyup', adicionarTarefaEnter);
 addTask.addEventListener('click', adicionarTarefa);
 ol.addEventListener('click', trocaSelecao);
 ol.addEventListener('dblclick', riscaTarefa);
