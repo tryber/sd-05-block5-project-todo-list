@@ -11,10 +11,21 @@ btn.addEventListener('click', function() {
   task.value = '';
 });
 
-// add event listener to change list itens color when it's clicked
+// add event listener to change list item color when it's clicked
 taskList.addEventListener('click', function (event) {
   let listItem = document.getElementById('lista-item');
   event.target.style.backgroundColor = 'rgb(128,128,128)';
 });
 
+/* add event listener to strikethrough a list item when double-clicked
+taskList.addEventListener('click', function (event) {
+  let listItem = document.getElementById('lista-item');
+  event.target.style.textDecoration = 'line-through';
+});
+*/
 
+// add a button the clear all list itens
+const clearTasks = document.getElementById('apaga-tudo');
+clearTasks.addEventListener('click', function () {
+  taskList.innerHTML = '';
+})
