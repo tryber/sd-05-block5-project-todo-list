@@ -4,42 +4,43 @@ body {
 }
 
 h1 {
-  text-align: center;
   font-size: 1.1em;
   font-weight: 700;
+  text-align: center;
 }
 
 li {
-  margin-left: 0;
-  list-style: none;
-  cursor: pointer;
   border-bottom: 1px dotted #ccc;
-  text-indent: 25px;
+  cursor: pointer;
   height: auto;
+  list-style: none;
+  margin-left: 0;
   padding: 10px;
+  text-indent: 25px;
   text-transform: capitalize;
 }
 
 ol {
-  margin-left: 5%;
-  color: rgb(80, 80, 80);
-  font-size: 22px;
-  padding: 0; 
-  width: 90%;
-  font-family: courier, monospace;
   border: 1px solid #dedede;
+  color: rgb(80, 80, 80);
+  font-family: courier, monospace;
+  font-size: 22px;
+  margin-left: 5%;
+  padding: 0;
+  width: 90%;
 }
 
 p {
   color: dimgrey;
   text-align: center;
 }
+
 .arrow {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-top: 2px solid white;
   border-right: 2px solid white;
+  border-top: 2px solid white;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
 }
 
 .arrow-bottom {
@@ -57,7 +58,6 @@ p {
 }
 
 .button {
-  display: inline-flexbox;
   border-radius: 60px;
   border: solid 1px transparent;
   color: white;
@@ -72,8 +72,9 @@ p {
 .button.button--small.red {
   margin-left: 10%;
 }
+
 .completed {
-  text-decoration: line-through;
+  text-decoration: line-through black;
 }
 
 .corpo {
@@ -90,13 +91,13 @@ p {
 }
 
 #linhas {
-  position: absolute;
   border-left: 1px solid #ffaa9f;
   border-right: 1px solid #ffaa9f;
-  width: 2px;
   height: 0;
-  margin-top: 22px;
   margin-left: 40px;
+  margin-top: 22px;
+  position: absolute;
+  width: 2px;
 }
 
 .orange {

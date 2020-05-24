@@ -15,7 +15,6 @@ let selected = '';
 // funcoes
 function adicionarTarefa() {
   if (taskText.value.length !== 0) {
-    const linhas = document.getElementById('linhas');
     const li = document.createElement('li');
     ol.appendChild(li);
     li.innerText = taskText.value;
