@@ -4,10 +4,17 @@ const task = document.getElementById('texto-tarefa');
 const taskList = document.getElementById('lista-tarefas');
 
 btn.addEventListener('click', function() {
-  let listItem = document.createElement('li');
-  listItem.id = 'lista-item';
-  listItem.innerHTML = task.value;
-  taskList.appendChild(listItem);
+  let listItemToBeCreated = document.createElement('li');
+  listItemToBeCreated.id = 'lista-item';
+  listItemToBeCreated.innerHTML = task.value;
+  taskList.appendChild(listItemToBeCreated);
   task.value = '';
-})
+});
+
+// add event listener to change list itens color when it's clicked
+taskList.addEventListener('click', function (event) {
+  let listItem = document.getElementById('lista-item');
+  event.target.style.backgroundColor = 'rgb(128,128,128)';
+});
+
 
