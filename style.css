@@ -1,9 +1,68 @@
+body {
+  font-family: 'Space Grotesk',sans-serif;
+  background-color: #181818;
+  color: white;
+  font-size: 15px;
+}
+
 button {
   cursor: pointer;
+  border: 0;
+  color: #231123;
+}
+
+button#apaga-tudo {
+  background-color: #CA054D;
+}
+
+button#criar-tarefa {
+  background-color: #84A9C0;
+  color: white;
+}
+
+button#mover-baixo {
+  background-color: #DD99BB;
+}
+
+button#mover-cima {
+  background-color: #7B506F;
+}
+
+button#remover-finalizados {
+  background-color: #558C8C;
+}
+
+button#remover-selecionado {
+  background-color: gray;
+}
+
+button#salvar-tarefas {
+  background-color: #E8DB7D;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+div.add {
+  border: 1px solid white;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+  padd
+}
+
+div.buttons {
+  border: 1px solid white;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+}
+
+input {
+  margin-right: 8px;
 }
 
 li {
@@ -12,4 +71,16 @@ li {
 
 .selected {
   background-color: gray;
+}
+
+ol {
+  border: 1px solid white;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+p {
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
 }
