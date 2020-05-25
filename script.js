@@ -27,6 +27,11 @@ function clearAllTask() {
   ordenedList.innerHTML = '';
 }
 
+function addEvents(listItem) {
+  listItem.addEventListener('click', function(){
+    listItem.className = 'selected';
+  });
+}
 
 function crossTheLine() {
   target = event.target;
