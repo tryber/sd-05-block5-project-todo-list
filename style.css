@@ -26,7 +26,6 @@ input{
   font-size: 25px;
   width: 250px;
   list-style: none;
-  background-color: aliceblue;
   border-radius: 5px;
   color: black;
   padding: 10px;
@@ -45,4 +44,7 @@ input{
 
 .completed {
   text-decoration: line-through black;
+}
+.selected {
+  background-color: gray;
 }

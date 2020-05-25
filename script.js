@@ -5,6 +5,9 @@ const removeCompleted = document.getElementById('remover-finalizados');
 const removeSelected = document.getElementById('remover-selecionado');
 const textTask = document.getElementById('texto-tarefa');
 const saveList = document.getElementById('salvar-tarefas');
+const toUpButton = document.getElementById('mover-cima');
+const toDownButton = document.getElementById('mover-baixo');
+let selected = '';
 
 
 function addTask() {
@@ -25,7 +28,7 @@ function clearAllTask() {
 
 function addEvents(listItem) {
   listItem.addEventListener('click', function(){
-    listItem.style.backgroundColor = "rgb(128, 128, 128)";
+    listItem.className = 'selected';
   });
 }
 
@@ -38,6 +41,15 @@ function crossTheLine() {
   }
 }
 
+function changeSelected (){
+  let target = event.target;
+  if(selected.classList !== undefined) {
+    selected.classList.remove('selected');
+  }
+  target.classList.add('selected');
+  selected = document.getElementsByClassName('selected')[0];
+}
+
 function clearDoneTask() {
   let complete = document.getElementsByClassName('completed');
   for(let index = complete.length - 1; index >=0; index -= 1) {
@@ -46,13 +58,41 @@ function clearDoneTask() {
 }
 
 function clearSelectedTask() {
-  let selected = document.getElementsByTagName('li');
-  for(let index = 0; index < selected.length; index += 1){
-    if(selected[index].style.backgroundColor === 'rgb(128, 128, 128)') {
-      selected[index].remove();
+  let selectedItem = document.getElementsByTagName('li');
+  for(let index = 0; index < selectedItem.length; index += 1){
+    if(selectedItem[index].className === 'selected') {
+      selectedItem[index].remove();
     }
   }
 
+}
+
+function toDown(){
+  if(selected.classList !== undefined) {
+    let whoChange = document.getElementsByClassName('selected')[0];
+    if(whoChange.nextElementSibling !== null) {
+      let aux = whoChange.nextElementSibling.innerText;
+      whoChange.nextElementSibling.innerText = whoChange.innerText;
+      whoChange.innerText = aux;
+      whoChange.classList.remove('selected');
+      whoChange.nextElementSibling.classList.add('selected');
+      selected = document.getElementsByClassName('selected')[0];
+    }
+  }
+}
+
+function toUp(){
+  if(selected.classList !== undefined) {
+    let whoChange = document.getElementsByClassName('selected')[0];
+    if(whoChange.previousElementSibling !== null) {
+      let aux = whoChange.previousElementSibling.innerText;
+      whoChange.previousElementSibling.innerText = whoChange.innerText;
+      whoChange.innerText = aux;
+      whoChange.classList.remove('selected');
+      whoChange.previousElementSibling.classList.add('selected');
+      selected = document.getElementsByClassName('selected')[0];
+    }
+  }
 }
 
 function saveTheList() {
@@ -65,10 +105,14 @@ function getSavedList() {
   ordenedList.innerHTML = savedList;
 }
 
+
 window.addEventListener('load', getSavedList());
+toDownButton.addEventListener('click', toDown);
+toUpButton.addEventListener('click', toUp);
 saveList.addEventListener('click', saveTheList);
 removeCompleted.addEventListener('click', clearDoneTask);
 removeSelected.addEventListener('click', clearSelectedTask);
+ordenedList.addEventListener('click', changeSelected);
 ordenedList.addEventListener('dblclick', crossTheLine);
 buttonClear.addEventListener('click', clearAllTask);
 buttonTask.addEventListener('click', addTask);
