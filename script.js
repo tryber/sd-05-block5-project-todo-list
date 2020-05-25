@@ -15,6 +15,7 @@ criarTarefaBut.addEventListener("click", TextAdd)
 function TextAdd(){
 textInput = document.getElementById("texto-tarefa")
 let textOutput = document.createElement("li")
+textOutput.className = "teste"
 textOutput.innerHTML= textInput.value
 textInput.value=""
 paiLista.appendChild(textOutput)
@@ -47,11 +48,11 @@ function lineThrough(event){
   if (verificadorRisco === true) {
   let target = event.target
   target.classList.add("completed")
- // verificadorRisco = false;
-//} else {
- // target = event.target
- // target.classList.remove("completed")
- // verificadorRisco = true
+  verificadorRisco = false;
+} else {
+  target = event.target
+  target.classList.remove("completed")
+  verificadorRisco = true
 }
 }
 
