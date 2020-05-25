@@ -81,16 +81,16 @@ const downButton = document.getElementById('mover-baixo');
 upButton.addEventListener('click', function () {
   const selectedTasks = document.getElementsByClassName('selected');
   for (let i = 0; i <= selectedTasks.length - 1; i += 1) {
-    let aux = selectedTasks[i].previousElementSibling.innerHTML;
+    const aux = selectedTasks[i].previousElementSibling.innerHTML;
     selectedTasks[i].previousElementSibling.innerHTML = selectedTasks[i].innerHTML;
     selectedTasks[i].innerHTML = aux;
-  }  
+  }
 });
 downButton.addEventListener('click', function () {
   const selectedTasks = document.getElementsByClassName('selected');
   for (let i = 0; i <= selectedTasks.length - 1; i += 1) {
-    let aux = selectedTasks[i].nextElementSibling.innerHTML;
+    const aux = selectedTasks[i].nextElementSibling.innerHTML;
     selectedTasks[i].nextElementSibling.innerHTML = selectedTasks[i].innerHTML;
     selectedTasks[i].innerHTML = aux;
-  }  
+  }
 });
