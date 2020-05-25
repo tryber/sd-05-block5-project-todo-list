@@ -29,10 +29,12 @@ function backgroundChange(event){
   if(verificadorFundo === true) {
   let target = event.target
   target.style.backgroundColor = "rgb(128,128,128)"
+  target.classList.add("selected")
   verificadorFundo = false
 } else {
   let target = event.target
   target.style.backgroundColor = "white"
+  target.classList.remove("selected")
   verificadorFundo = true
 }
 }
@@ -54,3 +56,28 @@ function lineThrough(event){
 }
 
 //APAGA TUDO
+apagarTudoBut.addEventListener("click", apagaTudo);
+function apagaTudo() {
+  let apagarLi = document.getElementsByTagName("li");
+  for ( i = (apagarLi.length-1) ; i >= 0 ; i -= 1){
+  paiLista.removeChild(apagarLi[i]);
+  } 
+}
+
+//APAGA FINALIZADOS
+removerFinalizadosBut.addEventListener("click", apagaFinaliza);
+function apagaFinaliza() {
+  let apagar = document.getElementsByClassName("completed");
+  for ( i = (apagar.length-1) ; i >= 0 ; i -= 1){
+  paiLista.removeChild(apagar[i]);
+  } 
+}
+
+//APAGAR SELECIONADOS
+removerSelecBut.addEventListener("click", apagaSelec);
+function apagaSelec() {
+  let apagar = document.getElementsByClassName("selected");
+  for ( i = (apagar.length-1) ; i >= 0 ; i -= 1){
+  paiLista.removeChild(apagar[i]);
+  } 
+}
