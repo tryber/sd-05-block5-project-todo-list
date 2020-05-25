@@ -4,6 +4,7 @@ const taskBox = document.getElementById('texto-tarefa');
 
 function createTask () {
   const newTask = document.createElement('li');
+  newTask.classList.add('li');
   newTask.innerText = taskBox.value;
   return newTask;
 }
