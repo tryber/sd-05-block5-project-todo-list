@@ -47,7 +47,7 @@ window.onload = function () {
     taskList.innerHTML = '';
   });
   checkoutButton.addEventListener('click', function () {
-    let comp = document.getElementsByClassName('completed');
-    for(let i = comp.length-1; i >= 0;  i -= 1) comp[i].remove();
+    const comp = document.getElementsByClassName('completed');
+    for (let i = comp.length - 1; i >= 0; i -= 1) comp[i].remove();
   });
 };
