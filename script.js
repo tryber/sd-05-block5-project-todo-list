@@ -55,14 +55,25 @@ clearTasks.addEventListener('click', function () {
   taskList.innerHTML = '';
 })
 
-// add a button the clear strikethrough items
-const clearDoneTasks = document.getElementById('remover-finalizados');
-clearDoneTasks.addEventListener('click', function () {
+// add a button the clear completed items
+const clearCompletedTasks = document.getElementById('remover-finalizados');
+clearCompletedTasks.addEventListener('click', function () {
   // create array with list items
-  const taskItems = document.querySelectorAll('.lista-item');
+  let taskItems = document.querySelectorAll('li');
   for (let i in taskItems) {
-    console.log(taskItems[i].style.backgroundColor);
     if (taskItems[i].className === 'lista-item completed' || taskItems[i].className === 'lista-item completed selected' || taskItems[i].className === 'lista-item selected completed') {
+      taskItems[i].remove();
+    }
+  }
+});
+
+// add a button the clear selected items
+const clearSelectedTasks = document.getElementById('remover-selecionado');
+clearSelectedTasks.addEventListener('click', function () {
+  // create array with list items
+  let taskItems = document.querySelectorAll('li');
+  for (let i in taskItems) {
+    if (taskItems[i].className === 'lista-item selected' || taskItems[i].className === 'lista-item completed selected' || taskItems[i].className === 'lista-item selected completed') {
       taskItems[i].remove();
     }
   }
