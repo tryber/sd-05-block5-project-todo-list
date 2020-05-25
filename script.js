@@ -1,5 +1,5 @@
 //Variáveis
-let ol = document.getElementById("lista-tarefas"));
+let ol = document.getElementById("lista-tarefas");
 let criarTarefa = document.getElementById("criar-tarefa");
 let textoTarefa = document.getElementById("texto-tarefa");
 let apagaTudo = document.getElementById("apaga-tudo")
@@ -15,19 +15,6 @@ function acrescentarTarefa () {
   textoTarefa.value = "";
 }
 
-/* COMO FEITO ANTES
-function acrescentarTarefa (){
-  let li = document.createElement("li");
-  let inputValue = textoTarefa.value;
-  let tarefa = document.createTextNode(inputValue);
-  li.appendChild(tarefa);
-  if (inputValue == "") {
-    alert("Você precisa escrever uma tarefa!");
-  } else {
-    document.getElementById("lista-tarefas").appendChild(li);
-  }
-  inputValue = "";
-} */
 
 function riscaTarefa() {
   target = event.target;
