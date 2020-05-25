@@ -11,8 +11,6 @@ btnCreateTarefa.addEventListener('click', function () {
   document.getElementById('texto-tarefa').value = '';
 });
 
-const listaTarefas = document.querySelectorAll('.item-lista');
-
 const clickItem = document.querySelector('ol');
 clickItem.addEventListener('click', function (event) {
   const itemEscolhido = event.target;
