@@ -101,6 +101,10 @@ function moveUp (){
   let oldText = moved.innerHTML;
   //encontrar a classe do item anterior
   let classN = parseInt(moved.className)-1;
+  let lista = document.getElementsByTagName("li")
+  if (classN < 0 || classN > lista.length-1) {
+    return;
+  }
   //transformar de inteiro para string
   let classStr = ""
   classStr += classN
