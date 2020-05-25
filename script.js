@@ -8,6 +8,7 @@ const saveList = document.getElementById('salvar-tarefas');
 const toUpButton = document.getElementById('mover-cima');
 const toDownButton = document.getElementById('mover-baixo');
 let selected = '';
+let target = '';
 
 
 function addTask() {
@@ -26,14 +27,9 @@ function clearAllTask() {
   ordenedList.innerHTML = '';
 }
 
-function addEvents(listItem) {
-  listItem.addEventListener('click', function(){
-    listItem.className = 'selected';
-  });
-}
 
 function crossTheLine() {
-  let target = event.target;
+  target = event.target;
   if (target.classList.contains ('completed')){
     target.classList.remove('completed');
   } else{
@@ -41,14 +37,6 @@ function crossTheLine() {
   }
 }
 
-function changeSelected (){
-  let target = event.target;
-  if(selected.classList !== undefined) {
-    selected.classList.remove('selected');
-  }
-  target.classList.add('selected');
-  selected = document.getElementsByClassName('selected')[0];
-}
 
 function clearDoneTask() {
   let complete = document.getElementsByClassName('completed');
@@ -64,7 +52,7 @@ function clearSelectedTask() {
       selectedItem[index].remove();
     }
   }
-
+  
 }
 
 function toDown(){
@@ -105,6 +93,14 @@ function getSavedList() {
   ordenedList.innerHTML = savedList;
 }
 
+function changeSelected (){
+  target = event.target;
+  if(selected.classList !== undefined) {
+    selected.classList.remove('selected');
+  }
+  target.classList.add('selected');
+  selected = document.getElementsByClassName('selected')[0];
+}
 
 window.addEventListener('load', getSavedList());
 toDownButton.addEventListener('click', toDown);
