@@ -19,9 +19,11 @@ taskList.addEventListener('click', function (event) {
       clickCount = 0;
       if (event.target.className.includes('selected')) {
         event.target.classList.remove('selected');
+        event.target.style.backgroundColor = 'rgb(255,255,255)'
       }
       else {
         event.target.classList.add('selected');
+        event.target.style.backgroundColor = 'rgb(128,128,128)';
       }
     } 
     else if (clickCount === 2) {
@@ -50,8 +52,10 @@ clearCompletedTasks.addEventListener('click', function () {
   let taskItem;
   for (let i in taskItems) {
     taskItem = taskItems[i];
-    if (taskItem.className.includes('completed')) {
+    if (taskItem.className !== undefined) {
+      if (taskItem.className.includes('completed')) {
       taskItem.remove();
+    }
     }
   }
 });
@@ -61,9 +65,13 @@ const clearSelectedTasks = document.getElementById('remover-selecionado');
 clearSelectedTasks.addEventListener('click', function () {
   // create array with list items
   let taskItems = document.querySelectorAll('li');
+  let taskItem;
   for (let i in taskItems) {
-    if (taskItems[i].className.includes('selected')) {
-      taskItems[i].remove();
+    taskItem = taskItems[i];
+    if (taskItem.className !== undefined) {
+      if (taskItem.className.includes('selected')) {
+      taskItem.remove();
+    }
     }
   }
 });
