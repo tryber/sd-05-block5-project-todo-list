@@ -16,3 +16,7 @@
   margin-top: 10%;
   transform: rotate(0deg);
 }
+
+li {
+  cursor: pointer;
+}

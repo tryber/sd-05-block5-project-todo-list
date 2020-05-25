@@ -20,7 +20,7 @@ function adicionaItem () {
 
 }
 
-function apagaTarefa() {
+function apagaTarefa () {
   target = event.target;
   if (target.classList.contains('completed')) {
     target.classList.remove('completed');
@@ -30,11 +30,18 @@ function apagaTarefa() {
 }
 
 //Apaga todos os itens da lista
-function clear() {
+function clear () {
   olList.innerText = "";
+}
+
+//Função para salvar a lista de tarefas
+function save () {
+  localStorage.clear();
+  localStorage.setItem('saved tasks', olList.innerHTML);
 }
 
 //Event Listners
 addItem.addEventListener("click", adicionaItem);
 clearAll.addEventListener('click', clear);
 olList.addEventListener('dblclick', apagaTarefa);
+saveList.addEventListener('click', saveList); // listener para salvar tasks no localstorage
