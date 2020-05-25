@@ -13,3 +13,13 @@ btnCreateTarefa.addEventListener('click', function () {
   // document.getElementById('texto-tarefa').value = '';
 });
 
+let listaTarefas = document.querySelectorAll('li');
+
+const clickItem = document.querySelector('ol');
+clickItem.addEventListener('click', function (event) {
+  let itemEscolhido = event.target;
+  for (let i = 0; i < listaTarefas.length; i += 1) {
+    listaTarefas[i].classList.remove('selected');
+  }
+  itemEscolhido.classList.add('selected');
+});
