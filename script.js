@@ -18,17 +18,35 @@ taskList.addEventListener('click', function (event) {
   let singleClickTimer = setTimeout(function() {
     if (clickCount === 1) {
       clickCount = 0;
-      event.target.style.backgroundColor = 'rgb(128,128,128)';
-    } else if (clickCount === 2) {
-    clickCount = 0;
-      if (event.target.style.textDecoration === 'line-through') {
-        event.target.style.textDecoration = '';
+      if (event.target.className === 'lista-item') {
+        event.target.className = 'lista-item selected';
+      }
+      else if (event.target.className === 'lista-item completed') {
+        event.target.className = 'lista-item completed selected';
+      }
+      else if (event.target.className === 'lista-item selected') {
+        event.target.className = 'lista-item';
       } 
-      else {
-        event.target.style.textDecoration = 'line-through';
+      else if (event.target.className === 'lista-item selected completed' || event.target.className === 'lista-item completed selected') {
+        event.target.className = 'lista-item completed';
+      }
+    } 
+    else if (clickCount === 2) {
+      clickCount = 0;
+      if (event.target.className === 'lista-item') {
+        event.target.className = 'lista-item completed';
+      }
+      else if (event.target.className === 'lista-item selected') {
+        event.target.className = 'lista-item selected completed';
+      }
+      else if (event.target.className === 'lista-item completed') {
+        event.target.className = 'lista-item';
+      } 
+      else if (event.target.className === 'lista-item selected completed' || event.target.className === 'lista-item completed selected') {
+        event.target.className = 'lista-item selected';
       }
     }
-  }, 300);
+  }, 400);
 });
 
 // add a button the clear all list itens
@@ -43,6 +61,7 @@ clearDoneTasks.addEventListener('click', function () {
   // create array with list items
   const taskItems = document.querySelectorAll('.lista-item');
   for (let i in taskItems) {
+    console.log(taskItems[i].style.backgroundColor);
     if (taskItems[i].style.textDecoration === 'line-through') {
       taskItems[i].remove();
     }
