@@ -11,10 +11,39 @@ btn.addEventListener('click', function() {
   task.value = '';
 });
 
-// add event listener to change list item color when it's clicked
-taskList.addEventListener('click', function (event) {
-  let listItem = document.getElementById('lista-item');
+// function ot change the color of the list item
+function changeColor (event) {
   event.target.style.backgroundColor = 'rgb(128,128,128)';
+};
+
+// function to strikthrough a list item
+function strikeThrough (event) {
+  event.target.style.textDecoration = 'line-through';
+};
+
+// add event listener to change list item color when it's clicked 
+let clickCount = 0;
+taskList.addEventListener('click', function (event) {
+  clickCount += 1;
+  let singleClickTimer = setTimeout(function() {
+    if (clickCount === 1) {
+      clickCount = 0;
+      if (event.target.style.backgroundColor === 'rgb(128,128,128)') {
+        event.target.style.backgroundColor = 'red';
+      } 
+      else {
+        event.target.style.backgroundColor = 'rgb(128,128,128)';
+      }
+    } else if (clickCount === 2) {
+    clickCount = 0;
+      if (event.target.style.textDecoration === 'line-through') {
+        event.target.style.textDecoration = '';
+      } 
+      else {
+        event.target.style.textDecoration = 'line-through';
+      }
+    }
+  }, 300);
 });
 
 /* add event listener to strikethrough a list item when double-clicked
