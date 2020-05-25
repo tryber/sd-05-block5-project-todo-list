@@ -1,4 +1,4 @@
-button:hover, li:hover {
+button, li {
   cursor: pointer;
 }
 
