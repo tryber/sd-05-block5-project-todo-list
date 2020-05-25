@@ -1,0 +1,18 @@
+//Seta para botão up e down
+.arrow {
+  border-right: 2px solid white;
+  border-top: 2px solid white;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+}
+
+.down {
+  margin-bottom: 10%;
+  transform: rotate(0deg);
+}
+
+.up {
+  margin-top: 10%;
+  transform: rotate(0deg);
+}
