@@ -47,11 +47,11 @@ function lineThrough(event){
   if (verificadorRisco === true) {
   let target = event.target
   target.classList.add("completed")
-  verificadorRisco = false;
-} else {
-  target = event.target
-  target.classList.remove("completed")
-  verificadorRisco = true
+ // verificadorRisco = false;
+//} else {
+ // target = event.target
+ // target.classList.remove("completed")
+ // verificadorRisco = true
 }
 }
 
