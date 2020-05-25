@@ -47,10 +47,7 @@ window.onload = function () {
     taskList.innerHTML = '';
   });
   checkoutButton.addEventListener('click', function () {
-    for (let i = 0; i < taskList.children.length; i += 1) {
-      if (taskList.children[i].className.includes('completed')) {
-        taskList.children[i].remove();
-      }
-    }
+    let comp = document.getElementsByClassName('completed');
+    for(let i = comp.length-1; i >= 0;  i -= 1) comp[i].remove();
   });
 };
