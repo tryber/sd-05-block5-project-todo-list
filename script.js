@@ -1,10 +1,10 @@
 const orderedList = document.getElementById('lista-tarefas');
 const buttonCreateTask = document.getElementById('criar-tarefa');
 const taskBox = document.getElementById('texto-tarefa');
+const cleanList = document.getElementById('apaga-tudo');
 
 function createTask(listContainer) {
   const newTask = document.createElement('li');
-  newTask.id = `tarefa-${listContainer.children.length}`;
   newTask.classList.add('li');
   newTask.classList.add('tarefa');
   newTask.innerText = taskBox.value;
@@ -44,3 +44,9 @@ document.addEventListener('dblclick', function (event) {
     }
   }
 });
+
+cleanList.onclick = function () {
+  const newOL = document.createElement('ol');
+  newOL.classList.add('lista-tarefas');
+  orderedList.replaceWith(newOL);
+}
