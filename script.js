@@ -43,16 +43,18 @@ function backgroundChange(event){
 //LINETHROUGH
 
 paiLista.addEventListener("dblclick", lineThrough)
-let verificadorRisco = true;
+
 function lineThrough(event){
-  if (verificadorRisco === true) {
   let target = event.target
-  target.classList.add("completed")
-  verificadorRisco = false;
+  let atual = target.style.textDecoration
+  console.log(atual)
+  if (atual === "" || atual === "none") {
+  target.classList.add("completed");
+  target.style.textDecoration = "line-through"
 } else {
   target = event.target
-  target.classList.remove("completed")
-  verificadorRisco = true
+  target.classList.remove("completed");
+  target.style.textDecoration = "none"
 }
 }
 
