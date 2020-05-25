@@ -1,9 +1,11 @@
-let ordenedList = document.getElementById('lista-tarefas');
-let buttonTask = document.getElementById('criar-tarefa');
-let buttonClear = document.getElementById('apaga-tudo')
-let textTask = document.getElementById('texto-tarefa');
-let removeCompleted = document.getElementById('remover-finalizados');
-let saveList = document.getElementById('salvar-tarefas');
+const ordenedList = document.getElementById('lista-tarefas');
+const buttonTask = document.getElementById('criar-tarefa');
+const buttonClear = document.getElementById('apaga-tudo')
+const removeCompleted = document.getElementById('remover-finalizados');
+const removeSelected = document.getElementById('remover-selecionado');
+const textTask = document.getElementById('texto-tarefa');
+const saveList = document.getElementById('salvar-tarefas');
+
 
 function addTask() {
   let listItem = document.createElement('li');
@@ -43,6 +45,16 @@ function clearDoneTask() {
   }
 }
 
+function clearSelectedTask() {
+  let selected = document.getElementsByTagName('li');
+  for(let index = 0; index < selected.length; index += 1){
+    if(selected[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+      selected[index].remove();
+    }
+  }
+
+}
+
 function saveTheList() {
   localStorage.clear();
   localStorage.setItem('saved tasks', ordenedList.innerHTML);
@@ -55,7 +67,9 @@ function getSavedList() {
 
 window.addEventListener('load', getSavedList());
 saveList.addEventListener('click', saveTheList);
-removeCompleted.addEventListener('click', clearDoneTask)
+removeCompleted.addEventListener('click', clearDoneTask);
+removeSelected.addEventListener('click', clearSelectedTask);
 ordenedList.addEventListener('dblclick', crossTheLine);
 buttonClear.addEventListener('click', clearAllTask);
 buttonTask.addEventListener('click', addTask);
+

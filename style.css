@@ -1,10 +1,46 @@
-/* *{
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
   padding: 0;
-  margin: 0;
   box-sizing: border-box;
-} */
+}
+
+body {
+  background-color: #3ba36b;
+  font-family: Roboto, sans-serif;
+}
+
 button, li  {
   cursor: pointer;
+}
+input{
+  width: 260px;
+}
+#lista-tarefas {
+  width: 250px;
+  margin: auto;
+  text-align: left;
+}
+
+#lista-tarefas li {
+  font-size: 25px;
+  width: 250px;
+  list-style: none;
+  background-color: aliceblue;
+  border-radius: 5px;
+  color: black;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.container {
+  background-color: white;
+  margin:auto;
+  width: 550px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  color: black;
 }
 
 .completed {
