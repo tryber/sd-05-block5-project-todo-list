@@ -15,7 +15,8 @@ let selected = '';
 
 // funcoes
 function refazLinha() {
-  // função relacionada ao CSS, só serve pra fazer a linha vermelha do caderninho quando muda a quantidade de tarefas na lista
+  // função relacionada ao CSS, só serve pra fazer a linha vermelha do caderninho
+  // quando muda a quantidade de tarefas na lista
   altura = 0; // reseta a variavel altura para 0
   for (let i = 0; i < ol.children.length; i += 1) {
     // pra cada elemento dentro do ol adiciona 46 ao valor de altura
@@ -50,7 +51,8 @@ function apagaFIn() {
   // funcao que apaga as tarefas completas
   const completos = document.getElementsByClassName('completed'); // puxa o array de todos os elementos que contenham a classe completed
   for (let index = completos.length - 1; index >= 0; index -= 1) {
-    // verificação feita de tras pra frente pra evitar mudança de posição dos elementos no array ao deletar um elemento
+    // verificação feita de tras pra frente pra evitar mudança de posição
+    // dos elementos no array ao deletar um elemento
     completos[index].remove(); // remove o elemento do array na posição do index
   }
   refazLinha();
@@ -65,14 +67,17 @@ function apagaTodos() {
 // funcao que apaga somente a tarefa selecionada
 function apagaSel() {
   const selecionado = document.getElementsByClassName('selected'); // seto variavel com o array de elementos com a classe selected
-  selecionado[0].remove(); // remove o elemento na posição 1 do array (na teoria era pra ter sempre somente 1 selecionado, mas nunca se sabe =p)
+  selecionado[0].remove(); // remove o elemento na posição 1 do array
+  // (na teoria era pra ter sempre somente 1 selecionado, mas nunca se sabe =p)
   refazLinha();
 }
 
 // funcao que carrega as infos do local storage
 function recuperaLocal() {
-  const savedList = localStorage.getItem('saved tasks'); // seta variavel com as informações salvas na key saved tasks
-  ol.innerHTML = savedList; // adiciona ao innerHTML do ol as informações que estavam na key saved tasks
+  const savedList = localStorage.getItem('saved tasks'); // seta variavel com as informações
+  // salvas na key saved tasks
+  ol.innerHTML = savedList; // adiciona ao innerHTML do ol as informações que estavam
+  // na key saved tasks
 }
 
 // função de risca a terefa
@@ -97,14 +102,18 @@ function saveList() {
 function trocaBaixo() {
   if (selected.classList !== undefined) {
     // verifica se tem algum elemento selecionado para troca
-    const quemTroca = document.getElementsByClassName('selected')[0]; //define variavel com o elemento a ser trocado de posição
+    const quemTroca = document.getElementsByClassName('selected')[0];
+    // define variavel com o elemento a ser trocado de posição
     if (quemTroca.nextElementSibling !== null) {
       // verifica se existe um elemento abaixo da task
-      //assim se for a ultima tarefa na lista n faz nada
-      const aux = quemTroca.nextElementSibling.innerText; // salva o innerText do elemento abaixo em uma variavel auxiliar
-      quemTroca.nextElementSibling.innerText = quemTroca.innerText; // define o innerText do elemento abaixo com o conteudo do selecionado
-      quemTroca.innerText = aux; // define o innerText do elemento selecinado com o salvo anteriormente na variavel auxiliar
-      // o texto da task selecionada e a task abaixo ja foram invertidos
+      // assim se for a ultima tarefa na lista n faz nada
+      const aux = quemTroca.nextElementSibling.innerText; // salva o innerText do elemento
+      // abaixo em uma variavel auxiliar
+      quemTroca.nextElementSibling.innerText = quemTroca.innerText;
+      // define o innerText do elemento abaixo com o conteudo do selecionado
+      quemTroca.innerText = aux; // define o innerText do elemento selecinado
+      // com o salvo anteriormente na variavel auxiliar
+      // agora o texto da task selecionada e a task abaixo ja foram invertidos
       quemTroca.classList.remove('selected'); // remove a seleção da task
       quemTroca.nextElementSibling.classList.add('selected'); // passa a seleção da task pro elemento abaixo
       // faz com que você continue com o mesmo valor selecionado apos a inversão dos conteudos
@@ -117,13 +126,17 @@ function trocaBaixo() {
 function trocaCima() {
   if (selected.classList !== undefined) {
     // verifica se tem algum elemento selecionado para troca
-    const quemTroca = document.getElementsByClassName('selected')[0]; // define variavel com o elemento a ser trocado de posição
+    const quemTroca = document.getElementsByClassName('selected')[0]; // define variavel com
+    // o elemento a ser trocado de posição
     if (quemTroca.previousElementSibling !== null) {
       // verifica se existe um elemento acima da task
       // assim se for a primeira tarefa na lista n faz nada
-      const aux = quemTroca.previousElementSibling.innerText; // salva o innerText do elemento acima em uma variavel auxiliar
-      quemTroca.previousElementSibling.innerText = quemTroca.innerText; // define o innerText do elemento acima com o conteudo do selecionado
-      quemTroca.innerText = aux; // define o innerText do elemento selecinado com o salvo anteriormente na variavel auxiliar
+      const aux = quemTroca.previousElementSibling.innerText; // salva o innerText do
+      // elemento acima em uma variavel auxiliar
+      quemTroca.previousElementSibling.innerText = quemTroca.innerText; // define o innerText
+      // do elemento acima com o conteudo do selecionado
+      quemTroca.innerText = aux; // define o innerText do elemento selecinado
+      // com o salvo anteriormente na variavel auxiliar
       quemTroca.classList.remove('selected'); // remove a seleção da task
       quemTroca.previousElementSibling.classList.add('selected'); // passa a seleção da task pro elemento acima
       // faz com que você continue com o mesmo valor selecionado apos a inversão dos conteudos
