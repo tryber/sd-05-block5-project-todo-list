@@ -6,7 +6,6 @@ let colorButton = document.getElementById('colorirb')
 
 function addTask() {
   let listItem = document.createElement('li');
-  listItem.setAttribute('class', 'completed');
   listItem.innerHTML = textTask.value;
   if(textTask.value == '' ) {
     alert('Escreva algo para adicionar');
@@ -22,22 +21,25 @@ function clearAllTask() {
 }
 
 function addEvents(listItem) {
+  let target = event.target;
   listItem.addEventListener('click', function(){
     listItem.style.backgroundColor = corCinza();
   });
-  listItem.addEventListener('dblclick', function (){
-    if(listItem.style.textDecoration == 'line-through') {
-      listItem.style.textDecoration = 'none';
-    } else{
-      listItem.style.textDecoration = 'line-through';
-    }
-  });
+}
 
+function crossTheLine(event) {
+  let target = event.target;
+  if (target.classList.contains ('completed')){
+    target.classList.remove('completed');
+  } else{
+    target.classList.add('completed');
+  }
 }
 
 function corCinza() {
   return "rgb(128, 128, 128)";
 }
 
+ordenedList.addEventListener('dblclick', crossTheLine);
 buttonClear.addEventListener('click', clearAllTask);
 buttonTask.addEventListener('click', addTask);

@@ -3,7 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 } */
-.button  {
+button, li  {
   cursor: pointer;
 }
 
+.completed {
+  text-decoration: line-through black;
+}
