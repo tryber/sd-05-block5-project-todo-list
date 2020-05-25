@@ -8,6 +8,8 @@ btnCreateTarefa.addEventListener('click', function () {
   li.className = 'item-lista'
   li.innerText = textoTarefa;
   document.querySelector('ol').appendChild(li);
+  document.getElementById('texto-tarefa').value = '';
   // document.querySelector('#lista-tarefas').innerHTML += '<li class="item-lista">' + textoTarefa + '</li>';
   // document.getElementById('texto-tarefa').value = '';
 });
+
