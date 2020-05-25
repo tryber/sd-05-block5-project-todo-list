@@ -2,12 +2,12 @@ button {
   cursor: pointer;
 }
 
-.lista-item {
-  cursor: pointer;
-}
-
 .completed {
   text-decoration: line-through;
+}
+
+.lista-item {
+  cursor: pointer;
 }
 
 .selected {

@@ -62,7 +62,7 @@ clearDoneTasks.addEventListener('click', function () {
   const taskItems = document.querySelectorAll('.lista-item');
   for (let i in taskItems) {
     console.log(taskItems[i].style.backgroundColor);
-    if (taskItems[i].style.textDecoration === 'line-through') {
+    if (taskItems[i].className === 'lista-item completed' || taskItems[i].className === 'lista-item completed selected' || taskItems[i].className === 'lista-item selected completed') {
       taskItems[i].remove();
     }
   }
