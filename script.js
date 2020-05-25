@@ -1,8 +1,8 @@
-let orderedList = document.getElementById('lista-tarefas');
+const orderedList = document.getElementById('lista-tarefas');
 const buttonCreateTask = document.getElementById('criar-tarefa');
 const taskBox = document.getElementById('texto-tarefa');
 
-function createTask () {
+function createTask() {
   const newTask = document.createElement('li');
   newTask.classList.add('li');
   newTask.innerText = taskBox.value;
