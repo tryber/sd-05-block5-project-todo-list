@@ -47,9 +47,11 @@ const clearCompletedTasks = document.getElementById('remover-finalizados');
 clearCompletedTasks.addEventListener('click', function () {
   // create array with list items
   let taskItems = document.querySelectorAll('li');
+  let taskItem;
   for (let i in taskItems) {
-    if (taskItems[i].className.includes('completed')) {
-      taskItems[i].remove();
+    taskItem = taskItems[i];
+    if (taskItem.className.includes('completed')) {
+      taskItem.remove();
     }
   }
 });
