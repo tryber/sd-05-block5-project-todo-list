@@ -1,7 +1,12 @@
 li {
 cursor: pointer;
+user-select: none;
 }
 
 .selected {
     background-color: gray;
+}
+
+.completed {
+    text-decoration: line-through;
 }

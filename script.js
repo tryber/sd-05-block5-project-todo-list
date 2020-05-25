@@ -18,3 +18,11 @@ list.addEventListener("click", function () {
     event.target.classList.add("selected")
     selecionado = event.target
 })
+
+list.addEventListener('dblclick', function() {
+    if (event.target.classList.contains('completed')) {
+        event.target.classList.remove("completed")
+    } else {
+        event.target.classList.add("completed")
+    }
+})
