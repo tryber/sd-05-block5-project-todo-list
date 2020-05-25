@@ -1,3 +1,7 @@
 header {
   font-size: 20px;
 }
+
+button , .item-lista {
+    cursor: pointer;
+}
