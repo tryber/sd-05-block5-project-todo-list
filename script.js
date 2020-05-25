@@ -1,20 +1,22 @@
 //Variáveis
-const ol = document.getElementById("lista-tarefas"));
-const criarTarefa = document.getElementById("criar-tarefa");
-const textoTarefa = document.getElementById("texto-tarefa");
-const apagaTudo = document.getElementById("apaga-tudo")
-const removerFinalizados = document.getElementById('remover-finalizados');
+let ol = document.getElementById("lista-tarefas"));
+let criarTarefa = document.getElementById("criar-tarefa");
+let textoTarefa = document.getElementById("texto-tarefa");
+let apagaTudo = document.getElementById("apaga-tudo")
+let removerFinalizados = document.getElementById('remover-finalizados');
 let target = "";
 
-//Funções
-function acrescentarTarefa() {
-  if (textoTarefa.value.length !== 0) {
-    const li = document.createElement("li");
-    ol.appendChild(li);
-    li.innerText = textoTarefa.value; 
-    textoTarefa.value = "";
+function acrescentarTarefa (){
+  let li = document.createElement("li");
+  let inputValue = textoTarefa.value;
+  let tarefa = document.createTextNode(inputValue);
+  li.appendChild(tarefa);
+  if (inputValue == "") {
+    alert("Você precisa escrever uma tarefa!");
+  } else {
+    document.getElementById("lista-tarefas").appendChild(li);
   }
-  
+  inputValue = "";
 }
 
 function riscaTarefa() {
