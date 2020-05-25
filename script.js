@@ -1,11 +1,18 @@
 const btnCreateTarefa = document.querySelector('#criar-tarefa');
 btnCreateTarefa.addEventListener('click', function () {
-  let textoTarefa = document.getElementById("texto-tarefa").value;
+  const textoTarefa = document.getElementById('texto-tarefa').value;
   if (textoTarefa === '') {
-    return
+    return;
   }
-  else {
-    document.querySelector('#lista-tarefas').innerHTML += "<li>" + textoTarefa + "</li>";
-  }
-  document.getElementById("texto-tarefa").value = '';
+  document.querySelector('#lista-tarefas').innerHTML += '<li>' + textoTarefa + '</li>';
+  document.getElementById('texto-tarefa').value = '';
 })
+
+
+// Incluindo pointer ao passar mouse sobre botões e itens da lista.
+document.querySelector('button').addEventListener('mouseover',() => {
+    document.querySelector('button').style.cursor = 'pointer';
+});
+document.querySelector('ol').addEventListener('mouseover',() => {
+    document.querySelector('ol').style.cursor = 'pointer';
+});
