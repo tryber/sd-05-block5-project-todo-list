@@ -3,8 +3,8 @@ const btn = document.getElementById('criar-tarefa');
 const task = document.getElementById('texto-tarefa');
 const taskList = document.getElementById('lista-tarefas');
 
-btn.addEventListener('click', function() {
-  let listItemToBeCreated = document.createElement('li');
+btn.addEventListener('click', function () {
+  const listItemToBeCreated = document.createElement('li');
   listItemToBeCreated.innerHTML = task.value;
   taskList.appendChild(listItemToBeCreated);
   task.value = '';
@@ -14,24 +14,21 @@ btn.addEventListener('click', function() {
 let clickCount = 0;
 taskList.addEventListener('click', function (event) {
   clickCount += 1;
-  let singleClickTimer = setTimeout(function() {
+  setTimeout(function () {
     if (clickCount === 1) {
       clickCount = 0;
       if (event.target.className.includes('selected')) {
         event.target.classList.remove('selected');
-        event.target.style.backgroundColor = 'rgb(255,255,255)'
-      }
-      else {
+        event.target.style.backgroundColor = 'rgb(255,255,255)';
+      } else {
         event.target.classList.add('selected');
         event.target.style.backgroundColor = 'rgb(128,128,128)';
       }
-    } 
-    else if (clickCount === 2) {
+    } else if (clickCount === 2) {
       clickCount = 0;
       if (event.target.className.includes('completed')) {
         event.target.classList.remove('completed');
-      }
-      else {
+      } else {
         event.target.classList.add('completed');
       }
     }
@@ -45,11 +42,11 @@ clearTasks.addEventListener('click', function () {
 })
 
 // add a button the clears completed items
-const clearCompletedTasks = document.getElementById('remover-finalizados');
+const clearCompletedTasks = document.getElementById;('remover-finalizados');
 clearCompletedTasks.addEventListener('click', function () {
   // create array with list items
-  let taskItems = document.getElementsByClassName('completed');
-  for (let i = taskItems.length-1; i >= 0 ; i -= 1) {
+  const taskItems = document.getElementsByClassName('completed');
+  for (let i = taskItems.length - 1; i >= 0; i -= 1) {
     taskItems[i].remove();
   }
 });
@@ -58,8 +55,8 @@ clearCompletedTasks.addEventListener('click', function () {
 const clearSelectedTasks = document.getElementById('remover-selecionado');
 clearSelectedTasks.addEventListener('click', function () {
   // create array with list items
-  let taskItems = document.getElementsByClassName('selected');
-  for (let i = taskItems.length-1; i >= 0 ; i -= 1) {
+  const taskItems = document.getElementsByClassName('selected');
+  for (let i = taskItems.length - 1; i >= 0; i -= 1) {
     taskItems[i].remove();
   }
 });
