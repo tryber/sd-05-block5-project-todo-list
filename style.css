@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-*{
+* {
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #3ba36b;
+  background-color: blueviolet;
   font-family: Roboto, sans-serif;
 }
 
-button, li  {
+button, li {
   cursor: pointer;
 }
-input{
+
+input {
   width: 260px;
 }
+
 #lista-tarefas {
   margin: auto;
   text-align: left;
@@ -32,7 +33,7 @@ input{
 
 .container {
   background-color: white;
-  margin:auto;
+  margin: auto;
   width: 550px;
   border-radius: 5px;
   text-align: center;
@@ -50,6 +51,7 @@ input{
 .completed {
   text-decoration: line-through black;
 }
+
 .selected {
   background-color: gray;
 }

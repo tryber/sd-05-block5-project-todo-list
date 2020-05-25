@@ -10,13 +10,12 @@ const toDownButton = document.getElementById('mover-baixo');
 let selected = '';
 let target = '';
 
-
 function addTask() {
   let listItem = document.createElement('li');
   listItem.innerHTML = textTask.value;
-  if(textTask.value == '' ) {
+  if (textTask.value == '') {
     alert('Escreva algo para adicionar');
-  } else{
+  } else {
     ordenedList.appendChild(listItem);
     textTask.value = '';
   }
@@ -28,35 +27,33 @@ function clearAllTask() {
 
 function crossTheLine() {
   target = event.target;
-  if (target.classList.contains ('completed')){
+  if (target.classList.contains('completed')) {
     target.classList.remove('completed');
-  } else{
+  } else {
     target.classList.add('completed');
   }
 }
 
-
 function clearDoneTask() {
   let complete = document.getElementsByClassName('completed');
-  for(let index = complete.length - 1; index >=0; index -= 1) {
+  for (let index = complete.length - 1; index >= 0; index -= 1) {
     complete[index].remove();
   }
 }
 
 function clearSelectedTask() {
   let selectedItem = document.getElementsByTagName('li');
-  for(let index = 0; index < selectedItem.length; index += 1){
-    if(selectedItem[index].className === 'selected') {
+  for (let index = 0; index < selectedItem.length; index += 1) {
+    if (selectedItem[index].className === 'selected') {
       selectedItem[index].remove();
     }
   }
-  
 }
 
-function toDown(){
-  if(selected.classList !== undefined) {
+function toDown() {
+  if (selected.classList !== undefined) {
     let whoChange = document.getElementsByClassName('selected')[0];
-    if(whoChange.nextElementSibling !== null) {
+    if (whoChange.nextElementSibling !== null) {
       let aux = whoChange.nextElementSibling.innerText;
       whoChange.nextElementSibling.innerText = whoChange.innerText;
       whoChange.innerText = aux;
@@ -67,11 +64,11 @@ function toDown(){
   }
 }
 
-function toUp(){
-  if(selected.classList !== undefined) {
-    let whoChange = document.getElementsByClassName('selected')[0];
-    if(whoChange.previousElementSibling !== null) {
-      let aux = whoChange.previousElementSibling.innerText;
+function toUp() {
+  if (selected.classList !== undefined) {
+    const whoChange = document.getElementsByClassName('selected')[0];
+    if (whoChange.previousElementSibling !== null) {
+      const aux = whoChange.previousElementSibling.innerText;
       whoChange.previousElementSibling.innerText = whoChange.innerText;
       whoChange.innerText = aux;
       whoChange.classList.remove('selected');
@@ -87,13 +84,13 @@ function saveTheList() {
 }
 
 function getSavedList() {
-  let savedList = localStorage.getItem('saved tasks');
+  const savedList = localStorage.getItem('saved tasks');
   ordenedList.innerHTML = savedList;
 }
 
-function changeSelected (){
+function changeSelected() {
   target = event.target;
-  if(selected.classList !== undefined) {
+  if (selected.classList !== undefined) {
     selected.classList.remove('selected');
   }
   target.classList.add('selected');
