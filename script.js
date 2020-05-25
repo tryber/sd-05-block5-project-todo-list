@@ -80,7 +80,7 @@ upButton.addEventListener('click', function () {
   const selectedTasks = document.querySelector('.selected');
   const aux = selectedTasks.innerHTML;
   selectedTasks.previousElementSibling.classList.add('selected');
-  selectedTasks.innerHTML = selectedTasks.previousElementSiblinginnerHTML;
+  selectedTasks.innerHTML = selectedTasks.previousElementSibling.innerHTML;
   selectedTasks.previousElementSibling.innerHTML = aux;
   selectedTasks.classList.remove('selected');
 });
@@ -88,7 +88,7 @@ downButton.addEventListener('click', function () {
   const selectedTasks = document.querySelector('.selected');
   const aux = selectedTasks.innerHTML;
   selectedTasks.nextElementSibling.classList.add('selected');
-  selectedTasks.innerHTML = selectedTasks.nextElementSiblinginnerHTML;
+  selectedTasks.innerHTML = selectedTasks.nextElementSibling.innerHTML;
   selectedTasks.nextElementSibling.innerHTML = aux;
   selectedTasks.classList.remove('selected');
 });

@@ -9,6 +9,7 @@ button {
   cursor: pointer;
   border: 0;
   color: #231123;
+  border-radius: 12px;
 }
 
 button#apaga-tudo {
@@ -45,16 +46,19 @@ button#salvar-tarefas {
 }
 
 div.add {
-  border: 1px solid white;
   margin-left: 30%;
   margin-right: 30%;
   text-align: center;
-  padd
 }
 
 div.buttons {
-  border: 1px solid white;
   text-align: center;
+}
+
+div#to-dos {
+  height: 400px;
+  overflow: scroll;
+  margin-bottom: 20px;
 }
 
 header {
@@ -67,6 +71,8 @@ input {
 
 li {
   cursor: pointer;
+  line-height: 23px;
+  margin-top: 5px;
 }
 
 .selected {
@@ -74,7 +80,6 @@ li {
 }
 
 ol {
-  border: 1px solid white;
   margin-left: 30%;
   margin-right: 30%;
 }
