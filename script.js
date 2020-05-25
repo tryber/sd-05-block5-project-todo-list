@@ -60,3 +60,19 @@ clearSelectedTasks.addEventListener('click', function () {
     taskItems[i].remove();
   }
 });
+
+// add a buttom that saves de list created
+const saveButton = document.getElementById('salvar-tarefas');
+saveButton.addEventListener('click', function () {
+  //create array with list items
+  let tasksSaved = document.getElementById('lista-tarefas');
+  localStorage.setItem('tasks', tasksSaved.innerHTML);
+  
+});
+
+// created the ol with the items saved
+window.onload = function () {
+  document.querySelector('ol').innerHTML = localStorage.getItem('tasks');
+  console.log(document.querySelector('ol').innerHTML);
+  console.log(localStorage.getItem('tasks'));
+}
