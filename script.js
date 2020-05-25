@@ -6,4 +6,5 @@ create.addEventListener("click", function() {
  let task = document.createElement("li")
  task.innerText = text.value
  list.appendChild(task)
+ text.value = null
 })
