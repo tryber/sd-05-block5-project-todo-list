@@ -64,15 +64,33 @@ clearSelectedTasks.addEventListener('click', function () {
 // add a buttom that saves de list created
 const saveButton = document.getElementById('salvar-tarefas');
 saveButton.addEventListener('click', function () {
-  //create array with list items
-  let tasksSaved = document.getElementById('lista-tarefas');
+  // create array with list items
+  const tasksSaved = document.getElementById('lista-tarefas');
   localStorage.setItem('tasks', tasksSaved.innerHTML);
-  
 });
 
-// created the ol with the items saved
+// create the ol with the items saved
 window.onload = function () {
   document.querySelector('ol').innerHTML = localStorage.getItem('tasks');
-  console.log(document.querySelector('ol').innerHTML);
-  console.log(localStorage.getItem('tasks'));
-}
+};
+
+// move down and up buttons
+const upButton = document.getElementById('mover-cima');
+const downButton = document.getElementById('mover-baixo');
+
+upButton.addEventListener('click', function () {
+  const selectedTasks = document.getElementsByClassName('selected');
+  for (let i = 0; i <= selectedTasks.length - 1; i += 1) {
+    let aux = selectedTasks[i].previousElementSibling.innerHTML;
+    selectedTasks[i].previousElementSibling.innerHTML = selectedTasks[i].innerHTML;
+    selectedTasks[i].innerHTML = aux;
+  }  
+});
+downButton.addEventListener('click', function () {
+  const selectedTasks = document.getElementsByClassName('selected');
+  for (let i = 0; i <= selectedTasks.length - 1; i += 1) {
+    let aux = selectedTasks[i].nextElementSibling.innerHTML;
+    selectedTasks[i].nextElementSibling.innerHTML = selectedTasks[i].innerHTML;
+    selectedTasks[i].innerHTML = aux;
+  }  
+});
