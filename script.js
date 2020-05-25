@@ -6,6 +6,16 @@ let apagaTudo = document.getElementById("apaga-tudo")
 let removerFinalizados = document.getElementById('remover-finalizados');
 let target = "";
 
+//Funções
+
+function acrescentarTarefa () {
+  let li = document.createElement("li");
+  ol.appendChild(li);
+  li.innerText = textoTarefa.value;
+  textoTarefa.value = "";
+}
+
+/* COMO FEITO ANTES
 function acrescentarTarefa (){
   let li = document.createElement("li");
   let inputValue = textoTarefa.value;
@@ -17,14 +27,14 @@ function acrescentarTarefa (){
     document.getElementById("lista-tarefas").appendChild(li);
   }
   inputValue = "";
-}
+} */
 
 function riscaTarefa() {
   target = event.target;
-  if (target.classList.contains('completed')) {
-    target.classList.remove('completed');
+  if (target.classList.contains('done')) {
+    target.classList.remove('done');
   } else {
-    target.classList.add('completed');
+    target.classList.add('done');
   }
 }
 
