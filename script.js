@@ -48,15 +48,9 @@ clearTasks.addEventListener('click', function () {
 const clearCompletedTasks = document.getElementById('remover-finalizados');
 clearCompletedTasks.addEventListener('click', function () {
   // create array with list items
-  let taskItems = document.querySelectorAll('li');
-  let taskItem;
-  for (let i in taskItems) {
-    taskItem = taskItems[i];
-    if (taskItem.className !== undefined) {
-      if (taskItem.className.includes('completed')) {
-      taskItem.remove();
-    }
-    }
+  let taskItems = document.getElementsByClassName('completed');
+  for (let i = taskItems.length-1; i >= 0 ; i -= 1) {
+    taskItems[i].remove();
   }
 });
 
@@ -64,14 +58,8 @@ clearCompletedTasks.addEventListener('click', function () {
 const clearSelectedTasks = document.getElementById('remover-selecionado');
 clearSelectedTasks.addEventListener('click', function () {
   // create array with list items
-  let taskItems = document.querySelectorAll('li');
-  let taskItem;
-  for (let i = 0; i < taskItems.length; i += 1) {
-    taskItem = taskItems[i];
-    if (taskItem.className !== undefined) {
-      if (taskItem.className.includes('selected')) {
-      taskItem.remove();
-    }
-    }
+  let taskItems = document.getElementsByClassName('selected');
+  for (let i = taskItems.length-1; i >= 0 ; i -= 1) {
+    taskItems[i].remove();
   }
 });
