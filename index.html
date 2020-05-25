@@ -3,7 +3,7 @@
 
 <head>
   <title>Marina Barcelos - To Do List Project</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -13,16 +13,17 @@
 
   <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo.</p>
 
-  <input type="text" id="texto-tarefa">
-  <input type="button" id="criar-tarefa" value="Adicionar tarefa">
-  <input type="button" id="apaga-tudo" value="Apagar tudo">
-  <input type="button" id="remover-finalizados" value="Remover tarefas finalizadas">
+  <div>
+    <input type="text" id="texto-tarefa" />
+    <button id="criar-tarefa">Adicionar tarefa</button>
+    <button id="apaga-tudo">Apagar tudo</button>
+    <button id="remover-finalizados">Remover tarefas finalizadas</button>
+  </div>
 
   <div>
     <ol id="lista-tarefas"></ol>
   </div>
-
-  <script src="script.js"></script>
 </body>
 
+<script src="script.js"></script>
 </html>

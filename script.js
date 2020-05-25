@@ -1,16 +1,20 @@
 //Variáveis
 const ol = document.getElementById("lista-tarefas"));
-let criarTarefa = document.getElementById("criar-tarefa");
-let textoTarefa = document.getElementById("texto-tarefa");
-let apagaTudo = document.getElementById("apaga-tudo")
-let removerFinalizados = document.getElementById('remover-finalizados');
+const criarTarefa = document.getElementById("criar-tarefa");
+const textoTarefa = document.getElementById("texto-tarefa");
+const apagaTudo = document.getElementById("apaga-tudo")
+const removerFinalizados = document.getElementById('remover-finalizados');
+let target = "";
 
 //Funções
 function acrescentarTarefa() {
-  const li = document.createElement("li");
-  ol.appendChild(li);
-  li.innerText = textoTarefa.value; 
-  textoTarefa.value = "";
+  if (textoTarefa.value.length !== 0) {
+    const li = document.createElement("li");
+    ol.appendChild(li);
+    li.innerText = textoTarefa.value; 
+    textoTarefa.value = "";
+  }
+  
 }
 
 function riscaTarefa() {
