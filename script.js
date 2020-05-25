@@ -5,21 +5,11 @@ const taskList = document.getElementById('lista-tarefas');
 
 btn.addEventListener('click', function() {
   let listItemToBeCreated = document.createElement('li');
-  listItemToBeCreated.id = 'lista-item';
+  listItemToBeCreated.className = 'lista-item';
   listItemToBeCreated.innerHTML = task.value;
   taskList.appendChild(listItemToBeCreated);
   task.value = '';
 });
-
-// function ot change the color of the list item
-function changeColor (event) {
-  event.target.style.backgroundColor = 'rgb(128,128,128)';
-};
-
-// function to strikthrough a list item
-function strikeThrough (event) {
-  event.target.style.textDecoration = 'line-through';
-};
 
 // add event listener to change list item color when it's clicked 
 let clickCount = 0;
@@ -28,12 +18,7 @@ taskList.addEventListener('click', function (event) {
   let singleClickTimer = setTimeout(function() {
     if (clickCount === 1) {
       clickCount = 0;
-      if (event.target.style.backgroundColor === 'rgb(128,128,128)') {
-        event.target.style.backgroundColor = 'red';
-      } 
-      else {
-        event.target.style.backgroundColor = 'rgb(128,128,128)';
-      }
+      event.target.style.backgroundColor = 'rgb(128,128,128)';
     } else if (clickCount === 2) {
     clickCount = 0;
       if (event.target.style.textDecoration === 'line-through') {
@@ -46,15 +31,20 @@ taskList.addEventListener('click', function (event) {
   }, 300);
 });
 
-/* add event listener to strikethrough a list item when double-clicked
-taskList.addEventListener('click', function (event) {
-  let listItem = document.getElementById('lista-item');
-  event.target.style.textDecoration = 'line-through';
-});
-*/
-
 // add a button the clear all list itens
 const clearTasks = document.getElementById('apaga-tudo');
 clearTasks.addEventListener('click', function () {
   taskList.innerHTML = '';
 })
+
+// add a button the clear strikethrough items
+const clearDoneTasks = document.getElementById('remover-finalizados');
+clearDoneTasks.addEventListener('click', function () {
+  // create array with list items
+  const taskItems = document.querySelectorAll('.lista-item');
+  for (let i in taskItems) {
+    if (taskItems[i].style.textDecoration === 'line-through') {
+      taskItems[i].remove();
+    }
+  }
+});
