@@ -39,10 +39,10 @@ taskList.addEventListener('click', function (event) {
 const clearTasks = document.getElementById('apaga-tudo');
 clearTasks.addEventListener('click', function () {
   taskList.innerHTML = '';
-})
+});
 
 // add a button the clears completed items
-const clearCompletedTasks = document.getElementById;('remover-finalizados');
+const clearCompletedTasks = document.getElementById('remover-finalizados');
 clearCompletedTasks.addEventListener('click', function () {
   // create array with list items
   const taskItems = document.getElementsByClassName('completed');
