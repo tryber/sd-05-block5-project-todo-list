@@ -66,7 +66,7 @@ clearSelectedTasks.addEventListener('click', function () {
   // create array with list items
   let taskItems = document.querySelectorAll('li');
   let taskItem;
-  for (let i in taskItems) {
+  for (let i = 0; i < taskItems.length; i += 1) {
     taskItem = taskItems[i];
     if (taskItem.className !== undefined) {
       if (taskItem.className.includes('selected')) {
