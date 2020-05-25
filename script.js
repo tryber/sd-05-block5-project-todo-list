@@ -29,6 +29,18 @@ function apagaTarefa () {
   }
 }
 
+//Função para riscar item já concluído
+function itemFinish() {
+  target = event.target; // seta o target
+  if (target.classList.contains('completed')) {
+    // se o target já tem a classe completed
+    target.classList.remove('completed'); // remove a classe completed
+  } else {
+    // se o target não tem a classe completed
+    target.classList.add('completed'); // adiciona a classe completed
+  }
+}
+
 //Apaga todos os itens da lista
 function clear () {
   olList.innerText = "";
@@ -44,4 +56,5 @@ function save () {
 addItem.addEventListener("click", adicionaItem);
 clearAll.addEventListener('click', clear);
 olList.addEventListener('dblclick', apagaTarefa);
-saveList.addEventListener('click', saveList); // listener para salvar tasks no localstorage
+saveList.addEventListener('click', save); // listener para salvar tasks no localstorage
+olList.addEventListener('dblclick', itemFinish); 
