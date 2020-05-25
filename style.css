@@ -1,61 +1,60 @@
 body {
-  font-family: 'Space Grotesk',sans-serif;
-  background-color: #181818;
+  background-color: #111111;
   color: white;
+  font-family: Space Grotesk, sans-serif;
   font-size: 15px;
 }
 
 button {
-  cursor: pointer;
   border: 0;
-  color: #231123;
   border-radius: 12px;
+  cursor: pointer;
 }
 
-button#apaga-tudo {
-  background-color: #CA054D;
+.apaga-tudo {
+  background-color: #ca054d;
 }
 
-button#criar-tarefa {
-  background-color: #84A9C0;
+.criar-tarefa {
+  background-color: #84a9c0;
   color: white;
 }
 
-button#mover-baixo {
-  background-color: #DD99BB;
+.mover-baixo {
+  background-color: #D9B;
 }
 
-button#mover-cima {
-  background-color: #7B506F;
+.mover-cima {
+  background-color: #7b506f;
 }
 
-button#remover-finalizados {
-  background-color: #558C8C;
+.remover-finalizados {
+  background-color: #558c8c;
 }
 
-button#remover-selecionado {
+.remover-selecionado {
   background-color: gray;
 }
 
-button#salvar-tarefas {
-  background-color: #E8DB7D;
+.salvar-tarefas {
+  background-color: #e8dB7d;
 }
 
 .completed {
   text-decoration: line-through;
 }
 
-div.add {
+.add {
   margin-left: 30%;
   margin-right: 30%;
   text-align: center;
 }
 
-div.buttons {
+.buttons {
   text-align: center;
 }
 
-div#to-dos {
+.to-dos {
   height: 400px;
   overflow: scroll;
   margin-bottom: 20px;
@@ -85,7 +84,7 @@ ol {
 }
 
 p {
-  text-align: center;
   font-size: 13px;
   font-style: italic;
+  text-align: center;
 }
