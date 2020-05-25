@@ -18,13 +18,13 @@ function removeSelectedClass() {
   }
 }
 
-function clearImput() {
-  taskBox.value = '';  
+function clearInput() {
+  taskBox.value = '';
 }
 
 buttonCreateTask.onclick = function () {
   orderedList.appendChild(createTask(orderedList));
-  clearImput();
+  clearInput();
   taskBox.focus();
 };
 
