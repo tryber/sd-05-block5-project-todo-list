@@ -5,75 +5,62 @@ const taskList = document.getElementById('lista-tarefas');
 
 btn.addEventListener('click', function() {
   let listItemToBeCreated = document.createElement('li');
-  listItemToBeCreated.className = 'lista-item';
   listItemToBeCreated.innerHTML = task.value;
   taskList.appendChild(listItemToBeCreated);
   task.value = '';
 });
 
-// add event listener to change list item color when it's clicked 
+// add event listener to complete (strikethrough) and select (change color) a list item
 let clickCount = 0;
 taskList.addEventListener('click', function (event) {
   clickCount += 1;
   let singleClickTimer = setTimeout(function() {
     if (clickCount === 1) {
       clickCount = 0;
-      if (event.target.className === 'lista-item') {
-        event.target.className = 'lista-item selected';
+      if (event.target.className.includes('selected')) {
+        event.target.classList.remove('selected');
       }
-      else if (event.target.className === 'lista-item completed') {
-        event.target.className = 'lista-item completed selected';
-      }
-      else if (event.target.className === 'lista-item selected') {
-        event.target.className = 'lista-item';
-      } 
-      else if (event.target.className === 'lista-item selected completed' || event.target.className === 'lista-item completed selected') {
-        event.target.className = 'lista-item completed';
+      else {
+        event.target.classList.add('selected');
       }
     } 
     else if (clickCount === 2) {
       clickCount = 0;
-      if (event.target.className === 'lista-item') {
-        event.target.className = 'lista-item completed';
+      if (event.target.className.includes('completed')) {
+        event.target.classList.remove('completed');
       }
-      else if (event.target.className === 'lista-item selected') {
-        event.target.className = 'lista-item selected completed';
-      }
-      else if (event.target.className === 'lista-item completed') {
-        event.target.className = 'lista-item';
-      } 
-      else if (event.target.className === 'lista-item selected completed' || event.target.className === 'lista-item completed selected') {
-        event.target.className = 'lista-item selected';
+      else {
+        event.target.classList.add('completed');
       }
     }
   }, 400);
 });
 
-// add a button the clear all list itens
+// add a button the clears all list itens
 const clearTasks = document.getElementById('apaga-tudo');
 clearTasks.addEventListener('click', function () {
   taskList.innerHTML = '';
 })
 
-// add a button the clear completed items
+// add a button the clears completed items
 const clearCompletedTasks = document.getElementById('remover-finalizados');
 clearCompletedTasks.addEventListener('click', function () {
   // create array with list items
   let taskItems = document.querySelectorAll('li');
   for (let i in taskItems) {
-    if (taskItems[i].className === 'lista-item completed' || taskItems[i].className === 'lista-item completed selected' || taskItems[i].className === 'lista-item selected completed') {
+    if (taskItems[i].className.includes('completed')) {
       taskItems[i].remove();
     }
   }
 });
 
-// add a button the clear selected items
+// add a button that clears selected items
 const clearSelectedTasks = document.getElementById('remover-selecionado');
 clearSelectedTasks.addEventListener('click', function () {
   // create array with list items
   let taskItems = document.querySelectorAll('li');
   for (let i in taskItems) {
-    if (taskItems[i].className === 'lista-item selected' || taskItems[i].className === 'lista-item completed selected' || taskItems[i].className === 'lista-item selected completed') {
+    if (taskItems[i].className.includes('selected')) {
       taskItems[i].remove();
     }
   }
