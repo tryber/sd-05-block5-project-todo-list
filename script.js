@@ -9,17 +9,18 @@ let removerSelecBut = document.getElementById("remover-selecionado");
 let paiLista = document.getElementById("lista-tarefas")
 
 //CRIAR TAREFA
-console.log(textInput)
 criarTarefaBut.addEventListener("click", TextAdd)
 
 function TextAdd(){
-textInput = document.getElementById("texto-tarefa")
-let textOutput = document.createElement("li")
-textOutput.className = "teste"
+textInput = document.getElementById("texto-tarefa");
+let textOutput = document.createElement("li");
+let lista = document.getElementsByTagName("li");
+for( i = lista.length ; i <= lista.length ; i++){
+textOutput.className = i;
+}
 textOutput.innerHTML= textInput.value
 textInput.value=""
 paiLista.appendChild(textOutput)
-console.log(textOutput);
 }
 
 //BACKGROUND CHANGE
@@ -47,7 +48,6 @@ paiLista.addEventListener("dblclick", lineThrough)
 function lineThrough(event){
   let target = event.target
   let atual = target.style.textDecoration
-  console.log(atual)
   if (atual === "" || atual === "none") {
   target.classList.add("completed");
   target.style.textDecoration = "line-through"
@@ -83,4 +83,64 @@ function apagaSelec() {
   for ( i = (apagar.length-1) ; i >= 0 ; i -= 1){
   paiLista.removeChild(apagar[i]);
   } 
+}
+
+//SALVANDO PAG
+salvarTarefasBut.addEventListener("click", function(){
+window.localStorage.setItem('lista', paiLista.innerHTML);
+});
+
+paiLista.innerHTML = localStorage.getItem('lista');
+
+//MOVER PRA CIMA
+moverCimaBut.addEventListener("click", moveUp)
+function moveUp (){
+  //qual sera movido
+  let moved = document.getElementsByClassName("selected")[0]
+  //guardar o texto dele
+  let oldText = moved.innerHTML;
+  //encontrar a classe do item anterior
+  let classN = parseInt(moved.className)-1;
+  //transformar de inteiro para string
+  let classStr = ""
+  classStr += classN
+  //encontrar elemento anterior
+  let destin = document.getElementsByClassName(classStr)[0];
+  //mudar classe e cor do elemento de destino
+  destin.classList.add("selected");
+  destin.style.backgroundColor = "rgb(128,128,128)"
+  //mudar conteudo, classe e cor do elemento que ficou pra trás
+  moved.classList.remove("selected");
+  moved.style.backgroundColor = "white"
+  moved.innerHTML = destin.innerHTML
+  //mudar conteudo do elemento de destino
+  destin.innerHTML = oldText
+}
+
+moverBaixoBut.addEventListener("click", moveDown)
+function moveDown (){
+  //qual sera movido
+  let moved = document.getElementsByClassName("selected")[0]
+  //guardar o texto dele
+  let oldText = moved.innerHTML;
+  //encontrar a classe do item anterior
+  let classN = parseInt(moved.className)+1;
+  let lista = document.getElementsByTagName("li")
+  if (classN < 0 || classN > lista.length-1) {
+    return;
+  }
+  //transformar de inteiro para string
+  let classStr = ""
+  classStr += classN
+  //encontrar elemento anterior
+  let destin = document.getElementsByClassName(classStr)[0];
+  //mudar classe e cor do elemento de destino
+  destin.classList.add("selected");
+  destin.style.backgroundColor = "rgb(128,128,128)"
+  //mudar conteudo, classe e cor do elemento que ficou pra trás
+  moved.classList.remove("selected");
+  moved.style.backgroundColor = "white"
+  moved.innerHTML = destin.innerHTML
+  //mudar conteudo do elemento de destino
+  destin.innerHTML = oldText
 }
