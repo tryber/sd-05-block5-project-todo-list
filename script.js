@@ -7,4 +7,5 @@ adicionar.addEventListener('click',function(){
   let valor = taskInput.value;  
   createEle.innerHTML=valor;
   lista.appendChild(createEle);
+  taskInput.value='';
 })
