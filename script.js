@@ -13,18 +13,34 @@ function createTask(listContainer) {
 
 function removeSelectedClass() {
   const item = document.getElementsByClassName('selected');
-  if ( item.length > 0) {
+  if (item.length > 0) {
     item[0].classList.remove('selected');
   }
 }
 
+function clearImput() {
+  taskBox.value = '';  
+}
+
 buttonCreateTask.onclick = function () {
   orderedList.appendChild(createTask(orderedList));
+  clearImput();
+  taskBox.focus();
 };
 
-document.addEventListener("click", function (event) {
+document.addEventListener('click', function (event) {
   removeSelectedClass();
-  if ( event.target.classList.contains( 'tarefa' ) ) {
-    event.target.classList.add( 'selected' );
+  if (event.target.classList.contains('tarefa')) {
+    event.target.classList.add('selected');
   }
-  })
+});
+
+document.addEventListener('dblclick', function (event) {
+  if (event.target.classList.contains('tarefa')) {
+    if (event.target.classList.contains('completed')) {
+      event.target.classList.remove('completed');
+    } else {
+      event.target.classList.add('completed');
+    }
+  }
+});
