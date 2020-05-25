@@ -19,10 +19,8 @@ taskList.addEventListener('click', function (event) {
       clickCount = 0;
       if (event.target.className.includes('selected')) {
         event.target.classList.remove('selected');
-        event.target.style.backgroundColor = 'rgb(255,255,255)';
       } else {
         event.target.classList.add('selected');
-        event.target.style.backgroundColor = 'rgb(128,128,128)';
       }
     } else if (clickCount === 2) {
       clickCount = 0;
@@ -79,18 +77,18 @@ const upButton = document.getElementById('mover-cima');
 const downButton = document.getElementById('mover-baixo');
 
 upButton.addEventListener('click', function () {
-  const selectedTasks = document.getElementsByClassName('selected');
-  for (let i = 0; i <= selectedTasks.length - 1; i += 1) {
-    const aux = selectedTasks[i].previousElementSibling.innerHTML;
-    selectedTasks[i].previousElementSibling.innerHTML = selectedTasks[i].innerHTML;
-    selectedTasks[i].innerHTML = aux;
-  }
+  let selectedTasks = document.querySelector('.selected');
+    let aux = selectedTasks.innerHTML;
+    selectedTasks.previousElementSibling.classList.add('selected');
+    selectedTasks.innerHTML = selectedTasks.previousElementSibling.innerHTML;
+    selectedTasks.previousElementSibling.innerHTML = aux;
+    selectedTasks.classList.remove('selected');
 });
 downButton.addEventListener('click', function () {
-  const selectedTasks = document.getElementsByClassName('selected');
-  for (let i = 0; i <= selectedTasks.length - 1; i += 1) {
-    const aux = selectedTasks[i].nextElementSibling.innerHTML;
-    selectedTasks[i].nextElementSibling.innerHTML = selectedTasks[i].innerHTML;
-    selectedTasks[i].innerHTML = aux;
-  }
+  let selectedTasks = document.querySelector('.selected');
+    let aux = selectedTasks.innerHTML;
+    selectedTasks.nextElementSibling.classList.add('selected');
+    selectedTasks.innerHTML = selectedTasks.nextElementSibling.innerHTML;
+    selectedTasks.nextElementSibling.innerHTML = aux;
+    selectedTasks.classList.remove('selected');
 });
