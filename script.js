@@ -22,6 +22,7 @@ taskList.addEventListener('click', function (event) {
       } else {
         event.target.classList.add('selected');
       }
+      console.log(event.target);
     } else if (clickCount === 2) {
       clickCount = 0;
       if (event.target.className.includes('completed')) {
@@ -67,7 +68,7 @@ saveButton.addEventListener('click', function () {
   localStorage.setItem('tasks', tasksSaved.innerHTML);
 });
 
-// create the ol with the items saved
+// create the ol with the items saved when the window is loaded
 window.onload = function () {
   document.querySelector('ol').innerHTML = localStorage.getItem('tasks');
 };
@@ -92,5 +93,3 @@ downButton.addEventListener('click', function () {
   selectedTasks.nextElementSibling.innerHTML = aux;
   selectedTasks.classList.remove('selected');
 });
-
-

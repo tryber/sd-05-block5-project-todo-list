@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(43, 42, 43);
+  background-color: rgb(43 , 42 , 43);
   color: white;
   font-family: Space Grotesk, sans-serif;
   font-size: 15px;
@@ -12,24 +12,24 @@ button {
 }
 
 .apaga-tudo {
-  background-color: rgb(171, 28, 12);
+  background-color: rgb(171 , 28 , 12);
 }
 
 .criar-tarefa {
-  background-color: rgb(17, 123, 156);
+  background-color: rgb(17 , 123 , 156);
   color: white;
 }
 
 .mover-baixo {
-  background-color: rgb(189, 106, 23);
+  background-color: rgb(189 , 106 , 23);
 }
 
 .mover-cima {
-  background-color: rgb(245, 143, 42);
+  background-color: rgb(245 , 143 , 42);
 }
 
 .remover-finalizados {
-  background-color: rgb(21, 107, 23);
+  background-color: rgb(21 , 107 , 23);
 }
 
 .remover-selecionado {
@@ -37,7 +37,7 @@ button {
 }
 
 .salvar-tarefas {
-  background-color: rgb(214, 214, 41);
+  background-color: rgb(214 , 214 , 41);
 }
 
 .completed {
