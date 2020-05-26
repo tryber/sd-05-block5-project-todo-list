@@ -67,13 +67,67 @@ botaoRemoveSelecionado.addEventListener('click', removerSelecionado);
 // Função para armazenar a lista no localStorage
 const botaoSalvarTarefas = document.getElementById('salvar-tarefas');
 function salvarTarefas() {
-  console.log('teste');
   const listaTarefas = document.getElementById('lista-tarefas').innerHTML;
   localStorage.setItem('tarefas', listaTarefas);
+  alert('Lista Salva com Sucesso!!!');
 }
 botaoSalvarTarefas.addEventListener('click', salvarTarefas);
 
-window.onload = initi;
+// Função para mudar a ordem de algum item na lista
+const botaoParaCima = document.getElementById('mover-cima');
+let qtdSelecionado = 0;
+function verificaQtdeSelecionados() {
+  qtdSelecionado = 0;
+  const listaTarefas = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < listaTarefas.length; i += 1) {
+    if (listaTarefas[i].classList.contains('selected')) {
+      qtdSelecionado += 1;
+    }
+  }
+}
+function moverParaCima(e) {
+  verificaQtdeSelecionados();
+  if (qtdSelecionado > 1) {
+    alert("Selecione apenas um item para mover");
+  } else {
+    const itemSelecionado = document.querySelector('#lista-tarefas .selected');
+    if (itemSelecionado.previousElementSibling !== null) {
+      const itemAnterior = itemSelecionado.previousElementSibling;
+      const conteudoAnterior = itemAnterior.innerText;
+      itemAnterior.innerText = itemSelecionado.innerText;
+      itemSelecionado.innerText = conteudoAnterior;
+      itemSelecionado.classList.toggle('selected');
+      itemAnterior.classList.toggle('selected');
+    } else {
+      alert('O ítem selecionado já é o primeiro da lista');
+    }
+  }
+}
+botaoParaCima.addEventListener('click', moverParaCima);
+
+const botaoParaBaixo = document.getElementById('mover-baixo');
+function moverParaBaixo(e) {
+  verificaQtdeSelecionados();
+  if (qtdSelecionado > 1) {
+    alert("Selecione apenas um item para mover");
+  } else {
+    const itemSelecionado = document.querySelector('#lista-tarefas .selected');
+    if (itemSelecionado.nextElementSibling !== null) {
+      const itemPosterior = itemSelecionado.nextElementSibling;
+      const conteudoPosterior = itemPosterior.innerText;
+      itemPosterior.innerText = itemSelecionado.innerText;
+      itemSelecionado.innerText = conteudoPosterior;
+      itemSelecionado.classList.toggle('selected');
+      itemPosterior.classList.toggle('selected');
+    } else {
+      alert('O ítem selecionado já é o último da lista');
+    }
+  }
+}
+botaoParaBaixo.addEventListener('click', moverParaBaixo);
+
+// carrega a lista salva no local storage, se houver
 function initi() {
   document.getElementById('lista-tarefas').innerHTML = localStorage.getItem('tarefas');
 }
+window.onload = initi;
