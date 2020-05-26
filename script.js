@@ -6,6 +6,8 @@ buttonAdicionar.addEventListener('click', function () {
   let li = document.createElement('li');
   li.innerHTML = inputText.value;
   lista.appendChild(li);
+  inputText.value = '';
+
 });
 
 // (((())))
