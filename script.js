@@ -7,7 +7,7 @@ function newTask() {
   if (inputText.value.length !== 0) {
     let newTaskList = document.createElement("li");
     document.getElementById("lista-tarefas").appendChild(newTaskList); // para adicionar elemento li no pai ol
-    newTaskList.innerHTML = "" + inputText.value; // para transferir o input texto em novo item de lista
+    newTaskList.innerText = inputText.value; // para transferir o input texto em novo item de lista
     inputText.value = ""; // para limpar o input text
   }
 }
