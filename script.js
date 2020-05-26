@@ -73,8 +73,7 @@ function salvarTarefas() {
 }
 botaoSalvarTarefas.addEventListener('click', salvarTarefas);
 
-// Função para mudar a ordem de algum item na lista
-const botaoParaCima = document.getElementById('mover-cima');
+// Função para verificar a quantidade de itens selecionados
 let qtdSelecionado = 0;
 function verificaQtdeSelecionados() {
   qtdSelecionado = 0;
@@ -85,19 +84,22 @@ function verificaQtdeSelecionados() {
     }
   }
 }
-function moverParaCima(e) {
+// Função para mover o item selecionado para cima
+const botaoParaCima = document.getElementById('mover-cima');
+function moverParaCima() {
   verificaQtdeSelecionados();
-  if (qtdSelecionado > 1) {
-    alert("Selecione apenas um item para mover");
+  if (qtdSelecionado > 1) { // verifica se tem apenas um item selecionado
+    alert('Selecione apenas um item para mover');
   } else {
     const itemSelecionado = document.querySelector('#lista-tarefas .selected');
-    if (itemSelecionado.previousElementSibling !== null) {
-      const itemAnterior = itemSelecionado.previousElementSibling;
-      const conteudoAnterior = itemAnterior.innerText;
-      itemAnterior.innerText = itemSelecionado.innerText;
-      itemSelecionado.innerText = conteudoAnterior;
-      itemSelecionado.classList.toggle('selected');
-      itemAnterior.classList.toggle('selected');
+    if (itemSelecionado.previousElementSibling !== null) { // não entra na função caso já seja o primeiro
+      const itemAnterior = itemSelecionado.previousElementSibling; // cria elemento com item anterior
+      const conteudoAnterior = itemAnterior.innerText; // copia o texto do elemento anterior
+      itemAnterior.innerText = itemSelecionado.innerText; // coloca o texto do item selecionado na posição anterior
+      itemSelecionado.innerText = conteudoAnterior; // o item selecionado assume o texto do item anterior
+      // as classes são invertidas para acompanhar o item selecionado
+      //itemSelecionado.classList.toggle('selected');
+      //itemAnterior.classList.toggle('selected');
     } else {
       alert('O ítem selecionado já é o primeiro da lista');
     }
@@ -106,10 +108,10 @@ function moverParaCima(e) {
 botaoParaCima.addEventListener('click', moverParaCima);
 
 const botaoParaBaixo = document.getElementById('mover-baixo');
-function moverParaBaixo(e) {
+function moverParaBaixo() {
   verificaQtdeSelecionados();
   if (qtdSelecionado > 1) {
-    alert("Selecione apenas um item para mover");
+    alert('Selecione apenas um item para mover');
   } else {
     const itemSelecionado = document.querySelector('#lista-tarefas .selected');
     if (itemSelecionado.nextElementSibling !== null) {
@@ -117,8 +119,8 @@ function moverParaBaixo(e) {
       const conteudoPosterior = itemPosterior.innerText;
       itemPosterior.innerText = itemSelecionado.innerText;
       itemSelecionado.innerText = conteudoPosterior;
-      itemSelecionado.classList.toggle('selected');
-      itemPosterior.classList.toggle('selected');
+      //itemSelecionado.classList.toggle('selected');
+      //itemPosterior.classList.toggle('selected');
     } else {
       alert('O ítem selecionado já é o último da lista');
     }
