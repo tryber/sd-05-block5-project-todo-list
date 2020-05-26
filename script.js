@@ -92,14 +92,19 @@ function moverParaCima() {
     alert('Selecione apenas um item para mover');
   } else {
     const itemSelecionado = document.querySelector('#lista-tarefas .selected');
-    if (itemSelecionado.previousElementSibling !== null) { // não entra na função caso já seja o primeiro
-      const itemAnterior = itemSelecionado.previousElementSibling; // cria elemento com item anterior
-      const conteudoAnterior = itemAnterior.innerText; // copia o texto do elemento anterior
-      itemAnterior.innerText = itemSelecionado.innerText; // coloca o texto do item selecionado na posição anterior
-      itemSelecionado.innerText = conteudoAnterior; // o item selecionado assume o texto do item anterior
+    // não entra na função caso já seja o primeiro
+    if (itemSelecionado.previousElementSibling !== null) {
+      // cria elemento com item anterior
+      const itemAnterior = itemSelecionado.previousElementSibling;
+      // copia o texto do elemento anterior
+      const conteudoAnterior = itemAnterior.innerText;
+      // coloca o texto do item selecionado na posição anterior
+      itemAnterior.innerText = itemSelecionado.innerText;
+      // o item selecionado assume o texto do item anterior
+      itemSelecionado.innerText = conteudoAnterior;
       // as classes são invertidas para acompanhar o item selecionado
-      //itemSelecionado.classList.toggle('selected');
-      //itemAnterior.classList.toggle('selected');
+      itemSelecionado.classList.toggle('selected');
+      itemAnterior.classList.toggle('selected');
     } else {
       alert('O ítem selecionado já é o primeiro da lista');
     }
@@ -119,8 +124,8 @@ function moverParaBaixo() {
       const conteudoPosterior = itemPosterior.innerText;
       itemPosterior.innerText = itemSelecionado.innerText;
       itemSelecionado.innerText = conteudoPosterior;
-      //itemSelecionado.classList.toggle('selected');
-      //itemPosterior.classList.toggle('selected');
+      itemSelecionado.classList.toggle('selected');
+      itemPosterior.classList.toggle('selected');
     } else {
       alert('O ítem selecionado já é o último da lista');
     }
