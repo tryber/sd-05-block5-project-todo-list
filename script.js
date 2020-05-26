@@ -72,11 +72,9 @@ function salvartarefas() {
 document.getElementById('salvar-tarefas').addEventListener('click', salvartarefas);
 
 // para carregar função para carregar as tarefas salvas;
-function trazlistasalva() {
+window.onload = function trazlistasalva() {
   document.getElementById('lista-tarefas').innerHTML = localStorage.getItem('tarefas-salvas');
 }
-
-document.body.addEventListener('onload', trazlistasalva);
 
 // criar botão que apaga SELECIONADAS
 
