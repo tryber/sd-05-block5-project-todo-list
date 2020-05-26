@@ -38,19 +38,14 @@ buttonDeleteAll.addEventListener("click", deleteAll);
 
 //botão com id="remover-finalizados" que quando clicado remove somente os elementos finalizados da sua lista.
 let buttonDeleteCompleted = document.getElementById("remover-finalizados");
-let listTasks = document.getElementsByTagName("li");
+let listCompleted = document.getElementsByClassName("completed");
 
 function deleteCompleted() {
-  for (let i = 0; i < listTasks.length; i += 1) {
-    if (listTasks[i].classList.contains("completed")) {
-      listTasks[i].remove();
-    }
+  for (let i = 0; i < listCompleted.length; i += 1) {
+    listCompleted[i].remove();
   }
 }
-    buttonDeleteCompleted.addEventListener("click", deleteCompleted);
-// cuidado, essa function funciona testando mas dà o erro seguinte no cypress: 
-// TypeError: Cannot read property 'content' of undefined
-//       at Context.<anonymous> (http://localhost:43033/__cypress/tests?p=cypress/integration/project.spec.js-099:88:37)
+buttonDeleteCompleted.addEventListener("click", deleteCompleted);
 
 //function para deixar fundo cinza dos li selecionados
 let allLi = document.getElementsByTagName("li");
@@ -58,12 +53,12 @@ let allLi = document.getElementsByTagName("li");
 function getGrey(eventgrey) {
   let liSelected = eventgrey.target;
   for (let i = 0; i < allLi.length; i += 1) {
-  if (liSelected === allLi[i] && !(liSelected.classList.contains("selected"))) {
-    allLi[i].classList.add("selected");
+    if (liSelected === allLi[i] && !(liSelected.classList.contains("selected"))) {
+      allLi[i].classList.add("selected");
+    }
+    else if (liSelected === allLi[i] && liSelected.classList.contains("selected")) {
+      allLi[i].classList.remove("selected");
+    }
   }
-  else if (liSelected === allLi[i] && liSelected.classList.contains("selected")){
-    allLi[i].classList.remove("selected");
-  }
-}
 }
 ol.addEventListener("click", getGrey);
