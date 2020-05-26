@@ -35,3 +35,16 @@ function deleteAll() {
   ol.innerText = "";
 }
 buttonDeleteAll.addEventListener("click", deleteAll);
+
+//botão com id="remover-finalizados" que quando clicado remove somente os elementos finalizados da sua lista.
+let buttonDeleteCompleted = document.getElementById("remover-finalizados");
+
+function deleteCompleted() {
+  const listTasks = document.getElementsByTagName("li");
+  for (let i = 0; i < listTasks.length; i += 1) {
+    if (listTasks[i].classList.contains("completed")) {
+      listTasks[i].remove();
+    }
+  }
+}
+    buttonDeleteCompleted.addEventListener("click", deleteCompleted);
