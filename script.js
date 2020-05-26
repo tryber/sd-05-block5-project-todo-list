@@ -1,6 +1,6 @@
 const ordenedList = document.getElementById('lista-tarefas');
 const buttonTask = document.getElementById('criar-tarefa');
-const buttonClear = document.getElementById('apaga-tudo')
+const buttonClear = document.getElementById('apaga-tudo');
 const removeCompleted = document.getElementById('remover-finalizados');
 const removeSelected = document.getElementById('remover-selecionado');
 const textTask = document.getElementById('texto-tarefa');
@@ -11,9 +11,9 @@ let selected = '';
 let target = '';
 
 function addTask() {
-  let listItem = document.createElement('li');
+  const listItem = document.createElement('li');
   listItem.innerHTML = textTask.value;
-  if (textTask.value == '') {
+  if (textTask.value === '') {
     alert('Escreva algo para adicionar');
   } else {
     ordenedList.appendChild(listItem);
@@ -35,14 +35,14 @@ function crossTheLine() {
 }
 
 function clearDoneTask() {
-  let complete = document.getElementsByClassName('completed');
+  const complete = document.getElementsByClassName('completed');
   for (let index = complete.length - 1; index >= 0; index -= 1) {
     complete[index].remove();
   }
 }
 
 function clearSelectedTask() {
-  let selectedItem = document.getElementsByTagName('li');
+  const selectedItem = document.getElementsByTagName('li');
   for (let index = 0; index < selectedItem.length; index += 1) {
     if (selectedItem[index].className === 'selected') {
       selectedItem[index].remove();
@@ -52,9 +52,9 @@ function clearSelectedTask() {
 
 function toDown() {
   if (selected.classList !== undefined) {
-    let whoChange = document.getElementsByClassName('selected')[0];
+    const whoChange = document.getElementsByClassName('selected')[0];
     if (whoChange.nextElementSibling !== null) {
-      let aux = whoChange.nextElementSibling.innerText;
+      const aux = whoChange.nextElementSibling.innerText;
       whoChange.nextElementSibling.innerText = whoChange.innerText;
       whoChange.innerText = aux;
       whoChange.classList.remove('selected');
