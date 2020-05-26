@@ -52,6 +52,28 @@ const removerItensFinalizados = () => {
   }
 };
 
+for(let i = 0; i < document.querySelectorAll('li').length; i += 1) {
+  document.querySelectorAll('li')[i].innerHTML = localStorage.getItem('lista');
+}
+// Salvar tarefas localStorage
+const salvarItensLocalStorage = () => {
+  const lista = [];
+  for (let i = 0; i < document.querySelectorAll('li').length; i += 1) {
+    lista.push(document.querySelectorAll('li')[i].innerHTML);
+  }
+
+  const listaEmTexto = JSON.stringify(lista);
+  localStorage.setItem('lista', listaEmTexto);
+}
+
+// const recuperarListaLocalStorage = () => {
+//   const listaEmTexto = localStorage.getItem('lista');
+//   const list = JSON.parse(listaEmTexto);
+//   for (let i = 0; i < list.length; i += 1) {
+
+//   }
+// }
+
 const btn = document.getElementById('criar-tarefa');
 btn.addEventListener('click', criarElementoLista);
 
@@ -60,3 +82,7 @@ btnApagarTudo.addEventListener('click', apagarTodosOsItens);
 
 const btnItensFinalizados = document.getElementById('remover-finalizados');
 btnItensFinalizados.addEventListener('click', removerItensFinalizados);
+
+const btnSalvarTarefas = document.getElementById('salvar-tarefas');
+btnSalvarTarefas.addEventListener('click', salvarItensLocalStorage);
+// recuperarListaLocalStorage();
