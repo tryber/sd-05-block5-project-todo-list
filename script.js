@@ -57,7 +57,40 @@ function moveUp() {
       alert('Item já está no topo!');
     }
     else {
-      
+      for (let i = 1; i < listaTarefas.length; i += 1) {
+        if (listaTarefas[i].classList.contains('selected')) {
+          const trocaItem = listaTarefas[i - 1].innerHTML;
+          listaTarefas[i - 1].innerHTML = listaTarefas[i].innerHTML;
+          listaTarefas[i - 1].classList.add('selected');
+          listaTarefas[i].innerHTML = trocaItem;
+          listaTarefas[i].className = 'item-lista';
+        }
+      }
+    }
+  }
+  else if (document.querySelectorAll('.selected').length === 0) {
+    alert('Não existe item selecionado.');
+  }
+  else {
+    alert('Gentileza escolher apenas um item para mover.');
+  }
+};
+
+function moveDown() {
+  if (document.querySelectorAll('.selected').length === 1) {
+    const listaTarefas = document.querySelectorAll('li');
+    for (let i = 0; i < listaTarefas.length; i += 1) {
+      if (i < (listaTarefas.length - 1) && listaTarefas[i].classList.contains('selected')) {
+        const trocaItem = listaTarefas[i + 1].innerHTML;
+        listaTarefas[i + 1].innerHTML = listaTarefas[i].innerHTML;
+        listaTarefas[i + 1].classList.add('selected');
+        listaTarefas[i].innerHTML = trocaItem;
+        listaTarefas[i].className = 'item-lista';
+        break;
+      }
+      if (i === (listaTarefas.length - 1)) {
+        alert('Item selecionado já é o último!');
+      }
     }
   }
   else if (document.querySelectorAll('.selected').length === 0) {
