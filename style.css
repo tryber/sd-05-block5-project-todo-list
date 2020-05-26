@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+/* Editar o mouse */
+.botoes:hover, .item-lista:hover {
+  cursor: pointer;
+}

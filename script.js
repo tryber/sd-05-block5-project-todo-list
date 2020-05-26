@@ -1,7 +1,9 @@
 // Criar lista ordenada
+const textoTarefa = document.getElementById('texto-tarefa');
+
 function createListItem() {
   let li = document.createElement('li');
-  let textoTarefa = document.getElementById('texto-tarefa');
+  li.className = "item-lista";
   if (textoTarefa.value === '') {
     alert('Você deve escrever algo!');
   } else {
