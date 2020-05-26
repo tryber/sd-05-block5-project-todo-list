@@ -1,3 +1,9 @@
 #funcionamento {
   font-style:italic;
 }
+li {
+  cursor: pointer;
+}
+li:hover {
+  background-color:rgb(128, 128, 128) ;
+}
