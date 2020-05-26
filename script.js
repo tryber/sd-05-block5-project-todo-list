@@ -26,7 +26,7 @@ const aplicarCorCinzaAosItens = (tagLi) => {
 
 // Marcar o item com sublinhado
 const sublinhaItem = (tagLi) => {
-  tagLi.addEventListener('dblclick', () => {
+  tagLi.addEventListener('dblclick', function() {
     if(tagLi.style.textDecoration != "line-through") {
       tagLi.style.textDecoration = "line-through";
     } else {
@@ -42,7 +42,6 @@ const apagarTodosOsItens = () => {
   while (tagPai.hasChildNodes()) {
     tagPai.removeChild(tagPai.firstChild);
   }
-  // tagPai.removeChild(tagPai.children[0]);
 }
 const btnApagarTudo = document.getElementById('apaga-tudo');
 btnApagarTudo.addEventListener('click', apagarTodosOsItens);

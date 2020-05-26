@@ -4,4 +4,5 @@ input, button {
 
 .completed {
   cursor: pointer;
+  text-decoration: line-through;
 }
