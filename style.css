@@ -4,3 +4,6 @@ li{
 button{
     cursor: pointer;
 }
+.selected{
+    background-color: gray;
+}
