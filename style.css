@@ -1,0 +1,12 @@
+.mainTitle {
+  font-family: monospace;
+  margin: 30px;
+}
+
+.subTitle {
+  color: grey;
+  font-family: monospace;
+  font-style: italic;
+  font-weight: 500;
+  margin: 30px;
+}
