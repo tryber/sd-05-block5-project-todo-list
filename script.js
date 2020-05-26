@@ -22,7 +22,6 @@ taskList.addEventListener('click', function (event) {
       } else {
         event.target.classList.add('selected');
       }
-      console.log(event.target);
     } else if (clickCount === 2) {
       clickCount = 0;
       if (event.target.className.includes('completed')) {
