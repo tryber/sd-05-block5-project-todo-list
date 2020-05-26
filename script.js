@@ -15,7 +15,11 @@ function newTask() {
 buttonNewTask.addEventListener("click", newTask);
 
 
-// Ao clicar em um item da lista, altere a cor de fundo do item para cinza rgb(128,128,128)
-// function changeItemColor (event) {
+//riscar item quando recebe double click, para indicar atividade completada
+function itemCrossed(e) {
+  const itemDblClick = e.target;
+  itemDblClick.classList.add('completed');
+}
+ol.addEventListener('dblclick', itemCrossed);
 
-// }
+
