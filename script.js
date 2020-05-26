@@ -2,12 +2,13 @@
 
 let buttonNewTask = document.getElementById("criar-tarefa");
 let inputText = document.getElementById("texto-tarefa");
+let ol = document.getElementById("lista-tarefas")
 
 function newTask() {
   if (inputText.value.length !== 0) {
-    let newTaskList = document.createElement("li");
-    document.getElementById("lista-tarefas").appendChild(newTaskList); // para adicionar elemento li no pai ol
-    newTaskList.innerText = inputText.value; // para transferir o input texto em novo item de lista
+    let li = document.createElement("li");
+    ol.appendChild(li); // para adicionar elemento li no pai ol
+    li.innerText = inputText.value; // para transferir o input texto em novo item de lista
     inputText.value = ""; // para limpar o input text
   }
 }
