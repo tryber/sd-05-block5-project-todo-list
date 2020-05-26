@@ -10,10 +10,10 @@ let saveList = document.getElementById('salvar-tarefas');
 let moveDown = document.getElementById('mover-baixo');
 let moveUp = document.getElementById('mover-cima');
 let lines = document.getElementById('linhas');
-let select = "";
+let itemSelected = "";
 
 //Funções
-function adicionaItem () {
+function adicionaItem() {
   let li = document.createElement("li");
   olList.appendChild(li);
   li.innerText = textList.value;
@@ -31,7 +31,7 @@ function itemFinish() {
 }
 
 //Função para apagar tarefa
-function apagaTarefa () {
+function apagaTarefa() {
   let complete = document.getElementsByClassName('completed');
   for (let j = complete.length - 1; j >= 0; j -= 1) {
     complete[j].remove();
@@ -39,34 +39,35 @@ function apagaTarefa () {
 }
 
 //Apaga todos os itens da lista
-function clear () {
+function clear() {
   olList.innerText = "";
 }
 
 //Função para salvar a lista de tarefas
-function save () {
+function save() {
   localStorage.clear();
   localStorage.setItem('saved tasks', olList.innerHTML);
 }
 
 //Função para alterar a cor do item da lista
-function changeBackground() {
-  let change = document.getElementsByTagName("li");
-  for(let i in change) {
-    change[i].style.backgroundColor = 'rgb(128, 128, 128)';
+function seleciona() {
+  if (itemSelected.classList !== undefined) {
+    itemSelected.classList.remove('selected');
   }
+    event.target.classList.add('selected');
+    itemSelected = event.target;
 }
-
+  
 //Event Listners
 addItem.addEventListener("click", adicionaItem);
 clearAll.addEventListener('click', clear);
 saveList.addEventListener('click', save);
 olList.addEventListener('dblclick', itemFinish);
 clearFinish.addEventListener('click', apagaTarefa);
-olList.addEventListener('click', changeBackground);
+olList.addEventListener('click', seleciona);
 load();
 
 //Salvar a lista de tarefas
-function load () {
-  olList.innerHTML  = localStorage.getItem('saved tasks');
+function load() {
+  olList.innerHTML = localStorage.getItem('saved tasks');
 }
