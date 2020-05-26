@@ -18,11 +18,33 @@ function eraseList(){
 
 eraseButton.addEventListener('click', eraseList);
 
+let tagLI = document.getElementsByTagName("li");
+
 function changeBGColor() {
-    let tagLI = document.getElementsByTagName("li");
     for(let i = 0; i < tagLI.length; i += 1) {
     event.target.style.backgroundColor = "rgb(128, 128, 128)";
     } 
   }
 
   list.addEventListener('click', changeBGColor);
+
+  //textes abaixo sobre a risca
+
+  let selecionado = "";
+
+  list.addEventListener("click", function () {
+
+    if (selecionado.classList !== undefined) {
+        selecionado.classList.remove("selected")
+        }
+    event.target.classList.add("selected")
+    selecionado = event.target
+})
+
+list.addEventListener('dblclick', function() {
+    if (event.target.classList.contains('completed')) {
+        event.target.classList.remove("completed")
+    } else {
+        event.target.classList.add("completed")
+    }
+})

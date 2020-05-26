@@ -34,3 +34,7 @@ header{
 #apaga-tudo{
     cursor: pointer;
 }
+
+.completed{
+    text-decoration: line-through;
+}
