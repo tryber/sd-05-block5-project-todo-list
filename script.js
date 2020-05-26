@@ -14,7 +14,7 @@ function criarTarefas () {
 
 document.getElementById("criar-tarefa").addEventListener("click", criarTarefas);
 
-// clicar elemento da lista alterar fundo para cinza rgb(128,128,128) e voltar
+// clicar elemento da lista (selecionado) alterar fundo para cinza rgb(128,128,128) e voltar
 
 function selecaoitem (event){
 	let item = event.target;
@@ -22,11 +22,11 @@ function selecaoitem (event){
 		item.classList.remove('selected');
 	}
 	else{item.classList.add('selected')};
-}
+};
 
 document.getElementById("lista-tarefas").addEventListener("click", selecaoitem);
 
-// clicar duas vezes elemento da lista riscar ele e voltar
+// clicar duas vezes no elemento comlpetado da lista riscar ele e conseguir voltar
 
 function completedItem (event){
 	let Citem = event.target;
@@ -34,6 +34,17 @@ function completedItem (event){
 		Citem.classList.remove('completed');
 	}
 	else{Citem.classList.add('completed')};
-}
+};
 
 document.getElementById("lista-tarefas").addEventListener("dblclick", completedItem);
+
+// criar botão que apaga completos
+
+function apagaCompletos () {
+	let completosFim = document.getElementsByClassName("completed");
+	for (let i = completosFim.length -1; i >= 0; i -=1){
+		completosFim[i].remove();
+	}
+};
+
+document.getElementById("remover-finalizados").addEventListener("click", apagaCompletos);
