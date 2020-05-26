@@ -16,7 +16,7 @@ buttonAdicionar.addEventListener('click', function () {
       li.style.backgroundColor = 'rgb(128,128,128)';
     } else {
       li.removeAttribute('style');
-    }    
+    }
   };
   li.ondblclick = function () {
     let liCompleted = li.getAttribute('class');
@@ -47,7 +47,7 @@ buttonLimpaFeitos.addEventListener('click', function () {
   }
 });
 
-buttonRemoverSelecionado.addEventListener('click', function() {
+buttonRemoverSelecionado.addEventListener('click', function () {
   let lis = document.querySelectorAll('li');
   for (let index = 0; index < lis.length; index += 1) {
     let itemDaLista = lis[index];
@@ -55,19 +55,51 @@ buttonRemoverSelecionado.addEventListener('click', function() {
       lista.removeChild(lis[index]);
     }
   }
-})
+});
 
-buttonPraBaixo.addEventListener('click', function() { 
-  let liSelecinado = separaLiSelecionado();
-  lista.removeChild(liSelecinado);
-})
-
-function separaLiSelecionado () {
+buttonPraBaixo.addEventListener('click', function () {
   let lis = document.querySelectorAll('li');
   for (let index = 0; index < lis.length; index += 1) {
     let itemDaLista = lis[index];
     if (itemDaLista.getAttribute('style')) {
-      return lis[index];
+      // let liSelecionado = lis[index];
+      let liNextDoSelecionado = lis[index + 1];
+      if (liNextDoSelecionado) {
+        lista.insertBefore(
+          itemDaLista,
+          itemDaLista.nextSibling.nextSibling
+        );
+      } else {
+        alert('fim da linha!');
+      }
     }
   }
-}
+});
+
+buttonPraCima.addEventListener('click', function () {
+  let lis = document.querySelectorAll('li');
+  for (let index = 0; index < lis.length; index += 1) {
+    let itemDaLista = lis[index];
+    if (itemDaLista.getAttribute('style')) {
+      // let liSelecionado = lis[index];
+      let liAnteriorDoSelecionado = lis[index - 1];
+      if (liAnteriorDoSelecionado) {       
+        lista.insertBefore(itemDaLista,itemDaLista.previousSibling);
+      } else {
+        alert('fim da linha!');
+      }
+    }
+  }
+});
+
+// })
+
+// function separaLiSelecionado() {
+//   let lis = document.querySelectorAll('li');
+//   for (let index = 0; index < lis.length; index += 1) {
+//     let itemDaLista = lis[index];
+//     if (itemDaLista.getAttribute('style')) {
+//       return lis[index];
+//     }
+//   }
+// }
