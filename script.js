@@ -11,5 +11,14 @@ function additenbt(){
   myText.value = "";
 
   li.appendChild(textNode);
+  li.className = "ponteiro"
   document.getElementById("lista-tarefas").appendChild(li);
+}
+//----------------------------------------------------------------------------
+
+document.addEventListener("mouseover", passMouse);
+function passMouse(evento){
+  if (evento.target.className === "ponteiro"){
+   evento.target.style.cursor = "pointer";
+  }
 }
