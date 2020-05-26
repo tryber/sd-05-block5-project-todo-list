@@ -1,5 +1,5 @@
 // criar elementos, adicionar na lista e apagar input adicionado
-function criarElementos() {
+const criarElementos = () => {
   let campoTarefas = document.getElementById('texto-tarefa').value;
   const tagOl = document.querySelector('#lista-tarefas');
   let tagLi = document.createElement('li');
@@ -25,7 +25,7 @@ const aplicarCorCinzaAosItens = (tagLi) => {
 
 // Marcar o item com sublinhado e atribuir a classe completed
 const sublinhaItem = (tagLi) => {
-  tagLi.addEventListener('dblclick', function() {
+  tagLi.addEventListener('dblclick', () => {
     for(let i = 0; i < document.getElementsByTagName('li').length; i += 1) {
       if(tagLi.style.textDecoration != "line-through") {
         tagLi.style.textDecoration = "line-through";

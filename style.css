@@ -1,20 +1,19 @@
-.texto-tarefa {
+/* .texto-tarefa {
   cursor: pointer;
-}
-
+} */
 .completed {
-  cursor: pointer;
   text-decoration: line-through;
 }
 
-.criar-tarefa {
+li {
   cursor: pointer;
 }
-
+/* .criar-tarefa {
+  cursor: pointer;
+}
 .apaga-tudo {
   cursor: pointer;
 }
-
 .remover-finalizados {
   cursor: pointer;
-}
+} */
