@@ -17,24 +17,25 @@ function addItemList() {
 //Change list item bg color to grey when clicked
 let itemSelected = "";
 function selectItem() {
-  if(itemSelected.classList !== undefined) {
+  if (itemSelected.classList !== undefined) {
     itemSelected.classList.remove("selected");
   }
-  if(event.target !== listOfItems){
+  if (event.target !== listOfItems) {
     event.target.classList.add("selected");
-    itemSelected = event.target;} 
+    itemSelected = event.target;
+  }
 }
 listOfItems.addEventListener("click", selectItem);
 
 //line-through completed items
 function completedItems() {
-  if(event.target.classList.contains("completed")) {
+  if (event.target.classList.contains("completed")) {
     event.target.classList.remove("completed");
-  } else if(event.target !== listOfItems){
+  } else if (event.target !== listOfItems) {
     event.target.classList.add("completed");
   }
 }
-listOfItems.addEventListener("dblclick", completedItems)
+listOfItems.addEventListener("dblclick", completedItems);
 
 //Delete all list items
 let deleteAllButton = document.getElementById("apaga-tudo");
@@ -49,7 +50,7 @@ let deleteCompletedButton = document.getElementById("remover-finalizados");
 let itemsCompleted = document.getElementsByClassName("completed");
 
 function deleteCompleted() {
-  for(let i = itemsCompleted.length - 1; i >= 0; i -= 1) {
+  for (let i = itemsCompleted.length - 1; i >= 0; i -= 1) {
     itemsCompleted[i].remove();
   }
 }
