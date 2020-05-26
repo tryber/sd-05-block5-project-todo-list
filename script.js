@@ -48,3 +48,20 @@ function deleteCompleted() {
   }
 }
     buttonDeleteCompleted.addEventListener("click", deleteCompleted);
+// cuidado, essa function funciona testando mas dà o erro seguinte no cypress: 
+//TypeError: Cannot read property 'content' of undefined
+//at Context.<anonymous> (http://localhost:37841/__cypress/tests?p=cypress/integration/project.spec.js-127:88:37)
+
+//function para deixar fundo cinza dos li selecionados
+let allLi = document.getElementsByTagName("li");
+
+function getGrey(eventgrey) {
+  
+  for (let i = 0; i < allLi.length; i += 1) {
+  if (eventgrey.target == allLi[i]) {
+    eventgrey.target.style.backgroundColor = "rgb(128 , 128 , 128)";
+  }
+}
+}
+
+ol.addEventListener("click", getGrey);
