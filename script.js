@@ -91,7 +91,7 @@ function moverParaCima() {
   if (qtdSelecionado > 1) { // verifica se tem apenas um item selecionado
     alert('Selecione apenas um item para mover');
   } else {
-    const itemSelecionado = document.querySelectorAll('.selected')[0];
+    const itemSelecionado = document.getElementsByClassName('selected')[0];
     // não entra na função caso já seja o primeiro
     if (itemSelecionado.previousElementSibling !== null) {
       // cria elemento com item anterior
@@ -118,7 +118,7 @@ function moverParaBaixo() {
   if (qtdSelecionado > 1) {
     alert('Selecione apenas um item para mover');
   } else {
-    const itemSelecionado = document.querySelectorAll('.selected')[0];
+    const itemSelecionado = document.getElementsByClassName('selected')[0];
     if (itemSelecionado.nextElementSibling !== null) {
       const itemPosterior = itemSelecionado.nextElementSibling;
       const conteudoPosterior = itemPosterior.innerText;
