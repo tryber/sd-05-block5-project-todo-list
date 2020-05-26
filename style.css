@@ -48,6 +48,18 @@ li {
   line-height: 25px;
 }
 
+#mover-cima {
+  background-color: greenyellow;
+  color: black;
+  line-height: 25px;
+
+}
+#mover-baixo {
+  background-color: greenyellow;
+  color: black;
+  line-height: 25px;
+}
+
 #remover-selecionado {
   background-color: grey;
   color: black;

@@ -9,8 +9,8 @@ function criarTarefas() {
   const filha = document.createElement('li');
   const tarefa = document.querySelector('#texto-tarefa').value;
   filha.innerHTML = tarefa;
-	document.getElementById('lista-tarefas').appendChild(filha);
-	document.querySelector('#texto-tarefa').value = '';
+  document.getElementById('lista-tarefas').appendChild(filha);
+  document.querySelector('#texto-tarefa').value = '';
 }
 
 document.getElementById('criar-tarefa').addEventListener('click', criarTarefas);
@@ -65,7 +65,7 @@ document.getElementById('apaga-tudo').addEventListener('click', apagatudo);
 const listaedtarefaspsalvar = document.getElementById('lista-tarefas');
 
 function salvartarefas() {
-	localStorage.clear();
+  localStorage.clear();
   localStorage.setItem('tarefas-salvas', listaedtarefaspsalvar.innerHTML);
 }
 
@@ -86,3 +86,23 @@ function apagarselecionado() {
 }
 
 document.getElementById('remover-selecionado').addEventListener('click', apagarselecionado);
+
+// criar botão que move selecionadas para cima
+
+function moverUp() {
+  const itemselecionado = document.querySelector('.selected');
+  var list = document.getElementById('lista-tarefas');
+  list.insertBefore(itemselecionado, itemselecionado.previousSibling)
+}
+
+document.getElementById('mover-cima').addEventListener('click', moverUp);
+
+// criar botão que move selecionadas para baixo
+
+function moverdown() {
+  const itemselecionado = document.querySelector('.selected');
+  var list = document.getElementById('lista-tarefas');
+  list.insertBefore(itemselecionado, itemselecionado.nextSibling)
+}
+
+document.getElementById('mover-baixo').addEventListener('click', moverdown);
