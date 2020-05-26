@@ -1,5 +1,5 @@
 body {
-  background-color: #111;
+  background-color: rgb(43, 42, 43);
   color: white;
   font-family: Space Grotesk, sans-serif;
   font-size: 15px;
@@ -12,24 +12,24 @@ button {
 }
 
 .apaga-tudo {
-  background-color: #ca054d;
+  background-color: rgb(171, 28, 12);
 }
 
 .criar-tarefa {
-  background-color: #84a9c0;
+  background-color: rgb(17, 123, 156);
   color: white;
 }
 
 .mover-baixo {
-  background-color: #d9b;
+  background-color: rgb(189, 106, 23);
 }
 
 .mover-cima {
-  background-color: #7b506f;
+  background-color: rgb(245, 143, 42);
 }
 
 .remover-finalizados {
-  background-color: #558c8c;
+  background-color: rgb(21, 107, 23);
 }
 
 .remover-selecionado {
@@ -37,7 +37,7 @@ button {
 }
 
 .salvar-tarefas {
-  background-color: #e8db7d;
+  background-color: rgb(214, 214, 41);
 }
 
 .completed {

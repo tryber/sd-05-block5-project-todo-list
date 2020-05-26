@@ -92,3 +92,5 @@ downButton.addEventListener('click', function () {
   selectedTasks.nextElementSibling.innerHTML = aux;
   selectedTasks.classList.remove('selected');
 });
+
+
