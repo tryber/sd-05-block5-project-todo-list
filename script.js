@@ -88,8 +88,8 @@ function verificaQtdeSelecionados() {
 const botaoParaCima = document.getElementById('mover-cima');
 function moverParaCima() {
   verificaQtdeSelecionados();
-  if (qtdSelecionado > 1) { // verifica se tem apenas um item selecionado
-    alert('Selecione apenas um item para mover');
+  if (qtdSelecionado !== 1) { // verifica se tem apenas um item selecionado
+    alert('Selecione UM item para mover');
   } else {
     const itemSelecionado = document.getElementsByClassName('selected')[0];
     // não entra na função caso já seja o primeiro
@@ -115,8 +115,8 @@ botaoParaCima.addEventListener('click', moverParaCima);
 const botaoParaBaixo = document.getElementById('mover-baixo');
 function moverParaBaixo() {
   verificaQtdeSelecionados();
-  if (qtdSelecionado > 1) {
-    alert('Selecione apenas um item para mover');
+  if (qtdSelecionado !== 1) {
+    alert('Selecione UM item para mover');
   } else {
     const itemSelecionado = document.getElementsByClassName('selected')[0];
     if (itemSelecionado.nextElementSibling !== null) {
