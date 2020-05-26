@@ -3,7 +3,8 @@ let ol = document.getElementById("lista-tarefas");
 let criarTarefa = document.getElementById("criar-tarefa");
 let textoTarefa = document.getElementById("texto-tarefa");
 let apagaTudo = document.getElementById("apaga-tudo")
-let removerFinalizados = document.getElementById('remover-finalizados');
+let removerFinalizados = document.getElementById("remover-finalizados");
+let botaoSalvarTarefas = document.getElementById("salvar-tarefas");
 let target = "";
 
 //Funções
@@ -29,8 +30,18 @@ function apagaTodos() {
   ol.innerText = "";
 }
 
+function saveList() {
+  localStorage.setItem("save-list", ol.innerHTML);
+}
+
+function getList() {
+  ol.innerHTML = localStorage.getItem("save-list");
+}
+
 //Event Listners
 criarTarefa.addEventListener("click", acrescentarTarefa);
-apagaTudo.addEventListener('click', apagaTodos);
-ol.addEventListener('dblclick', riscaTarefa);
+apagaTudo.addEventListener("click", apagaTodos);
+ol.addEventListener("dblclick", riscaTarefa);
+botaoSalvarTarefas.addEventListener("click", saveList)
+getList();
 
