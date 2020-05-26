@@ -10,15 +10,15 @@ let saveList = document.getElementById('salvar-tarefas');
 let moveDown = document.getElementById('mover-baixo');
 let moveUp = document.getElementById('mover-cima');
 let lines = document.getElementById('linhas');
-let itemSelected = "";
-let selecao ="";
+let itemSelected = '';
+let selecao = '';
 
 //Funções
 function adicionaItem() {
-  let li = document.createElement("li");
+  let li = document.createElement('li');
   olList.appendChild(li);
   li.innerText = textList.value;
-  textList.value = ""
+  textList.value = '';
 }
 
 //Função para riscar item já concluído
@@ -41,7 +41,7 @@ function apagaTarefa() {
 
 //Apaga todos os itens da lista
 function clear() {
-  olList.innerText = "";
+  olList.innerText = '';
 }
 
 //Função para salvar a lista de tarefas
@@ -66,7 +66,7 @@ function removeSelected() {
 }
 
 //Event Listners
-addItem.addEventListener("click", adicionaItem);
+addItem.addEventListener('click', adicionaItem);
 clearAll.addEventListener('click', clear);
 saveList.addEventListener('click', save);
 olList.addEventListener('dblclick', itemFinish);
