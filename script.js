@@ -6,4 +6,11 @@ function criarTarefa() {
   listaTarefas.appendChild(elementoLista);
   listaTarefas.lastChild.innerHTML = tarefa;
 }
-botaoCriarTarefa.addEventListener('click', criarTarefa);
+function verificaInput() {
+  if (document.getElementById('texto-tarefa').value === '') {
+    alert('Insira alguma tarefa para adicionar à sua Lista!!!');
+  } else {
+    criarTarefa();
+  }
+}
+botaoCriarTarefa.addEventListener('click', verificaInput);
