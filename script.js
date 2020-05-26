@@ -39,3 +39,13 @@ btnFinalizados.addEventListener('click', function () {
     }
   }
 });
+
+const btnRemoverSelecionados = document.querySelector('#remover-selecionado');
+btnRemoverSelecionados.addEventListener('click', function () {
+  const listaSelecionados = document.querySelectorAll('li');
+  for (let i = 0; i < listaSelecionados.length; i += 1) {
+    if (listaSelecionados[i].classList.contains('selected')) {
+      document.querySelector('#lista-tarefas').removeChild(listaSelecionados[i]);
+    }
+  }
+});
