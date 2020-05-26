@@ -10,28 +10,30 @@
     <header>
         Minha Lista de Tarefas
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-        <form>
+
           <input type="text" id="texto-tarefa" placeholder="Digite seu texto aqui">
-          <button id='criar-tarefa'>Criar Tarefa</button>
-        </form>
+          <button id='criar-tarefa' onclick="criarElemento()">Criar Tarefa</button>
+        
     </header>
-    <section>
+    
         <ol id="lista-tarefas"></ol>
 
-    </section>
+    
    
  <script>
         function criarElemento(){
+            
             let recuperaOL = document.getElementById('lista-tarefas')
             let recuperaTexto = document.getElementById('texto-tarefa')
             let recebeTexto = recuperaTexto.value
-            let criarLi = document.createElement('li')
-                criarLi.innerHTML = recebeTexto  
-                document.getElementById('lista-tarefas').appendChild(criarLi)
-                recuperaTexto.value = ""
-                console.log(recuperaOL)
+            let criar = document.createElement('li')
+                criar.innerHTML = recebeTexto  
+                document.getElementById('lista-tarefas').appendChild(criar)
+                recebeTexto.value = " "
+               console.log(criar)
             }
-            criarElemento()
+            
+ 
  </script>
     
 </body>
