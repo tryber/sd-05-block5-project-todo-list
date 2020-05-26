@@ -71,3 +71,4 @@ ol.addEventListener("click", getGrey);
 
 //       -'rgba(0, 0, 0, 0)'
 //       +'rgb(128, 128, 128)'
+// refazer com essa dica: usar class .selected no css com o bg cinza, e ao clicar no objeto vc adiciona essa classe nele
