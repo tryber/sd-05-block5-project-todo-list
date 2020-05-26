@@ -29,11 +29,11 @@ buttonCreateTask.onclick = function () {
   taskBox.focus();
 };
 
-taskBox.addEventListener("keyup", function (event) {
+taskBox.addEventListener('keyup', function (event) {
   if (event.keyCode === 13) {
     buttonCreateTask.click();
   }
-  })
+});
 
 document.addEventListener('click', function (event) {
   removeSelectedClass();
@@ -56,16 +56,17 @@ cleanList.onclick = function () {
   while (orderedList.firstChild) {
     orderedList.removeChild(orderedList.firstChild);
   }
-}
+};
 
 removeCompleted.onclick = function () {
-  let items = document.getElementsByClassName('completed');
+  const items = document.getElementsByClassName('completed');
   if (items.length > 0) {
     for (let i = 0; i < items.length; i++) {
+      console.log(i);
       console.log(items[i]);
       orderedList.removeChild(items[i]);
     }
   } else {
-    alert( "É necessário ter tarefas completadas para limpar!");
+    alert('É necessário ter tarefas completadas para limpar!');
   }
 }
