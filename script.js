@@ -17,6 +17,7 @@ function updateList(text) {
     if (element.target.className.includes('selected')) {
       element.target.classList.remove('selected');
     } else {
+      for (let i = 0; i < taskList.children.length; i += 1) taskList.children[i].classList.remove('selected');
       element.target.classList.add('selected');
     }
   });
