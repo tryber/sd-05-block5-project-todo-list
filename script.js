@@ -11,5 +11,6 @@ function newTask() {
     inputText.value = ""; // para limpar o input text
   }
 }
-
 buttonNewTask.addEventListener("click", newTask);
+
+
