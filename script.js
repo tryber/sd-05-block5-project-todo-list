@@ -18,13 +18,20 @@ buttonNewTask.addEventListener("click", newTask);
 //riscar item quando recebe double click, para indicar atividade completada
 function itemCrossed(e) {
   const itemDblClick = e.target;
-  if (itemDblClick.className !== "completed"){
-  itemDblClick.classList.add("completed");
-}
-else {
-  itemDblClick.classList.remove("completed");
-}
+  if (itemDblClick.className !== "completed") {
+    itemDblClick.classList.add("completed");
+  }
+  else {
+    itemDblClick.classList.remove("completed");
+  }
 }
 ol.addEventListener("dblclick", itemCrossed);
 
 
+//botão com id="apaga-tudo" que quando clicado deve apagar todos os items da lista.
+let buttonDeleteAll = document.getElementById("apaga-tudo");
+
+function deleteAll() {
+  ol.innerText = "";
+}
+buttonDeleteAll.addEventListener("click", deleteAll);
