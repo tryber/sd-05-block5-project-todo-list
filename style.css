@@ -1,8 +1,20 @@
-input, button {
+.texto-tarefa {
   cursor: pointer;
 }
 
-button .completed {
+.completed {
   cursor: pointer;
   text-decoration: line-through;
+}
+
+.criar-tarefa {
+  cursor: pointer;
+}
+
+.apaga-tudo {
+  cursor: pointer;
+}
+
+.remover-finalizados {
+  cursor: pointer;
 }
