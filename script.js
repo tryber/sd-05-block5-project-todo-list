@@ -1,47 +1,55 @@
 //Variáveis
-let ol = document.getElementById("lista-tarefas");
+let listaTarefas = document.getElementById("lista-tarefas");
 let criarTarefa = document.getElementById("criar-tarefa");
 let textoTarefa = document.getElementById("texto-tarefa");
 let apagaTudo = document.getElementById("apaga-tudo")
 let removerFinalizados = document.getElementById("remover-finalizados");
 let botaoSalvarTarefas = document.getElementById("salvar-tarefas");
 let target = "";
+let itemSelecionado = "";
 
 //Funções
 
-function acrescentarTarefa () {
+function acrescentarTarefa() {
   let li = document.createElement("li");
-  ol.appendChild(li);
+  listaTarefas.appendChild(li);
   li.innerText = textoTarefa.value;
   textoTarefa.value = "";
 }
 
-
 function riscaTarefa() {
   target = event.target;
-  if (target.classList.contains('done')) {
-    target.classList.remove('done');
+  if (target.classList.contains("completed")) {
+    target.classList.remove("completed");
   } else {
-    target.classList.add('done');
+    target.classList.add("completed");
   }
 }
 
 function apagaTodos() {
-  ol.innerText = "";
+  listaTarefas.innerText = "";
 }
 
 function saveList() {
-  localStorage.setItem("save-list", ol.innerHTML);
+  localStorage.setItem("save-list", listaTarefas.innerHTML);
 }
 
 function getList() {
-  ol.innerHTML = localStorage.getItem("save-list");
+  listaTarefas.innerHTML = localStorage.getItem("save-list");
 }
 
-//Event Listners
-criarTarefa.addEventListener("click", acrescentarTarefa);
-apagaTudo.addEventListener("click", apagaTodos);
-ol.addEventListener("dblclick", riscaTarefa);
-botaoSalvarTarefas.addEventListener("click", saveList)
-getList();
+function seleciona() {
+  if (itemSelecionado.classList !== undefined) {
+    itemSelecionado.classList.remove("selected");
+  }
+  event.target.classList.add("selected");
+  itemSelecionado = event.target;
+}
 
+  //Event Listners
+  criarTarefa.addEventListener("click", acrescentarTarefa);
+  apagaTudo.addEventListener("click", apagaTodos);
+  listaTarefas.addEventListener("click", seleciona)
+  listaTarefas.addEventListener("dblclick", riscaTarefa);
+  botaoSalvarTarefas.addEventListener("click", saveList)
+  getList();
