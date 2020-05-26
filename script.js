@@ -18,16 +18,6 @@ function adicionaItem () {
   olList.appendChild(li);
   li.innerText = textList.value;
   textList.value = ""
-
-}
-//Função para apagar item da lista
-function apagaTarefa () {
-  target = event.target;
-  if (target.classList.contains('completed')) {
-    target.classList.remove('completed');
-  } else {
-    target.classList.add('completed');
-  }
 }
 
 //Função para riscar item já concluído
@@ -37,6 +27,14 @@ function itemFinish() {
     target.classList.remove('completed');
   } else {
     target.classList.add('completed');
+  }
+}
+
+//Função para apagar tarefa
+function apagaTarefa () {
+  let complete = document.getElementsByClassName('completed');
+  for (let j = complete.length - 1; j >= 0; j -= 1) {
+    complete[j].remove();
   }
 }
 
@@ -54,6 +52,6 @@ function save () {
 //Event Listners
 addItem.addEventListener("click", adicionaItem);
 clearAll.addEventListener('click', clear);
-olList.addEventListener('dblclick', apagaTarefa);
 saveList.addEventListener('click', save);
 olList.addEventListener('dblclick', itemFinish);
+clearFinish.addEventListener('click', apagaTarefa);
