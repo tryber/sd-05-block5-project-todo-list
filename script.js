@@ -63,3 +63,17 @@ function removerSelecionado() {
   }
 }
 botaoRemoveSelecionado.addEventListener('click', removerSelecionado);
+
+// Função para armazenar a lista no localStorage
+const botaoSalvarTarefas = document.getElementById('salvar-tarefas');
+function salvarTarefas() {
+  console.log('teste');
+  const listaTarefas = document.getElementById('lista-tarefas').innerHTML;
+  localStorage.setItem('tarefas', listaTarefas);
+}
+botaoSalvarTarefas.addEventListener('click', salvarTarefas);
+
+window.onload = initi;
+function initi() {
+  document.getElementById('lista-tarefas').innerHTML = localStorage.getItem('tarefas');
+}
