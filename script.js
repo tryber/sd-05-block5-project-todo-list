@@ -5,7 +5,7 @@ let textoTarefa = document.getElementById("texto-tarefa");
 let apagaTudo = document.getElementById("apaga-tudo")
 let botaoSalvarTarefas = document.getElementById("salvar-tarefas");
 let botaoRemoverFinalizados = document.getElementById("remover-finalizados");
-let botaoRemoverSelecionados = document.getElementById("remover-selecionados");
+let botaoRemoverSelecionado = document.getElementById("remover-selecionado");
 let target = "";
 let itemSelecionado = "";
 
@@ -64,6 +64,6 @@ apagaTudo.addEventListener("click", apagaTodos);
 listaTarefas.addEventListener("click", seleciona)
 listaTarefas.addEventListener("dblclick", riscaTarefa);
 botaoRemoverFinalizados.addEventListener("click", removeDone);
-botaoRemoverSelecionados.addEventListener("click", removeSelected);
+botaoRemoverSelecionado.addEventListener("click", removeSelected);
 botaoSalvarTarefas.addEventListener("click", saveList)
 getList();
