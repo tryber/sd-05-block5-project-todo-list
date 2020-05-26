@@ -2,7 +2,6 @@
 <html lang="pt-be">
 <head>
     <link rel="stylesheet" href="/style.css">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Lista de tarefas</title>
@@ -11,28 +10,29 @@
     <header>
         Minha Lista de Tarefas
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+        <form>
+          <input type="text" id="texto-tarefa" placeholder="Digite seu texto aqui">
+          <button id='criar-tarefa'>Criar Tarefa</button>
+        </form>
     </header>
     <section>
-        
-            <input type="text" id="texto-tarefa" placeholder="Digite seu texto aqui">
-            <button id='criar-tarefa' ondblclick="criarElemento()">Criar Tarefa</button>
-        
-         <ol id="lista-tarefas"></ol>
+        <ol id="lista-tarefas"></ol>
 
     </section>
    
-    <script>        
+ <script>
         function criarElemento(){
-           let recuperaOL = document.getElementById('lista-tarefas')
-           let recuperaTexto = document.getElementById('texto-tarefa')
-           let recebeTexto = recuperaTexto.value
-           let criarLi = document.createElement('li')
-               criarLi.innerHTML = recebeTexto  
-               document.getElementById('lista-tarefas').appendChild(criarLi)
-               recuperaTexto.value = ""
-              
-           }
-    </script>
+            let recuperaOL = document.getElementById('lista-tarefas')
+            let recuperaTexto = document.getElementById('texto-tarefa')
+            let recebeTexto = recuperaTexto.value
+            let criarLi = document.createElement('li')
+                criarLi.innerHTML = recebeTexto  
+                document.getElementById('lista-tarefas').appendChild(criarLi)
+                recuperaTexto.value = ""
+                console.log(recuperaOL)
+            }
+            criarElemento()
+ </script>
     
 </body>
 </html>
