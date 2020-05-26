@@ -37,7 +37,7 @@ function apagaTudo() {
 
 function apagaFinalizados() {
   let itemsFinalizados=document.querySelectorAll('.completed');
-  for(let i=0;i<=itemsFinalizados.length;i+=1)
+  for(let i=0;i<itemsFinalizados.length;i+=1)
     itemsFinalizados[i].remove();
 }
 
