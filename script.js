@@ -3,7 +3,6 @@ function criarElementos() {
   let campoTarefas = document.getElementById('texto-tarefa').value;
   const tagOl = document.querySelector('#lista-tarefas');
   let tagLi = document.createElement('li');
-  tagLi.className = 'completed';
 
   tagLi.innerHTML = campoTarefas;
   tagOl.appendChild(tagLi);
@@ -24,16 +23,19 @@ const aplicarCorCinzaAosItens = (tagLi) => {
   })
 }
 
-// Marcar o item com sublinhado
+// Marcar o item com sublinhado e atribuir a classe completed
 const sublinhaItem = (tagLi) => {
   tagLi.addEventListener('dblclick', function() {
-    if(tagLi.style.textDecoration != "line-through") {
-      tagLi.style.textDecoration = "line-through";
-    } else {
-      tagLi.style.textDecoration = "none";
+    for(let i = 0; i < document.getElementsByTagName('li').length; i += 1) {
+      if(tagLi.style.textDecoration != "line-through") {
+        tagLi.style.textDecoration = "line-through";
+        tagLi.className = 'completed';
+      } else {
+        tagLi.style.textDecoration = "none";
+        tagLi.className = null;
+      }
     }
   })
-  removerItens(tagLi);
 }
 
 // Apagar todos os itens da lista
@@ -47,13 +49,13 @@ const btnApagarTudo = document.getElementById('apaga-tudo');
 btnApagarTudo.addEventListener('click', apagarTodosOsItens);
 
 // Remover itens finalizados
-const removerItens = (tagLi) => {
-  if(tagLi.style.textDecoration == "line-through") {
-    tagLi.style.backgroundColor = 'blue';
+const removerItensFinalizados = (tagLi) => {
+  if(tagLi.className == "completed") {
+    tagLi.remove();
   }
 }
 let btnItensFinalizados = document.getElementById('remover-finalizados');
-btnItensFinalizados.addEventListener('click', removerItens);
+btnItensFinalizados.addEventListener('click', removerItensFinalizados);
 
 
 
