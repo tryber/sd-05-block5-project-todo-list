@@ -11,6 +11,7 @@ buttonAdicionar.addEventListener('click', function () {
   let li = document.createElement('li');
 
   li.onclick = function () {
+    removerSelecaoDeTodas();
     let isSelected = li.getAttribute('style');
     if (!isSelected) {
       li.style.backgroundColor = 'rgb(128,128,128)';
@@ -47,7 +48,17 @@ buttonLimpaFeitos.addEventListener('click', function () {
   }
 });
 
-buttonRemoverSelecionado.addEventListener('click', function () {
+function removerSelecaoDeTodas() {
+  let lis = document.querySelectorAll('li');
+  for (let index = 0; index < lis.length; index += 1) {
+    let itemDaLista = lis[index];
+    if (itemDaLista.getAttribute('style')) {
+      itemDaLista.removeAttribute('style');
+    }
+  }
+}
+
+function removerSelecionad() {
   let lis = document.querySelectorAll('li');
   for (let index = 0; index < lis.length; index += 1) {
     let itemDaLista = lis[index];
@@ -55,7 +66,9 @@ buttonRemoverSelecionado.addEventListener('click', function () {
       lista.removeChild(lis[index]);
     }
   }
-});
+}
+
+buttonRemoverSelecionado.addEventListener('click', removerSelecionad);
 
 buttonPraBaixo.addEventListener('click', function () {
   let lis = document.querySelectorAll('li');
@@ -65,10 +78,7 @@ buttonPraBaixo.addEventListener('click', function () {
       // let liSelecionado = lis[index];
       let liNextDoSelecionado = lis[index + 1];
       if (liNextDoSelecionado) {
-        lista.insertBefore(
-          itemDaLista,
-          itemDaLista.nextSibling.nextSibling
-        );
+        lista.insertBefore(itemDaLista, itemDaLista.nextSibling.nextSibling);
       } else {
         alert('fim da linha!');
       }
@@ -83,23 +93,11 @@ buttonPraCima.addEventListener('click', function () {
     if (itemDaLista.getAttribute('style')) {
       // let liSelecionado = lis[index];
       let liAnteriorDoSelecionado = lis[index - 1];
-      if (liAnteriorDoSelecionado) {       
-        lista.insertBefore(itemDaLista,itemDaLista.previousSibling);
+      if (liAnteriorDoSelecionado) {
+        lista.insertBefore(itemDaLista, itemDaLista.previousSibling);
       } else {
         alert('fim da linha!');
       }
     }
   }
 });
-
-// })
-
-// function separaLiSelecionado() {
-//   let lis = document.querySelectorAll('li');
-//   for (let index = 0; index < lis.length; index += 1) {
-//     let itemDaLista = lis[index];
-//     if (itemDaLista.getAttribute('style')) {
-//       return lis[index];
-//     }
-//   }
-// }
