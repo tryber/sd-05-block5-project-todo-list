@@ -56,3 +56,16 @@ function deleteCompleted() {
 }
 
 deleteCompletedButton.addEventListener("click", deleteCompleted);
+
+//Save and Load List
+let saveListButton = document.getElementById('salvar-tarefas');
+function salvarTarefas() {
+  let itemsList = listOfItems.innerHTML;
+  localStorage.setItem('list', itemsList);
+}
+saveListButton.addEventListener('click', saveListButton);
+
+function loadList() {
+  listOfItems.innerHTML = localStorage.getItem('list');
+}
+window.onload = loadList;
