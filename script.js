@@ -22,9 +22,7 @@ const adicionarEventoDeSublinhar = (tagLi) => {
   });
 };
 
-// criar elementos, adicionar na lista e apagar input adicionado
-const criarElementoLista = () => {
-  const campoTarefas = document.getElementById('texto-tarefa').value;
+const insereTarefaNaLista = (campoTarefas) => {
   const tagOl = document.querySelector('#lista-tarefas');
   const tagLi = document.createElement('li');
 
@@ -35,6 +33,12 @@ const criarElementoLista = () => {
 
   adicionarEventoDeSublinhar(tagLi);
   adicionarEventoFundoCinza(tagLi);
+}
+
+// criar elementos, adicionar na lista e apagar input adicionado
+const criarElementoLista = () => {
+  const campoTarefas = document.getElementById('texto-tarefa').value;
+  insereTarefaNaLista(campoTarefas);
 };
 
 // Apagar todos os itens da lista
@@ -52,7 +56,7 @@ const removerItensFinalizados = () => {
   }
 };
 
-for(let i = 0; i < document.querySelectorAll('li').length; i += 1) {
+for (let i = 0; i < document.querySelectorAll('li').length; i += 1) {
   document.querySelectorAll('li')[i].innerHTML = localStorage.getItem('lista');
 }
 // Salvar tarefas localStorage
@@ -64,15 +68,15 @@ const salvarItensLocalStorage = () => {
 
   const listaEmTexto = JSON.stringify(lista);
   localStorage.setItem('lista', listaEmTexto);
+};
+
+const recuperarListaLocalStorage = () => {
+  const listaEmTexto = localStorage.getItem('lista');
+  const list = JSON.parse(listaEmTexto);
+  for (let i = 0; i < list.length; i++) {
+    insereTarefaNaLista(list[i]);
+  }
 }
-
-// const recuperarListaLocalStorage = () => {
-//   const listaEmTexto = localStorage.getItem('lista');
-//   const list = JSON.parse(listaEmTexto);
-//   for (let i = 0; i < list.length; i += 1) {
-
-//   }
-// }
 
 const btn = document.getElementById('criar-tarefa');
 btn.addEventListener('click', criarElementoLista);
@@ -85,4 +89,4 @@ btnItensFinalizados.addEventListener('click', removerItensFinalizados);
 
 const btnSalvarTarefas = document.getElementById('salvar-tarefas');
 btnSalvarTarefas.addEventListener('click', salvarItensLocalStorage);
-// recuperarListaLocalStorage();
+recuperarListaLocalStorage();
