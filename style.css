@@ -5,3 +5,6 @@ header {
     font-size: 15px;
     color: gray;
 }
+button {
+    cursor: pointer;
+}
