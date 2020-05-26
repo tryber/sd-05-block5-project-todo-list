@@ -5,9 +5,9 @@
 .button {
   /* border: 1px solid; */
   border-radius: 20px;
-  color: #fff;
+  color: #ffff;
   display: inline-block;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana , Geneva , Tahoma , sans-serif;
   font-weight: bold;
   font-size: 13px;
   padding: 6px 10px;
@@ -19,23 +19,23 @@
   top: 2px;
 }
 
-.button-green {
+.button-green { 
   background: #0F2027;
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  color: #fff
+  background: -webkit-linear-gradient(to right , #2c5364 , #203a43 , #0f2027);
+  background: linear-gradient(to right , #2c5364 , #203a43 , #0f2027);
+  color: #ffff;
 }
 
 .button-red {
   background: #c31432;
-  background: -webkit-linear-gradient(to right, #240b36, #c31432);
-  background: linear-gradient(to right, #240b36, #c31432);
+  background: -webkit-linear-gradient(to right , #240b36 , #c31432);
+  background: linear-gradient(to right , #240b36 , #c31432);
 }
 
 .button-mover {
   background: #659999;
-  background: -webkit-linear-gradient(to right, #f4791f, #659999);
-  background: linear-gradient(to right, #f4791f, #659999);
+  background: -webkit-linear-gradient(to right , #f4791f , #659999);
+  background: linear-gradient(to right , #f4791f , #659999);
 }
 
 .selected {

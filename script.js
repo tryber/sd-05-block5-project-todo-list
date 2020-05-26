@@ -10,15 +10,13 @@ const moveBaixo = document.getElementById('mover-baixo');
 function moveUp() {
   const selected = document.querySelector('.selected');
   const lista = document.getElementById('lista-tarefas');
-  let index = Array.prototype.indexOf.call(lista.children, selected);
-  console.log(index);
+  const index = Array.prototype.indexOf.call(lista.children, selected);
   if (index === -1) {
-    alert("Não há item selecionado, ou a lista está vazia, bb!")
+    alert('Não há item selecionado, ou a lista está vazia, bb!');
   } else if (orderedList.childElementCount === 0) {
-    alert("A lista está vazia, bb!");
+    alert('A lista está vazia, bb!');
   } else if (index > 0) {
-    let before = lista.children[index - 1];
-    console.log(before);
+    const before = lista.children[index - 1];
     lista.insertBefore(selected, before);
   } else {
     alert('Já é o topo da lista, bb!')
@@ -28,15 +26,13 @@ function moveUp() {
 function moveDown() {
   const selected = document.querySelector('.selected');
   const lista = document.getElementById('lista-tarefas');
-  let index = Array.prototype.indexOf.call(lista.children, selected);
-  console.log(index);
+  const index = Array.prototype.indexOf.call(lista.children, selected);
   if (index === -1) {
-    alert("Não há item selecionado, ou a lista está vazia, bb!")
+    alert('Não há item selecionado, ou a lista está vazia, bb!');
   } else if (orderedList.childElementCount === 0) {
-    alert("A lista está vazia, bb!");
+    alert('A lista está vazia, bb!');
   } else if (index < orderedList.childElementCount - 1) {
-    let next = lista.children[index + 1];
-    console.log(next);
+    const next = lista.children[index + 1];
     lista.insertBefore(selected, next.nextSibling);
   } else {
     alert('Já é o fim da lista, bb!')
@@ -52,7 +48,6 @@ function createTask() {
 }
 
 function removeSelectedClass() {
-  const item = document.getElementsByClassName('selected');
   if (document.querySelector('.selected')) {
     document.querySelector('.selected').classList.remove('selected');
   }
@@ -75,7 +70,7 @@ taskBox.addEventListener('keyup', function (event) {
 });
 
 orderedList.addEventListener('click', function (event) {
-  let clicked = event.target;
+  const clicked = event.target;
   if (clicked.classList.contains('selected')) {
     clicked.classList.remove('selected');
   } else {
@@ -112,13 +107,13 @@ removeCompleted.onclick = function () {
 }
 
 removeSelected.onclick = function () {
-  let selected = document.querySelector('.selected');
+  const selected = document.querySelector('.selected');
   if (selected) {
     while (document.querySelector('.selected')) {
       document.querySelector('.selected').remove();
     }
   } else {
-    alert("Não há item selecionado!");
+    alert('Não há item selecionado!');
   }
 }
 
