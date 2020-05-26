@@ -3,11 +3,20 @@ const inputText = document.getElementById('texto-tarefa');
 const lista = document.getElementById('lista-tarefas');
 const buttonLimpaTudo = document.getElementById('apaga-tudo');
 const buttonLimpaFeitos = document.getElementById('remover-finalizados');
+const buttonPraCima = document.getElementById('mover-cima');
+const buttonPraBaixo = document.getElementById('move-baixo');
+const buttonRemoverSelecionado = document.getElementById('remover-selecionado');
 
 buttonAdicionar.addEventListener('click', function () {
   let li = document.createElement('li');
+
   li.onclick = function () {
-    li.style.backgroundColor = 'rgb(128,128,128)';
+    let isSelected = li.getAttribute('style');
+    if (!isSelected) {
+      li.style.backgroundColor = 'rgb(128,128,128)';
+    } else {
+      li.removeAttribute('style');
+    }    
   };
   li.ondblclick = function () {
     let liCompleted = li.getAttribute('class');
@@ -37,3 +46,13 @@ buttonLimpaFeitos.addEventListener('click', function () {
     }
   }
 });
+
+buttonRemoverSelecionado.addEventListener('click', function() {
+  let lis = document.querySelectorAll('li');
+  for (let index = 0; index < lis.length; index += 1) {
+    let itemDaLista = lis[index];
+    if (itemDaLista.getAttribute('style')) {
+      lista.removeChild(lis[index]);
+    }
+  }
+})
