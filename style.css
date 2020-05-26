@@ -8,6 +8,10 @@ h1 {
   width: 500px;
 }
 
+li {
+	cursor: pointer;
+}
+
 #texto-tarefa {
   float: left;
   line-height: 25px;
@@ -51,4 +55,3 @@ h1 {
 .completed {
   text-decoration: line-through;
 }
-
