@@ -10,11 +10,13 @@ function addTask() {
   const li = document.createElement('li');
   li.innerHTML = textInput.value;
   taskList.appendChild(li);
-  //Ao clicar em um item da lista, altere a cor de fundo do item para cinza rgb(128,128,128).
-  li.addEventListener('click', function() {
+  // Ao clicar em um item da lista, altere a cor de fundo do item para cinza rgb(128,128,128).
+  li.addEventListener('click', function () {
     li.style.backgroundColor = 'rgb(128 , 128 , 128)';
-    }); 
+  });
+  li.addEventListener('dblclick', function () {
+    li.classList.toggle('completed');
+  });
   textInput.value = '';
 }
-createTaskButton.addEventListener('click', addTask);
-
+/* createTaskButton.addEventListener('click', addTask);*/
