@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projeto To-do List</title>
-  
+
   <link rel="stylesheet" href="style.css">
-  
+
 </head>
 
 <body>
@@ -16,13 +16,13 @@
 
   <input type="text" id="texto-tarefa">
 
-  <ol id="lista-tarefas"></ol>
+  <ol id="lista-tarefas" class="cursor"> </ol>
 
-  <button id="criar-tarefa" onclick="criarItem()" onclick="document.getElementById('texto-tarefa').value = '' ">Novo Item</button>
-  <button id="apaga-tudo">Reset</button>
+  <button id="criar-tarefa" class="cursor" onclick="createItem()">Novo Item</button>
+  <button id="apaga-tudo" class="cursor" onclick="removeAllElements()">Reset</button>
 
-  <button id="remover-finalizados">Refresh</button>
-  
+  <button id="remover-finalizados" class="cursor">Refresh</button>
+
   <script src="script.js"></script>
 
 </body>
