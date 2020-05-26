@@ -51,8 +51,10 @@ function save () {
 
 //Função para alterar a cor do item da lista
 function changeBackground() {
-  let change = document.getElementsByTagName("li"); 
-  change[0].style.backgroundColor = 'rgb(128, 128, 128)';
+  let change = document.getElementsByTagName("li");
+  for(let i in change) {
+    change[i].style.backgroundColor = 'rgb(128, 128, 128)';
+  }
 }
 
 //Event Listners
@@ -62,3 +64,9 @@ saveList.addEventListener('click', save);
 olList.addEventListener('dblclick', itemFinish);
 clearFinish.addEventListener('click', apagaTarefa);
 olList.addEventListener('click', changeBackground);
+load();
+
+//Salvar a lista de tarefas
+function load () {
+  olList.innerHTML  = localStorage.getItem('saved tasks');
+}
