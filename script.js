@@ -23,15 +23,6 @@ const aplicarCorCinzaAosItens = (tagLi) => {
       tagLi.style.backgroundColor = 'rgb(128, 128, 128)';
   })
 }
-// const aplicarCorCinzaAosItens = (tagLi) => {
-//   tagLi.addEventListener('click', () => {
-//     if(tagLi.style.backgroundColor != 'rgb(128, 128, 128)') {
-//       tagLi.style.backgroundColor = 'rgb(128, 128, 128)';
-//     } else {
-//       tagLi.style.backgroundColor = null;
-//     }
-//   })
-// }
 
 // Marcar o item com sublinhado
 const sublinhaItem = (tagLi) => {
@@ -48,7 +39,10 @@ const sublinhaItem = (tagLi) => {
 // Apagar todos os itens da lista
 const apagarTodosOsItens = () => {
   let tagPai = document.getElementById('lista-tarefas');
-  tagPai.removeChild(tagPai.childNodes[0]);
+  while (tagPai.hasChildNodes()) {
+    tagPai.removeChild(tagPai.firstChild);
+  }
+  // tagPai.removeChild(tagPai.children[0]);
 }
 const btnApagarTudo = document.getElementById('apaga-tudo');
 btnApagarTudo.addEventListener('click', apagarTodosOsItens);
