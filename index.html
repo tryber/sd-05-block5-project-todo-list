@@ -2,7 +2,7 @@
 <html lang="pt-be">
 <head>
     <link rel="stylesheet" href="/style.css">
-    <script src="/script.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Lista de tarefas</title>
@@ -13,13 +13,25 @@
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
     </header>
     <section>
-        <input type="text" name="" id="texto-tarefa">
-        <button id="criar-tarefa">Criar Tarefa</button>
+        <input type="text" id="texto-tarefa">
+        <button id="criar-tarefa" ondblclick="crElemento()">Criar Tarefa</button>
         <ol id="lista-tarefas">
 
         </ol>
 
     </section>
-    
+    <script>
+        
+        function crElemento(){
+           let recuperaOL = document.getElementById('lista-tarefas')
+           let recuperaTexto = document.getElementById('texto-tarefa')
+           let recebeTexto = recuperaTexto.value
+           let criarLi = document.createElement('li')
+               criarLi.innerHTML = recebeTexto  
+               document.getElementById('lista-tarefas').appendChild(criarLi)
+               console.log("deu certo")
+        }
+
+    </script>
 </body>
 </html>
