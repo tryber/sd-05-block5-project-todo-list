@@ -4,7 +4,7 @@ const taskBox = document.getElementById('texto-tarefa');
 const cleanList = document.getElementById('apaga-tudo');
 const removeCompleted = document.getElementById('remover-finalizados');
 
-function createTask(listContainer) {
+function createTask() {
   const newTask = document.createElement('li');
   newTask.classList.add('li');
   newTask.classList.add('tarefa');
@@ -61,10 +61,8 @@ cleanList.onclick = function () {
 removeCompleted.onclick = function () {
   const items = document.getElementsByClassName('completed');
   if (items.length > 0) {
-    for (let i = 0; i < items.length; i++) {
-      console.log(i);
-      console.log(items[i]);
-      orderedList.removeChild(items[i]);
+    while (document.querySelector('.completed')) {
+      document.querySelector('.completed').remove();
     }
   } else {
     alert('É necessário ter tarefas completadas para limpar!');
