@@ -1,0 +1,43 @@
+
+h1 {
+	margin-left: 20%;
+	width: 500px;
+}
+
+.inputs {
+	margin-left: 20%;
+	width: 500px;
+}
+
+#texto-tarefa {
+	float: left;
+	line-height: 25px;
+	margin-right: 5px;
+}
+
+#criar-tarefa {
+background-color: green;
+color: white;
+display: inline-block;
+padding: 5px;
+}
+
+.lista {
+	margin-left: 20%;
+}
+
+.botoes {
+	margin-left: 20%;
+}
+
+#apaga-tudo {
+	background-color: red;
+	color: white;
+	line-height: 25px;
+}
+
+#remover-finalizados {
+	background-color: blue;
+	color: white;
+	line-height: 25px;
+}
