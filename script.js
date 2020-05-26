@@ -6,10 +6,9 @@ const textInput = document.getElementById('texto-tarefa');
 // O texto do item da lista criado, deve ser o texto inserido no text-input.//
 
 function addTask() {
-  let li = document.createElement('li');
+  const li = document.createElement('li');
   li.innerHTML = textInput.value;
   taskList.appendChild(li);
-  textInput.value = "";
+  textInput.value = '';
 }
-
 createTaskButton.addEventListener('click', addTask);
