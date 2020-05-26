@@ -19,3 +19,8 @@
 button {
   cursor: pointer;
 }
+
+li {
+  cursor: pointer;
+  line-height: 30px;
+}
