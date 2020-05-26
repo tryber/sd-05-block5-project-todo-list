@@ -1,0 +1,40 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{
+    font-size: 40px;
+    text-align: center;
+}
+
+#funcionamento{
+    font-style: oblique;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#texto-tarefa{
+    margin-left: 42%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#lista-tarefas{
+    margin-left: 42%;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+#criar-tarefa{
+    margin-left: 42%;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+#apaga-tudo{
+    cursor: pointer;
+}
+
+.completed{
+    text-decoration: line-through;
+}
