@@ -65,3 +65,9 @@ function getGrey(eventgrey) {
 }
 
 ol.addEventListener("click", getGrey);
+// cuidado, essa function tb funciona testando mas dà o erro seguinte no cypress:
+// AssertionError: expected '<li>' to have CSS property 'background-color' with the value 'rgb(128, 128, 128)', but the value was 'rgba(0, 0, 0, 0)'
+//       + expected - actual
+
+//       -'rgba(0, 0, 0, 0)'
+//       +'rgb(128, 128, 128)'
