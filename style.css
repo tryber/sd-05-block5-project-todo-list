@@ -1,3 +1,7 @@
-button, li {
+input, button {
+  cursor: pointer;
+}
+
+.completed {
   cursor: pointer;
 }
