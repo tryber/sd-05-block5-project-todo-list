@@ -2,6 +2,7 @@ const orderedList = document.getElementById('lista-tarefas');
 const buttonCreateTask = document.getElementById('criar-tarefa');
 const taskBox = document.getElementById('texto-tarefa');
 const cleanList = document.getElementById('apaga-tudo');
+const removeCompleted = document.getElementById('remover-finalizados');
 
 function createTask(listContainer) {
   const newTask = document.createElement('li');
@@ -28,6 +29,12 @@ buttonCreateTask.onclick = function () {
   taskBox.focus();
 };
 
+taskBox.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    buttonCreateTask.click();
+  }
+  })
+
 document.addEventListener('click', function (event) {
   removeSelectedClass();
   if (event.target.classList.contains('tarefa')) {
@@ -46,7 +53,19 @@ document.addEventListener('dblclick', function (event) {
 });
 
 cleanList.onclick = function () {
-  const newOL = document.createElement('ol');
-  newOL.classList.add('lista-tarefas');
-  orderedList.replaceWith(newOL);
+  while (orderedList.firstChild) {
+    orderedList.removeChild(orderedList.firstChild);
+  }
+}
+
+removeCompleted.onclick = function () {
+  let items = document.getElementsByClassName('completed');
+  if (items.length > 0) {
+    for (let i = 0; i < items.length; i++) {
+      console.log(items[i]);
+      orderedList.removeChild(items[i]);
+    }
+  } else {
+    alert( "É necessário ter tarefas completadas para limpar!");
+  }
 }
