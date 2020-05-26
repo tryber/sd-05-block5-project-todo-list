@@ -56,10 +56,7 @@ function saveList() {
 function loadList() {
   if (typeof (Storage) !== 'undefined') {
     const itens = JSON.parse(localStorage.getItem('list'));
-    if (!itens) {
-      window.alert('Não há nenhuma lista salva');
-      return;
-    }
+    if (!itens) return;
     taskList.innerHTML = '';
     itens.forEach((item, i) => {
       updateList(item[0]);
@@ -72,6 +69,8 @@ window.onload = function () {
   taskInput = this.document.querySelector('#texto-tarefa');
   // Define task list
   taskList = this.document.querySelector('#lista-tarefas');
+  // Load Data
+  this.loadList();
   // Functions
   this.document.querySelector('#criar-tarefa').addEventListener('click', function () {
     const text = taskInput.value;
