@@ -49,9 +49,9 @@ const btnApagarTudo = document.getElementById('apaga-tudo');
 btnApagarTudo.addEventListener('click', apagarTodosOsItens);
 
 // Remover itens finalizados
-const removerItensFinalizados = (tagLi) => {
-  if(tagLi.className == "completed") {
-    tagLi.remove();
+const removerItensFinalizados = () => {
+  while (document.querySelector('.completed')) {
+    document.querySelector('.completed').remove();
   }
 }
 let btnItensFinalizados = document.getElementById('remover-finalizados');

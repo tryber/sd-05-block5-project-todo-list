@@ -2,7 +2,7 @@ input, button {
   cursor: pointer;
 }
 
-.completed {
+button .completed {
   cursor: pointer;
   text-decoration: line-through;
 }
