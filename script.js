@@ -24,9 +24,9 @@ clickItem.addEventListener('dblclick', function () {
 
 const btnApagaTudo = document.querySelector('#apaga-tudo');
 btnApagaTudo.addEventListener('click', function () {
-  const listaTarefas = document.querySelectorAll('li').lenght;
-  for (let i = 0; i < listaTarefas; i += 1) {
-    document.querySelector('ol').removeChild(li);
+  while (document.querySelectorAll('li').length) {
+    itemRemovido = document.querySelectorAll('li')[0];
+    document.querySelector('#lista-tarefas').removeChild(itemRemovido);
   }
 });
 
