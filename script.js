@@ -19,7 +19,7 @@ function moveUp() {
     const before = lista.children[index - 1];
     lista.insertBefore(selected, before);
   } else {
-    alert('Já é o topo da lista, bb!')
+    alert('Já é o topo da lista, bb!');
   }
 }
 
@@ -35,7 +35,7 @@ function moveDown() {
     const next = lista.children[index + 1];
     lista.insertBefore(selected, next.nextSibling);
   } else {
-    alert('Já é o fim da lista, bb!')
+    alert('Já é o fim da lista, bb!');
   }
 }
 
@@ -76,7 +76,7 @@ orderedList.addEventListener('click', function (event) {
   } else {
     removeSelectedClass();
     clicked.classList.add('selected');
-    }
+  }
 });
 
 orderedList.addEventListener('dblclick', function (event) {
@@ -104,7 +104,7 @@ removeCompleted.onclick = function () {
   } else {
     alert('É necessário ter tarefas completadas para limpar!');
   }
-}
+};
 
 removeSelected.onclick = function () {
   const selected = document.querySelector('.selected');
@@ -115,7 +115,7 @@ removeSelected.onclick = function () {
   } else {
     alert('Não há item selecionado!');
   }
-}
+};
 
 moveCima.onclick = moveUp;
 moveBaixo.onclick = moveDown;
