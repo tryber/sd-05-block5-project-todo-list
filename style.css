@@ -1,0 +1,27 @@
+button {
+  cursor: pointer;
+}
+
+li {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+#criar-tarefa {
+  background-color: rgb(108, 214, 21)
+}
+
+#remover-finalizados {
+  background-color: rgb(223, 114, 25)
+}
+
+#apaga-tudo {
+  background-color: rgb(214, 50, 21)
+}
+
+.selected {
+  background-color: rgb(128 , 128 , 128);
+}
