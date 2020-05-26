@@ -72,9 +72,11 @@ const salvarItensLocalStorage = () => {
 
 const recuperarListaLocalStorage = () => {
   const listaEmTexto = localStorage.getItem('lista');
-  const list = JSON.parse(listaEmTexto);
-  for (let i = 0; i < list.length; i += 1) {
-    insereTarefaNaLista(list[i]);
+  if (listaEmTexto != null) {
+    const list = JSON.parse(listaEmTexto);
+    for (let i = 0; i < list.length; i += 1) {
+      insereTarefaNaLista(list[i]);
+    }
   }
 };
 
