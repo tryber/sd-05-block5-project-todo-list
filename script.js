@@ -1,7 +1,7 @@
+//Add item list
 let addButton = document.getElementById("criar-tarefa");
 let textInput = document.getElementById("texto-tarefa");
 let listOfItems = document.getElementById("lista-tarefas");
-
 
 addButton.addEventListener("click", addItemList);
 
