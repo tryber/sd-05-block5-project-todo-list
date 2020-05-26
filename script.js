@@ -16,11 +16,14 @@ target.style.backgroundColor='rgb(128,128,128)';
 
 function riscaItem(){
   let target= event.target;
-  target.className='completed'
-  if(target.style.textDecoration !== 'line-through')
-  target.style.textDecoration='line-through';
-  else
-    target.style.textDecoration='none';
+  if(target.style.textDecoration !== 'line-through'){
+    target.style.textDecoration='line-through';
+    target.className='completed'
   }
+  else{
+    target.style.textDecoration='none';
+    target.classList.remove('completed');
+  }
+}
 lista.addEventListener('click',trocaFundo);
 lista.addEventListener('dblclick',riscaItem);
