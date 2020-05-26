@@ -3,6 +3,7 @@ const buttonCreateTask = document.getElementById('criar-tarefa');
 const taskBox = document.getElementById('texto-tarefa');
 const cleanList = document.getElementById('apaga-tudo');
 const removeCompleted = document.getElementById('remover-finalizados');
+const removeSelected = document.getElementById('remover-selecionado');
 
 function createTask() {
   const newTask = document.createElement('li');
@@ -66,5 +67,16 @@ removeCompleted.onclick = function () {
     }
   } else {
     alert('É necessário ter tarefas completadas para limpar!');
+  }
+}
+
+removeSelected.onclick = function () {
+  let selected = document.querySelector('.selected');
+  if (selected) {
+    while (document.querySelector('.selected')) {
+      document.querySelector('.selected').remove();
+    }
+  } else {
+    alert("Não há item selecionado!");
   }
 }
