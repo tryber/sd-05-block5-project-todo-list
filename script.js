@@ -60,11 +60,9 @@ function loadList() {
       return;
     }
     taskList.innerHTML = '';
-    itens.forEach((item) => {
-      const li = document.createElement('li');
-      const element = taskList.appendChild(li);
-      element.innerHTML = item[0];
-      element.className = item[1];
+    itens.forEach((item, i) => {
+      updateList(item[0]);
+      taskList.children[i].className = item[1];
     });
   }
   else console.error('Este browser não tem suporte a Storage');
