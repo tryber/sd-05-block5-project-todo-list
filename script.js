@@ -45,3 +45,14 @@ function removerFinalizados() {
   }
 }
 botaoRemoveFinalizados.addEventListener('click', removerFinalizados);
+
+const botaoRemoveSelecionado = document.getElementById('remover-selecionado');
+function removerSelecionado() {
+  const listaTarefas = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < listaTarefas.length; i += 1) {
+    if (listaTarefas[i].classList.contains('selected')) {
+      listaTarefas[i].remove();
+    }
+  }
+}
+botaoRemoveSelecionado.addEventListener('click', removerSelecionado);
