@@ -18,7 +18,7 @@ btn.addEventListener('click', criarElementos);
 // Marcar cor dos itens de cinza
 const aplicarCorCinzaAosItens = (tagLi) => {
   tagLi.addEventListener('click', () => {
-      tagLi.style.backgroundColor = 'rgb(128, 128, 128)';
+    tagLi.style.backgroundColor = 'rgb(128, 128, 128)';
   });
 };
 
@@ -37,22 +37,6 @@ const sublinharItem = (tagLi) => {
   });
   aplicarCorCinzaAosItens(tagLi);
 };
-// const sublinharItem = (tagLi) => {
-//   for(let i = 0; i < document.getElementsByTagName('li').length; i += 1) {
-//     if(tagLi.style.textDecoration != "line-through") {
-//       tagLi.style.textDecoration = "line-through";
-//       tagLi.className = 'completed';
-//     } else {
-//       tagLi.style.textDecoration = "none";
-//       tagLi.className = null;
-//     }
-//   }
-// }
-
-// for (let i = 0; i < document.getElementsByTagName('li').length; i += 1) {
-//   let tagLi = document.getElementsByTagName('li')[i];
-//   tagLi.addEventListener('dblclick', sublinharItem);
-// }
 
 // Apagar todos os itens da lista
 const apagarTodosOsItens = () => {
@@ -70,6 +54,5 @@ const removerItensFinalizados = () => {
     document.querySelector('.completed').remove();
   };
 };
-
-const btnItensFinalizados = document.getElementById('remover-finalizados');
+let btnItensFinalizados = document.getElementById('remover-finalizados');
 btnItensFinalizados.addEventListener('click', removerItensFinalizados);
