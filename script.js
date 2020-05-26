@@ -22,17 +22,13 @@ const itemLista = document.getElementById('lista-tarefas');
 // adiciona a classe 'selected' ao item clicado
 function selecionaItem(e) {
   const itemSelecionado = e.target;
-  if (itemSelecionado.classList.contains('selected')){
-    itemSelecionado.classList.remove('selected');
-  } else {
-    const listaTarefas = document.querySelectorAll('#lista-tarefas li');
-    for (let i = 0; i < listaTarefas.length; i += 1) {
-      if (listaTarefas[i].classList.contains('selected')) {
-        listaTarefas[i].classList.remove('selected');
-      }
+  const listaTarefas = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < listaTarefas.length; i += 1) {
+    if (listaTarefas[i].classList.contains('selected')) {
+      listaTarefas[i].classList.remove('selected');
     }
-    itemSelecionado.classList.add('selected');
   }
+  itemSelecionado.classList.add('selected');
 }
 itemLista.addEventListener('click', selecionaItem);
 
