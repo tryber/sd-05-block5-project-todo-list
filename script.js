@@ -4,7 +4,7 @@ const lista = document.getElementById('lista-tarefas');
 const buttonLimpaTudo = document.getElementById('apaga-tudo');
 const buttonLimpaFeitos = document.getElementById('remover-finalizados');
 const buttonPraCima = document.getElementById('mover-cima');
-const buttonPraBaixo = document.getElementById('move-baixo');
+const buttonPraBaixo = document.getElementById('mover-baixo');
 const buttonRemoverSelecionado = document.getElementById('remover-selecionado');
 
 buttonAdicionar.addEventListener('click', function () {
@@ -56,3 +56,18 @@ buttonRemoverSelecionado.addEventListener('click', function() {
     }
   }
 })
+
+buttonPraBaixo.addEventListener('click', function() { 
+  let liSelecinado = separaLiSelecionado();
+  lista.removeChild(liSelecinado);
+})
+
+function separaLiSelecionado () {
+  let lis = document.querySelectorAll('li');
+  for (let index = 0; index < lis.length; index += 1) {
+    let itemDaLista = lis[index];
+    if (itemDaLista.getAttribute('style')) {
+      return lis[index];
+    }
+  }
+}
