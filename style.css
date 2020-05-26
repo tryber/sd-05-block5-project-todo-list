@@ -25,6 +25,6 @@ li {
   text-decoration: line-through;
 }
 
-.selected {
+.backgroundColor {
   background-color: gray;
 }

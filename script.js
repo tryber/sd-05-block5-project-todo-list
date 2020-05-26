@@ -49,9 +49,16 @@ function save () {
   localStorage.setItem('saved tasks', olList.innerHTML);
 }
 
+//Função para alterar a cor do item da lista
+function changeBackground() {
+  let change = document.getElementsByTagName("li"); 
+  change[0].style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
 //Event Listners
 addItem.addEventListener("click", adicionaItem);
 clearAll.addEventListener('click', clear);
 saveList.addEventListener('click', save);
 olList.addEventListener('dblclick', itemFinish);
 clearFinish.addEventListener('click', apagaTarefa);
+olList.addEventListener('click', changeBackground);
