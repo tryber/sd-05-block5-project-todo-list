@@ -9,7 +9,7 @@ h1 {
 }
 
 li {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 #texto-tarefa {
@@ -44,6 +44,12 @@ li {
 
 #remover-finalizados {
   background-color: blue;
+  color: white;
+  line-height: 25px;
+}
+
+#salvar-tarefas {
+  background-color: black;
   color: white;
   line-height: 25px;
 }

@@ -9,8 +9,8 @@ function criarTarefas() {
   const filha = document.createElement('li');
   const tarefa = document.querySelector('#texto-tarefa').value;
   filha.innerHTML = tarefa;
-  document.getElementById('lista-tarefas').appendChild(filha);
-  document.querySelector('#texto-tarefa').value = '';
+	document.getElementById('lista-tarefas').appendChild(filha);
+	document.querySelector('#texto-tarefa').value = '';
 }
 
 document.getElementById('criar-tarefa').addEventListener('click', criarTarefas);
@@ -20,8 +20,8 @@ document.getElementById('criar-tarefa').addEventListener('click', criarTarefas);
 function selecaoitem(event) {
   const item = event.target;
   if (item.classList.contains('selected')) {
-		item.classList.remove('selected');
-	}
+    item.classList.remove('selected');
+  }
   else { item.classList.add('selected'); }
 }
 
@@ -32,8 +32,8 @@ document.getElementById('lista-tarefas').addEventListener('click', selecaoitem);
 function completedItem(event) {
   const Citem = event.target;
   if (Citem.classList.contains('completed')) {
-		Citem.classList.remove('completed');
-	}
+  Citem.classList.remove('completed');
+  }
   else { Citem.classList.add('completed'); }
 }
 
@@ -44,8 +44,8 @@ document.getElementById('lista-tarefas').addEventListener('dblclick', completedI
 function apagaCompletos() {
   const completosFim = document.getElementsByClassName('completed');
   for (let i = completosFim.length - 1; i >= 0; i -= 1) {
-		completosFim[i].remove();
-	}
+    completosFim[i].remove();
+  }
 }
 
 document.getElementById('remover-finalizados').addEventListener('click', apagaCompletos);
@@ -53,10 +53,28 @@ document.getElementById('remover-finalizados').addEventListener('click', apagaCo
 // criar botão que apaga TODAS AS TAREFAS
 
 function apagatudo() {
-    const ftarefas = document.getElementsByTagName('li');
+  const ftarefas = document.getElementsByTagName('li');
   for (let j = ftarefas.length - 1; j >= 0; j -= 1) {
-	ftarefas[j].remove();
-	}
+    ftarefas[j].remove();
+  }
 }
 
 document.getElementById('apaga-tudo').addEventListener('click', apagatudo);
+
+// botão salvar tarefas
+const listaedtarefaspsalvar = document.getElementById('lista-tarefas');
+
+function salvartarefas() {
+	localStorage.clear();
+  localStorage.setItem('tarefas-salvas', listaedtarefaspsalvar.innerHTML);
+}
+
+document.getElementById('salvar-tarefas').addEventListener('click', salvartarefas);
+
+// para carregar função para carregar as tarefas salvas;
+function trazlistasalva() {
+  document.getElementById('lista-tarefas').innerHTML= localStorage.getItem('tarefas-salvas');
+}
+
+document.body.addEventListener('onload', trazlistasalva);
+
