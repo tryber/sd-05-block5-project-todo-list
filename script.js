@@ -41,6 +41,8 @@ function removerFinalizados() {
   for (let i = 0; i < listaTarefas.length; i += 1) {
     if (listaTarefas[i].classList.contains('completed')) {
       listaTarefas[i].remove();
+    } else {
+      alert('Não existem tarefas completas para remover!!!')
     }
   }
 }
