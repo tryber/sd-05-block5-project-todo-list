@@ -23,22 +23,21 @@
   background: #0F2027;
   background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
   background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  color: #fff;
-  text-shadow: 0 1px 0 #528009;
+  color: #fff
 }
 
 .button-red {
   background: #c31432;
   background: -webkit-linear-gradient(to right, #240b36, #c31432);
-  background: linear-gradient(to right, #240b36, #c31432); 
-  text-shadow: 0 1px 0 #528009;
+  background: linear-gradient(to right, #240b36, #c31432);
 }
 
 .button-mover {
-  background: #659999;  /* fallback for old browsers */
+  background: #659999;
   background: -webkit-linear-gradient(to right, #f4791f, #659999);
   background: linear-gradient(to right, #f4791f, #659999);
 }
+
 .selected {
   background-color: rgb(128 , 128 , 128);
 }
