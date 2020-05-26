@@ -8,6 +8,7 @@ function createItem() {
   li.className='white';
   listaTarefa.appendChild(li);
   li.innerText = inputText.value;
+  inputText.value = '';
   renderEvents();
 }
 
