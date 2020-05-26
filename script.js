@@ -19,4 +19,7 @@ function addTask() {
   });
   textInput.value = '';
 }
-/* createTaskButton.addEventListener('click', addTask);*/
+
+function deleteList() {
+  taskList.innerHTML = '';
+}
