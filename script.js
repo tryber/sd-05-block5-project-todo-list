@@ -35,3 +35,13 @@ function completedItems() {
   }
 }
 listOfItems.addEventListener("dblclick", completedItems)
+
+//delete all list items
+let deleteAll = document.getElementById("apaga-tudo");
+
+function deleteList() {
+  listOfItems.innerText = "";
+}
+
+deleteAll.addEventListener("click", deleteList);
+
