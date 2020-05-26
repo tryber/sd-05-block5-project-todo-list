@@ -3,8 +3,9 @@ let listaTarefas = document.getElementById("lista-tarefas");
 let criarTarefa = document.getElementById("criar-tarefa");
 let textoTarefa = document.getElementById("texto-tarefa");
 let apagaTudo = document.getElementById("apaga-tudo")
-let removerFinalizados = document.getElementById("remover-finalizados");
 let botaoSalvarTarefas = document.getElementById("salvar-tarefas");
+let botaoRemoverFinalizados = document.getElementById("remover-finalizados");
+let botaoRemoverSelecionados = document.getElementById("remover-selecionados");
 let target = "";
 let itemSelecionado = "";
 
@@ -46,10 +47,23 @@ function seleciona() {
   itemSelecionado = event.target;
 }
 
+function removeDone() {
+  let completedTasks = document.getElementsByClassName("completed");
+  for (let j = completedTasks.length - 1; j >= 0; j -= 1) {
+    completedTasks[j].remove();
+  }
+}
+
+function removeSelected() {
+  let itemSelecionado = document.getElementsByClassName("selected")[0].remove();
+}
+
   //Event Listners
-  criarTarefa.addEventListener("click", acrescentarTarefa);
-  apagaTudo.addEventListener("click", apagaTodos);
-  listaTarefas.addEventListener("click", seleciona)
-  listaTarefas.addEventListener("dblclick", riscaTarefa);
-  botaoSalvarTarefas.addEventListener("click", saveList)
-  getList();
+criarTarefa.addEventListener("click", acrescentarTarefa);
+apagaTudo.addEventListener("click", apagaTodos);
+listaTarefas.addEventListener("click", seleciona)
+listaTarefas.addEventListener("dblclick", riscaTarefa);
+botaoRemoverFinalizados.addEventListener("click", removeDone);
+botaoRemoverSelecionados.addEventListener("click", removeSelected);
+botaoSalvarTarefas.addEventListener("click", saveList)
+getList();
