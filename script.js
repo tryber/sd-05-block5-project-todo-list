@@ -9,3 +9,19 @@ adicionar.addEventListener('click',function(){
   lista.appendChild(createEle);
   taskInput.value='';
 })
+function trocaFundo(){
+let target= event.target;
+target.style.backgroundColor='rgb(128,128,128)';
+}
+
+function riscaItem(){
+  let target= event.target;
+  if(target.style.textDecoration !== 'line-through')
+  target.style.textDecoration='line-through';
+  else{
+    target.style.textDecoration='none';
+  }
+  
+  }
+lista.addEventListener('click',trocaFundo);
+lista.addEventListener('dblclick',riscaItem);
