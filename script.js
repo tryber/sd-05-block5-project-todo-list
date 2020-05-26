@@ -17,8 +17,8 @@ buttonNewTask.addEventListener("click", newTask);
 
 //riscar item quando recebe double click, para indicar atividade completada
 function itemCrossed(e) {
-  const itemDblClick = e.target;
-  if (itemDblClick.className !== "completed") {
+  let itemDblClick = e.target;
+  if (!(itemDblClick.classList.contains("completed"))) {
     itemDblClick.classList.add("completed");
   }
   else {
@@ -56,15 +56,19 @@ function deleteCompleted() {
 let allLi = document.getElementsByTagName("li");
 
 function getGrey(eventgrey) {
-  
+  let liSelected = eventgrey.target;
   for (let i = 0; i < allLi.length; i += 1) {
-  if (eventgrey.target == allLi[i]) {
-    eventgrey.target.style.backgroundColor = "rgb(128 , 128 , 128)";
+  if (liSelected === allLi[i] && !(liSelected.classList.contains("selected"))) {
+    allLi[i].classList.add("selected");
+  }
+  else if (liSelected === allLi[i] && liSelected.classList.contains("selected")){
+    allLi[i].classList.remove("selected");
   }
 }
 }
-
 ol.addEventListener("click", getGrey);
+
+
 // cuidado, essa function tb funciona testando mas dà o erro seguinte no cypress:
 // AssertionError: expected '<li>' to have CSS property 'background-color' with the value 'rgb(128, 128, 128)', but the value was 'rgba(0, 0, 0, 0)'
 //       + expected - actual
@@ -72,3 +76,4 @@ ol.addEventListener("click", getGrey);
 //       -'rgba(0, 0, 0, 0)'
 //       +'rgb(128, 128, 128)'
 // refazer com essa dica: usar class .selected no css com o bg cinza, e ao clicar no objeto vc adiciona essa classe nele
+//neste caso sem esquecer de mudar o == class para contain class acima ou vai descapacitar a function de rescar
