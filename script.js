@@ -15,6 +15,6 @@ buttonNewTask.addEventListener("click", newTask);
 
 
 // Ao clicar em um item da lista, altere a cor de fundo do item para cinza rgb(128,128,128)
-function changeItemColor (event) {
-  
-}
+// function changeItemColor (event) {
+
+// }
