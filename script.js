@@ -1,3 +1,17 @@
+// Carregando dados do localStorage
+function carregarDados() {
+  const dados = localStorage.listaTarefas;
+  const listaDados = dados.split(',');
+  let li = document.createElement('li');
+  for (let i = 0; i < listaDados.length; i += 1) {
+    li.className = 'item-lista';
+    li.innerText = listaDados[i];
+    document.querySelector('ol').appendChild(li);
+  }
+}
+carregarDados();
+
+// Evento para botão que adiciona tarefa na lista
 const btnCreateTarefa = document.querySelector('#criar-tarefa');
 btnCreateTarefa.addEventListener('click', function () {
   const textoTarefa = document.getElementById('texto-tarefa').value;
@@ -11,17 +25,20 @@ btnCreateTarefa.addEventListener('click', function () {
   document.getElementById('texto-tarefa').value = '';
 });
 
+// Evento que seleciona item ao ser clicado
 const clickItem = document.querySelector('ol');
 clickItem.addEventListener('click', function (event) {
   const itemEscolhido = event.target;
   itemEscolhido.classList.toggle('selected');
 });
 
+// Evento que risca item ao dar dois cliques
 clickItem.addEventListener('dblclick', function () {
   const itemEscolhido = event.target;
   itemEscolhido.classList.toggle('completed');
 });
 
+// Evento do botão que limpa a lista de tarefas
 const btnApagaTudo = document.querySelector('#apaga-tudo');
 btnApagaTudo.addEventListener('click', function () {
   while (document.querySelectorAll('li').length) {
@@ -30,6 +47,7 @@ btnApagaTudo.addEventListener('click', function () {
   }
 });
 
+// Evento do botão que remove os itens riscados
 const btnFinalizados = document.querySelector('#remover-finalizados');
 btnFinalizados.addEventListener('click', function () {
   const listaSelecionados = document.querySelectorAll('li');
@@ -40,6 +58,7 @@ btnFinalizados.addEventListener('click', function () {
   }
 });
 
+// Evento do botão que remove itens selecionados
 const btnRemoverSelecionados = document.querySelector('#remover-selecionado');
 btnRemoverSelecionados.addEventListener('click', function () {
   const listaSelecionados = document.querySelectorAll('li');
@@ -50,6 +69,7 @@ btnRemoverSelecionados.addEventListener('click', function () {
   }
 });
 
+// Função do botão que move item selecionado para cima
 function moveUp() {
   if (document.querySelectorAll('.selected').length === 1) {
     const listaTarefas = document.querySelectorAll('li');
@@ -76,6 +96,7 @@ function moveUp() {
   }
 };
 
+// Função do botão que move item selecionado para baixo
 function moveDown() {
   if (document.querySelectorAll('.selected').length === 1) {
     const listaTarefas = document.querySelectorAll('li');
@@ -101,9 +122,13 @@ function moveDown() {
   }
 };
 
-
+// Evento do botão que salva a lista no localStorage
 btnSalvarTarefas = document.querySelector('#salvar-tarefas');
 btnSalvarTarefas.addEventListener('click', function () {
   const listaTarefas = document.querySelectorAll('li');
-  localStorage.setItem('listaTarefas', listaTarefas);
-})
+  const salvarDados = [];
+  for (let i = 0; i < document.querySelectorAll('li').length; i += 1) {
+    salvarDados[i] = listaTarefas[i].innerHTML;
+  }
+  localStorage.setItem('listaTarefas', salvarDados);
+});
