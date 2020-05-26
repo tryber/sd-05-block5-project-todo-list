@@ -13,16 +13,16 @@
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
     </header>
     <section>
-        <input type="text" id="texto-tarefa" placeholder="Digite seu texto aqui">
-        
-        <ol id="lista-tarefas">
-        </ol>
+        <form>
+            <input type="text" id="texto-tarefa" placeholder="Digite seu texto aqui">
+            <button id='criar-tarefa' ondblclick="criarElemento()">Criar Tarefa</button>
+        </form>
+        <ol id="lista-tarefas"></ol>
 
     </section>
-    <button id='criar-tarefa' ondblclick="crElemento()">Criar Tarefa</button>
-    <script>
-        
-        function crElemento(){
+    
+    <script>        
+        function criarElemento(){
            let recuperaOL = document.getElementById('lista-tarefas')
            let recuperaTexto = document.getElementById('texto-tarefa')
            let recebeTexto = recuperaTexto.value
@@ -30,8 +30,9 @@
                criarLi.innerHTML = recebeTexto  
                document.getElementById('lista-tarefas').appendChild(criarLi)
                recuperaTexto.value = ""
+               console.log(recuperaTexto)
            }
-
     </script>
+    
 </body>
 </html>
