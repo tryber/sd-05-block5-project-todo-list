@@ -103,8 +103,8 @@ function moverParaCima() {
       // o item selecionado assume o texto do item anterior
       itemSelecionado.innerText = conteudoAnterior;
       // as classes são invertidas para acompanhar o item selecionado
-      itemSelecionado.classList.toggle('selected');
-      itemAnterior.classList.toggle('selected');
+      itemSelecionado.classList.remove('selected');
+      itemAnterior.classList.add('selected');
     } else {
       alert('O ítem selecionado já é o primeiro da lista');
     }
@@ -124,8 +124,8 @@ function moverParaBaixo() {
       const conteudoPosterior = itemPosterior.innerText;
       itemPosterior.innerText = itemSelecionado.innerText;
       itemSelecionado.innerText = conteudoPosterior;
-      itemSelecionado.classList.toggle('selected');
-      itemPosterior.classList.toggle('selected');
+      itemSelecionado.classList.remove('selected');
+      itemPosterior.classList.add('selected');
     } else {
       alert('O ítem selecionado já é o último da lista');
     }
