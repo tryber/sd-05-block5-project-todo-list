@@ -1,6 +1,8 @@
-let taskInput = document.querySelector('#texto-tarefa');
-let lista = document.querySelector('#lista-tarefas');
-let adicionar = document.getElementById('criar-tarefa');
+const taskInput = document.querySelector('#texto-tarefa');
+const lista = document.querySelector('#lista-tarefas');
+const adicionar = document.getElementById('criar-tarefa');
+const botaoRemoverTudo = document.querySelector('#apaga-tudo');
+const botaoApagarFinalizados=document.querySelector('#remover-finalizados');
 
 adicionar.addEventListener('click',function(){
   let createEle = document.createElement('li');
@@ -9,6 +11,7 @@ adicionar.addEventListener('click',function(){
   lista.appendChild(createEle);
   taskInput.value='';
 })
+
 function trocaFundo(){
 let target= event.target;
 target.style.backgroundColor='rgb(128,128,128)';
@@ -26,16 +29,19 @@ function riscaItem(){
   }
 }
 
-let botaoRemoverTudo = document.querySelector('#apaga-tudo');
-
 function apagaTudo() {
   while (lista.firstChild) {
     lista.removeChild(lista.firstChild);
   }
 }
 
+function apagaFinalizados() {
+  let itemsFinalizados=document.querySelectorAll('.completed');
+  for(let i=0;i<=itemsFinalizados.length;i+=1)
+    itemsFinalizados[i].remove();
+}
 
-
+botaoApagarFinalizados.addEventListener('click',apagaFinalizados);
 botaoRemoverTudo.addEventListener('click',apagaTudo);
 lista.addEventListener('click',trocaFundo);
 lista.addEventListener('dblclick',riscaItem);
