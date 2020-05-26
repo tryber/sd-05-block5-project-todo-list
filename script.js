@@ -11,6 +11,7 @@ let moveDown = document.getElementById('mover-baixo');
 let moveUp = document.getElementById('mover-cima');
 let lines = document.getElementById('linhas');
 let itemSelected = "";
+let selecao ="";
 
 //Funções
 function adicionaItem() {
@@ -60,7 +61,8 @@ function seleciona() {
 
 //Função remover item selecionado
 function removeSelected() {
-document.getElementsByClassName('selected')[0].remove();
+  selecao = document.getElementsByClassName('selected');
+  selecao[0].remove();
 }
 
 //Event Listners
@@ -70,6 +72,7 @@ saveList.addEventListener('click', save);
 olList.addEventListener('dblclick', itemFinish);
 clearFinish.addEventListener('click', apagaTarefa);
 olList.addEventListener('click', seleciona);
+clearSelect.addEventListener('click', removeSelected);
 load();
 
 //Salvar a lista de tarefas
