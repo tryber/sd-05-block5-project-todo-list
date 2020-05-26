@@ -104,5 +104,6 @@ function moveDown() {
 
 btnSalvarTarefas = document.querySelector('#salvar-tarefas');
 btnSalvarTarefas.addEventListener('click', function () {
-  
+  const listaTarefas = document.querySelectorAll('li');
+  localStorage.setItem('listaTarefas', listaTarefas);
 })
