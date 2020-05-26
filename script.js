@@ -49,8 +49,8 @@ function deleteCompleted() {
 }
     buttonDeleteCompleted.addEventListener("click", deleteCompleted);
 // cuidado, essa function funciona testando mas dà o erro seguinte no cypress: 
-//TypeError: Cannot read property 'content' of undefined
-//at Context.<anonymous> (http://localhost:37841/__cypress/tests?p=cypress/integration/project.spec.js-127:88:37)
+// TypeError: Cannot read property 'content' of undefined
+//       at Context.<anonymous> (http://localhost:43033/__cypress/tests?p=cypress/integration/project.spec.js-099:88:37)
 
 //function para deixar fundo cinza dos li selecionados
 let allLi = document.getElementsByTagName("li");
@@ -67,13 +67,3 @@ function getGrey(eventgrey) {
 }
 }
 ol.addEventListener("click", getGrey);
-
-
-// cuidado, essa function tb funciona testando mas dà o erro seguinte no cypress:
-// AssertionError: expected '<li>' to have CSS property 'background-color' with the value 'rgb(128, 128, 128)', but the value was 'rgba(0, 0, 0, 0)'
-//       + expected - actual
-
-//       -'rgba(0, 0, 0, 0)'
-//       +'rgb(128, 128, 128)'
-// refazer com essa dica: usar class .selected no css com o bg cinza, e ao clicar no objeto vc adiciona essa classe nele
-//neste caso sem esquecer de mudar o == class para contain class acima ou vai descapacitar a function de rescar
