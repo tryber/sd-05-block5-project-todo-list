@@ -54,10 +54,15 @@ function seleciona() {
   if (itemSelected.classList !== undefined) {
     itemSelected.classList.remove('selected');
   }
-    event.target.classList.add('selected');
-    itemSelected = event.target;
+  event.target.classList.add('selected');
+  itemSelected = event.target;
 }
-  
+
+//Função remover item selecionado
+function removeSelected() {
+document.getElementsByClassName('selected')[0].remove();
+}
+
 //Event Listners
 addItem.addEventListener("click", adicionaItem);
 clearAll.addEventListener('click', clear);
