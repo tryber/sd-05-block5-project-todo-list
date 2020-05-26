@@ -7,7 +7,7 @@ let posListaTarefas = document.getElementById('lista-tarefas');
 
 
 document.addEventListener('mouseover', function (event) {
-  if (event.target.nodeName == 'BUTTON') {
+  if (event.target.nodeName == 'BUTTON' || event.target.nodeName == 'LI') {
     event.target.style.cursor = 'pointer';
   }
 }, false);
