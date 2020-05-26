@@ -16,7 +16,7 @@ textInput = document.getElementById("texto-tarefa");
 let textOutput = document.createElement("li");
 let lista = document.getElementsByTagName("li");
 for( i = lista.length ; i <= lista.length ; i++){
-textOutput.className = i;
+textOutput.style.backgroundColor = "white";
 }
 textOutput.innerHTML= textInput.value
 textInput.value=""
@@ -26,18 +26,16 @@ paiLista.appendChild(textOutput)
 //BACKGROUND CHANGE
 
 paiLista.addEventListener("click", backgroundChange);
-let verificadorFundo = true;
 function backgroundChange(event){
-  if(verificadorFundo === true) {
   let target = event.target
+  let corAtual = target.style.backgroundColor;
+  if(corAtual === "white") {
   target.style.backgroundColor = "rgb(128,128,128)"
   target.classList.add("selected")
-  verificadorFundo = false
 } else {
   let target = event.target
   target.style.backgroundColor = "white"
   target.classList.remove("selected")
-  verificadorFundo = true
 }
 }
 
@@ -94,57 +92,44 @@ paiLista.innerHTML = localStorage.getItem('lista');
 
 //MOVER PRA CIMA
 moverCimaBut.addEventListener("click", moveUp)
-function moveUp (){
-  //qual sera movido
-  let moved = document.getElementsByClassName("selected")[0]
-  //guardar o texto dele
-  let oldText = moved.innerHTML;
-  //encontrar a classe do item anterior
-  let classN = parseInt(moved.className)-1;
-  let lista = document.getElementsByTagName("li")
-  if (classN < 0 || classN > lista.length-1) {
-    return;
-  }
-  //transformar de inteiro para string
-  let classStr = ""
-  classStr += classN
-  //encontrar elemento anterior
-  let destin = document.getElementsByClassName(classStr)[0];
-  //mudar classe e cor do elemento de destino
-  destin.classList.add("selected");
-  destin.style.backgroundColor = "rgb(128,128,128)"
-  //mudar conteudo, classe e cor do elemento que ficou pra trás
-  moved.classList.remove("selected");
-  moved.style.backgroundColor = "white"
-  moved.innerHTML = destin.innerHTML
-  //mudar conteudo do elemento de destino
-  destin.innerHTML = oldText
+
+function moveUp(){
+  let select = document.getElementsByClassName("selected")[0]
+  let list = document.getElementsByTagName("li")
+  let oldText = ""
+   for (i = 0 ; i < list.length ; i += 1){
+    if ( list [i] === select && i != 0) {
+      console.log(list[i])
+      console.log(select)
+      oldText = list[i].innerHTML
+      list[i].innerHTML = list[i-1].innerHTML
+      list[i-1].innerHTML = oldText
+      list[i].classList.remove("selected");
+      list[i].style.backgroundColor = "white" 
+    } else {
+      list[i].classList.remove("selected")
+      list[i].style.backgroundColor = "white"
+    }
+   }
+}
+moverBaixoBut.addEventListener("click", moveDown)
+function moveDown(){
+  let select = document.getElementsByClassName("selected")[0]
+  let list = document.getElementsByTagName("li")
+  let oldText = ""
+   for (i = 0 ; i < list.length ; i += 1){
+    if ( list [i] === select && i != list.length-1) {
+      console.log(list[i])
+      console.log(select)
+      oldText = list[i].innerHTML
+      list[i].innerHTML = list[i+1].innerHTML
+      list[i+1].innerHTML = oldText
+      list[i].classList.remove("selected");
+      list[i].style.backgroundColor = "white" 
+    } else {
+      list[i].classList.remove("selected")
+      list[i].style.backgroundColor = "white"
+    }
+   }
 }
 
-moverBaixoBut.addEventListener("click", moveDown)
-function moveDown (){
-  //qual sera movido
-  let moved = document.getElementsByClassName("selected")[0]
-  //guardar o texto dele
-  let oldText = moved.innerHTML;
-  //encontrar a classe do item anterior
-  let classN = parseInt(moved.className)+1;
-  let lista = document.getElementsByTagName("li")
-  if (classN < 0 || classN > lista.length-1) {
-    return;
-  }
-  //transformar de inteiro para string
-  let classStr = ""
-  classStr += classN
-  //encontrar elemento anterior
-  let destin = document.getElementsByClassName(classStr)[0];
-  //mudar classe e cor do elemento de destino
-  destin.classList.add("selected");
-  destin.style.backgroundColor = "rgb(128,128,128)"
-  //mudar conteudo, classe e cor do elemento que ficou pra trás
-  moved.classList.remove("selected");
-  moved.style.backgroundColor = "white"
-  moved.innerHTML = destin.innerHTML
-  //mudar conteudo do elemento de destino
-  destin.innerHTML = oldText
-}
