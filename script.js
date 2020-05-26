@@ -18,8 +18,13 @@ buttonNewTask.addEventListener("click", newTask);
 //riscar item quando recebe double click, para indicar atividade completada
 function itemCrossed(e) {
   const itemDblClick = e.target;
-  itemDblClick.classList.add('completed');
+  if (itemDblClick.className !== "completed"){
+  itemDblClick.classList.add("completed");
 }
-ol.addEventListener('dblclick', itemCrossed);
+else {
+  itemDblClick.classList.remove("completed");
+}
+}
+ol.addEventListener("dblclick", itemCrossed);
 
 
