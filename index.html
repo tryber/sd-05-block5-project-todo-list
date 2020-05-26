@@ -7,13 +7,13 @@
     <body>
         <div class="header">
             <header> Minha Lista de Tarefas </header>
-            <p> Clique duas vezes em um item para marcá-lo como completo </p>
+            <p id="funcionamento"> Clique duas vezes em um item para marcá-lo como completo </p>
         </div>
         <div class="midle">
             <form>
                 <label> Nova Tarefa </label>
                 <input type="text" id="texto-tarefa">
-                <input type="button" id="criar-tarefa" value="Adicionar">
+                <button type="button" id="criar-tarefa">Adicionar</button>
             </form>
         </div>
         <div class="list">
@@ -21,10 +21,8 @@
             <ol id="lista-tarefas"></ol>
         </div>
         <div>
-            <form>
-                <input type="button" id="apaga-tudo" value="Apagar lista">
-                <input type="button" id="remover-finalizados" value="Apagar itens finalizados">
-            </form>
+            <button type="button" id="apaga-tudo">Apagar lista</button>
+            <button type="button" id="remover-finalizados">Apagar itens finalizados</button>
         </div>
         <script src="script.js"></script>
     </body>
