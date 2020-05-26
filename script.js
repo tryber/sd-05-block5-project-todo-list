@@ -28,3 +28,20 @@ function riscaItem(e) {
   itemSelecionado.classList.toggle('completed');
 }
 itemLista.addEventListener('dblclick', riscaItem);
+
+const botaoApagaTudo = document.getElementById('apaga-tudo');
+function apagaTudo() {
+  document.getElementById('lista-tarefas').innerHTML = '';
+}
+botaoApagaTudo.addEventListener('click', apagaTudo);
+
+const botaoRemoveFinalizados = document.getElementById('remover-finalizados');
+function removerFinalizados() {
+  const listaTarefas = document.getElementById('lista-tarefas').children;
+  for (let i = 0; i < listaTarefas.length; i += 1) {
+    if (listaTarefas[i].classList.contains('completed')) {
+      listaTarefas[i].remove();
+    }
+  }
+}
+botaoRemoveFinalizados.addEventListener('click', removerFinalizados);
