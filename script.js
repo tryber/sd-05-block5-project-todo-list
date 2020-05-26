@@ -1,6 +1,8 @@
-let buttonAdicionar = document.getElementById('criar-tarefa');
-let inputText = document.getElementById('texto-tarefa');
-let lista = document.getElementById('lista-tarefas');
+const buttonAdicionar = document.getElementById('criar-tarefa');
+const inputText = document.getElementById('texto-tarefa');
+const lista = document.getElementById('lista-tarefas');
+const buttonLimpaTudo = document.getElementById('apaga-tudo');
+const buttonLimpaFeitos = document.getElementById('remover-finalizados');
 
 buttonAdicionar.addEventListener('click', function () {
   let li = document.createElement('li');
@@ -20,5 +22,13 @@ buttonAdicionar.addEventListener('click', function () {
   inputText.value = '';
 });
 
-// (((())))
-// document.getElementsByTagName("H1")[0].removeAttribute("class");
+buttonLimpaTudo.addEventListener('click', function() {
+  let lis = document.querySelectorAll('li')
+  for (let i = 0; i < lis.length; i += 1) {
+    lista.removeChild(lis[i]);
+  }
+ 
+})
+buttonLimpaFeitos.addEventListener('click', function() {
+  
+})
