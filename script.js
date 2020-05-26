@@ -13,10 +13,6 @@ function add(){
     lista.appendChild(li);
     caixaDeTexto.value = "";
 }
-function mouse(){
-    (lista.target).style.cursor = 'pointer';
-  };
-
 //eventos
 button.addEventListener("click",add);
-lista.addEventListener('mouseover', mouse);
+
