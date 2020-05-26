@@ -49,3 +49,27 @@ btnRemoverSelecionados.addEventListener('click', function () {
     }
   }
 });
+
+function moveUp() {
+  if (document.querySelectorAll('.selected').length === 1) {
+    const listaTarefas = document.querySelectorAll('li');
+    if (listaTarefas[0].classList.contains('selected')) {
+      alert('Item já está no topo!');
+    }
+    else {
+      
+    }
+  }
+  else if (document.querySelectorAll('.selected').length === 0) {
+    alert('Não existe item selecionado.');
+  }
+  else {
+    alert('Gentileza escolher apenas um item para mover.');
+  }
+};
+
+
+btnSalvarTarefas = document.querySelector('#salvar-tarefas');
+btnSalvarTarefas.addEventListener('click', function () {
+  
+})
