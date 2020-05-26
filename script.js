@@ -2,6 +2,7 @@
 let addButton = document.getElementById("criar-tarefa");
 let textInput = document.getElementById("texto-tarefa");
 let listOfItems = document.getElementById("lista-tarefas");
+let tagLI = document.getElementsByTagName("li");
 
 addButton.addEventListener("click", addItemList);
 
@@ -10,13 +11,27 @@ function addItemList() {
   listOfItems.appendChild(listItems);
   listItems.innerText = textInput.value;
   textInput.value = "";
+  textInput.focus();
 }
 
 //Change list item bg color to grey when clicked
-function changeBGColor() {
-  let tagLI = document.getElementsByTagName("li");
-  for(let i = 0; i < tagLI.length; i += 1) {
-  event.target.style.backgroundColor = "rgb(128, 128, 128)";
-  } 
+let itemSelected = "";
+function selectItem() {
+  if(itemSelected.classList !== undefined) {
+    itemSelected.classList.remove("selected");
+  }
+  if(event.target !== listOfItems){
+    event.target.classList.add("selected");
+    itemSelected = event.target;} 
 }
-listOfItems.addEventListener("click", changeBGColor);
+listOfItems.addEventListener("click", selectItem);
+
+//line-through completed items
+function completedItems() {
+  if(event.target.classList.contains("completed")) {
+    event.target.classList.remove("completed");
+  } else if(event.target !== listOfItems){
+    event.target.classList.add("completed");
+  }
+}
+listOfItems.addEventListener("dblclick", completedItems)
