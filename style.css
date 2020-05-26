@@ -22,9 +22,15 @@ header{
 #lista-tarefas{
     margin-left: 42%;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 #criar-tarefa{
     margin-left: 42%;
     margin-top: 30px;
+    cursor: pointer;
+}
+
+#apaga-tudo{
+    cursor: pointer;
 }
