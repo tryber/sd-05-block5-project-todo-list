@@ -1,13 +1,14 @@
 
 function criarElemento(){
-    let recuperaOL = document.getElementById('lista-tarefas')
-    let recuperaTexto = document.getElementById('texto-tarefa')
+    let recuperaOL = document.getElementById('lista-tarefas');
+    let recuperaTexto = document.getElementById('texto-tarefa');
     let recebeTexto = recuperaTexto.value
-    let criar = document.createElement('li')
+    let criar = document.createElement('li');
         criar.innerHTML = recebeTexto  
-        document.getElementById('lista-tarefas').appendChild(criar)
-        recuperaTexto.value = " "
+        document.getElementById('lista-tarefas').appendChild(criar);
+        recuperaTexto.value = " ";
     }
+
 
 let itemLista = document.getElementById('lista-tarefas');
 
