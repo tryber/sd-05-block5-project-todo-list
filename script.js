@@ -37,12 +37,10 @@ botaoApagaTudo.addEventListener('click', apagaTudo);
 
 const botaoRemoveFinalizados = document.getElementById('remover-finalizados');
 function removerFinalizados() {
-  const listaTarefas = document.getElementById('lista-tarefas').children;
+  const listaTarefas = document.querySelectorAll('#lista-tarefas li');
   for (let i = 0; i < listaTarefas.length; i += 1) {
     if (listaTarefas[i].classList.contains('completed')) {
       listaTarefas[i].remove();
-    } else {
-      alert('Não existem tarefas completas para remover!!!')
     }
   }
 }
