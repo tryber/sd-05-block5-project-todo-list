@@ -28,9 +28,10 @@ function moveUp() {
     if (itens[i].className.includes('selected')) {
       const currentItem = itens[i - 1].innerHTML;
       taskList.children[i - 1].innerHTML = taskList.children[i].innerHTML;
+      taskList.children[i - 1].className = taskList.children[i].className;
       taskList.children[i].classList.remove('selected');
+      taskList.children[i].classList.remove('completed');
       taskList.children[i].innerHTML = currentItem;
-      taskList.children[i - 1].classList.add('selected');
     }
   }
 }
@@ -40,9 +41,10 @@ function moveDown() {
     if (itens[i].className.includes('selected')) {
       const currentItem = itens[i + 1].innerHTML;
       taskList.children[i + 1].innerHTML = taskList.children[i].innerHTML;
+      taskList.children[i + 1].className = taskList.children[i].className;
       taskList.children[i].classList.remove('selected');
+      taskList.children[i].classList.remove('completed');
       taskList.children[i].innerHTML = currentItem;
-      taskList.children[i + 1].classList.add('selected');
     }
   }
 }
