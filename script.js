@@ -88,9 +88,7 @@ function verificaQtdeSelecionados() {
 const botaoParaCima = document.getElementById('mover-cima');
 function moverParaCima() {
   verificaQtdeSelecionados();
-  if (qtdSelecionado > 1) { // verifica se tem apenas um item selecionado
-    alert('Selecione apenas um item para mover');
-  } else {
+  
     const itemSelecionado = document.querySelectorAll('#lista-tarefas .selected')[0];
     // não entra na função caso já seja o primeiro
     if (itemSelecionado.previousElementSibling !== null) {
@@ -108,16 +106,14 @@ function moverParaCima() {
     } else {
       alert('O ítem selecionado já é o primeiro da lista');
     }
-  }
+  
 }
 botaoParaCima.addEventListener('click', moverParaCima);
 
 const botaoParaBaixo = document.getElementById('mover-baixo');
 function moverParaBaixo() {
   verificaQtdeSelecionados();
-  if (qtdSelecionado > 1) {
-    alert('Selecione apenas um item para mover');
-  } else {
+  
     const itemSelecionado = document.querySelectorAll('#lista-tarefas .selected')[0];
     if (itemSelecionado.nextElementSibling !== null) {
       const itemPosterior = itemSelecionado.nextElementSibling;
@@ -129,7 +125,7 @@ function moverParaBaixo() {
     } else {
       alert('O ítem selecionado já é o último da lista');
     }
-  }
+  
 }
 botaoParaBaixo.addEventListener('click', moverParaBaixo);
 
