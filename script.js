@@ -73,8 +73,18 @@ document.getElementById('salvar-tarefas').addEventListener('click', salvartarefa
 
 // para carregar função para carregar as tarefas salvas;
 function trazlistasalva() {
-  document.getElementById('lista-tarefas').innerHTML= localStorage.getItem('tarefas-salvas');
+  document.getElementById('lista-tarefas').innerHTML = localStorage.getItem('tarefas-salvas');
 }
 
 document.body.addEventListener('onload', trazlistasalva);
 
+// criar botão que apaga SELECIONADAS
+
+function apagarselecionado() {
+  const selecionados = document.getElementsByClassName('selected');
+  for (let l = selecionados.length - 1; l >= 0; l -= 1) {
+    selecionados[l].remove();
+  }
+}
+
+document.getElementById('remover-selecionado').addEventListener('click', apagarselecionado);

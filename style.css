@@ -48,6 +48,12 @@ li {
   line-height: 25px;
 }
 
+#remover-selecionado {
+  background-color: grey;
+  color: black;
+  line-height: 25px;
+}
+
 #salvar-tarefas {
   background-color: black;
   color: white;
