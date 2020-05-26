@@ -19,11 +19,41 @@ function adicionaItem () {
   li.innerText = textList.value;
   textList.value = ""
 
+}
+//Função para apagar item da lista
+function apagaTarefa () {
+  target = event.target;
+  if (target.classList.contains('completed')) {
+    target.classList.remove('completed');
+  } else {
+    target.classList.add('completed');
+  }
+}
+
+//Função para riscar item já concluído
+function itemFinish() {
+  target = event.target;
+  if (target.classList.contains('completed')) {
+    target.classList.remove('completed');
+  } else {
+    target.classList.add('completed');
+  }
+}
+
 //Apaga todos os itens da lista
 function clear () {
   olList.innerText = "";
 }
 
+//Função para salvar a lista de tarefas
+function save () {
+  localStorage.clear();
+  localStorage.setItem('saved tasks', olList.innerHTML);
+}
+
 //Event Listners
 addItem.addEventListener("click", adicionaItem);
 clearAll.addEventListener('click', clear);
+olList.addEventListener('dblclick', apagaTarefa);
+saveList.addEventListener('click', save);
+olList.addEventListener('dblclick', itemFinish);
