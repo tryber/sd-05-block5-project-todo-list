@@ -25,5 +25,17 @@ function riscaItem(){
     target.classList.remove('completed');
   }
 }
+
+let botaoRemoverTudo = document.querySelector('#apaga-tudo');
+
+function apagaTudo() {
+  while (lista.firstChild) {
+    lista.removeChild(lista.firstChild);
+  }
+}
+
+
+
+botaoRemoverTudo.addEventListener('click',apagaTudo);
 lista.addEventListener('click',trocaFundo);
 lista.addEventListener('dblclick',riscaItem);
