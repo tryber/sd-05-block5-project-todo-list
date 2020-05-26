@@ -17,3 +17,12 @@ function eraseList(){
 }
 
 eraseButton.addEventListener('click', eraseList);
+
+function changeBGColor() {
+    let tagLI = document.getElementsByTagName("li");
+    for(let i = 0; i < tagLI.length; i += 1) {
+    event.target.style.backgroundColor = "rgb(128, 128, 128)";
+    } 
+  }
+
+  list.addEventListener('click', changeBGColor);
