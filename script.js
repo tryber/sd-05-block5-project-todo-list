@@ -1,3 +1,4 @@
+// Marcar o item com sublinhado e atribuir a classe completed
 const sublinharElemento = (tagLi) => {
   if (tagLi.style.textDecoration !== 'line-through') {
     tagLi.style.textDecoration = 'line-through';
@@ -6,8 +7,9 @@ const sublinharElemento = (tagLi) => {
     tagLi.style.textDecoration = 'none';
     tagLi.className = null;
   }
-}
+};
 
+// Adiciona evento fundo cinza
 const adicionarEventoFundoCinza = (tagLi) => {
   tagLi.addEventListener('click', () => {
     tagLi.style.backgroundColor = 'rgb(128, 128, 128)';
@@ -35,17 +37,19 @@ const criarElementoLista = () => {
   adicionarEventoFundoCinza(tagLi);
 };
 
+// Apagar todos os itens da lista
 const apagarTodosOsItens = () => {
   const tagPai = document.getElementById('lista-tarefas');
   while (tagPai.hasChildNodes()) {
     tagPai.removeChild(tagPai.firstChild);
-  };
+  }
 };
 
+// Remover itens finalizados
 const removerItensFinalizados = () => {
   while (document.querySelector('.completed')) {
     document.querySelector('.completed').remove();
-  };
+  }
 };
 
 const btn = document.getElementById('criar-tarefa');
@@ -54,14 +58,5 @@ btn.addEventListener('click', criarElementoLista);
 const btnApagarTudo = document.getElementById('apaga-tudo');
 btnApagarTudo.addEventListener('click', apagarTodosOsItens);
 
-let btnItensFinalizados = document.getElementById('remover-finalizados');
+const btnItensFinalizados = document.getElementById('remover-finalizados');
 btnItensFinalizados.addEventListener('click', removerItensFinalizados);
-
-// Marcar cor dos itens de cinza
-
-
-// Marcar o item com sublinhado e atribuir a classe completed
-
-
-// Apagar todos os itens da lista
-// Remover itens finalizados

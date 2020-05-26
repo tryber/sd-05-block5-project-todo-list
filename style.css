@@ -15,8 +15,8 @@ li {
 }
 
 .title {
-  text-align: center;
   padding: 10px;
+  text-align: center;
 }
 
 .article {
@@ -26,8 +26,8 @@ li {
 
 button {
   background-color: white;
-  color: black;
   border: 1px solid yellow;
+  color: black;
 }
 
 button:hover {
