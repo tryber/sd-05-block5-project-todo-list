@@ -15,8 +15,9 @@
           <button id='criar-tarefa' onclick="criarElemento()">Criar Tarefa</button>
         
     </header>
-    
+    <section>
         <ol id="lista-tarefas"></ol>
+    </section>
 
     
    
@@ -29,8 +30,7 @@
             let criar = document.createElement('li')
                 criar.innerHTML = recebeTexto  
                 document.getElementById('lista-tarefas').appendChild(criar)
-                recebeTexto.value = " "
-               console.log(criar)
+                recuperaTexto.value = " "
             }
             
  
