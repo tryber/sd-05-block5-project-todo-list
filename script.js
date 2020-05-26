@@ -36,12 +36,22 @@ function completedItems() {
 }
 listOfItems.addEventListener("dblclick", completedItems)
 
-//delete all list items
-let deleteAll = document.getElementById("apaga-tudo");
-
+//Delete all list items
+let deleteAllButton = document.getElementById("apaga-tudo");
 function deleteList() {
   listOfItems.innerText = "";
 }
 
-deleteAll.addEventListener("click", deleteList);
+deleteAllButton.addEventListener("click", deleteList);
 
+//Delete completed items
+let deleteCompletedButton = document.getElementById("remover-finalizados");
+let itemsCompleted = document.getElementsByClassName("completed");
+
+function deleteCompleted() {
+  for(let i = itemsCompleted.length - 1; i >= 0; i -= 1) {
+    itemsCompleted[i].remove();
+  }
+}
+
+deleteCompletedButton.addEventListener("click", deleteCompleted);
