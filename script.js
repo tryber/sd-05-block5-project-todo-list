@@ -33,7 +33,7 @@ const insereTarefaNaLista = (campoTarefas) => {
 
   adicionarEventoDeSublinhar(tagLi);
   adicionarEventoFundoCinza(tagLi);
-}
+};
 
 // criar elementos, adicionar na lista e apagar input adicionado
 const criarElementoLista = () => {
@@ -73,10 +73,10 @@ const salvarItensLocalStorage = () => {
 const recuperarListaLocalStorage = () => {
   const listaEmTexto = localStorage.getItem('lista');
   const list = JSON.parse(listaEmTexto);
-  for (let i = 0; i < list.length; i++) {
+  for (let i = 0; i < list.length; i += 1) {
     insereTarefaNaLista(list[i]);
   }
-}
+};
 
 const btn = document.getElementById('criar-tarefa');
 btn.addEventListener('click', criarElementoLista);
