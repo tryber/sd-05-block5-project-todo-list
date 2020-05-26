@@ -13,10 +13,9 @@
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
     </header>
     <section>
-        <input type="text" id="texto-tarefa">
+        <input type="text" id="texto-tarefa" placeholder="Digite seu texto aqui">
         <input type="button" id="criar-tarefa" value="Criar Tarefa" ondblclick="crElemento()">
         <ol id="lista-tarefas">
-            <li></li>
         </ol>
 
     </section>
@@ -29,8 +28,8 @@
            let criarLi = document.createElement('li')
                criarLi.innerHTML = recebeTexto  
                document.getElementById('lista-tarefas').appendChild(criarLi)
-               console.log("deu certo")
-        }
+               recuperaTexto.value = ""
+           }
 
     </script>
 </body>
