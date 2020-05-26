@@ -10,3 +10,14 @@ button{
 .completed{
     text-decoration:line-through;
 }
+/*---------------------------------*/
+
+#conteiner {
+    width: 800px;
+    height: 360px;
+    border: 2px solid;
+    background-color: green;
+    border-radius: 8px;
+    position: relative;
+    left: 130px;
+}
