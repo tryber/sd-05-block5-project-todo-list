@@ -41,7 +41,7 @@ let buttonDeleteCompleted = document.getElementById("remover-finalizados");
 let listCompleted = document.getElementsByClassName("completed");
 
 function deleteCompleted() {
-  for (let i = 0; i < listCompleted.length; i += 1) {
+  for (let i = listCompleted.length - 1; i >= 0; i -= 1) {
     listCompleted[i].remove();
   }
 }
