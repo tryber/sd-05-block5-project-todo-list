@@ -2,8 +2,9 @@
 //variáveis e constantes
 const button = document.querySelector("#criar-tarefa");
 const caixaDeTexto = document.querySelector("#texto-tarefa");
-let lista = document.querySelector("ol");
-let listaLi = document.querySelectorAll("li");
+const lista = document.querySelector("ol");
+const listaLi = document.getElementsByTagName("li");
+const clearButton = document.querySelector('#apaga-tudo')
 let completed = false;
 
 //funções e métodos
@@ -13,6 +14,9 @@ function add(){
     lista.appendChild(li);
     caixaDeTexto.value = "";
 }
+function clear(){
+    lista.innerHTML = "";
+};
 //eventos
 button.addEventListener("click",add);
 lista.addEventListener('click', function(event){
@@ -27,3 +31,4 @@ lista.addEventListener('dblclick', function(event){
         completed = false;
     }
 });
+clearButton.addEventListener('click', clear);
