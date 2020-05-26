@@ -22,13 +22,18 @@ buttonAdicionar.addEventListener('click', function () {
   inputText.value = '';
 });
 
-buttonLimpaTudo.addEventListener('click', function() {
-  let lis = document.querySelectorAll('li')
+buttonLimpaTudo.addEventListener('click', function () {
+  let lis = document.querySelectorAll('li');
   for (let i = 0; i < lis.length; i += 1) {
     lista.removeChild(lis[i]);
   }
- 
-})
-buttonLimpaFeitos.addEventListener('click', function() {
-  
-})
+});
+buttonLimpaFeitos.addEventListener('click', function () {
+  let lis = document.querySelectorAll('li');
+  for (let index = 0; index < lis.length; index += 1) {
+    let itemDaLista = lis[index];
+    if (itemDaLista.getAttribute('class')) {
+      lista.removeChild(lis[index]);
+    }
+  }
+});
