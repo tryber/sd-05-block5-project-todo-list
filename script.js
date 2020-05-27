@@ -8,38 +8,36 @@ const posBotaoSalvar = document.getElementById('salvar-tarefas');
 const posBotaoMoveCima = document.getElementById('mover-cima');
 const posBotaoMoveBaixo = document.getElementById('mover-baixo');
 
+function exchangeElements(element1, element2) {
+  var clonedElement1 = element1.cloneNode(true);
+  var clonedElement2 = element2.cloneNode(true);
+  element2.parentNode.replaceChild(clonedElement1, element2);
+  element1.parentNode.replaceChild(clonedElement2, element1);
+}
+
+function moveBaixo() {
+  const pegaTodosLi = document.querySelectorAll('li');
+  for (let i = 0; i<pegaTodosLi.length; i+=1) {
+    if (pegaTodosLi[i].classList.contains('coloreCinza')) {
+      exchangeElements(pegaTodosLi[i], pegaTodosLi[i].nextSibling);
+    }
+  }
+}
+
+posBotaoMoveBaixo.addEventListener('click', moveBaixo);
+
 function moveCima() {
   const pegaTodosLi = document.querySelectorAll('li');
-  console.log(pegaTodosLi);
   for (let i=0; i<pegaTodosLi.length; i+=1) {
     if (pegaTodosLi[i].classList.contains('coloreCinza')) {
       exchangeElements(pegaTodosLi[i], pegaTodosLi[i].previousSibling);
-
-      /* console.log("achei o elemento selecionado!!!!")
-      console.log("O elemento selecionado é " + pegaTodosLi[i]);
-      const pegaAnterior = pegaTodosLi[i].previousSibling;
-      console.log("O elemento anterior é: " + pegaAnterior)
-      let aux = pegaTodosLi[i];
-      pegaTodosLi[i] = pegaAnterior;
-      pegaTodosLi[i].previousSibling = aux;
-      console.log("O novo elemento selecionado é " + pegaTodosLi[i].innerHTML);
-      console.log("O elemento anterior é: " + pegaTodosLi[i].previousSibling.innerHTML); */
     }
   }
-  //console.log(pegaTodosLi);
-  //console.log(pegaAnterior);
 }
 
-function exchangeElements(element1, element2)
-{
-    var clonedElement1 = element1.cloneNode(true);
-    var clonedElement2 = element2.cloneNode(true);
 
-    element2.parentNode.replaceChild(clonedElement1, element2);
-    element1.parentNode.replaceChild(clonedElement2, element1);
 
-    //return clonedElement1;
-}
+
 
 posBotaoMoveCima.addEventListener('click', moveCima);
 
@@ -53,13 +51,7 @@ function salvarTarefas() {
   localStorage.clear()
   const pegaTudo = document.getElementById('lista-tarefas').innerHTML;
   localStorage.setItem('conteudo', pegaTudo);
-  /* const pegaTodosLi = document.querySelectorAll('#lista-tarefas li');
-  for (let i=0; i<pegaTodosLi.length; i+=1) {
-    let classe = pegaTodosLi[i].className;
-    let conteudo = pegaTodosLi[i].innerHTML;
-    localStorage.setItem(conteudo, classe);
-  } */
- }
+}
 
 posBotaoSalvar.addEventListener('click', salvarTarefas);
 
