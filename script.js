@@ -19,10 +19,11 @@ document.getElementById('criar-tarefa').addEventListener('click', criarTarefas);
 
 function selecaoitem(event) {
   const item = event.target;
-  if (item.classList.contains('selected')) {
-    item.classList.remove('selected');
-  } else { item.classList.add('selected'); }
-}
+ // if (item.classList.contains('selected')) {
+   // item.classList.remove('selected');
+  // } else {
+     item.classList.add('selected'); }
+//}
 
 document.getElementById('lista-tarefas').addEventListener('click', selecaoitem);
 
