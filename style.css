@@ -3,5 +3,8 @@ li, button{
     cursor: pointer;
 }
 .fundoCinza{
-    background-color: gray;
+    background-color: rgb(207, 205, 205);
+}
+.listaRiscada{
+    text-decoration: line-through;
 }

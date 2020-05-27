@@ -4,7 +4,8 @@ let input = document.getElementById("texto-tarefa");
 let adicionar = document.getElementById("criar-tarefa");
         
 adicionar.addEventListener("click", adicionaLista);
-listaTarefas.addEventListener('click', sombraCinza);      
+listaTarefas.addEventListener('click', fundoCinza); 
+listaTarefas.addEventListener('dblclick', listaRiscada)     
 function adicionaLista(){
              
         let lista = document.createElement("li");
@@ -12,7 +13,11 @@ function adicionaLista(){
         listaTarefas.appendChild(lista);
         input.value = "";
         }
-function sombraCinza(){
-let sombra = event.target;
-sombra.classList.add("fundoCinza");
+function fundoCinza(){
+    let sombra = event.target;
+    sombra.classList.toggle("fundoCinza");
+}
+function listaRiscada(){
+    let risco = event.target;
+    risco.classList.toggle("listaRiscada");  
 }
