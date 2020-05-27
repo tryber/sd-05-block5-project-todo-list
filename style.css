@@ -1,16 +1,45 @@
 body {
-  background-color: blanchedalmond;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16pt;
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18pt;
   line-height: 1.8em;
   margin: 30px 20px;
   text-align: center;
 }
 
+.button {
+  background-color: midnightblue;
+  color: gold;
+  cursor: pointer;
+  font-size: 12pt;
+  font-weight: bolder;
+  padding: 0.5%;
+  font-family: 'Open Sans', sans-serif;
+  }
+
+  .completed {
+    text-decoration: line-through black;
+  }
+
 h1 {
-  color:darkmagenta;
-  font-family: 'Balsamiq Sans', sans-serif;
-  font-size: 3em;
+  color: navy;
+  font-family: 'Rock Salt', sans-serif;
+  font-size: 3.5em;
+  line-height: 2em;
+}
+
+.header-container {
+  position: relative;
+  text-align: center;
+  margin-top: -30px;
+}
+
+.header-title {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 5em;
 }
 
 li {
@@ -23,19 +52,7 @@ li {
   margin-right: auto;
 }
 
-.completed {
-  text-decoration: line-through black;
-}
-
 .selected {
   background-color: gray;
 }
 
-.button {
-background-color: midnightblue;
-color: gold;
-cursor: pointer;
-font-size: 14pt;
-font-weight: bolder;
-padding: 0.5%;
-}

@@ -3,16 +3,19 @@
 <head>
   <title>Marina Barcelos - To Do List Project</title>
   <link rel="stylesheet" href="style.css" />
-  <link href='https://fonts.googleapis.com/css?family=Balsamiq+Sans' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
 </head>
 <body>
   <header>
-    <h1>Minha Lista de Tarefas</h1>
+    <div class="header-container">
+      <div class="header-title"><h1>Minha Lista de Tarefas</h1></div>
+      <img src="abstractgray.jpg" alt="Imagem abstrata que serve de fundo ao título" style="width: 100%">
+    </div>
   </header>
   <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo.</p>
   <div>
-    <input type="text" id="texto-tarefa" placeholder="Digite aqui uma tarefa" style="font-size:16pt; height:30px; width:50%"//><br><br>
+    <input type="text" id="texto-tarefa" placeholder="Digite aqui uma tarefa" style="font-size:16pt; height:30px; width:50%"/><br><br>
     <button id="criar-tarefa" class="button">Adicionar tarefa</button>
     <button id="remover-selecionado" class="button">Remover selecionados</button>
     <button id="remover-finalizados" class="button">Remover finalizadas</button>
