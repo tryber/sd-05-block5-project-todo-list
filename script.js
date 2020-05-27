@@ -82,7 +82,7 @@ taskBox.addEventListener('keyup', function (event) {
 orderedList.addEventListener('click', function (event) {
   const clicked = event.target;
   if (clicked.classList.contains('selected')) {
-    clicked.classList.remove('selected');
+    // clicked.classList.remove('selected');
   } else {
     removeSelectedClass();
     clicked.classList.add('selected');
