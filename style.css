@@ -9,7 +9,7 @@ h1 {
   font-size: 30px;
   position: absolute;
   right: 50%;
-  top: 10%;
+  top: 5%;
   transform: translate(50%, 50%);
 }
 
@@ -17,18 +17,83 @@ p {
   font-size: 15px;
   position: absolute;
   right: 50%;
-  top: 20%;
+  top: 15%;
   transform: translate(50%, 50%);
 }
 
 .input {
   position: absolute;
   right: 50%;
-  top: 30%;
+  top: 25%;
   transform: translate(50%, 50%);
 }
 
-  button , .item-lista {
+.lista {
+  position: absolute;
+  right: 60%;
+  top: 10%;
+  transform: translate(50%, 50%);
+  width: 50%;
+  height: 50%;
+}
+
+ol {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+li {
+  margin: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.setas {
+  position: absolute;
+  right: 20%;
+  top: 40%;
+  height: 30%;
+}
+
+.seta-cima {
+  position: absolute;
+  top: 0%;
+}
+
+.seta-baixo {
+  position: absolute;
+  top: 60%;
+}
+
+.botoes-limpar {
+  position: absolute;
+  bottom: 15%;
+  left: 15%;
+}
+
+.criar-tarefa {
+  position: absolute;
+  right: -25%;
+  background-color: forestgreen;
+	border-radius: 50%;
+	border: 2px solid limegreen;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 18px;
+}
+
+.remover-selecionado {
+  position: absolute;
+  right: -50%;
+  bottom: 30%;
+  background-color: firebrick;
+	border-radius: 50%;
+	border: 2px solid darkred;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 15px;
+}
+button , .item-lista {
   cursor: pointer;
 }
 

@@ -13,19 +13,19 @@
     </header>
     <section class="input">
       <input type="text" id="texto-tarefa" placeholder="Nome da tarefa">
-      <button id="criar-tarefa">Criar tarefa</button>
+      <button class="criar-tarefa" id="criar-tarefa">+</button>
     </section>
-    <section>
+    <section class="lista">
       <ol id="lista-tarefas"></ol>
     </section>
-    <section>
-      <button id="mover-cima" onclick="moveUp()">Mover para Cima</button>
-      <button id="mover-baixo" onclick="moveDown()">Mover para Baixo</button>
+    <section class="setas">
+      <button class="seta-cima" id="mover-cima" onclick="moveUp()">Mover para Cima</button>
+      <button class="seta-baixo" id="mover-baixo" onclick="moveDown()">Mover para Baixo</button>
     </section>
-    <section>
+    <section class="botoes-limpar">
       <button id="apaga-tudo">Limpar lista</button>
       <button id="remover-finalizados">Remover Finalizados</button>
-      <button id="remover-selecionado">Remover Selecionado</button>
+      <button class="remover-selecionado" id="remover-selecionado">X</button>
       <button id="salvar-tarefas">Salvar Tarefas</button>
     </section>
   </body>
