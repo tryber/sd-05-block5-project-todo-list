@@ -1,8 +1,34 @@
-header {
-  font-size: 20px;
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/fundo-de-folha-de-caderno-alinhado_42852-15.jpg");
 }
 
-button , .item-lista {
+h1 {
+  font-size: 30px;
+  position: absolute;
+  right: 50%;
+  top: 10%;
+  transform: translate(50%, 50%);
+}
+
+p {
+  font-size: 15px;
+  position: absolute;
+  right: 50%;
+  top: 20%;
+  transform: translate(50%, 50%);
+}
+
+.input {
+  position: absolute;
+  right: 50%;
+  top: 30%;
+  transform: translate(50%, 50%);
+}
+
+  button , .item-lista {
   cursor: pointer;
 }
 
