@@ -1,0 +1,41 @@
+#funcionamento {
+  font-style:italic;
+}
+
+li {
+  cursor: pointer;
+  color:white;
+}
+.botao {
+  background-color: green;
+  color:white;
+  border-radius: 10%;
+  border-color: green;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-family:fantasy;
+  font-size: 10px;
+}
+.inputStyle {
+  background-color:white;
+  border-radius: 9%;
+  border-color: black;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+body {
+  padding: 10px;
+  background-color: white;
+}
+section {
+  background-color: navy;
+  border-radius: 2%;
+  height: 100%;
+  width: 80%;
+}
+.completed {
+  text-decoration: line-through solid rgb(0,0,0) ;
+}
+.selected{
+  background-color: rgb(128,128,128);
+}
