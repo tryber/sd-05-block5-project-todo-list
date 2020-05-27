@@ -7,10 +7,18 @@ const posBotaoFinalizados = document.getElementById('remover-finalizados');
 const posBotaoSalvar = document.getElementById('salvar-tarefas');
 const posBotaoMoveCima = document.getElementById('mover-cima');
 const posBotaoMoveBaixo = document.getElementById('mover-baixo');
+const posBotaoRemoveSelecionado = document.getElementById('remover-selecionado');
+
+function removeSelecionado() {
+  const pegaSelecionados = document.querySelector('.coloreCinza');
+  pegaSelecionados.remove();
+}
+
+posBotaoRemoveSelecionado.addEventListener('click', removeSelecionado);
 
 function exchangeElements(element1, element2) {
-  var clonedElement1 = element1.cloneNode(true);
-  var clonedElement2 = element2.cloneNode(true);
+  let clonedElement1 = element1.cloneNode(true);
+  let clonedElement2 = element2.cloneNode(true);
   element2.parentNode.replaceChild(clonedElement1, element2);
   element1.parentNode.replaceChild(clonedElement2, element1);
 }
@@ -34,10 +42,6 @@ function moveCima() {
     }
   }
 }
-
-
-
-
 
 posBotaoMoveCima.addEventListener('click', moveCima);
 
