@@ -19,6 +19,9 @@ taskList.addEventListener('click', function (event) {
       clickCount = 0;
       if (event.target.className.includes('selected')) {
         event.target.classList.remove('selected');
+      } else if (!event.target.className.includes('selected') && document.querySelector('.selected') !== null) {
+        document.querySelector('.selected').classList.remove('selected');
+        event.target.classList.add('selected');
       } else {
         event.target.classList.add('selected');
       }
