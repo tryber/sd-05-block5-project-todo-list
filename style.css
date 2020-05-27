@@ -3,6 +3,7 @@
 }
 
 .criar-tarefa {
+  cursor: pointer;
   background-color: white;
   margin-left: 15px;
 }
