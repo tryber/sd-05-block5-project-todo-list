@@ -4,10 +4,10 @@ const adicionar = document.getElementById('criar-tarefa');
 const botaoRemoverTudo = document.querySelector('#apaga-tudo');
 const botaoApagarFinalizados=document.querySelector('#remover-finalizados');
 const botaoSalvar=document.querySelector('#salvar-tarefas');
+const botaoUp=document.querySelector('#mover-cima');
+const botaoDown=document.querySelector('#mover-baixo');
 
-// let storageContador=1;
-// localStorage.setItem('Task'+(storageContador),taskInput.value);
-// storageContador+=1;
+let selecionado='';
 
 adicionar.addEventListener('click',function(){
   let createEle = document.createElement('li');
@@ -19,8 +19,14 @@ adicionar.addEventListener('click',function(){
 
 function trocaFundo(){
   let target= event.target;
-  target.style.backgroundColor='rgb(128,128,128)';
+  if(target.className !== 'selecionado'){
+    target.className='selecionado'
+  }
+  else{
+    target.classList.remove('selecionado');
+  }
 }
+
 
 function riscaItem(){
   let target= event.target;
@@ -55,7 +61,16 @@ function loadLista() {
   let valoresLista = localStorage.getItem('Lista salva');
   lista.innerHTML=valoresLista;
 } 
+function moverCima() {
+  selecionado = document.querySelector('.selecionado');
+  if(selecionado.previousSibling != null){
+  let anterior = selecionado.previousSibling.innerHTML;
+  selecionado.previousSibling.innerHTML=selecionado.innerHTML;
+  selecionado.innerHTML =anterior;
+  }
+}
 
+botaoUp.addEventListener('click',moverCima);
 botaoSalvar.addEventListener('click',salvarLista);
 botaoApagarFinalizados.addEventListener('click',apagaFinalizados);
 botaoRemoverTudo.addEventListener('click',apagaTudo);

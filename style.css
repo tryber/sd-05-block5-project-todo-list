@@ -36,3 +36,6 @@ section {
 .completed {
   text-decoration: line-through solid rgb(0,0,0) ;
 }
+.selecionado{
+  background-color: rgb(128,128,128);
+}
