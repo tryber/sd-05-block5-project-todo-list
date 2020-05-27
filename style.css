@@ -9,3 +9,16 @@ body{
 li{
   cursor: pointer;
 }
+
+.completed{}
+
+ol{
+}
+.vista{
+  background-color: azure;
+  width: 500px;
+}
+
+.selected{
+  background-color:rgb(128, 128, 128);
+}
