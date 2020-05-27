@@ -49,7 +49,7 @@ let removerFinalizdos = document.getElementById('remover-finalizados')
 
 function limparListaTarefa(){
     let pg = document.getElementById('lista-tarefas')
-        pg.innerHTML= '';
+        pg.innerHTML= "";
 }
 
 let apagarTudo = document.getElementById('apaga-tudo')
