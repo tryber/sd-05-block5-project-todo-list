@@ -15,10 +15,10 @@ function additenbt(){
   document.getElementById("lista-tarefas").appendChild(li);
 }
 //----------------------------------------------------------------------------
-document.addEventListener("mouseover", passMouse);
-function passMouse(evento){
-  console.log(evento.target)
-  if (evento.target.className === "ponteiro"){
-   evento.target.style.cursor = "pointer";
-  }
-}
+// document.addEventListener("mouseover", passMouse);
+// function passMouse(evento){
+//   console.log(evento.target)
+//   if (evento.target.className === "ponteiro"){
+//    evento.target.style.cursor = "pointer";
+//   }
+// }
