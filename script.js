@@ -25,3 +25,8 @@ lista.addEventListener('dblclick',function(event){
     selected.className=selected.className.replace(" completed","")
   }
 })
+
+let botaoApagaTudo=document.getElementById("apaga-tudo")
+botaoApagaTudo.addEventListener("click",function(){
+  document.getElementById("lista-tarefas").innerHTML=""
+})
