@@ -8,6 +8,7 @@ const posBotaoSalvar = document.getElementById('salvar-tarefas');
 const posBotaoMoveCima = document.getElementById('mover-cima');
 const posBotaoMoveBaixo = document.getElementById('mover-baixo');
 const posBotaoRemoveSelecionado = document.getElementById('remover-selecionado');
+let quantidade = 0;
 
 function removeSelecionado() {
   const pegaSelecionados = document.querySelector('.coloreCinza');
@@ -24,21 +25,33 @@ function exchangeElements(element1, element2) {
 }
 
 function moveBaixo() {
+  contaItensLista();
   const pegaTodosLi = document.querySelectorAll('li');
-  for (let i = 0; i<pegaTodosLi.length; i+= 1) {
-    if (pegaTodosLi[i].classList.contains('coloreCinza')) {
-      exchangeElements(pegaTodosLi[i], pegaTodosLi[i].nextSibling);
+  if (quantidade > 1) {
+    for (let i = 0; i<pegaTodosLi.length; i += 1) {
+      if (pegaTodosLi[i].classList.contains('coloreCinza') && pegaTodosLi[i].nextSibling !== null) {
+          exchangeElements(pegaTodosLi[i], pegaTodosLi[i].nextSibling);
+      }
     }
   }
 }
 
 posBotaoMoveBaixo.addEventListener('click', moveBaixo);
 
-function moveCima() {
+function contaItensLista() {
   const pegaTodosLi = document.querySelectorAll('li');
-  for (let i=0; i<pegaTodosLi.length; i+=1) {
-    if (pegaTodosLi[i].classList.contains('coloreCinza')) {
-      exchangeElements(pegaTodosLi[i], pegaTodosLi[i].previousSibling);
+  quantidade = pegaTodosLi.length;
+  return quantidade;
+}
+
+function moveCima() {
+  contaItensLista();
+  const pegaTodosLi = document.querySelectorAll('li');
+  if (quantidade > 1) {
+    for (let i=0; i<pegaTodosLi.length; i += 1) {
+      if (pegaTodosLi[i].classList.contains('coloreCinza') && pegaTodosLi[i].previousSibling !== null ) {
+        exchangeElements(pegaTodosLi[i], pegaTodosLi[i].previousSibling);
+      }
     }
   }
 }
@@ -67,7 +80,7 @@ posListaTarefas.addEventListener('dblclick', adicionaCompleted);
 
 function coloreCinza(event) {
   const pegaTodosLi = document.querySelectorAll('#lista-tarefas li');
-  for (let i = 0; i < pegaTodosLi.length; i+=1) {
+  for (let i = 0; i < pegaTodosLi.length; i += 1) {
     if (pegaTodosLi[i].classList.contains('coloreCinza')) {
       pegaTodosLi[i].classList.remove('coloreCinza');
     }
@@ -93,11 +106,13 @@ function apagaFinalizados() {
 posBotaoFinalizados.addEventListener('click', apagaFinalizados);
 
 function adicionaItem() {
-  const criaLi = document.createElement('li');
-  posListaTarefas.appendChild(criaLi);
-  conteudoAdicionar = posTextoTarefa.value;
-  posListaTarefas.lastElementChild.innerHTML = conteudoAdicionar;
-  posTextoTarefa.value = '';
+  if (posTextoTarefa.value !== ''){
+    const criaLi = document.createElement('li');
+    posListaTarefas.appendChild(criaLi);
+    conteudoAdicionar = posTextoTarefa.value;
+    posListaTarefas.lastElementChild.innerHTML = conteudoAdicionar;
+    posTextoTarefa.value = '';
+  }
 }
 
 posBotaoAdicionar.addEventListener('click', adicionaItem);
