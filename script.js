@@ -22,7 +22,7 @@ function fundoCinza(){
 }
 function listaRiscada(){
     let risco = event.target;
-    risco.classList.toggle("listaRiscada");  
+    risco.classList.toggle("completed");  
 }
 function excluirLista(){
     let limparLista = event.target;

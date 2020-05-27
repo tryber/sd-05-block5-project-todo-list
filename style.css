@@ -5,6 +5,6 @@ li, button{
 .fundoCinza{
     background-color: rgb(128, 128, 128);
 }
-.listaRiscada{
+.completed{
     text-decoration: line-through;
 }
