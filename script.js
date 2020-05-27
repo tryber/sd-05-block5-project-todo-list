@@ -15,16 +15,17 @@ function addItemList() {
 }
 
 //Select Element - Change list item bg color to grey when clicked
-function selectItem(event) {
-if(event.target.classList.contains("selected")) {
-  event.target.classList.remove("selected");
-  return;
-} 
-for(item of listOfItems.children) {
-  item.classList.remove("selected");
-  event.target.classList.add("selected");
-}
-  
+function selectItem() {
+  if (event.target.classList.contains("selected")) {
+    event.target.classList.remove("selected");
+    return;
+  }
+  for (item of listOfItems.children) {
+    item.classList.remove("selected");
+    if (event.target !== listOfItems) {
+      event.target.classList.add("selected");
+    }
+  }
 }
 listOfItems.addEventListener("click", selectItem);
 
@@ -59,15 +60,15 @@ function deleteCompleted() {
 deleteCompletedButton.addEventListener("click", deleteCompleted);
 
 //Save and Load List
-let saveListButton = document.getElementById('salvar-tarefas');
+let saveListButton = document.getElementById("salvar-tarefas");
 function saveList() {
   let itemsList = listOfItems.innerHTML;
-  localStorage.setItem('list', itemsList);
+  localStorage.setItem("list", itemsList);
 }
-saveListButton.addEventListener('click', saveList);
+saveListButton.addEventListener("click", saveList);
 
 function loadList() {
-  listOfItems.innerHTML = localStorage.getItem('list');
+  listOfItems.innerHTML = localStorage.getItem("list");
 }
 window.onload = loadList;
 
