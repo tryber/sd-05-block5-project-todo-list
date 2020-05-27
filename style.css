@@ -13,7 +13,7 @@ button{
 /*---------------------------------*/
 
 #conteiner {
-    width: 680px;
+    width: 600px;
     height: 360px;
     border: 2px solid;
     background-color: greenyellow;
@@ -27,7 +27,7 @@ button{
     border: 1px solid;
     border-radius: 10px;
     position: relative;
-    left: 85px;
+    left: 45px;
     top: 10px;
     background-color: white;
 }
