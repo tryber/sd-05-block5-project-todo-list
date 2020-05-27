@@ -31,7 +31,7 @@ button {
   padding: 7px;
 }
 
-#texto-tarefa {
+input {
   border-radius: 7px;
   float: left;
   line-height: 25px;
@@ -40,8 +40,8 @@ button {
 
 .lista {
   background-color: white;
-  border-radius: 7px;
   border: solid 1px rgb(128 , 128 , 128);
+  border-radius: 7px;
   margin-left: 20%;
   width: 500px;
 }

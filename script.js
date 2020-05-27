@@ -21,8 +21,7 @@ function selecaoitem(event) {
   const item = event.target;
   if (item.classList.contains('selected')) {
     item.classList.remove('selected');
-  }
-  else { item.classList.add('selected'); }
+  } else { item.classList.add('selected'); }
 }
 
 document.getElementById('lista-tarefas').addEventListener('click', selecaoitem);
@@ -33,8 +32,7 @@ function completedItem(event) {
   const Citem = event.target;
   if (Citem.classList.contains('completed')) {
     Citem.classList.remove('completed');
-  }
-  else { Citem.classList.add('completed'); }
+  } else { Citem.classList.add('completed'); }
 }
 
 document.getElementById('lista-tarefas').addEventListener('dblclick', completedItem);
