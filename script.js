@@ -8,6 +8,7 @@ const moveCima = document.getElementById('mover-cima');
 const moveBaixo = document.getElementById('mover-baixo');
 
 function moveUp() {
+  let texto;
   const selected = document.querySelector('.selected');
   const lista = document.getElementById('lista-tarefas');
   const index = Array.prototype.indexOf.call(lista.children, selected);
@@ -17,7 +18,11 @@ function moveUp() {
     alert('A lista está vazia, bb!');
   } else if (index > 0) {
     const before = lista.children[index - 1];
-    lista.insertBefore(selected, before);
+    texto = before.innerText;
+    before.innerText = selected.innerText;
+    selected.innerText = texto;
+    before.click();
+    // lista.insertBefore(selected, before);
   } else {
     alert('Já é o topo da lista, bb!');
   }
