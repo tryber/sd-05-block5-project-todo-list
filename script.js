@@ -7,6 +7,7 @@ function createListItem() {
   li.className = "item-lista";
   if (textoTarefa.value === '') {
     alert('Você deve escrever algo!');
+    return;
   } else {
     listaTarefas.appendChild(li);
     li.innerHTML = textoTarefa.value;
@@ -20,14 +21,33 @@ function createListItem() {
     })
   }
 }
-// Botão pra apagar itens completos
+// Botão para apagar itens completos
 function deleteCompleted() {
   let completed = document.getElementsByClassName('completed');
   while (completed.length > 0) {
     completed[0].parentNode.removeChild(completed[0]);
   }
 }
-// Botão pra apagar lista inteira
+// Botão para apagar item selecionado
+function deleteSelected() {
+  let selected = document.getElementsByClassName('selected');
+  while (selected.length > 0) {
+    selected[0].parentNode.removeChild(selected[0]);
+  }
+}
+// Botão para apagar lista inteira
 function deleteListItem() {
   listaTarefas.innerHTML = '';
 }
+// Salvar no local storage
+function saveList() {
+  localStorage.clear();
+  localStorage.setItem('listaItens', listaTarefas.innerHTML);
+}
+// Resgatar o local storage
+function loadList() {
+  let savedList = localStorage.getItem('listaItens');
+  listaTarefas.innerHTML = savedList;
+}
+
+window.addEventListener('load', loadList());
