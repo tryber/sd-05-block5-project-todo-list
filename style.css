@@ -13,11 +13,26 @@ button{
 /*---------------------------------*/
 
 #conteiner {
-    width: 800px;
+    width: 680px;
     height: 360px;
     border: 2px solid;
-    background-color: green;
+    background-color: greenyellow;
     border-radius: 8px;
     position: relative;
-    left: 130px;
+    left: 45px;
+}
+#conteiner2 {
+    width: 500px;
+    height: 340px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: relative;
+    left: 85px;
+    top: 10px;
+    background-color: white;
+}
+header{
+    position: relative;
+    left: 10px;
+    top: 10px;
 }
