@@ -1,10 +1,11 @@
 // Carregando dados do localStorage
 function carregarDados() {
   const dados = localStorage.listaTarefas;
+  console.log(dados);
   if (dados !== undefined) {
-    const listaDados = dados.split(',');
-    const li = document.createElement('li');
+    const listaDados = dados.split(',');    
     for (let i = 0; i < listaDados.length; i += 1) {
+      const li = document.createElement('li');
       li.className = 'item-lista';
       li.innerText = listaDados[i];
       document.querySelector('ol').appendChild(li);
