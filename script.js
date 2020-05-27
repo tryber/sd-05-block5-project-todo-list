@@ -30,8 +30,13 @@ btnCreateTarefa.addEventListener('click', function () {
 // Evento que seleciona item ao ser clicado
 const clickItem = document.querySelector('ol');
 clickItem.addEventListener('click', function (event) {
-  const itemEscolhido = event.target;
-  itemEscolhido.classList.toggle('selected');
+  if (document.querySelectorAll('li').length) {
+    const itemEscolhido = event.target;
+    itemEscolhido.classList.toggle('selected');
+  }
+  else {
+    alert('Não existem itens na lista para serem selecionados.')
+  }
 });
 
 // Evento que risca item ao dar dois cliques
