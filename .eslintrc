@@ -1,15 +1,10 @@
 {
-  "extends": "airbnb",
-  "rules": {
-    "no-alert": "off",
-    "prefer-arrow-callback": "off",
-    "func-names": "off",
-    "arrow-parens": [2, "always"],
-    "no-param-reassign": "off"
-  },
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["html", "prettier"],
+    "rules": {
+      "prettier/prettier": ["error"],},
   "env": {
+    "es6": true,
     "browser": true,
-    "node": true,
-    "jest": true
   }
 }
