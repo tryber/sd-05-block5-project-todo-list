@@ -16,10 +16,6 @@ function addItemList() {
 
 //Select Element - Change list item bg color to grey when clicked
 function selectItem(event) {
-  if (event.target.classList.contains("selected")) {
-    event.target.classList.remove("selected");
-    return;
-  }
   for (item of listOfItems.children) {
     item.classList.remove("selected");
     if (event.target !== listOfItems) {
@@ -75,14 +71,12 @@ window.onload = loadList;
 //Move items up
 function moveUp() {
   const selectedElement = document.getElementsByClassName("selected")[0];
-  if(selectedElement !== null || selectedElement.classList !== undefined){
   if(selectedElement.previousElementSibling !== null) {
     const saveText = selectedElement.previousElementSibling.innerText;
     selectedElement.previousElementSibling.innerText = selectedElement.innerText;
     selectedElement.innerText = saveText;
     selectedElement.classList.remove("selected");
     selectedElement.previousElementSibling.classList.add("selected");
-  }
 }
 }
 
@@ -92,7 +86,6 @@ moveUpButton.addEventListener("click", moveUp);
 //Move items down
 function moveDown() {
   const selectedElement =  document.getElementsByClassName("selected")[0];
-  if(selectedElement !== null || selectedElement.classList !== undefined){
   if(selectedElement.nextElementSibling !== null) {
     const saveText = selectedElement.nextSibling.innerText;
     selectedElement.nextElementSibling.innerText = selectedElement.innerText;
@@ -100,7 +93,6 @@ function moveDown() {
     selectedElement.classList.remove("selected");
     selectedElement.nextElementSibling.classList.add("selected");
   }
-}
 } 
 let moveDownButton = document.getElementById("mover-baixo");
 moveDownButton.addEventListener("click", moveDown);
