@@ -1,8 +1,27 @@
-// Deve haver uma lista ordenada de tarefas com o id="lista-tarefas"
-// Os itens da lista de tarefas devem ser ordenados por ordem de criação.
-// Ao passar o mouse sobre qualquer botão e qualquer item da lista
+// VARIÁVEIS
 
-// o ícone do mouse deve mudar para uma mãozinha apontando-o.
+const addTarefa = document.getElementById('lista-tarefas');
+const inputValue = document.getElementById('texto-tarefa');
+const btnAdicionar = document.getElementById('criar-tarefa');
+const btnApagar = document.getElementById('apaga-tudo');
+const btnRemover = document.getElementById('remover-finalizados');
+const btnSalvar = document.getElementById('salvar-tarefas');
+const btnMoverCima = document.getElementById('mover-cima');
+const btnMoberBaixo = document.getElementById('mover-baixo');
+const btnRemoverSelecionado = document.getElementById('remover-selecionado');
+
+// FUNÇÕES
+
+function criaTarefa() {
+  const task = document.createElement('li');
+  addTarefa.appendChild(task);
+  task.innerText = inputValue.value;
+  inputValue.value = '';
+}
+
+// EVENT LISTENERS
+
+btnAdicionar.addEventListener('click', criaTarefa);
 
 // Ao clicar em um item da lista, altere a cor de fundo do item para cinza rgb(128,128,128).
 

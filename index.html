@@ -8,21 +8,23 @@
 </head>
 <body>
   <section class="list-box">
-    <header>Minha Lista de Tarefas</header>
-    <p id="funcionamento"><em><small>Clique duas vezes em um item para marcá-lo como completo</small></em></p>
-    <form>
-      <label for="criar-tarefa">
-        <input type="text" id="texto-tarefa">
-        <button id="criar-tarefa">Adicionar</button>
-      </label>
-    </form>
-    <section class="lista-ordenada">
-      <ol id="lista-tarefas"></ol>
+    <header class="title-list"><h2>Lista de Tarefas</h2></header>
+    <p id="funcionamento" class="funcionamento"><em><small>Clique duas vezes em um item para marcá-lo como completo</small></em></p>
+    <section class="input-button">
+      <label for="criar-tarefa"></label>
+      <input type="text" id="texto-tarefa">
+      <button type="button" id="criar-tarefa" class="btn">Adicionar</button>
     </section>
     <section class="btns">
-      <button id="apaga-tudo">LIMPAR LISTA</button>
-      <button id="remover-finalizados">LIMPAR FINALIZADOS</button>
-      <button id="salvar-tarefas">SALVAR</button>
+      <button id="apaga-tudo" class="btn">LIMPAR LISTA</button>
+      <button id="remover-finalizados" class="btn">LIMPAR FINALIZADOS</button>
+      <button id="salvar-tarefas" class="btn">SALVAR</button>
+      <button id="mover-cima" class="btn">MOVER PARA CIMA</button>
+      <button id="mover-baixo" class="btn">MOVER PARA BAIXO</button>
+      <button id="remover-selecionado" class="btn">REMOVER SELECIONADO</button>
+    </section>
+    <section class="lista-ordenada">
+      <ol id="lista-tarefas" class="listado"></ol>
     </section>
   </section>
   <footer class="rodape"></footer>
