@@ -1,12 +1,14 @@
 // Carregando dados do localStorage
 function carregarDados() {
   const dados = localStorage.listaTarefas;
-  const listaDados = dados.split(',');
-  let li = document.createElement('li');
-  for (let i = 0; i < listaDados.length; i += 1) {
-    li.className = 'item-lista';
-    li.innerText = listaDados[i];
-    document.querySelector('ol').appendChild(li);
+  if (dados !== undefined) {
+    const listaDados = dados.split(',');
+    const li = document.createElement('li');
+    for (let i = 0; i < listaDados.length; i += 1) {
+      li.className = 'item-lista';
+      li.innerText = listaDados[i];
+      document.querySelector('ol').appendChild(li);
+    }
   }
 }
 carregarDados();
@@ -94,7 +96,7 @@ function moveUp() {
   else {
     alert('Gentileza escolher apenas um item para mover.');
   }
-};
+}
 
 // Função do botão que move item selecionado para baixo
 function moveDown() {
@@ -120,10 +122,10 @@ function moveDown() {
   else {
     alert('Gentileza escolher apenas um item para mover.');
   }
-};
+}
 
 // Evento do botão que salva a lista no localStorage
-btnSalvarTarefas = document.querySelector('#salvar-tarefas');
+const btnSalvarTarefas = document.querySelector('#salvar-tarefas');
 btnSalvarTarefas.addEventListener('click', function () {
   const listaTarefas = document.querySelectorAll('li');
   const salvarDados = [];
