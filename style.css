@@ -1,0 +1,59 @@
+body {
+  background-color: darkblue;
+}
+
+h1 {
+  color: azure;
+  margin-left: 20%;
+  width: 500px;
+}
+
+p {
+  color: gray;
+}
+
+.inputs {
+  margin-left: 20%;
+  width: 500px;
+}
+
+li {
+  cursor: pointer;
+}
+
+button {
+  background-color: greenyellow;
+  border: solid 1px transparent;
+  border-radius: 37px;
+  color: black;
+  display: inline-block;
+  line-height: 25px;
+  padding: 7px;
+}
+
+input {
+  border-radius: 7px;
+  float: left;
+  line-height: 25px;
+  margin-right: 5px;
+}
+
+.lista {
+  background-color: white;
+  border: solid 1px rgb(128 , 128 , 128);
+  border-radius: 7px;
+  margin-left: 20%;
+  width: 500px;
+}
+
+.botoes {
+  margin-left: 20%;
+}
+
+.selected {
+  background-color: rgb(128 , 128 , 128);
+}
+
+.completed {
+  text-decoration: line-through;
+}
