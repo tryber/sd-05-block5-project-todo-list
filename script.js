@@ -2,14 +2,14 @@
 function criarElemento(){
     let recuperaOL = document.getElementById('lista-tarefas');
     let recuperaTexto = document.getElementById('texto-tarefa');
-    let recebeTexto = recuperaTexto.value
+    let recebeTexto = recuperaTexto.value;
     let criar = document.createElement('li');
-        criar.innerHTML = recebeTexto  
+        criar.innerHTML = recebeTexto;  
         document.getElementById('lista-tarefas').appendChild(criar);
         recuperaTexto.value = " ";
     }
-let criarTF = document.getElementById('criar-tarefa')
-criarTF.addEventListener('click',criarElemento)
+let criarTF = document.getElementById('criar-tarefa');
+criarTF.addEventListener('click',criarElemento);
 
 
 let itemLista = document.getElementById('lista-tarefas');
@@ -24,7 +24,7 @@ itemLista.addEventListener('click',selecionarItem);
 let riscaItemDaLista = document.getElementById('lista-tarefas');
 
 function selecionarItParaRiscar(event){
-    let itemSelecionado2 = event.target
+    let itemSelecionado2 = event.target;
     itemSelecionado2.classList.toggle('completed');
 }
 
