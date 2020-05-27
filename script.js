@@ -7,7 +7,7 @@ const clearButton = document.querySelector('#apaga-tudo');
 let completed = false;
 
 // funções e métodos
-function add (){
+function add () {
   const li = document.createElement('li');
   li.innerText = caixaDeTexto.value;
   lista.appendChild(li);
