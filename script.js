@@ -21,6 +21,13 @@ function createListItem() {
   }
 }
 // Botão pra apagar itens completos
+function deleteCompleted() {
+  let completed = document.getElementsByClassName('completed');
+  while (completed.length > 0) {
+    completed[0].parentNode.removeChild(completed[0]);
+  }
+}
+// Botão pra apagar lista inteira
 function deleteListItem() {
   listaTarefas.innerHTML = '';
 }
