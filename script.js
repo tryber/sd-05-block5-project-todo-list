@@ -23,30 +23,34 @@ function updateList(text) {
   });
 }
 function moveUp() {
-  const itens = taskList.children;
-  for (let i = 1; i < itens.length; i += 1) {
-    if (itens[i].className.includes('selected')) {
-      const currentItem = itens[i - 1].innerHTML;
-      taskList.children[i - 1].innerHTML = taskList.children[i].innerHTML;
-      taskList.children[i - 1].className = taskList.children[i].className;
-      taskList.children[i].classList.remove('selected');
-      taskList.children[i].classList.remove('completed');
-      taskList.children[i].innerHTML = currentItem;
-    }
+  let selected = document.querySelector('.selected');
+  if(!selected) return;
+  let previous = selected.previousElementSibling;
+  if(!previous) return;
+  const text = previous.innerText;
+  previous.innerText = selected.innerText;
+  previous.classList.add('selected');
+  if(selected.className.includes('completed') && !previous.className.includes('completed')){
+    previous.classList.add('completed');
+    selected.classList.remove('completed')
   }
+  selected.innerText = text;
+  selected.classList.remove('selected');
 }
 function moveDown() {
-  const itens = taskList.children;
-  for (let i = itens.length - 2; i >= 0; i -= 1) {
-    if (itens[i].className.includes('selected')) {
-      const currentItem = itens[i + 1].innerHTML;
-      taskList.children[i + 1].innerHTML = taskList.children[i].innerHTML;
-      taskList.children[i + 1].className = taskList.children[i].className;
-      taskList.children[i].classList.remove('selected');
-      taskList.children[i].classList.remove('completed');
-      taskList.children[i].innerHTML = currentItem;
-    }
+  let selected = document.querySelector('.selected');
+  if(!selected) return;
+  let next = selected.nextElementSibling;
+  if(!next) return;
+  const text = next.innerText;
+  next.innerText = selected.innerText;
+  next.classList.add('selected');
+  if(selected.className.includes('completed') && !next.className.includes('completed')){
+    next.classList.add('completed');
+    selected.classList.remove('completed')
   }
+  selected.innerText = text;
+  selected.classList.remove('selected');
 }
 function saveList() {
   const itens = taskList.children;
