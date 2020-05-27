@@ -25,7 +25,7 @@ function exchangeElements(element1, element2) {
 
 function moveBaixo() {
   const pegaTodosLi = document.querySelectorAll('li');
-  for (let i = 0; i<pegaTodosLi.length; i+ =1) {
+  for (let i = 0; i<pegaTodosLi.length; i+= 1) {
     if (pegaTodosLi[i].classList.contains('coloreCinza')) {
       exchangeElements(pegaTodosLi[i], pegaTodosLi[i].nextSibling);
     }
