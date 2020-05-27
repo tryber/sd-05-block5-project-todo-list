@@ -6,14 +6,18 @@ const apagaTudo = document.getElementById('apaga-tudo');
 const botaoSalvarTarefas = document.getElementById('salvar-tarefas');
 const botaoRemoverFinalizados = document.getElementById('remover-finalizados');
 const botaoRemoverSelecionado = document.getElementById('remover-selecionado');
+const botaoCima = document.getElementById('mover-cima');
+const botaoBaixo = document.getElementById('mover-baixo');
 let target = '';
 let itemSelecionado = '';
+
 
 // Funções
 function acrescentarTarefa() {
   const li = document.createElement('li');
   listaTarefas.appendChild(li);
   li.innerText = textoTarefa.value;
+  li.classList.add('item-tarefa');
   textoTarefa.value = '';
 }
 
@@ -39,11 +43,10 @@ function getList() {
 }
 
 function seleciona() {
-  if (itemSelecionado.classList !== undefined) {
-    itemSelecionado.classList.remove('selected');
+  if (event.target.classList.contains('item-tarefa')) {
+    event.target.classList.add('selected');
+    itemSelecionado = event.target;
   }
-  event.target.classList.add('selected');
-  itemSelecionado = event.target;
 }
 
 function removeDone() {
@@ -63,6 +66,27 @@ function adicionarTarefaEnter(tecla) {
   }
 }
 
+function moverCima() {
+  if (itemSelecionado.previousElementSibling) {
+    listaTarefas.insertBefore(itemSelecionado, itemSelecionado.previousElementSibling);
+  } else if (!itemSelecionado.previousElementSibling) {
+    alert('O item selecionado já é o topo da lista!');
+  } else {
+    alert('É preciso selecionar um item para mover!');
+  }
+}
+
+function moverBaixo() {
+  let proximoItem = itemSelecionado.nextElementSibling;
+  if (proximoItem) {
+    listaTarefas.insertBefore(itemSelecionado, proximoItem.nextElementSibling);
+  } else if (!proximoItem) {
+    alert('O item selecionado já é o final da lista!');
+  } else {
+    alert('É preciso selecionar um item para mover!')
+  }
+}
+
 // Event Listners
 textoTarefa.addEventListener('keyup', adicionarTarefaEnter);
 criarTarefa.addEventListener('click', acrescentarTarefa);
@@ -73,3 +97,5 @@ botaoRemoverFinalizados.addEventListener('click', removeDone);
 botaoRemoverSelecionado.addEventListener('click', removeSelected);
 botaoSalvarTarefas.addEventListener('click', saveList);
 getList();
+botaoCima.addEventListener('click', moverCima);
+botaoBaixo.addEventListener('click', moverBaixo);
