@@ -19,22 +19,22 @@ adicionar.addEventListener('click',function(){
 
 function trocaFundo(){
   let target= event.target;
-  if(target.className !== 'selecionado'){
-    target.className='selecionado'
+  if(target.classList.contains('selected')){
+    target.classList.remove('selected');
   }
   else{
-    target.classList.remove('selecionado');
+    target.classList.add('selected');
   }
 }
 
 
 function riscaItem(){
   let target= event.target;
-  if(target.className !== 'completed'){
-    target.className='completed'
+  if(target.classList.contains('completed')){
+    target.classList.remove('completed');
   }
   else{
-    target.classList.remove('completed');
+    target.classList.add('completed');
   }
 }
 
@@ -62,11 +62,12 @@ function loadLista() {
   lista.innerHTML=valoresLista;
 } 
 function moverCima() {
-  selecionado = document.querySelector('.selecionado');
+  selecionado = document.querySelector('.selected');
   if(selecionado.previousSibling != null){
-  let anterior = selecionado.previousSibling.innerHTML;
-  selecionado.previousSibling.innerHTML=selecionado.innerHTML;
-  selecionado.innerHTML =anterior;
+    let anterior = selecionado.previousSibling.innerHTML;
+    selecionado.previousSibling.innerHTML=selecionado.innerHTML;
+    selecionado.innerHTML =anterior;
+    selecionado.classList.remove('selected');
   }
 }
 
