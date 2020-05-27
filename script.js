@@ -6,6 +6,16 @@ const removeCompleted = document.getElementById('remover-finalizados');
 const removeSelected = document.getElementById('remover-selecionado');
 const moveCima = document.getElementById('mover-cima');
 const moveBaixo = document.getElementById('mover-baixo');
+const salvaLista = document.getElementById('salva-lista');
+const itensSalvos =  localStorage;
+
+function saveItems() {
+  localStorage.setItem('itens', orderedList.innerHTML);
+}
+
+salvaLista.onclick = function () {
+  saveItems();
+}
 
 function moveUp() {
   const selected = document.querySelector('.selected');
@@ -85,12 +95,12 @@ cleanList.onclick = function () {
 
 removeCompleted.onclick = function () {
   const items = document.getElementsByClassName('completed');
-  if (items.length > 0) {
+  if (items.length <= 0) {
+    alert('É necessário ter tarefas completadas para limpar!');
+  } else {
     while (document.querySelector('.completed')) {
       document.querySelector('.completed').remove();
     }
-  } else {
-    alert('É necessário ter tarefas completadas para limpar!');
   }
 };
 
@@ -107,3 +117,9 @@ removeSelected.onclick = function () {
 
 moveCima.onclick = moveUp;
 moveBaixo.onclick = moveDown;
+window.onload = function () {
+  let items = itensSalvos.getItem('itens');
+  if (items.length) {
+    orderedList.innerHTML = items;
+  } 
+}
