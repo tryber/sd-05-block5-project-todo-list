@@ -3,8 +3,8 @@ let listaTarefas = document.getElementById("lista-tarefas");
 let input = document.getElementById("texto-tarefa");
 let adicionar = document.getElementById("criar-tarefa");
         
-adicionar.addEventListener("click", adicionaLista)
-        
+adicionar.addEventListener("click", adicionaLista);
+listaTarefas.addEventListener('click', sombraCinza);      
 function adicionaLista(){
              
         let lista = document.createElement("li");
@@ -12,3 +12,7 @@ function adicionaLista(){
         listaTarefas.appendChild(lista);
         input.value = "";
         }
+function sombraCinza(){
+let sombra = event.target;
+sombra.classList.add("fundoCinza");
+}

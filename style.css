@@ -1,1 +1,7 @@
 /* Estilizado por Elisangelo */
+li, button{
+    cursor: pointer;
+}
+.fundoCinza{
+    background-color: gray;
+}
