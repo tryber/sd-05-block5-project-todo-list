@@ -13,9 +13,6 @@ function saveItems() {
   localStorage.setItem('itens', orderedList.innerHTML);
 }
 
-salvaLista.onclick = function () {
-  saveItems();
-}
 
 function moveUp() {
   const selected = document.querySelector('.selected');
@@ -114,6 +111,10 @@ removeSelected.onclick = function () {
     alert('Não há item selecionado!');
   }
 };
+
+salvaLista.onclick = function () {
+  saveItems();
+}
 
 moveCima.onclick = moveUp;
 moveBaixo.onclick = moveDown;
