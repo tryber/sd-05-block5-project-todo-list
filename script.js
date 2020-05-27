@@ -27,7 +27,6 @@ function trocaFundo(){
   }
 }
 
-
 function riscaItem(){
   let target= event.target;
   if(target.classList.contains('completed')){
@@ -66,6 +65,7 @@ function moverCima() {
   if(selecionado.previousSibling != null){
     let anterior = selecionado.previousSibling.innerHTML;
     selecionado.previousSibling.innerHTML=selecionado.innerHTML;
+    selecionado.previousSibling.classList.add('selected');
     selecionado.innerHTML =anterior;
     selecionado.classList.remove('selected');
   }
