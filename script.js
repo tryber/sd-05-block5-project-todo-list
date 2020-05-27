@@ -8,7 +8,8 @@ function criarElemento(){
         document.getElementById('lista-tarefas').appendChild(criar);
         recuperaTexto.value = " ";
     }
-
+let criarTF = document.getElementById('criar-tarefa')
+criarTF.addEventListener('click',criarElemento)
 
 
 let itemLista = document.getElementById('lista-tarefas');
