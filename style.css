@@ -22,7 +22,12 @@ button {
 
 li {
   cursor: pointer;
+  font-family: monospace;
   line-height: 30px;
+}
+
+.selected {
+  background-color: gray;
 }
 
 .completed {
