@@ -58,17 +58,29 @@ li {
 .seta-cima {
   position: absolute;
   top: 0%;
+  background-color: midnightblue;
+	border-radius: 50%;
+	border: 2px solid navy;
+	cursor: pointer;
+	color: white;
+	font-size: 18px;
 }
 
 .seta-baixo {
   position: absolute;
   top: 60%;
+  background-color: midnightblue;
+	border-radius: 50%;
+	border: 2px solid navy;
+	cursor: pointer;
+	color: white;
+	font-size: 18px;
 }
 
 .botoes-limpar {
   position: absolute;
-  bottom: 15%;
-  left: 15%;
+  bottom: 5%;
+  left: 20%;
 }
 
 .criar-tarefa {
@@ -78,21 +90,52 @@ li {
 	border-radius: 50%;
 	border: 2px solid limegreen;
 	cursor: pointer;
-	color: #ffffff;
+	color: white;
 	font-size: 18px;
 }
 
 .remover-selecionado {
   position: absolute;
-  right: -50%;
-  bottom: 30%;
-  background-color: firebrick;
+  right: -45%;
+  top: 0%;
+  background-color: darkred;
 	border-radius: 50%;
-	border: 2px solid darkred;
+	border: 2px solid firebrick;
 	cursor: pointer;
-	color: #ffffff;
-	font-size: 15px;
+	color: white;
+	font-size: 18px;
 }
+
+.apaga-tudo {
+  background-color: darkred;
+	border-radius: 20px;
+	border: 1px solid firebrick;
+	cursor: pointer;
+	color: white;
+	font-size: 15px;
+	padding: 5px 15px;
+}
+
+.remover-finalizados {
+  background-color: midnightblue;
+	border-radius: 20px;
+	border: 1px solid navy;
+	cursor: pointer;
+	color: white;
+	font-size: 15px;
+	padding: 5px 15px;
+}
+
+.salvar-tarefas {
+  background-color: forestgreen;
+	border-radius: 20px;
+	border: 1px solid limegreen;
+	cursor: pointer;
+	color: white;
+	font-size: 15px;
+	padding: 5px 15px;
+}
+
 button , .item-lista {
   cursor: pointer;
 }
