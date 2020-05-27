@@ -10,3 +10,4 @@ criarTarefas.addEventListener('click', function () {
   tarefa.innerText = textoTarefa.value;
   textoTarefa.value = ""
 });
+
