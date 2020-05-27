@@ -28,3 +28,14 @@ criarTarefas.addEventListener('click', function () {
     }
   })
 });
+
+apagaTudo.addEventListener('click', function(){
+  listaTarefas.innerHTML = "";
+});
+
+removerFinalizados.addEventListener('click', function(){
+  let riscados = document.getElementsByClassName('riscarLetra')
+  for (let i = riscados.length -1; i >= 0; i--){
+    riscados[i].remove();
+  }
+});
