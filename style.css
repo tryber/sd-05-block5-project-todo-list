@@ -2,8 +2,10 @@ button {
   cursor: pointer;
 }
 li {
+    
   cursor: pointer;
 }
 .completed {
+
   text-decoration: line-through;
 }
