@@ -2,7 +2,6 @@ const button = document.getElementById('criar-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
 const tarefas = document.getElementById('texto-tarefa');
 const eraseAll = document.getElementById('apaga-tudo');
-let itensDaLista = document.getElementsByTagName('li');
 
 button.addEventListener('click', function addTarefa() {
   const intensParaALista = tarefas.value;
@@ -18,5 +17,5 @@ button.addEventListener('click', function addTarefa() {
   });
 });
 eraseAll.addEventListener('click', function apagarTudo() {
-  listaTarefas.innerHTML = "";
+  listaTarefas.innerHTML = '';
 });
