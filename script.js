@@ -11,3 +11,15 @@ botao.addEventListener('click', function () {
 lista.addEventListener('mouseover', function () {
   document.body.style.cursor = 'pointer'
 })
+lista.addEventListener('click', function (event) {
+  let selected = event.target
+
+  alert(selected)
+  if (selected.style.backgroundColor == "") {
+    selected.style.backgroundColor = "rgb(128,128,128)"
+  } else {
+    alert("opa")
+    selected.style.backgroundColor = "null"
+  }
+
+})
