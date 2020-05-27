@@ -3,7 +3,8 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
-button, li {
+button,
+li {
   cursor: pointer;
 }
 
@@ -11,18 +12,14 @@ input {
   width: 260px;
 }
 
-#lista-tarefas {
-  margin: auto;
-  text-align: left;
-}
-
-#lista-tarefas li {
+li {
   border-radius: 5px;
   color: black;
   font-size: 25px;
   list-style: none;
   margin: 5px 0;
   padding: 10px;
+  text-align: left;
 }
 
 .container {
