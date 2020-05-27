@@ -8,11 +8,11 @@ let a = "";
 botaoAdd.addEventListener ('click', adicionar);
 
 function adicionar () {
-    if (tarefa.value !== " ") {
+    if (tarefa.value !== "") {
         const li = document.createElement ('li');
         li.innerText = tarefa.value;
         lista.appendChild (li);  
-        tarefa.value = " ";
+        tarefa.value = "";
     }
 
     
