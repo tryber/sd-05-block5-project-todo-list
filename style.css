@@ -1,6 +1,14 @@
 @charset "UTF-8";
 
 /* Editar o mouse */
-.botoes:hover, .item-lista:hover {
+button, .item-lista {
   cursor: pointer;
+}
+
+/* Editar a lista */
+.selected {
+  background-color: rgb(128,128,128);
+}
+.completed {
+  text-decoration: line-through;
 }
