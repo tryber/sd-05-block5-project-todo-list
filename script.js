@@ -38,15 +38,9 @@ function moveBaixo() {
 
 posBotaoMoveBaixo.addEventListener('click', moveBaixo);
 
-function contaItensLista() {
+function moveCima() {
   const pegaTodosLi = document.querySelectorAll('li');
   quantidade = pegaTodosLi.length;
-  return quantidade;
-}
-
-function moveCima() {
-  contaItensLista();
-  const pegaTodosLi = document.querySelectorAll('li');
   if (quantidade > 1) {
     for (let i=0; i<pegaTodosLi.length; i += 1) {
       if (pegaTodosLi[i].classList.contains('coloreCinza') && pegaTodosLi[i].previousSibling !== null) {
