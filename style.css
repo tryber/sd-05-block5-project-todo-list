@@ -33,3 +33,6 @@ section {
   height: 100%;
   width: 80%;
 }
+.completed {
+  text-decoration: line-through solid rgb(0,0,0) ;
+}

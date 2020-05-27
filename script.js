@@ -25,7 +25,7 @@ function trocaFundo(){
 function riscaItem(){
   let target= event.target;
   if(target.style.textDecoration !== 'line-through'){
-    target.style.textDecoration='line-through rgb(0,0,0) solid';
+    target.style.textDecoration='line-through';
     target.className='completed'
   }
   else{
@@ -50,21 +50,12 @@ function apagaFinalizados() {
 
 function salvarLista() {
   localStorage.clear();
-  let auxSalvar = document.querySelectorAll('li');
-  for(let i = 0; i<auxSalvar.length;i+=1){
-    console.log(auxSalvar[i]); 
-    localStorage.setItem('Task'+i,auxSalvar[i].innerHTML);  
-    localStorage.setItem('Task'+i,auxSalvar[i].className); 
-  }
+  localStorage.setItem('Lista salva',lista.innerHTML);
 }
 
 function loadLista() {
-  for (let i=0;i<localStorage.length;i+=1){
-    let cEle = document.createElement('li');
-    cEle.innerHTML=localStorage.getItem('Task'+i);
-    console.log(cEle);
-    lista.appendChild(cEle);
-  }
+  let valoresLista = localStorage.getItem('Lista salva');
+  lista.innerHTML=valoresLista;
 } 
 
 botaoSalvar.addEventListener('click',salvarLista);
