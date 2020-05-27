@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Minha lista de tarefas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>to-do list</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="https://image.flaticon.com/icons/png/512/1950/1950715.png">
 </head>
 <body>
-  <header>
-    <h1>Minha Lista de Tarefas</h1>
-  </header>
-  <div class="add">
-    <input id="texto-tarefa"><button id="criar-tarefa" class="criar-tarefa">Criar tarefa</button>
+  <div class="main-div">  
+    <header>
+      <h1>To do list</h1>
+    </header>
+    <div class="add">
+      <input id="texto-tarefa" placeholder="Task  "><button id="criar-tarefa"  class="criar-tarefa">Create &crarr;</button>
+    </div>
+    <p id="funcionamento">Click twice to complete a task</p>
+    <div id="to-dos" class="to-dos">
+      <ol id="lista-tarefas">
+      </ol>
+    </div>
+    <div class="buttons">
+      <button id="salvar-tarefas"   class="salvar-tarefas">Save</button>
+      <button id="mover-cima" class="mover-cima">&uarr;</button>
+      <button id="mover-baixo" class="mover-baixo">&darr;</button>
+      <button id="remover-finalizados"  class="remover-finalizados">Remove completed</button>
+      <button id="remover-selecionado"  class="remover-selecionado">Remove selected</button>
+      <button id="apaga-tudo"   class="apaga-tudo">Clear all</button>
+    </div>
   </div>
-  <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-  <div id="to-dos" class="to-dos">
-    <ol id="lista-tarefas">
-    </ol>
-  </div>
-  <div class="buttons">
-    <button id="apaga-tudo" class="apaga-tudo">X</button>
-    <button id="remover-finalizados" class="remover-finalizados">Remover  finalizadas</button>
-    <button id="remover-selecionado" class="remover-selecionado">Remover  selecionados</button>
-    <button id="salvar-tarefas" class="salvar-tarefas">Salvar lista</button>
-    <button id="mover-cima" class="mover-cima">Mover para cima</button>
-    <button id="mover-baixo" class="mover-baixo">Mover para baixo</button>
-  </div>
+  <footer>
+    Made with &hearts; by Pedro Calado
+  </footer>
   <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -1,8 +1,9 @@
 body {
   background-color: rgb(43 , 42 , 43);
-  color: white;
+  color: rgb(185, 184, 184);
   font-family: Space Grotesk, sans-serif;
   font-size: 15px;
+  margin: 0;
 }
 
 button {
@@ -12,32 +13,38 @@ button {
 }
 
 .apaga-tudo {
-  background-color: rgb(171 , 28 , 12);
+  background-color: rgb(206, 51, 34);
+  color: rgb(88, 10, 10);
 }
 
 .criar-tarefa {
   background-color: rgb(17 , 123 , 156);
-  color: white;
+  color: rgb(223, 221, 221);
 }
 
 .mover-baixo {
-  background-color: rgb(189 , 106 , 23);
+  background-color: rgb(245 , 143 , 42);
+  color: rgb(95, 65, 10);
 }
 
 .mover-cima {
   background-color: rgb(245 , 143 , 42);
+  color: rgb(95, 65, 10);
 }
 
 .remover-finalizados {
-  background-color: rgb(21 , 107 , 23);
+  background-color: rgb(48, 163, 50);
+  color: rgb(8, 59, 19);
 }
 
 .remover-selecionado {
-  background-color: gray;
+  background-color: rgb(155, 153, 153);
+  color: rgb(68, 67, 67);
 }
 
 .salvar-tarefas {
-  background-color: rgb(214 , 214 , 41);
+  background-color: rgb(192, 192, 8);
+  color: rgb(90, 90, 8);
 }
 
 .completed {
@@ -55,10 +62,14 @@ button {
 }
 
 .to-dos {
+  border: 1px solid rgb(75, 74, 74);
+  border-radius: 12px;
   height: 400px;
   margin-bottom: 20px;
+  margin-left: 30%;
+  margin-right: 30%;
   overflow: scroll;
-}
+} 
 
 header {
   text-align: center;
@@ -69,22 +80,31 @@ input {
 }
 
 li {
+  border-bottom: 1px solid rgb(75, 74, 74);
   cursor: pointer;
   line-height: 23px;
-  margin-top: 5px;
+  margin-right: 8px;
+  user-select: none;
 }
 
 .selected {
   background-color: gray;
 }
 
-ol {
-  margin-left: 30%;
-  margin-right: 30%;
-}
-
 p {
   font-size: 13px;
   font-style: italic;
   text-align: center;
+}
+
+footer {
+  font-size: 12px;
+  height: 5vh;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.main-div {
+  height: 90vh;
 }

@@ -10,6 +10,16 @@ btn.addEventListener('click', function () {
   task.value = '';
 });
 
+// add function to create a task pressing enter
+task.addEventListener('keypress', function (e) {
+  if (e.key == 'Enter') {
+  const listItemToBeCreated = document.createElement('li');
+  listItemToBeCreated.innerHTML = task.value;
+  taskList.appendChild(listItemToBeCreated);
+  task.value = '';
+  }
+})
+
 // add event listener to complete (strikethrough) and select (change color) a list item
 let clickCount = 0;
 taskList.addEventListener('click', function (event) {
