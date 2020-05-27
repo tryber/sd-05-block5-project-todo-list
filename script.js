@@ -98,5 +98,16 @@ function moveDown() {
     }
   }
 }
+
 let moveDownButton = document.getElementById("mover-baixo");
 moveDownButton.addEventListener("click", moveDown);
+
+//Remove selected item
+
+function removeSelected() {
+  const selectedElement = document.querySelector(".selected");
+  selectedElement.remove();
+}
+
+const removeSelectedButton = document.getElementById("remover-selecionado");
+removeSelectedButton.addEventListener("click", removeSelected);
