@@ -31,14 +31,20 @@ function selecionarItParaRiscar(event){
 riscaItemDaLista.addEventListener('dblclick',selecionarItParaRiscar);
 
 
-let apagarTudo = document.getElementById('apaga-tudo')
-let listTarefa = document.getElementById('lista-tarefas')
- 
-function limparListaTarefa(){
-    
-   listTarefa.remove()
-   console.log(listTarefa)
+
+
+function limparItemSelecionado(){
+let recLi = document.getElementsByTagName('li');
+   for(let i = 0; i < recLi.length;i+=1) {
+      if(recLi[i].className === 'completed'){
+          recLi[i].remove()
+      }
+   }
 }
+
+let removerFinalizdos = document.getElementById('remove-finalizados')
+    removerFinalizdos.addEventListener('click',limparItemSelecionado)
+
 
 apagarTudo.addEventListener('click',limparListaTarefa)
 
