@@ -1,16 +1,11 @@
-header {
-    line-height: 0px;
-}
-#funcionamento {
-    font-size: 15px;
-    color: gray;
-}
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
+
 li {
-    cursor: pointer;
+  cursor: pointer;
 }
+
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
