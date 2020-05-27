@@ -2,6 +2,7 @@
 const textoInput = document.getElementById('texto-tarefa');
 const listaOrdenada = document.getElementById('lista-tarefas');
 const criaTarefa = document.getElementById('criar-tarefa');
+const apagaItens = document.getElementById('apaga-tudo')
 
 function adicionaItem () {
   const criaItem = document.createElement('li');
@@ -15,3 +16,6 @@ function adicionaItem () {
 }
 criaTarefa.addEventListener('click', adicionaItem);
 
+apagaItens.addEventListener('click', function () {
+  listaOrdenada.innerHTML = '';
+});
