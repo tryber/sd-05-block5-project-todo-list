@@ -100,7 +100,7 @@ document.getElementById('mover-cima').addEventListener('click', moverUp);
 function moverdown() {
   const itemselecionado = document.querySelector('.selected');
   const list = document.getElementById('lista-tarefas');
-  list.insertBefore(itemselecionado, itemselecionado.nextSibling);
+  list.insertBefore(itemselecionado, itemselecionado.nextSibling.nextSibling);
 }
 
 document.getElementById('mover-baixo').addEventListener('click', moverdown);
