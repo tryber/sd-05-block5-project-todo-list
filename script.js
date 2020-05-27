@@ -35,7 +35,7 @@ clickItem.addEventListener('click', function (event) {
     itemEscolhido.classList.toggle('selected');
   }
   else {
-    alert('Não existem itens na lista para serem selecionados.')
+    alert('Não existem itens na lista para serem selecionados.');
   }
 });
 
