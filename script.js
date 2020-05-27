@@ -120,7 +120,7 @@ moveCima.onclick = moveUp;
 moveBaixo.onclick = moveDown;
 window.onload = function () {
   let items = itensSalvos.getItem('itens');
-  if (items.length) {
+  if (items) {
     orderedList.innerHTML = items;
   } 
 }
