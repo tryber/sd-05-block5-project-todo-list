@@ -4,3 +4,9 @@ li.ponteiro{
 button.ponteiro{
   cursor: pointer;
 }
+.change-Bg{
+  background-color: rgb(128, 128, 128);
+}
+.bg{
+  background-color: rgb(255, 255, 255);
+}

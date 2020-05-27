@@ -11,7 +11,7 @@ function additenbt(){
   myText.value = "";
 
   li.appendChild(textNode);
-  li.className = "ponteiro"
+  li.className = "bg"
   document.getElementById("lista-tarefas").appendChild(li);
 }
 //----------------------------------------------------------------------------
@@ -22,3 +22,12 @@ function additenbt(){
 //    evento.target.style.cursor = "pointer";
 //   }
 // }
+//------------------------------------------------------------------------------
+document.addEventListener("click", backgorundChange)
+function backgorundChange(eventoClique){
+  if (eventoClique.target.className === "bg"){
+     eventoClique.target.className = "change-Bg";
+    }else if (eventoClique.target.className === "change-Bg"){
+      eventoClique.target.className = "bg";
+    }
+}
