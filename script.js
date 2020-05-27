@@ -8,7 +8,7 @@ const moveCima = document.getElementById('mover-cima');
 const moveBaixo = document.getElementById('mover-baixo');
 
 function moveUp() {
-  let texto;
+  // let texto;
   const selected = document.querySelector('.selected');
   const lista = document.getElementById('lista-tarefas');
   const index = Array.prototype.indexOf.call(lista.children, selected);
@@ -18,11 +18,11 @@ function moveUp() {
     alert('A lista está vazia, bb!');
   } else if (index > 0) {
     const before = lista.children[index - 1];
-    texto = before.innerText;
-    before.innerText = selected.innerText;
-    selected.innerText = texto;
-    before.click();
-    // lista.insertBefore(selected, before);
+    // texto = before.innerText;
+    // before.innerText = selected.innerText;
+    // selected.innerText = texto;
+    // before.click();
+    lista.insertBefore(selected, before);
   } else {
     alert('Já é o topo da lista, bb!');
   }
@@ -32,18 +32,18 @@ function moveDown() {
   const selected = document.querySelector('.selected');
   const lista = document.getElementById('lista-tarefas');
   const index = Array.prototype.indexOf.call(lista.children, selected);
-  let texto;
+  // let texto;
   if (index === -1) {
     alert('Não há item selecionado, ou a lista está vazia, bb!');
   } else if (orderedList.childElementCount === 0) {
     alert('A lista está vazia, bb!');
   } else if (index < orderedList.childElementCount - 1) {
     const next = lista.children[index + 1];
-    // lista.insertBefore(selected, next.nextSibling);
-    texto = next.innerText;
-    next.innerText = selected.innerText;
-    selected.innerText = texto;
-    next.click();
+    lista.insertBefore(selected, next.nextSibling);
+    // texto = next.innerText;
+    // next.innerText = selected.innerText;
+    // selected.innerText = texto;
+    // next.click();
   } else {
     alert('Já é o fim da lista, bb!');
   }
