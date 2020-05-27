@@ -1,4 +1,5 @@
 .imovel{
   position: fixed;
   font-size: 3em;
+  display: block;
 }
