@@ -35,7 +35,7 @@ riscaItemDaLista.addEventListener('dblclick',selecionarItParaRiscar);
 //Código que remove os itens selecionados
 function limparItemSelecionado(){
 let recLi = document.getElementsByTagName('li');
-   for(let i = 0; i < recLi.length;i+=1) {
+   for(let i =0; i < recLi.length;i+=1) {
       if(recLi[i].className === 'completed'){
           recLi[i].remove()
       }
