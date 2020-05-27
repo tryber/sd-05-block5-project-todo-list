@@ -25,8 +25,8 @@ function exchangeElements(element1, element2) {
 }
 
 function moveBaixo() {
-  contaItensLista();
   const pegaTodosLi = document.querySelectorAll('li');
+  quantidade = pegaTodosLi.length;
   if (quantidade > 1) {
     for (let i = 0; i<pegaTodosLi.length; i += 1) {
       if (pegaTodosLi[i].classList.contains('coloreCinza') && pegaTodosLi[i].nextSibling !== null) {
