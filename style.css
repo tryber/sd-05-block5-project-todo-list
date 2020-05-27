@@ -1,0 +1,56 @@
+body {
+  background-color: white;
+  font-family: Open Sans, sans-serif;
+  font-size: 18pt;
+  line-height: 1.8em;
+  margin: 30px 20px;
+  text-align: center;
+}
+
+.button {
+  background-color: midnightblue;
+  color: gold;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  padding: 0.5%;
+}
+
+.completed {
+  text-decoration: line-through black;
+}
+
+h1 {
+  color: navy;
+  font-family: Rock Salt, sans-serif;
+  font-size: 3.5em;
+  line-height: 2em;
+}
+
+.header-container {
+  margin-top: -30px;
+  position: relative;
+  text-align: center;
+}
+
+.header-title {
+  left: 50%;
+  line-height: 5em;
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+li {
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  user-select: none;
+  width: 40%;
+}
+
+.selected {
+  background-color: gray;
+}
