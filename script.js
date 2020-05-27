@@ -80,18 +80,21 @@ const upButton = document.getElementById('mover-cima');
 const downButton = document.getElementById('mover-baixo');
 
 upButton.addEventListener('click', function () {
-  const selectedTasks = document.querySelector('.selected');
-  const aux = selectedTasks.innerHTML;
-  selectedTasks.previousElementSibling.classList.add('selected');
-  selectedTasks.innerHTML = selectedTasks.previousElementSibling.innerHTML;
-  selectedTasks.previousElementSibling.innerHTML = aux;
-  selectedTasks.classList.remove('selected');
+  const selectedTask = document.querySelector('.selected');
+  const aux1 = selectedTask.innerHTML;
+  const aux2 = selectedTask.className;
+  selectedTask.className = selectedTask.previousElementSibling.className;
+  selectedTask.innerHTML = selectedTask.previousElementSibling.innerHTML;
+  selectedTask.previousElementSibling.className = aux2;
+  selectedTask.previousElementSibling.innerHTML = aux1;
 });
+
 downButton.addEventListener('click', function () {
-  const selectedTasks = document.querySelector('.selected');
-  const aux = selectedTasks.innerHTML;
-  selectedTasks.nextElementSibling.classList.add('selected');
-  selectedTasks.innerHTML = selectedTasks.nextElementSibling.innerHTML;
-  selectedTasks.nextElementSibling.innerHTML = aux;
-  selectedTasks.classList.remove('selected');
+  const selectedTask = document.querySelector('.selected');
+  const aux1 = selectedTask.innerHTML;
+  const aux2 = selectedTask.className;
+  selectedTask.className = selectedTask.nextElementSibling.className;
+  selectedTask.innerHTML = selectedTask.nextElementSibling.innerHTML;
+  selectedTask.nextElementSibling.className = aux2;
+  selectedTask.nextElementSibling.innerHTML = aux1;
 });
