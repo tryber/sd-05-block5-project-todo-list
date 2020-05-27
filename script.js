@@ -15,7 +15,7 @@ function addItemList() {
 }
 
 //Select Element - Change list item bg color to grey when clicked
-function selectItem() {
+function selectItem(event) {
   if (event.target.classList.contains("selected")) {
     event.target.classList.remove("selected");
     return;
@@ -30,7 +30,7 @@ function selectItem() {
 listOfItems.addEventListener("click", selectItem);
 
 //line-through completed items
-function completedItems() {
+function completedItems(event) {
   if (event.target.classList.contains("completed")) {
     event.target.classList.remove("completed");
   } else if (event.target !== listOfItems) {
@@ -75,7 +75,7 @@ window.onload = loadList;
 //Move items up
 function moveUp() {
   const selectedElement = document.querySelector(".selected");
-  if (selectedElement.previousElementSibling !== null) {
+  if(selectedElement.previousElementSibling !== null) {
     const saveText = selectedElement.previousElementSibling.innerText;
     selectedElement.previousElementSibling.innerText = selectedElement.innerText;
     selectedElement.innerText = saveText;
@@ -91,6 +91,7 @@ moveUpButton.addEventListener("click", moveUp);
 function moveDown() {
   const selectedElement = document.querySelector(".selected");
   if(selectedElement.nextElementSibling !== null) {
+    console.log(selectedElement.nextElementSibling)
     const saveText = selectedElement.nextSibling.innerText;
     selectedElement.nextElementSibling.innerText = selectedElement.innerText;
     selectedElement.innerText = saveText;
