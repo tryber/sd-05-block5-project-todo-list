@@ -29,3 +29,11 @@ body {
 li, button {
   cursor: pointer;
 }
+
+.backgroundClick {
+  background-color: rgb(128, 128, 128);
+}
+
+.riscarLetra {
+  text-decoration: line-through;
+}
