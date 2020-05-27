@@ -25,3 +25,7 @@
 body {
   background-color: rgb(139, 80, 80);
 }
+
+li, button {
+  cursor: pointer;
+}
