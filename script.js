@@ -32,13 +32,18 @@ function moveDown() {
   const selected = document.querySelector('.selected');
   const lista = document.getElementById('lista-tarefas');
   const index = Array.prototype.indexOf.call(lista.children, selected);
+  let texto;
   if (index === -1) {
     alert('Não há item selecionado, ou a lista está vazia, bb!');
   } else if (orderedList.childElementCount === 0) {
     alert('A lista está vazia, bb!');
   } else if (index < orderedList.childElementCount - 1) {
     const next = lista.children[index + 1];
-    lista.insertBefore(selected, next.nextSibling);
+    // lista.insertBefore(selected, next.nextSibling);
+    texto = next.innerText;
+    next.innerText = selected.innerText;
+    selected.innerText = texto;
+    next.click();
   } else {
     alert('Já é o fim da lista, bb!');
   }
