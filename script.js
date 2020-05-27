@@ -70,16 +70,16 @@ window.onload = loadList;
 
 //Move items up
 function moveUp() {
-  const selectedElement = document.getElementsByClassName("selected")[0];
-  if(selectedElement !== null){
-  if(selectedElement.previousElementSibling !== null) {
-    const saveText = selectedElement.previousElementSibling.innerText;
-    selectedElement.previousElementSibling.innerText = selectedElement.innerText;
-    selectedElement.innerText = saveText;
-    selectedElement.classList.remove("selected");
-    selectedElement.previousElementSibling.classList.add("selected");
+  const selectedElement = document.querySelector(".selected");
+  if (selectedElement !== undefined) {
+    if (selectedElement.previousElementSibling !== null) {
+      const saveText = selectedElement.previousElementSibling.innerText;
+      selectedElement.previousElementSibling.innerText = selectedElement.innerText;
+      selectedElement.innerText = saveText;
+      selectedElement.classList.remove("selected");
+      selectedElement.previousElementSibling.classList.add("selected");
+    }
   }
-}
 }
 
 let moveUpButton = document.getElementById("mover-cima");
@@ -87,16 +87,16 @@ moveUpButton.addEventListener("click", moveUp);
 
 //Move items down
 function moveDown() {
-  const selectedElement =  document.getElementsByClassName("selected")[0];
-  if(selectedElement !== null){
-  if(selectedElement.nextElementSibling !== null) {
-    const saveText = selectedElement.nextSibling.innerText;
-    selectedElement.nextElementSibling.innerText = selectedElement.innerText;
-    selectedElement.innerText = saveText;
-    selectedElement.classList.remove("selected");
-    selectedElement.nextElementSibling.classList.add("selected");
+  const selectedElement = document.querySelector(".selected");
+  if (selectedElement !== undefined) {
+    if (selectedElement.nextElementSibling !== null) {
+      const saveText = selectedElement.nextSibling.innerText;
+      selectedElement.nextElementSibling.innerText = selectedElement.innerText;
+      selectedElement.innerText = saveText;
+      selectedElement.classList.remove("selected");
+      selectedElement.nextElementSibling.classList.add("selected");
+    }
   }
 }
-} 
 let moveDownButton = document.getElementById("mover-baixo");
 moveDownButton.addEventListener("click", moveDown);
