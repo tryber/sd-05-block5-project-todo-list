@@ -6,7 +6,7 @@ const removeCompleted = document.getElementById('remover-finalizados');
 const removeSelected = document.getElementById('remover-selecionado');
 const moveCima = document.getElementById('mover-cima');
 const moveBaixo = document.getElementById('mover-baixo');
-const salvaLista = document.getElementById('salva-lista');
+const salvaLista = document.getElementById('salvar-tarefas');
 const itensSalvos =  localStorage;
 
 function saveItems() {
