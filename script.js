@@ -21,10 +21,10 @@ criarTarefas.addEventListener('click', function () {
     }
   })
   itemDaLista.addEventListener('dblclick', function(evento){
-    if (evento.target.className.includes('riscarLetra')){
-      evento.target.classList.remove('riscarLetra');
+    if (evento.target.className.includes('completed')){
+      evento.target.classList.remove('completed');
     } else {
-      evento.target.classList.add('riscarLetra')
+      evento.target.classList.add('completed')
     }
   })
 });
@@ -34,7 +34,7 @@ apagaTudo.addEventListener('click', function(){
 });
 
 removerFinalizados.addEventListener('click', function(){
-  let riscados = document.getElementsByClassName('riscarLetra')
+  let riscados = document.getElementsByClassName('completed')
   for (let i = riscados.length -1; i >= 0; i--){
     riscados[i].remove();
   }

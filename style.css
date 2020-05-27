@@ -34,6 +34,6 @@ li, button {
   background-color: rgb(128, 128, 128);
 }
 
-.riscarLetra {
+.completed {
   text-decoration: line-through;
 }
