@@ -28,7 +28,7 @@ function moveBaixo() {
   const pegaTodosLi = document.querySelectorAll('li');
   quantidade = pegaTodosLi.length;
   if (quantidade > 1) {
-    for (let i = 0; i<pegaTodosLi.length; i += 1) {
+    for (let i = 0; i < pegaTodosLi.length; i += 1) {
       if (pegaTodosLi[i].classList.contains('coloreCinza') && pegaTodosLi[i].nextSibling !== null) {
         exchangeElements(pegaTodosLi[i], pegaTodosLi[i].nextSibling);
       }
@@ -42,7 +42,7 @@ function moveCima() {
   const pegaTodosLi = document.querySelectorAll('li');
   quantidade = pegaTodosLi.length;
   if (quantidade > 1) {
-    for (let i=0; i<pegaTodosLi.length; i += 1) {
+    for (let i=0; i < pegaTodosLi.length; i += 1) {
       if (pegaTodosLi[i].classList.contains('coloreCinza') && pegaTodosLi[i].previousSibling !== null) {
         exchangeElements(pegaTodosLi[i], pegaTodosLi[i].previousSibling);
       }
