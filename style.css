@@ -1,0 +1,47 @@
+body {
+  background-color: blueviolet;
+  font-family: Montserrat, sans-serif;
+}
+
+button , li {
+  cursor: pointer;
+}
+
+input {
+  width: 260px;
+}
+
+li {
+  border-radius: 5px;
+  color: black;
+  font-size: 25px;
+  list-style: none;
+  margin: 5px 0;
+  padding: 10px;
+  text-align: left;
+}
+
+.container {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  width: 550px;
+}
+
+.button {
+  border: 0;
+  margin-right: 5px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.completed {
+  text-decoration: line-through black;
+}
+
+.selected {
+  background-color: gray;
+}

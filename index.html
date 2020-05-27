@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="title">Minha Lista de Tarefas</h1>
+      </header>
+      <p id="funcionamento">
+        Clique duas vezes em um item para marcá-lo como completo
+      </p>
+      <input type="text" id="texto-tarefa" /><button
+        class="button-add"
+        id="criar-tarefa"
+      >
+        adicionar
+      </button>
+      <ol id="lista-tarefas"></ol>
+      <button class="button" id="apaga-tudo">Apagar Tudo</button>
+      <button class="button" id="remover-finalizados">
+        Remover Concluídos
+      </button>
+      <button class="button" id="remover-selecionado">
+        Remover Selecionado
+      </button>
+      <button class="button" id="mover-baixo">Mover para Baixo</button>
+      <button class="button" id="mover-cima">Mover para Cima</button>
+      <button class="button" id="salvar-tarefas">Salvar Lista</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
