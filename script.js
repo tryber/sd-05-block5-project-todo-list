@@ -43,10 +43,11 @@ function getList() {
 }
 
 function seleciona() {
-  if (event.target.classList.contains('item-tarefa')) {
-    event.target.classList.add('selected');
-    itemSelecionado = event.target;
+  if (itemSelecionado.classList !== undefined) {
+    itemSelecionado.classList.remove('selected');
   }
+  event.target.classList.add('selected');
+  itemSelecionado = event.target;
 }
 
 function removeDone() {
