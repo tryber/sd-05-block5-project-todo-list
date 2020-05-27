@@ -32,7 +32,7 @@ document.getElementById('lista-tarefas').addEventListener('click', selecaoitem);
 function completedItem(event) {
   const Citem = event.target;
   if (Citem.classList.contains('completed')) {
-  Citem.classList.remove('completed');
+    Citem.classList.remove('completed');
   }
   else { Citem.classList.add('completed'); }
 }
@@ -74,7 +74,7 @@ document.getElementById('salvar-tarefas').addEventListener('click', salvartarefa
 // para carregar função para carregar as tarefas salvas;
 window.onload = function trazlistasalva() {
   document.getElementById('lista-tarefas').innerHTML = localStorage.getItem('tarefas-salvas');
-}
+};
 
 // criar botão que apaga SELECIONADAS
 
@@ -91,8 +91,8 @@ document.getElementById('remover-selecionado').addEventListener('click', apagars
 
 function moverUp() {
   const itemselecionado = document.querySelector('.selected');
-  var list = document.getElementById('lista-tarefas');
-  list.insertBefore(itemselecionado, itemselecionado.previousSibling)
+  const list = document.getElementById('lista-tarefas');
+  list.insertBefore(itemselecionado, itemselecionado.previousSibling);
 }
 
 document.getElementById('mover-cima').addEventListener('click', moverUp);
@@ -101,8 +101,8 @@ document.getElementById('mover-cima').addEventListener('click', moverUp);
 
 function moverdown() {
   const itemselecionado = document.querySelector('.selected');
-  var list = document.getElementById('lista-tarefas');
-  list.insertBefore(itemselecionado, itemselecionado.nextSibling)
+  const list = document.getElementById('lista-tarefas');
+  list.insertBefore(itemselecionado, itemselecionado.nextSibling);
 }
 
 document.getElementById('mover-baixo').addEventListener('click', moverdown);
