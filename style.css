@@ -1,11 +1,11 @@
 button {
   cursor: pointer;
 }
-li {
 
+li {
   cursor: pointer;
 }
-.completed {
 
+.completed {
   text-decoration: line-through;
 }

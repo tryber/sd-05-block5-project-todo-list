@@ -7,19 +7,19 @@ const clearButton = document.querySelector('#apaga-tudo');
 let completed = false;
 
 // funções e métodos
-function add () {
+function add() {
   const li = document.createElement('li');
   li.innerText = caixaDeTexto.value;
   lista.appendChild(li);
   caixaDeTexto.value = '';
 }
-function clear (){
+function clear() {
   lista.innerHTML = '';
 }
 
 // eventos
 button.addEventListener('click', add);
-lista.addEventListener('click', function(event){
+lista.addEventListener('click', function (event) {
   event.target.style.backgroundColor = 'rgb(128, 128, 128)';
 });
 
