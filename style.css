@@ -45,7 +45,7 @@ ol {
 }
 
 li {
-  margin: 5px;  
+  margin: 5px;
 }
 
 .setas {
@@ -57,8 +57,8 @@ li {
 
 .seta-cima {
   background-color: midnightblue;
-	border-radius: 50%;
   border: 2px solid navy;
+	border-radius: 50%;
   color: white;
   font-size: 18px;
   position: absolute;
@@ -66,8 +66,8 @@ li {
 
 .seta-baixo {
   background-color: midnightblue;
-	border-radius: 50%;
   border: 2px solid navy;
+	border-radius: 50%;
   color: white;
   font-size: 18px;
   position: absolute;
@@ -82,8 +82,8 @@ li {
 
 .criar-tarefa {
   background-color: forestgreen;
-	border-radius: 50%;
   border: 2px solid limegreen;
+	border-radius: 50%;
   color: white;
   font-size: 18px;
   position: absolute;
@@ -92,8 +92,8 @@ li {
 
 .remover-selecionado {
   background-color: darkred;
-	border-radius: 50%;
   border: 2px solid firebrick;
+	border-radius: 50%;
   color: white;
   font-size: 18px;
   position: absolute;
@@ -102,8 +102,8 @@ li {
 
 .apaga-tudo {
   background-color: darkred;
+  border: 1px solid firebrick;
 	border-radius: 20px;
-	border: 1px solid firebrick;
 	color: white;
 	font-size: 15px;
 	padding: 5px 15px;
@@ -111,8 +111,8 @@ li {
 
 .remover-finalizados {
   background-color: midnightblue;
+  border: 1px solid navy;
 	border-radius: 20px;
-	border: 1px solid navy;
 	color: white;
 	font-size: 15px;
 	padding: 5px 15px;
@@ -120,8 +120,8 @@ li {
 
 .salvar-tarefas {
   background-color: forestgreen;
+  border: 1px solid limegreen;
 	border-radius: 20px;
-	border: 1px solid limegreen;
 	color: white;
 	font-size: 15px;
 	padding: 5px 15px;
