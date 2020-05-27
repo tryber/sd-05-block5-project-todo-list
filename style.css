@@ -10,3 +10,6 @@ button{
 .bg{
   background-color: rgb(255, 255, 255);
 }
+.completed{
+  text-decoration: line-through;
+}

@@ -1,6 +1,3 @@
-// let li = document.createElement("li");
-// let myText = document.getElementById("texto-tarefa").Value;
-// let textNode = document.createTextNode(myText);
 let btn = document.getElementById("criar-tarefa");
 btn.addEventListener("click", additenbt);
 
@@ -15,19 +12,32 @@ function additenbt(){
   document.getElementById("lista-tarefas").appendChild(li);
 }
 //----------------------------------------------------------------------------
-// document.addEventListener("mouseover", passMouse);
-// function passMouse(evento){
-//   console.log(evento.target)
-//   if (evento.target.className === "ponteiro"){
-//    evento.target.style.cursor = "pointer";
-//   }
-// }
-//------------------------------------------------------------------------------
+
 document.addEventListener("click", backgorundChange)
 function backgorundChange(eventoClique){
-  if (eventoClique.target.className === "bg"){
-     eventoClique.target.className = "change-Bg";
-    }else if (eventoClique.target.className === "change-Bg"){
-      eventoClique.target.className = "bg";
+  let nameOfF = eventoClique.target.className;
+  nameOfF = nameOfF.split(' ');
+  console.log(nameOfF)
+  if (nameOfF[0] === "bg"){
+    eventoClique.target.className = "change-Bg";
+    }else if (nameOfF[0] === "change-Bg"){
+       eventoClique.target.className = "bg";
+     }
+}
+//-----------------------------------------------------------------------------
+document.addEventListener("dblclick", textDecorChange)
+function textDecorChange(evento){
+  let nameOfS = evento.target.className
+  nameOfS = nameOfS.split(' ')
+  console.log(nameOfS)
+  if ((nameOfS[0] == "bg" && nameOfS[1] == null) || (nameOfS[0] == "change-Bg" && nameOfS[1] == null)){
+    nameOfS[1] = "completed" 
+    Ntext = nameOfS[0] +  " " + nameOfS[1]
+    evento.target.className = Ntext ;
+    }else if (nameOfS[1]){
+      nameOfS[1] = null
+      Ntext = nameOfS[0]
+      evento.target.className = Ntext
     }
+    
 }
