@@ -11,17 +11,14 @@ function additenbt(){
   myText.value = "";
 
   li.appendChild(textNode);
-  // li.className = "ponteiro"
+  li.className = "ponteiro"
   document.getElementById("lista-tarefas").appendChild(li);
 }
 //----------------------------------------------------------------------------
-let button = document.getElementsByTagName("button");
-let lista = document.getElementsByTagName("li");
-console.log(button)
 document.addEventListener("mouseover", passMouse);
 function passMouse(evento){
   console.log(evento.target)
-  if (evento.target == "button" ||evento.target == "li"  ){
+  if (evento.target.className === "ponteiro"){
    evento.target.style.cursor = "pointer";
   }
 }
