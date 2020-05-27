@@ -8,21 +8,12 @@ const moveCima = document.getElementById('mover-cima');
 const moveBaixo = document.getElementById('mover-baixo');
 
 function moveUp() {
-  // let texto;
   const selected = document.querySelector('.selected');
   const lista = document.getElementById('lista-tarefas');
-  const index = Array.prototype.indexOf.call(lista.children, selected);
-  if (index === -1) {
+  if (selected === undefined) {
     alert('Não há item selecionado, ou a lista está vazia, bb!');
-  } else if (orderedList.childElementCount === 0) {
-    alert('A lista está vazia, bb!');
-  } else if (index > 0) {
-    const before = lista.children[index - 1];
-    // texto = before.innerText;
-    // before.innerText = selected.innerText;
-    // selected.innerText = texto;
-    // before.click();
-    lista.insertBefore(selected, before);
+  } else if (selected.previousElementSibling) {
+    lista.insertBefore(selected, selected.previousElementSibling);
   } else {
     alert('Já é o topo da lista, bb!');
   }
@@ -31,19 +22,10 @@ function moveUp() {
 function moveDown() {
   const selected = document.querySelector('.selected');
   const lista = document.getElementById('lista-tarefas');
-  const index = Array.prototype.indexOf.call(lista.children, selected);
-  // let texto;
-  if (index === -1) {
+  if (selected == undefined) {
     alert('Não há item selecionado, ou a lista está vazia, bb!');
-  } else if (orderedList.childElementCount === 0) {
-    alert('A lista está vazia, bb!');
-  } else if (index < orderedList.childElementCount - 1) {
-    const next = lista.children[index + 1];
-    lista.insertBefore(selected, next.nextSibling);
-    // texto = next.innerText;
-    // next.innerText = selected.innerText;
-    // selected.innerText = texto;
-    // next.click();
+  } else if (selected.nextElementSibling) {
+    lista.insertBefore(selected, selected.nextElementSibling.nextElementSibling);
   } else {
     alert('Já é o fim da lista, bb!');
   }
@@ -81,12 +63,8 @@ taskBox.addEventListener('keyup', function (event) {
 
 orderedList.addEventListener('click', function (event) {
   const clicked = event.target;
-  if (clicked.classList.contains('selected')) {
-    // clicked.classList.remove('selected');
-  } else {
-    removeSelectedClass();
-    clicked.classList.add('selected');
-  }
+  removeSelectedClass();
+  clicked.classList.add('selected');
 });
 
 orderedList.addEventListener('dblclick', function (event) {
