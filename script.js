@@ -18,10 +18,15 @@ function backgorundChange(eventoClique){
   let nameOfF = eventoClique.target.className;
   nameOfF = nameOfF.split(' ');
   console.log(nameOfF)
-  if (nameOfF[0] === "bg"){
-    eventoClique.target.className = "change-Bg";
-    }else if (nameOfF[0] === "change-Bg"){
-       eventoClique.target.className = "bg";
+
+  if (nameOfF[0] === "bg" && nameOfF[1] == null){
+    eventoClique.target.className = "change-Bg"
+    }else if (nameOfF[0] === "change-Bg" && nameOfF[1] == null){
+       eventoClique.target.className = "bg"
+     }else if(nameOfF[0] === "bg" && nameOfF[1] != null){
+      eventoClique.target.className = "change-Bg" +" "+ nameOfF[1]
+     }else if(nameOfF[0] === "change-Bg" && nameOfF[1] != null){
+      eventoClique.target.className = "bg" +" "+ nameOfF[1]
      }
 }
 //-----------------------------------------------------------------------------
