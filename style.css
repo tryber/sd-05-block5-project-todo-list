@@ -3,6 +3,7 @@ body {
   width: 100%;
   height: 100%;
   background-image: url("images/fundo-de-folha-de-caderno-alinhado_42852-15.jpg");
+  background-size: cover;
 }
 
 h1 {
@@ -80,7 +81,7 @@ li {
 .botoes-limpar {
   position: absolute;
   bottom: 5%;
-  left: 20%;
+  left: 30%;
 }
 
 .criar-tarefa {
