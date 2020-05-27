@@ -17,15 +17,15 @@ function removeSelecionado() {
 posBotaoRemoveSelecionado.addEventListener('click', removeSelecionado);
 
 function exchangeElements(element1, element2) {
-  let clonedElement1 = element1.cloneNode(true);
-  let clonedElement2 = element2.cloneNode(true);
+  const clonedElement1 = element1.cloneNode(true);
+  const clonedElement2 = element2.cloneNode(true);
   element2.parentNode.replaceChild(clonedElement1, element2);
   element1.parentNode.replaceChild(clonedElement2, element1);
 }
 
 function moveBaixo() {
   const pegaTodosLi = document.querySelectorAll('li');
-  for (let i = 0; i<pegaTodosLi.length; i+=1) {
+  for (let i = 0; i<pegaTodosLi.length; i+ =1) {
     if (pegaTodosLi[i].classList.contains('coloreCinza')) {
       exchangeElements(pegaTodosLi[i], pegaTodosLi[i].nextSibling);
     }
@@ -52,7 +52,7 @@ function carregaStorage() {
 window.onload = carregaStorage;
 
 function salvarTarefas() {
-  localStorage.clear()
+  localStorage.clear();
   const pegaTudo = document.getElementById('lista-tarefas').innerHTML;
   localStorage.setItem('conteudo', pegaTudo);
 }
