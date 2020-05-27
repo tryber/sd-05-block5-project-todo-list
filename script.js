@@ -45,6 +45,10 @@ let recLi = document.getElementsByTagName('li');
 let removerFinalizdos = document.getElementById('remove-finalizados')
     removerFinalizdos.addEventListener('click',limparItemSelecionado)
 
-
+function limparListaTarefa(){
+  
+    riscaItemDaLista.innerHTML= '';
+}
+let apagarTudo = document.getElementById('apaga-tudo')
 apagarTudo.addEventListener('click',limparListaTarefa)
 
