@@ -11,7 +11,7 @@ function additenbt(){
   myText.value = "";
 
   li.appendChild(textNode);
-  //li.className = "ponteiro"
+  li.className = "ponteiro"
   document.getElementById("lista-tarefas").appendChild(li);
 }
 //----------------------------------------------------------------------------
