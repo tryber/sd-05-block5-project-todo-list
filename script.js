@@ -30,7 +30,7 @@ function moveBaixo() {
   if (quantidade > 1) {
     for (let i = 0; i<pegaTodosLi.length; i += 1) {
       if (pegaTodosLi[i].classList.contains('coloreCinza') && pegaTodosLi[i].nextSibling !== null) {
-          exchangeElements(pegaTodosLi[i], pegaTodosLi[i].nextSibling);
+        exchangeElements(pegaTodosLi[i], pegaTodosLi[i].nextSibling);
       }
     }
   }
@@ -49,7 +49,7 @@ function moveCima() {
   const pegaTodosLi = document.querySelectorAll('li');
   if (quantidade > 1) {
     for (let i=0; i<pegaTodosLi.length; i += 1) {
-      if (pegaTodosLi[i].classList.contains('coloreCinza') && pegaTodosLi[i].previousSibling !== null ) {
+      if (pegaTodosLi[i].classList.contains('coloreCinza') && pegaTodosLi[i].previousSibling !== null) {
         exchangeElements(pegaTodosLi[i], pegaTodosLi[i].previousSibling);
       }
     }
@@ -106,7 +106,7 @@ function apagaFinalizados() {
 posBotaoFinalizados.addEventListener('click', apagaFinalizados);
 
 function adicionaItem() {
-  if (posTextoTarefa.value !== ''){
+  if (posTextoTarefa.value !== '') {
     const criaLi = document.createElement('li');
     posListaTarefas.appendChild(criaLi);
     conteudoAdicionar = posTextoTarefa.value;
