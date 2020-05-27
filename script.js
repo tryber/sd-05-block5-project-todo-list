@@ -6,7 +6,7 @@ function criarElemento(){
     let criar = document.createElement('li');
         criar.innerHTML = recebeTexto;  
       recuperaOL.appendChild(criar);
-        recuperaTexto.value = " ";
+        recuperaTexto.value = "";
     }
 
 let criarTF = document.getElementById('criar-tarefa');
