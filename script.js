@@ -14,16 +14,17 @@ function addItemList() {
   textInput.focus();
 }
 
-//Change list item bg color to grey when clicked
-let itemSelected = "";
-function selectItem() {
-  if (itemSelected.classList !== undefined) {
-    itemSelected.classList.remove("selected");
-  }
-  if (event.target !== listOfItems) {
-    event.target.classList.add("selected");
-    itemSelected = event.target;
-  }
+//Select Element - Change list item bg color to grey when clicked
+function selectItem(event) {
+if(event.target.classList.contains("selected")) {
+  event.target.classList.remove("selected");
+  return;
+} 
+for(item of listOfItems.children) {
+  item.classList.remove("selected");
+  event.target.classList.add("selected");
+}
+  
 }
 listOfItems.addEventListener("click", selectItem);
 
@@ -69,3 +70,29 @@ function loadList() {
   listOfItems.innerHTML = localStorage.getItem('list');
 }
 window.onload = loadList;
+
+//Move items up
+function moveUp() {
+  const selectedElement = document.querySelector(".selected");
+  const saveText = selectedElement.previousElementSibling.innerText;
+  selectedElement.previousElementSibling.innerText = selectedElement.innerText;
+  selectedElement.innerText = saveText;
+  selectedElement.classList.remove("selected");
+  selectedElement.previousElementSibling.classList.add("selected");
+}
+
+let moveUpButton = document.getElementById("mover-cima");
+moveUpButton.addEventListener("click", moveUp);
+
+//Move items down
+function moveDown() {
+  const selectedElement = document.querySelector(".selected");
+  const saveText = selectedElement.nextElementSibling.innerText;
+  selectedElement.nextElementSibling.innerText = selectedElement.innerText;
+  selectedElement.innerText = saveText;
+  selectedElement.classList.remove("selected");
+  selectedElement.nextElementSibling.classList.add("selected");
+}
+
+let moveDownButton = document.getElementById("mover-baixo");
+moveDownButton.addEventListener("click", moveDown);
