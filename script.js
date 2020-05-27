@@ -25,7 +25,7 @@ function trocaFundo(){
 function riscaItem(){
   let target= event.target;
   if(target.style.textDecoration !== 'line-through'){
-    target.style.textDecoration='line-through';
+    target.style.textDecoration='line-through rgb(0,0,0) solid';
     target.className='completed'
   }
   else{
@@ -53,7 +53,8 @@ function salvarLista() {
   let auxSalvar = document.querySelectorAll('li');
   for(let i = 0; i<auxSalvar.length;i+=1){
     console.log(auxSalvar[i]); 
-    localStorage.setItem('Task'+i,auxSalvar[i].innerHTML);   
+    localStorage.setItem('Task'+i,auxSalvar[i].innerHTML);  
+    localStorage.setItem('Task'+i,auxSalvar[i].className); 
   }
 }
 
