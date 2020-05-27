@@ -10,29 +10,3 @@ button{
 .completed{
     text-decoration:line-through;
 }
-/*---------------------------------*/
-
-#conteiner {
-    width: 600px;
-    height: 360px;
-    border: 2px solid;
-    background-color: greenyellow;
-    border-radius: 8px;
-    position: relative;
-    left: 45px;
-}
-#conteiner2 {
-    width: 500px;
-    height: 340px;
-    border: 1px solid;
-    border-radius: 10px;
-    position: relative;
-    left: 45px;
-    top: 10px;
-    background-color: white;
-}
-header{
-    position: relative;
-    left: 10px;
-    top: 10px;
-}
