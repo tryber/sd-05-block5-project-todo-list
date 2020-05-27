@@ -42,7 +42,7 @@ let recLi = document.getElementsByTagName('li');
    }
 }
 
-let removerFinalizdos = document.getElementById('remove-finalizados')
+let removerFinalizdos = document.getElementById('remover-finalizados')
     removerFinalizdos.addEventListener('click',limparItemSelecionado)
 
 function limparListaTarefa(){
