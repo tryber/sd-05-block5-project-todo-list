@@ -1,6 +1,26 @@
+body {
+  background-color: blanchedalmond;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16pt;
+  line-height: 1.8em;
+  margin: 30px 20px;
+  text-align: center;
+}
+
+h1 {
+  color:darkmagenta;
+  font-family: 'Balsamiq Sans', sans-serif;
+  font-size: 3em;
+}
+
 li {
   cursor: pointer;
   user-select: none;
+  width: 40%;
+  text-align: justify;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .completed {
@@ -8,5 +28,14 @@ li {
 }
 
 .selected {
-  background-color: gray);
+  background-color: gray;
+}
+
+.button {
+background-color: midnightblue;
+color: gold;
+cursor: pointer;
+font-size: 14pt;
+font-weight: bolder;
+padding: 0.5%;
 }

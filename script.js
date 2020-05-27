@@ -57,7 +57,14 @@ function removeSelected() {
   itemSelecionado = document.getElementsByClassName('selected')[0].remove();
 }
 
+function adicionarTarefaEnter(tecla) {
+  if (tecla.key === 'Enter') {
+    acrescentarTarefa();
+  }
+}
+
 // Event Listners
+textoTarefa.addEventListener('keyup', adicionarTarefaEnter);
 criarTarefa.addEventListener('click', acrescentarTarefa);
 apagaTudo.addEventListener('click', apagaTodos);
 listaTarefas.addEventListener('click', seleciona);
