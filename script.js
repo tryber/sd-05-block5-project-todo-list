@@ -1,7 +1,6 @@
 // Carregando dados do localStorage
 function carregarDados() {
   const dados = localStorage.listaTarefas;
-  console.log(dados);
   if (dados !== undefined) {
     const listaDados = dados.split(',');    
     for (let i = 0; i < listaDados.length; i += 1) {
@@ -31,7 +30,11 @@ btnCreateTarefa.addEventListener('click', function () {
 // Evento que seleciona item ao ser clicado
 const clickItem = document.querySelector('ol');
 clickItem.addEventListener('click', function (event) {
-  if (document.querySelectorAll('li').length) {
+  const listaItens = document.querySelectorAll('li');
+  if (listaItens.length) {
+    for (let i = 0; i < listaItens.length; i += 1) {
+      listaItens[i].classList.remove('selected');
+    }
     const itemEscolhido = event.target;
     itemEscolhido.classList.toggle('selected');
   }
