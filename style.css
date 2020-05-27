@@ -1,6 +1,6 @@
 body {
   background-color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open Sans, sans-serif;
   font-size: 18pt;
   line-height: 1.8em;
   margin: 30px 20px;
@@ -11,48 +11,46 @@ body {
   background-color: midnightblue;
   color: gold;
   cursor: pointer;
+  font-family: "Open Sans", sans-serif;
   font-size: 12pt;
-  font-weight: bolder;
+  font-weight: 700;
   padding: 0.5%;
-  font-family: 'Open Sans', sans-serif;
-  }
+}
 
-  .completed {
-    text-decoration: line-through black;
-  }
+.completed {
+  text-decoration: line-through black;
+}
 
 h1 {
   color: navy;
-  font-family: 'Rock Salt', sans-serif;
+  font-family: Rock Salt, sans-serif;
   font-size: 3.5em;
   line-height: 2em;
 }
 
 .header-container {
+  margin-top: -30px;
   position: relative;
   text-align: center;
-  margin-top: -30px;
 }
 
 .header-title {
+  left: 50%;
+  line-height: 5em;
   position: absolute;
   top: 60%;
-  left: 50%;
   transform: translate(-50%, -50%);
-  line-height: 5em;
 }
 
 li {
   cursor: pointer;
-  user-select: none;
-  width: 40%;
-  text-align: justify;
-  position: center;
   margin-left: auto;
   margin-right: auto;
+  text-align: justify;
+  user-select: none;
+  width: 40%;
 }
 
 .selected {
   background-color: gray;
 }
-
