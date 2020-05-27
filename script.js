@@ -24,12 +24,10 @@ function trocaFundo(){
 
 function riscaItem(){
   let target= event.target;
-  if(target.style.textDecoration !== 'line-through'){
-    target.style.textDecoration='line-through';
+  if(target.className !== 'completed'){
     target.className='completed'
   }
   else{
-    target.style.textDecoration='none';
     target.classList.remove('completed');
   }
 }
