@@ -29,14 +29,20 @@ header {
   padding-top: 0;
 }
 
-.parent {
-  display: block;
-  
+#funcionamento{
+  font-style: italic;
+  font-size: 0.8em;
+  margin: 5% 0;
+  text-align: center;
 }
 
+.parent {
+  display: block;
+}
 
 input#texto-tarefa {
   font-size: 0.8em;
+  letter-spacing: 0.1em;
   outline: 0;
   border: 0;
   border-bottom: 2px solid gray;
@@ -58,6 +64,7 @@ input#texto-tarefa {
 
 button {
   font-size: 0.8em;
+  letter-spacing: 0.1em;  
   padding:0.35em 1.2em;
   margin:0 0.3em 0.3em 0;
   border:0.1em solid #99B898;
@@ -69,15 +76,11 @@ button {
 }
 
 button:hover {
-  background-color: #99B898
+  background-color: #99B898;
+  cursor: pointer;
 }
 
-#funcionamento{
-  font-style: italic;
-  font-size: 0.8em;
-  margin: 5% 0;
-  text-align: center;
-}
+
 
 #salvar-tarefas{
 }
@@ -112,9 +115,10 @@ button:hover {
   letter-spacing: 0.1em;  
   margin-top: 3%;
   text-align: center;
+  font-size: 0.9em;
 }
 
-button, #lista-tarefas li {
+#lista-tarefas li:hover {
   cursor: pointer;
 }
 
