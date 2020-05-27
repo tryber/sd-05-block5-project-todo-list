@@ -75,7 +75,7 @@ window.onload = loadList;
 //Move items up
 function moveUp() {
   const selectedElement = document.getElementsByClassName("selected")[0];
-  if(selectedElement !== null){
+  if(selectedElement !== null || selectedElement.classList !== undefined){
   if(selectedElement.previousElementSibling !== null) {
     const saveText = selectedElement.previousElementSibling.innerText;
     selectedElement.previousElementSibling.innerText = selectedElement.innerText;
@@ -92,7 +92,7 @@ moveUpButton.addEventListener("click", moveUp);
 //Move items down
 function moveDown() {
   const selectedElement =  document.getElementsByClassName("selected")[0];
-  if(selectedElement !== null){
+  if(selectedElement !== null || selectedElement.classList !== undefined){
   if(selectedElement.nextElementSibling !== null) {
     const saveText = selectedElement.nextSibling.innerText;
     selectedElement.nextElementSibling.innerText = selectedElement.innerText;
