@@ -7,10 +7,11 @@ button.addEventListener('click', function addTarefa() {
   const itensNovos = document.createElement('li');
   itensNovos.innerHTML = intensParaALista;
   listaTarefas.appendChild(itensNovos);
+  tarefas.value = '';
   itensNovos.addEventListener('click', function changeBackgroundColor() {
-      itensNovos.className = 'li';
-    });
-    itensNovos.addEventListener('dblclick', function resetBackground() {
-        itensNovos.classList.remove('li');
-    });
+    itensNovos.className = 'li';
+  });
+  itensNovos.addEventListener('dblclick', function resetBackground() {
+    itensNovos.classList.remove('li');
+  });
 });
