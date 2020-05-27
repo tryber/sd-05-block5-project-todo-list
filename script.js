@@ -17,3 +17,11 @@ lista.addEventListener('click', function (event) {
     selected.className="selected"
   }
 })
+lista.addEventListener('dblclick',function(event){
+  let selected = event.target
+  if (selected.className.indexOf(" completed")<0) {
+    selected.className+=" completed"
+  }else{
+    selected.className=selected.className.replace(" completed","")
+  }
+})
