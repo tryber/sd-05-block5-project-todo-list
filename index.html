@@ -2,38 +2,43 @@
   <head>
     <meta charset="utf-8">
     <title>Minha Lista de Tarefas</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-  </head>
-  <body>
-    <header>Minha Lista de Tarefas</header>
-    <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">      <body>
+    <main>
+      <header class="header">Minha Lista de Tarefas</header>
+      <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+      
+      <div class="parent">
 
-    <input type="text" id="texto-tarefa">
+        <form id="input_form">
+          <input type="text" id="texto-tarefa" autocomplete="off" placeholder="O que tenho que fazer?"> <!--autocomplete="off" to prevent browser input suggestions, given that the task will probably have nothing to do with them-->     
+          <button id="criar-tarefa">criar tarefa</button>
+        </form>  
 
-    
-    <ol id="lista-tarefas">
+        <ol id="lista-tarefas">
+          <li>comprar pão</li>
+          <li>aaa</li>
+          <li></li>        
+        </ol>
+      
+        <div id="actions"> 
 
-    </ol>
+          <button id="salvar-tarefas">salvar tarefas</button>
 
+          <button id="remover-finalizados">remover finalizadas</button>
 
-    <button id="criar-tarefa">criar tarefa</button>
+          <button id="apaga-tudo">zerar lista</button>
 
-    <button id="apaga-tudo">apagar lista</button>
+          <button id="mover-cima">▲</button>
 
-    <button id="remover-finalizados">remover tarefas finalizadas</button>
+          <button id="mover-baixo">▼</button>
 
-    <button id="salvar-tarefas">salvar tarefas</button>
+        </div>
 
-    <button id="mover-cima"></button>
-
-    <button id="mover-baixo"></button>
-
-
-
-
-
-  <script src="script.js"></script>
+      </div>
+    </main>
+    <script src="script.js"></script>
   </body>
 </html>
