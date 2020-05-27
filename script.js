@@ -1,8 +1,8 @@
-const createTaskButton = document.getElementById('criar-tarefa');
 const taskList = document.getElementById('lista-tarefas');
 const textInput = document.getElementById('texto-tarefa');
 const taskItem = document.getElementsByTagName('li');
-
+const selectedElements = document.getElementsByClassName('selected')
+const moveUpButton = document.getElementById('mover-cima');
 // criar uma função que irá adicionar uma nova tarefa ao receber o click no botão.
 // O texto do item da lista criado, deve ser o texto inserido no text-input.//
 
@@ -28,29 +28,46 @@ function deleteList() {
   taskList.innerHTML = '';
 }
 
-/*function deleteCompleted() {
+/* function deleteCompleted() {
   $('.completed').remove();
 }*/
 
 function deleteCompleted() {
-  let completedElements = document.getElementsByClassName('completed');
+  const completedElements = document.getElementsByClassName('completed');
   while (completedElements.length > 0) {
     completedElements[0].parentNode.removeChild(completedElements[0]);
   }
 }
 
 function removeSelected() {
-  let selectedElements = document.getElementsByClassName('selected');
   while (selectedElements.length > 0) {
     selectedElements[0].parentNode.removeChild(selectedElements[0]);
   }
 }
 
 function saveList() {
-  for (let i = 0; i < taskItem.length; i += 1) {
-    console.log(taskItem[i].innerHTML);
-    window.localStorage.setItem('item', taskItem[i].innerHTML);
-  }
+  localStorage.clear();
+  localStorage.setItem('tasks', taskList.innerHTML);
 }
 
-window.localStorage.getItem('item');
+function loadSavedList() {
+  const savedList = localStorage.getItem('tasks');
+  taskList.innerHTML = savedList;
+}
+loadSavedList();
+
+/* function moveUp() {
+  if (selectedElements.length === 0) {
+    alert('Não há item selecionado.');
+  } else  if (selectedElements.length > 1) {
+    alert('Selecione apenas um item para mover!');
+  } else if (selectedElements.length === 1) {
+    const siblings = taskList.children;
+    console.log(siblings);
+    console.log(selectedElements);
+    const irmaos = document.querySelector('li').parentNode.childNodes;
+    console.log(irmaos);
+  } else {
+    alert('Chegou até o topo da lista.');
+  }
+} */
