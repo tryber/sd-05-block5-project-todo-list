@@ -9,7 +9,6 @@ function adicionaLista(){
              
         let lista = document.createElement("li");
         lista.innerHTML = input.value;
-        document.body.appendChild(lista);
+        listaTarefas.appendChild(lista);
         input.value = "";
         }
-        
