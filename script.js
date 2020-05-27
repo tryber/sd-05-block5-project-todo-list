@@ -46,7 +46,7 @@ let removerFinalizdos = document.getElementById('remover-finalizados')
     removerFinalizdos.addEventListener('click',limparItemSelecionado)
 
 function limparListaTarefa(){
-  
+    let pg = document.getElementById('lista-tarefas')
     riscaItemDaLista.innerHTML= '';
 }
 let apagarTudo = document.getElementById('apaga-tudo')
