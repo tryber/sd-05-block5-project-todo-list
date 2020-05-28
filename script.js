@@ -31,6 +31,13 @@ function removeList() {
   listaTarefa.innerHTML = "";
 }
 
-const removeTarefa = document.getElementById('apaga-tudo');
-removeTarefa.addEventListener('click', removeList);
+const removeTarefa = document.getElementById("apaga-tudo");
+removeTarefa.addEventListener("click", removeList);
 
+function completeList(event) {
+  if (event.target.classList.contains("itemlist")) {
+    event.target.classList.toggle("completed");
+  }
+}
+
+listaTarefa.addEventListener("dblclick", completeList);
