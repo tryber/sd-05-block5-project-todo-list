@@ -12,7 +12,7 @@ lista.addEventListener('mouseover', function () {
 });
 lista.addEventListener('click', function (event) {
   const selected = event.target;
-  for (let i = 0; i < selected.parentElement.children.length; i+=1) {
+  for (let i = 0; i < selected.parentElement.children.length; i += 1) {
     if (selected.parentElement.children[i].className.indexOf('selected') >= 0) {
       selected.parentElement.children[i].className = selected.parentElement.children[i].className.replace('selected', '');
     }
@@ -37,7 +37,7 @@ botaoApagaTudo.addEventListener('click', function () {
 const botaoFinalizados = document.getElementById('remover-finalizados');
 botaoFinalizados.addEventListener('click', function () {
   const listFinalizados = document.getElementsByClassName('completed');
-  for (let item = listFinalizados.length - 1; item >= 0; item-=1) {
+  for (let item = listFinalizados.length - 1; item >= 0; item -= 1) {
     const elemento = listFinalizados[item];
     elemento.parentElement.removeChild(elemento);
   }
@@ -45,7 +45,7 @@ botaoFinalizados.addEventListener('click', function () {
 const botaoRemoveSelecionado = document.getElementById('remover-selecionado');
 botaoRemoveSelecionado.addEventListener('click', function () {
   const selecionadoRemocao = document.getElementsByClassName('selected');
-  for (let item = selecionadoRemocao.length - 1; item >= 0; item--) {
+  for (let item = selecionadoRemocao.length - 1; item >= 0; item -= 1) {
     const elemento = selecionadoRemocao[item];
     elemento.parentElement.removeChild(elemento);
   }
