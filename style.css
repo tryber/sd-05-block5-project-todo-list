@@ -78,7 +78,6 @@ button {
 
 button:hover {
   background-color: #99B898;
-  cursor: pointer;
 }
 
 
@@ -118,7 +117,7 @@ button:hover {
   text-align: center;
 }
 
-#lista-tarefas li:hover {
+#lista-tarefas li, button {
   cursor: pointer;
 }
 
