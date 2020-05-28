@@ -1,4 +1,4 @@
-let addButton = document.getElementsByName("button")[0];
+let addButton = document.getElementsByTagName("button")[0];
 addButton.addEventListener("click", addItem);
 
 function addItem(){
@@ -8,5 +8,6 @@ function addItem(){
   let li = document.createElement("li");
   li.innerHTML = text;
   list.appendChild(li);
+  textoTarefa.value = "";
 }
 
