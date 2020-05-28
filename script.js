@@ -38,6 +38,17 @@ function limparListaTarefa(){
 
 let apagarTudo = document.getElementById('apaga-tudo')
 apagarTudo.addEventListener('click',limparListaTarefa)
-//fim .....
+//fim .....lista-tarefas
 
 
+function rmFinalizados(){
+   let removeFinalisado = document.getElementsByTagName('li');
+   for(let i=0;i < removeFinalisado.length;i+=1){
+        if(removeFinalisado[i].className === 'completed'){
+            removeFinalisado[i].remove();
+        }
+   }    
+
+}
+let remove = document.getElementById('remover-finalizados')
+    remove.addEventListener('click',rmFinalizados)
