@@ -1,6 +1,6 @@
 const botaoAdd = document.getElementById ('criar-tarefa');
 const botaoClearAll = document.getElementById ('apaga-tudo');
-const botaoClear = document.getElementById ('remover-finalizados');
+const botaoClear = document.getElementById ('remover-selecionados');
 const tarefa = document.getElementById ('texto-tarefa');
 const lista = document.getElementById ('lista-tarefas');
 
