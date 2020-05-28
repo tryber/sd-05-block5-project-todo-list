@@ -11,9 +11,11 @@ div{
   width: 825px;
   border-radius: 20px;
   background-color: white;
-
 }
 
 p{
   color: rgb(182, 182, 182);
+}
+.selected{
+  background-color: rgb(128,128,128) ;
 }
