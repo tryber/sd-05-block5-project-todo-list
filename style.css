@@ -1,6 +1,6 @@
 body {
   background-color: rgb(35 , 35 , 35);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: Gill Sans, Gill Sans MT, Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .list-box {
@@ -12,8 +12,14 @@ body {
   width: 850px;
 }
 
+.lista-ordenada {
+  max-width: 450px;
+  text-align: justify;
+  word-break: break-all;
+}
+
 .funcionamento {
-  color: rgb(128 , 128 , 128);
+  color: gray;
 }
 
 .btns {
@@ -25,6 +31,24 @@ body {
   font-size: 11px;
 }
 
-.listado {
+.lista-tarefas {
   cursor: pointer;
+}
+
+.tarefa {
+  margin: 4px;
+  padding: 2px;
+}
+
+.selected {
+  background-color: rgb(128 , 128 , 128);
+  border-radius: 1vh;
+  margin: 4px;
+  padding: 2px;
+}
+
+.completed {
+  margin: 4px;
+  padding: 2px;
+  text-decoration: line-through;
 }

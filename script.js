@@ -11,28 +11,70 @@ const btnMoberBaixo = document.getElementById('mover-baixo');
 const btnRemoverSelecionado = document.getElementById('remover-selecionado');
 
 // FUNÇÕES
+// manda o texto do input para a lista ordenada criada
 
 function criaTarefa() {
   const task = document.createElement('li');
   addTarefa.appendChild(task);
+  task.classList.add('tarefa');
   task.innerText = inputValue.value;
   inputValue.value = '';
 }
 
+// manda o texto teclando enter
+
+function criaEnter(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    criaTarefa();
+  }
+}
+
+// add ou remove (toggle) uma classe no evento do addListener, no caso click
+
+function selectItem() {
+  const target = event.target.classList;
+  if (target.contains('tarefa')) {
+    target.toggle('selected');
+  }
+}
+
+// add ou remove completed como classe seguido da classe selected a cada dblclick.
+
+function clickDuplo() {
+  const target = event.target.classList;
+  if (target.contains('tarefa')) {
+    target.toggle('completed');
+    target.toggle('selected', true);
+  } else if (target.contains('completed')) {
+    target.remove('completed', 'selected');
+  }
+}
+
+// apaga o conteúdo da lista
+
+function apagarLista() {
+  addTarefa.innerHTML = '';
+}
+
+// percorro toda a lista criada decrementando e removo os itens com a classe completed
+// atente-se: ByClassName éso entre aspas simples e sem .
+
+function removeFinalizados() {
+  const finalizados = document.getElementsByClassName('completed');
+  for (let itens = finalizados.length - 1; itens >= 0; itens -= 1) {
+    finalizados[itens].remove();
+  }
+}
+
 // EVENT LISTENERS
 
+addTarefa.addEventListener('click', selectItem);
+addTarefa.addEventListener('dblclick', clickDuplo);
 btnAdicionar.addEventListener('click', criaTarefa);
-
-// Ao clicar em um item da lista, altere a cor de fundo do item para cinza rgb(128,128,128).
-
-// 9 - Ao clicar duas vezes em um item, ele deverá ser riscado,
-// indicando que foi completo. Deve ser possível desfazer essa ação
-// clicando novamente duas vezes no item.
-// Pontos importantes sobre este requisito:
-// * Crie uma classe CSS com o nome "completed" e defina a propriedade
-// "text-decoration" com o valor "line-through".
-// * Utilize a classe CSS "completed" para adicionar o efeito de letra
-// tachada (riscada) as tarefas finalizadas.
+btnApagar.addEventListener('click', apagarLista);
+inputValue.addEventListener('keyup', criaEnter);
+btnRemover.addEventListener('click', removeFinalizados);
 
 // BONUS
 
