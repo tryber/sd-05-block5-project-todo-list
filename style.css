@@ -5,7 +5,7 @@
 
 body {
   background-color: #99B898;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 main {
@@ -30,8 +30,8 @@ header {
 }
 
 #funcionamento{
-  font-style: italic;
-  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
   margin: 5% 0;
   text-align: center;
 }
@@ -49,6 +49,7 @@ input#texto-tarefa {
   padding: 0.5em;
   width: 20em;
   background: transparent;
+  font-style: italic;
 }
 
 #texto-tarefa:focus{
@@ -63,7 +64,7 @@ input#texto-tarefa {
 }
 
 button {
-  font-size: 0.8em;
+  font-size: 0.9em;
   letter-spacing: 0.1em;  
   padding:0.35em 1.2em;
   margin:0 0.3em 0.3em 0;
@@ -115,7 +116,6 @@ button:hover {
   letter-spacing: 0.1em;  
   margin-top: 3%;
   text-align: center;
-  font-size: 0.9em;
 }
 
 #lista-tarefas li:hover {
