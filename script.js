@@ -57,3 +57,33 @@ salvaLista.addEventListener('click', function () {
 if (localStorage.getItem('lista') != null) {
   document.getElementsByTagName('ol')[0].innerHTML = localStorage.getItem('lista');
 }
+const botaoCima = document.getElementById('mover-cima')
+
+botaoCima.addEventListener('click',cima);
+
+function cima(posicao) {
+  const SelecionadoMover = document.getElementsByClassName('selected')[0];
+    const NewReplacement = document.createElement("li")
+    if (SelecionadoMover.previousSibling == null) return;
+    NewReplacement.innerHTML = SelecionadoMover.previousSibling.innerHTML;
+    SelecionadoMover.previousSibling.innerHTML = SelecionadoMover.innerHTML;
+    SelecionadoMover.innerHTML = NewReplacement.innerHTML;
+    SelecionadoMover.className = SelecionadoMover.className.replace('selected', '');
+    SelecionadoMover.previousSibling.className += ' selected';
+  
+}
+
+const botatBaixo = document.getElementById('mover-baixo')
+botatBaixo.addEventListener('click',baixo);
+function baixo(posicao) {
+  const SelecionadoMover = document.getElementsByClassName('selected')[0];
+    const NewReplacement = document.createElement("li")
+  
+    if (SelecionadoMover.nextSibling == null) return;
+    NewReplacement.innerHTML = SelecionadoMover.nextSibling.innerHTML;
+    SelecionadoMover.nextSibling.innerHTML = SelecionadoMover.innerHTML;
+    SelecionadoMover.innerHTML = NewReplacement.innerHTML;
+    SelecionadoMover.className = SelecionadoMover.className.replace('selected', '');
+    SelecionadoMover.nextSibling.className += ' selected';
+  
+}
