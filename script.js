@@ -30,3 +30,14 @@ let botaoApagaTudo=document.getElementById("apaga-tudo")
 botaoApagaTudo.addEventListener("click",function(){
   document.getElementById("lista-tarefas").innerHTML=""
 })
+
+let botaoFinalizados= document.getElementById("remover-finalizados")
+botaoFinalizados.addEventListener('click',function(){
+  let listFinalizados = document.getElementsByClassName("completed")
+  console.log(listFinalizados)
+  for (let item = listFinalizados.length-1; item >= 0; item--) {
+    let elemento = listFinalizados[item]
+    elemento.parentElement.removeChild(elemento)
+    
+  }
+})
