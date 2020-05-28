@@ -11,14 +11,9 @@ criar_tarefa.addEventListener("click", adicionarItem)
 
 function adicionarItem(event){
   event.preventDefault();
-  let item = input.value;
-  novoItem(item)
+  let novo_item = document.createElement("li");
+  let novo_item_texto = document.createTextNode(input.value)
+  novo_item.appendChild(novo_item_texto)
+  lista_tarefas.appendChild(novo_item)
+  input.value = "";
 }
-
-function novoItem(item) {
-    let novo_item = document.createElement("li");
-    let novo_item_texto = document.createTextNode(item)
-    novo_item.appendChild(novo_item_texto)
-    lista_tarefas.appendChild(novo_item)
-}
-
