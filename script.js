@@ -6,6 +6,7 @@ const lista = document.getElementById ('lista-tarefas');
 let a = "";
 
 botaoAdd.addEventListener ('click', adicionar);
+botaoClearAll.addEventListener ('click', resetar);
 
 function adicionar () {
     if (tarefa.value !== "") {
@@ -13,7 +14,12 @@ function adicionar () {
         li.innerText = tarefa.value;
         lista.appendChild (li);  
         tarefa.value = "";
-    }
-
-    
+    }   
 }
+
+function resetar () {
+    while (lista.lastElementChild) {
+        lista.removeChild (lista.lastElementChild);
+    }    
+}
+    
