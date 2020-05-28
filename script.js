@@ -1,13 +1,15 @@
 const botaoAdd = document.getElementById ('criar-tarefa');
 const botaoClearAll = document.getElementById ('apaga-tudo');
-const botaoClear = document.getElementById ('remover-selecionados');
+const botaoClearSel = document.getElementById ('remover-selecionados');
+const botaoClearFin = document.getElementById  ('remover-finalizados')
 const tarefa = document.getElementById ('texto-tarefa');
 const lista = document.getElementById ('lista-tarefas');
 
 
 botaoAdd.addEventListener ('click', adicionar);
 botaoClearAll.addEventListener ('click', resetar);
-botaoClear.addEventListener ('click', rmvSel);
+botaoClearSel.addEventListener ('click', rmvSel);
+botaoClearFin.addEventListener ('click', rmvFin);
 
 function adicionar () {
     if (tarefa.value !== "") {
@@ -22,10 +24,10 @@ function adicionar () {
             li.classList.toggle ('selected');
         }
 
-        li.addEventListener ('dblclick', pintar);
+        li.addEventListener ('dblclick', completa);
 
-        function pintar () {
-            li.classList.toggle('feita');
+        function completa () {
+            li.classList.toggle('completed');
         }
 
     }   
@@ -36,10 +38,17 @@ function resetar () {
         lista.removeChild (lista.lastElementChild);
     }    
 }
-let elementosSel = document.getElementsByClassName ('selected');
+
 function rmvSel () {
+    const elementosSel = document.getElementsByClassName ('selected')
     for (let i = elementosSel.length -1; i>=0; i-=1) {
         elementosSel[i].remove();
     } 
 }
 
+function rmvFin (){
+    const finalizado = document.getElementsByClassName ('completed')
+    for (let a = finalizado.length -1; a>= 0; a -= 1) {
+        finalizado[a].remove();
+    }
+}
