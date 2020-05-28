@@ -19,3 +19,7 @@ p{
 .selected{
   background-color: rgb(128,128,128) ;
 }
+
+button, li{
+  cursor: pointer;
+}

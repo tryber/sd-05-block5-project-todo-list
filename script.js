@@ -33,3 +33,4 @@ function removeList() {
 
 const removeTarefa = document.getElementById('apaga-tudo');
 removeTarefa.addEventListener('click', removeList);
+
