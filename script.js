@@ -33,17 +33,18 @@ window.onload = function () {
  //  inputValue.value = '';
 
   
-  const orderList = document.querySelectorAll('.lista-tarefas');
-  const textValue = inputValue.value;
-  let list = document.createElement('li');
-  createTaskButton.addEventListener("click", () => {
-   list.innerHTML = textValue;
-   orderList.appendChild(list);
-   inputValue.value = '';
-  });
+ 
+   createTaskButton.addEventListener("click", () => {
+    const list = document.createElement('li');
+    const orderList = document.querySelectorAll('ol')[0];
+    const textValue = inputValue.value;
+    list.innerHTML = textValue;
+    orderList.appendChild(list);
+    inputValue.value = '';
+    list.ondblclick = () => (list.style.backgroundColor = "grey")
+   })  
+ 
   
-  
-  list.ondblclick = () => (list.style.backgroundColor = "grey")
 
 
 
