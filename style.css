@@ -1,0 +1,12 @@
+.buttons {
+  display: inline-block;
+  margin: 5px;
+}
+
+button , li {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+}
