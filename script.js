@@ -1,6 +1,7 @@
 botao = document.getElementById("criar-tarefa")
 lista = document.getElementById("lista-tarefas")
 entradaTexto = document.getElementById("texto-tarefa")
+
 botao.addEventListener('click', function () {
   let novo = document.createElement("li")
   novo.innerText = entradaTexto.value;
@@ -13,31 +14,47 @@ lista.addEventListener('mouseover', function () {
 })
 lista.addEventListener('click', function (event) {
   let selected = event.target
-  if (selected.className.indexOf("selected")<0) {
-    selected.className="selected"
+  for (let i = 0; i < selected.parentElement.children.length; i++) {
+    if (selected.parentElement.children[i].className.indexOf("selected") >= 0) {
+      selected.parentElement.children[i].className = selected.parentElement.children[i].className.replace("selected", "")
+    }
+  }
+  if (selected.className.indexOf("selected") < 0) {
+    selected.className = "selected"
   }
 })
-lista.addEventListener('dblclick',function(event){
+lista.addEventListener('dblclick', function (event) {
   let selected = event.target
-  if (selected.className.indexOf(" completed")<0) {
-    selected.className+=" completed"
-  }else{
-    selected.className=selected.className.replace(" completed","")
+  if (selected.className.indexOf(" completed") < 0) {
+    selected.className += " completed"
+  } else {
+    selected.className = selected.className.replace(" completed", "")
   }
 })
 
-let botaoApagaTudo=document.getElementById("apaga-tudo")
-botaoApagaTudo.addEventListener("click",function(){
-  document.getElementById("lista-tarefas").innerHTML=""
+let botaoApagaTudo = document.getElementById("apaga-tudo")
+botaoApagaTudo.addEventListener("click", function () {
+  document.getElementById("lista-tarefas").innerHTML = ""
 })
 
-let botaoFinalizados= document.getElementById("remover-finalizados")
-botaoFinalizados.addEventListener('click',function(){
+let botaoFinalizados = document.getElementById("remover-finalizados")
+botaoFinalizados.addEventListener('click', function () {
   let listFinalizados = document.getElementsByClassName("completed")
   console.log(listFinalizados)
-  for (let item = listFinalizados.length-1; item >= 0; item--) {
+  for (let item = listFinalizados.length - 1; item >= 0; item--) {
     let elemento = listFinalizados[item]
     elemento.parentElement.removeChild(elemento)
-    
+
+  }
+})
+
+let botaoRemoveSelecionado = document.getElementById("remover-selecionado")
+botaoRemoveSelecionado.addEventListener('click', function () {
+  let selecionadoRemocao = document.getElementsByClassName("selected")
+  console.log(selecionadoRemocao)
+  for (let item = selecionadoRemocao.length - 1; item >= 0; item--) {
+    let elemento = selecionadoRemocao[item]
+    elemento.parentElement.removeChild(elemento)
+
   }
 })
