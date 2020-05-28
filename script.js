@@ -58,3 +58,10 @@ botaoRemoveSelecionado.addEventListener('click', function () {
 
   }
 })
+let salvaLista=document.getElementById("salvar-tarefas")
+salvaLista.addEventListener('click',function(){
+  localStorage.setItem("lista",document.getElementsByTagName("ol")[0].innerHTML)
+})
+window.onload=function(){
+  document.getElementsByTagName("ol")[0].innerHTML=localStorage.getItem("ol")
+}
