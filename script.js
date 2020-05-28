@@ -31,22 +31,6 @@ function selecionarItParaRiscar(event){
 riscaItemDaLista.addEventListener('dblclick',selecionarItParaRiscar);
 // fim ....
 
-
-//Código que remove os itens selecionados
-function limparItemSelecionado(){
-let recLi = document.getElementsByTagName('li');
-   for(let i =0; i < recLi.length;i+=1) {
-      if(recLi[i].className === 'completed'){
-          recLi[i].remove()
-      }
-   }
-}
-let removerFinalizdos = document.getElementById('remover-finalizados')
-    removerFinalizdos.addEventListener('click',limparItemSelecionado)
-//fim da função ....
-
-
-
 function limparListaTarefa(){
     let pg = document.getElementById('lista-tarefas')
         pg.innerHTML= "";
