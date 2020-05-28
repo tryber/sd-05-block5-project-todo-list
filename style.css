@@ -1,0 +1,28 @@
+body{
+  background-color: rgba(32, 46, 240, 0.247);
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+div{
+  margin-top: 40px;
+  padding: 30px;
+  height: 325px;
+  width: 825px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+p{
+  color: rgb(182, 182, 182);
+}
+.selected{
+  background-color: rgb(128,128,128) ;
+}
+
+button, li{
+  cursor: pointer;
+}
+.completed{
+  text-decoration: line-through;
+}
