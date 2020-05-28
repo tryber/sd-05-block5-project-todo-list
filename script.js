@@ -30,7 +30,7 @@ function selecionarItParaRiscar(event){
 }
 riscaItemDaLista.addEventListener('dblclick',selecionarItParaRiscar);
 // fim ....
-
+// Código que apaga toda lista do código
 function limparListaTarefa(){
     let pg = document.getElementById('lista-tarefas')
         pg.innerHTML= "";
@@ -38,4 +38,6 @@ function limparListaTarefa(){
 
 let apagarTudo = document.getElementById('apaga-tudo')
 apagarTudo.addEventListener('click',limparListaTarefa)
+//fim .....
+
 
