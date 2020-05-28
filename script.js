@@ -1,4 +1,3 @@
-//variáveis
 const textoInput = document.getElementById('texto-tarefa');
 const listaOrdenada = document.getElementById('lista-tarefas');
 const criaTarefa = document.getElementById('criar-tarefa');
@@ -27,6 +26,4 @@ function completado(e) {
     e.target.classList.add('completed');
   }
 }
-listaOrdenada.addEventListener("dblclick", completado);
-
-
+listaOrdenada.addEventListener('dblclick', completado);
