@@ -41,3 +41,12 @@ function completeList(event) {
 }
 
 listaTarefa.addEventListener("dblclick", completeList);
+
+function removeSelected(){
+  while(document.querySelector('.selected')){
+    document.querySelector('.selected').remove();
+    
+  }
+}
+const removeSelection = document.getElementById('remover-selecionado');
+removeSelection.addEventListener('click', removeSelected);
