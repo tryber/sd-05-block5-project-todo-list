@@ -4,9 +4,11 @@ const botaoClear = document.getElementById ('remover-finalizados');
 const tarefa = document.getElementById ('texto-tarefa');
 const lista = document.getElementById ('lista-tarefas');
 let a = "";
+const selecionado = document.getElementsByClassName ('.selected');
 
 botaoAdd.addEventListener ('click', adicionar);
 botaoClearAll.addEventListener ('click', resetar);
+botaoClear.addEventListener ('click', rmvSel);
 
 function adicionar () {
     if (tarefa.value !== "") {
@@ -14,6 +16,19 @@ function adicionar () {
         li.innerText = tarefa.value;
         lista.appendChild (li);  
         tarefa.value = "";
+
+        li.addEventListener ('click', selecionar);
+        
+        function selecionar () {
+            li.classList.toggle ('selected');
+        }
+
+        li.addEventListener ('dblclick', pintar);
+
+        function pintar () {
+            li.classList.toggle('feita');
+        }
+
     }   
 }
 
@@ -22,4 +37,9 @@ function resetar () {
         lista.removeChild (lista.lastElementChild);
     }    
 }
-    
+
+function rmvSel () {
+    while (selecionado.length > 0) {
+        selecionado[0].parentNode.removeChild(selecionado[0]);
+    }
+}
