@@ -1,28 +1,25 @@
-.imovel{
-  position: fixed;
+.imovel {
   font-size: 3em;
-  
+  position: fixed;
 }
-body{
+
+body {
   background-color: aqua;
 }
-li{
+
+li {
   cursor: pointer;
 }
 
-.completed{}
-
-ol{
-}
-.vista{
+.vista {
   background-color: azure;
   width: 500px;
 }
 
-.selected{
-  background-color:rgb(128, 128, 128);
+.selected {
+  background-color: rgb(128, 128, 128);
 }
 
-.completed{
+.completed {
   text-decoration: line-through;
 }
