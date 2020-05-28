@@ -1,9 +1,12 @@
 .buttons {
   display: inline-block;
-  margin-inline-end: 5px;
-  margin-inline-start: 5px;
+  margin: 5px;
 }
 
-button, li {
+button , li {
   cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
 }

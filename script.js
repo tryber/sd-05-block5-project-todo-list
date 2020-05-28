@@ -19,3 +19,14 @@ criaTarefa.addEventListener('click', adicionaItem);
 apagaItens.addEventListener('click', function () {
   listaOrdenada.innerHTML = '';
 });
+
+function completado(e) {
+  if (e.target.classList.contains('completed')) {
+    e.target.classList.remove('completed');
+  } else {
+    e.target.classList.add('completed');
+  }
+}
+listaOrdenada.addEventListener("dblclick", completado);
+
+
