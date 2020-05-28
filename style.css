@@ -1,0 +1,25 @@
+.imovel {
+  font-size: 3em;
+  position: fixed;
+}
+
+body {
+  background-color: aqua;
+}
+
+li {
+  cursor: pointer;
+}
+
+.vista {
+  background-color: azure;
+  width: 500px;
+}
+
+.selected {
+  background-color: gray;
+}
+
+.completed {
+  text-decoration: line-through;
+}
