@@ -5,10 +5,11 @@ const inputValue = document.getElementById('texto-tarefa');
 const btnAdicionar = document.getElementById('criar-tarefa');
 const btnApagar = document.getElementById('apaga-tudo');
 const btnRemover = document.getElementById('remover-finalizados');
-const btnSalvar = document.getElementById('salvar-tarefas');
-const btnMoverCima = document.getElementById('mover-cima');
-const btnMoberBaixo = document.getElementById('mover-baixo');
 const btnRemoverSelecionado = document.getElementById('remover-selecionado');
+
+// const btnSalvar = document.getElementById('salvar-tarefas');
+// const btnMoverCima = document.getElementById('mover-cima');
+// const btnMoberBaixo = document.getElementById('mover-baixo');
 
 // FUNÇÕES
 // manda o texto do input para a lista ordenada criada
@@ -47,7 +48,7 @@ function clickDuplo() {
     target.toggle('completed');
     target.toggle('selected', true);
   } else if (target.contains('completed')) {
-    target.remove('completed', 'selected');
+    target.remove('completed');
   }
 }
 
@@ -67,6 +68,13 @@ function removeFinalizados() {
   }
 }
 
+function removeSelecinados() {
+  const selecionados = document.getElementsByClassName('selected');
+  for (let itens = selecionados.length - 1; itens >= 0; itens -= 1) {
+    selecionados[itens].remove();
+  }
+}
+
 // EVENT LISTENERS
 
 addTarefa.addEventListener('click', selectItem);
@@ -75,6 +83,7 @@ btnAdicionar.addEventListener('click', criaTarefa);
 btnApagar.addEventListener('click', apagarLista);
 inputValue.addEventListener('keyup', criaEnter);
 btnRemover.addEventListener('click', removeFinalizados);
+btnRemoverSelecionado.addEventListener('click', removeSelecinados);
 
 // BONUS
 
