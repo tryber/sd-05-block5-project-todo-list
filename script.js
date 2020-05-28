@@ -1,12 +1,14 @@
 const botao = document.getElementById('criar-tarefa');
 const lista = document.getElementById('lista-tarefas');
 const entradaTexto = document.getElementById('texto-tarefa');
+//-----------------------
 botao.addEventListener('click', function () {
   const novo = document.createElement('li');
   novo.innerText = entradaTexto.value;
   lista.appendChild(novo);
   entradaTexto.value = '';
 });
+//-----------------------
 lista.addEventListener('mouseover', function () {
   document.body.style.cursor = 'pointer';
 });
@@ -30,10 +32,12 @@ lista.addEventListener('dblclick', function (event) {
     selected.className = selected.className.replace(' completed', '');
   }
 });
+//-----------------------
 const botaoApagaTudo = document.getElementById('apaga-tudo');
 botaoApagaTudo.addEventListener('click', function () {
   document.getElementById('lista-tarefas').innerHTML = '';
 });
+//-----------------------
 const botaoFinalizados = document.getElementById('remover-finalizados');
 botaoFinalizados.addEventListener('click', function () {
   const listFinalizados = document.getElementsByClassName('completed');
@@ -42,6 +46,7 @@ botaoFinalizados.addEventListener('click', function () {
     elemento.parentElement.removeChild(elemento);
   }
 });
+//-----------------------
 const botaoRemoveSelecionado = document.getElementById('remover-selecionado');
 botaoRemoveSelecionado.addEventListener('click', function () {
   const selecionadoRemocao = document.getElementsByClassName('selected');
@@ -50,6 +55,7 @@ botaoRemoveSelecionado.addEventListener('click', function () {
     elemento.parentElement.removeChild(elemento);
   }
 });
+//-----------------------
 const salvaLista = document.getElementById('salvar-tarefas');
 salvaLista.addEventListener('click', function () {
   localStorage.setItem('lista', document.getElementsByTagName('ol')[0].innerHTML);
@@ -57,11 +63,11 @@ salvaLista.addEventListener('click', function () {
 if (localStorage.getItem('lista') != null) {
   document.getElementsByTagName('ol')[0].innerHTML = localStorage.getItem('lista');
 }
-const botaoCima = document.getElementById('mover-cima')
-botaoCima.addEventListener('click', cima);
+//-----------------------------------------
+const botaoCima = document.getElementById('mover-cima');
 function cima() {
   const SelecionadoMover = document.getElementsByClassName('selected')[0];
-  const NewReplacement = document.createElement("li");
+  const NewReplacement = document.createElement('li');
   if (SelecionadoMover.previousSibling == null) return;
   NewReplacement.innerHTML = SelecionadoMover.previousSibling.innerHTML;
   SelecionadoMover.previousSibling.innerHTML = SelecionadoMover.innerHTML;
@@ -69,11 +75,12 @@ function cima() {
   SelecionadoMover.className = SelecionadoMover.className.replace('selected', '');
   SelecionadoMover.previousSibling.className += ' selected';
 }
-const botatBaixo = document.getElementById('mover-baixo')
-botatBaixo.addEventListener('click', baixo);
+botaoCima.addEventListener('click', cima);
+//-----------------------------------------------------
+const botatBaixo = document.getElementById('mover-baixo');
 function baixo() {
   const SelecionadoMover = document.getElementsByClassName('selected')[0];
-  const NewReplacement = document.createElement("li")
+  const NewReplacement = document.createElement('li');
   if (SelecionadoMover.nextSibling == null) return;
   NewReplacement.innerHTML = SelecionadoMover.nextSibling.innerHTML;
   SelecionadoMover.nextSibling.innerHTML = SelecionadoMover.innerHTML;
@@ -81,3 +88,5 @@ function baixo() {
   SelecionadoMover.className = SelecionadoMover.className.replace('selected', '');
   SelecionadoMover.nextSibling.className += ' selected';
 }
+botatBaixo.addEventListener('click', baixo);
+//-----------------------------------------------------
