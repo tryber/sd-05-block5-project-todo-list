@@ -1,3 +1,7 @@
 .botao, .item-tarefa {
   cursor: pointer;
 }
+
+.selected {
+  background-color: grey;
+}
