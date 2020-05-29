@@ -9,5 +9,10 @@ function addItem(){
   li.innerHTML = text;
   list.appendChild(li);
   textoTarefa.value = "";
+  li.addEventListener("click", changeColor)
 }
 
+function changeColor(event){
+  let clickedItem = event.target;
+  clickedItem.style.backgroundColor = "rgb(128, 128, 128)";
+}
