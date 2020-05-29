@@ -5,7 +5,8 @@ let arr = [];
 function adicionar (){
     let lista = document.getElementById('texto-tarefa');
     orderList.innerHTML = orderList.innerHTML + '<li>' + lista.value + '</li>';
-    arr = arr + lista.value + ' ';    
+    arr = arr + lista.value + ' ';
+    lista.value='';
 }
 
 botao.addEventListener('click', adicionar);
