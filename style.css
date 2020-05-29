@@ -4,4 +4,9 @@
 
 .selected {
   background-color: grey;
+  width: fit-content;
+}
+
+.item-tarefa {
+  width: fit-content;
 }

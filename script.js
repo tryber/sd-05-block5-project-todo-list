@@ -3,6 +3,7 @@ const textoTarefa = document.getElementById("texto-tarefa");
 const listaTarefas = document.getElementById("lista-tarefas");
 const criarTarefa = document.getElementById("criar-tarefa");
 const itemTarefa = document.getElementsByClassName("item-tarefa");
+const apagaTudo = document.getElementById("apaga-tudo");
 
 // Funções
 // Adicionando tarefa na lista tarefa
@@ -21,6 +22,12 @@ function seleciona() {
   itemSelecionado = event.target;
 }
 
+// Apagar todas as tarefas
+function apagaTarefas() {
+  listaTarefas.innerText = "";
+}
+
 // Event Listeners
 criarTarefa.addEventListener('click', adicionarTarefa); // passando o valor da caixa de texto pra a lista em um clique
 listaTarefas.addEventListener('click', seleciona);
+apagaTudo.addEventListener('click', apagaTarefas);
