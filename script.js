@@ -20,9 +20,9 @@ function changeColor(event){
 
 function doubleClick(event){
   let clickedItem = event.target;
-  if (clickedItem.style.textDecoration !== "line-through"){
-    clickedItem.style.textDecoration = "line-through";
+  if (clickedItem.classList.contains("completed")){
+    clickedItem.classList.remove("completed");
   } else {
-    clickedItem.style.textDecoration = "";
+    clickedItem.classList.add("completed");
   }
 }
