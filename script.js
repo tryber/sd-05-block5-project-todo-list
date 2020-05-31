@@ -1,14 +1,14 @@
+// Variáveis
+const btn = document.getElementById('criar-tarefa');
+const ol = document.getElementById('lista-tarefas')
+
 const insereTarefaNaLista = (campoTarefas) => {
-  const tagOl = document.querySelector('#lista-tarefas');
-  const tagLi = document.createElement('li');
+  const li = document.createElement('li');
 
-  tagLi.innerHTML = campoTarefas;
-  tagOl.appendChild(tagLi);
+  li.innerHTML = campoTarefas;
+  ol.appendChild(li);
 
-  document.getElementById('texto-tarefa').value = '';
-
-  adicionarEventoDeSublinhar(tagLi);
-  adicionarEventoFundoCinza(tagLi);
+  document.getElementById('texto-tarefa').value = '';  
 };
 
 // adiciona na lista e apagar input adicionado
@@ -17,7 +17,12 @@ const criarElementoLista = () => {
   insereTarefaNaLista(campoTarefas);
 };
 
-// Funções para os botões
-const btn = document.querySelector('#criar-tarefa');
 btn.addEventListener('click', criarElementoLista);
 
+// Apagar lista inteira
+let buttonDeleteAll = document.getElementById("apaga-tudo");
+
+function deleteAll() {
+  ol.innerText = "";
+}
+buttonDeleteAll.addEventListener("click", deleteAll);
