@@ -23,3 +23,11 @@ lista.addEventListener('dblclick', function() {
         evento.classList.add('completed');
     }
 });
+
+const remover = document.getElementById('remover-finalizados');
+remover.addEventListener('click', function () {
+    let paraApagar = document.getElementsByClassName('completed');
+    for (let i = paraApagar.length; i > 0; i -= 1) {
+        lista.removeChild(paraApagar[0]);
+    }
+});
