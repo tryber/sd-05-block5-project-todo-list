@@ -1,6 +1,6 @@
 // Variáveis
 const btn = document.getElementById('criar-tarefa');
-const ol = document.getElementById('lista-tarefas')
+const ol = document.getElementById('lista-tarefas');
 
 const insereTarefaNaLista = (campoTarefas) => {
   const li = document.createElement('li');
@@ -8,7 +8,7 @@ const insereTarefaNaLista = (campoTarefas) => {
   li.innerHTML = campoTarefas;
   ol.appendChild(li);
 
-  document.getElementById('texto-tarefa').value = '';  
+document.getElementById('texto-tarefa').value = '';  
 };
 
 // adiciona na lista e apagar input adicionado
@@ -20,9 +20,21 @@ const criarElementoLista = () => {
 btn.addEventListener('click', criarElementoLista);
 
 // Apagar lista inteira
-let buttonDeleteAll = document.getElementById("apaga-tudo");
+const buttonDeleteAll = document.getElementById('apaga-tudo');
 
 function deleteAll() {
-  ol.innerText = "";
+  ol.innerText = '';
 }
-buttonDeleteAll.addEventListener("click", deleteAll);
+buttonDeleteAll.addEventListener('click', deleteAll);
+
+// Sublinhar item
+function itemCrossed(e) {
+  let itemDblClick = e.target;
+  if (!(itemDblClick.classList.contains('completed'))) {
+    itemDblClick.classList.add('completed');
+  }
+  else {
+    itemDblClick.classList.remove('completed');
+  }
+}
+ol.addEventListener('dblclick', itemCrossed);
