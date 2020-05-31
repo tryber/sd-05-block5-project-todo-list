@@ -1,6 +1,9 @@
-span:hover {
+li {
     cursor: pointer;
 }
-.corClique {
+.completed {
     background-color: rgb(128, 128, 128);
+}
+.riscado {
+    text-decoration: line-through;
 }
