@@ -16,5 +16,10 @@ lista.addEventListener('click', function () {
 
 lista.addEventListener('dblclick', function() {
     const evento = event.target;
-    evento.classList.add('riscado');
+    let classes = evento.classList.value;
+    if (classes.search('completed') >= 0) {
+        evento.classList.remove('completed');
+    } else {
+        evento.classList.add('completed');
+    }
 });
