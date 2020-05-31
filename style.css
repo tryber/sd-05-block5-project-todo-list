@@ -8,3 +8,7 @@ li, button{
 .completed{
     text-decoration: line-through;
 }
+.box-Lista{
+    width: 33%;
+    max-height: 300px;
+}

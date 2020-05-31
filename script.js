@@ -2,9 +2,10 @@
 //Declaracao de variaveis globais
 let listaTarefas = document.getElementById("lista-tarefas");
 let inputTexto = document.getElementById("texto-tarefa");
-let botaoAdicionar = document.getElementById("criar-tarefa");
-let botaoApagaTudo = document.getElementById("apaga-tudo");
+const botaoAdicionar = document.getElementById("criar-tarefa");
+const botaoApagaTudo = document.getElementById("apaga-tudo");
 let lista = document.getElementsByTagName("li");
+const botaoLimparCompleto = document.getElementById("remover-finalizados");
 
 // adicionando eventos ao apertar Enter nos campos de texto      
 inputTexto.addEventListener("keypress", function(e){
@@ -45,3 +46,15 @@ botaoApagaTudo.addEventListener('click', excluirLista);
 function excluirLista(){
     listaTarefas.innerHTML = "";
 }
+//adiconando evento ao botao (LimparCompleto) para quando houver um Click, chamar a funcao exluirTarefaCompleta()
+botaoLimparCompleto.addEventListener('click', excluirTarefaCompleta);
+function excluirTarefaCompleta(){
+  const completed = document.getElementsByClassName("completed");
+  let i = completed.length;
+while(i > 0){
+    completed[0].remove();
+    i--;
+  }
+}
+
+
