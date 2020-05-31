@@ -8,7 +8,7 @@ const insereTarefaNaLista = (campoTarefas) => {
   li.innerHTML = campoTarefas;
   ol.appendChild(li);
 
-document.getElementById('texto-tarefa').value = '';  
+  document.getElementById('texto-tarefa').value = '';
 };
 
 // adiciona na lista e apagar input adicionado
@@ -29,12 +29,22 @@ buttonDeleteAll.addEventListener('click', deleteAll);
 
 // Sublinhar item
 function itemCrossed(e) {
-  let itemDblClick = e.target;
+  const itemDblClick = e.target;
   if (!(itemDblClick.classList.contains('completed'))) {
     itemDblClick.classList.add('completed');
-  }
-  else {
+  } else {
     itemDblClick.classList.remove('completed');
   }
 }
 ol.addEventListener('dblclick', itemCrossed);
+
+// Remover finalizados
+const btnDeleteCompleted = document.getElementById('remover-finalizados');
+const listCompleted = document.getElementsByClassName('completed');
+
+function deleteCompleted() {
+  for (let i = listCompleted.length - 1; i >= 0; i -= 1) {
+    listCompleted[i].remove();
+  }
+}
+btnDeleteCompleted.addEventListener('click', deleteCompleted);
