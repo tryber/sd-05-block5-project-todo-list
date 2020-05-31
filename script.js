@@ -15,21 +15,32 @@ function addTask() {
     li.className = "item-lista";
     taskList.appendChild(li);
     textInput.value = '';
-    li.addEventListener('click', selectItem);
-    li.addEventListener('dblclick', concludeItem);
   }
 }
 let createTask = document.getElementById('criar-tarefa');
 createTask.addEventListener('click', addTask);
 
 // função para selecionar o item da lista, e pintar o background de cinza.
-function selectItem(event) {
+/*function selectItem(event) {
   event.target.classList.toggle('selected');
-};
+};*/
+function selectItem(e) {
+  const itemSelected = e.target;
+  const listTasks = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < listTasks.length; i += 1) {
+    if (listTasks[i].classList.contains('selected')) {
+      listTasks[i].classList.remove('selected');
+    }
+  }
+  itemSelected.classList.add('selected');
+}
+taskList.addEventListener('click', selectItem);
+
 // função para riscar os elementos concluidos
 function concludeItem(event) {
   event.target.classList.toggle('completed');
 }
+taskList.addEventListener('dblclick', concludeItem);
 // função para deletar a lista toda
 function deleteList() {
   taskList.innerHTML = '';
