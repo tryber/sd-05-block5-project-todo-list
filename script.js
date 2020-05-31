@@ -1,7 +1,7 @@
-const taskList = document.getElementById('lista-tarefas');
-const textInput = document.getElementById('texto-tarefa');
-const taskItem = document.getElementsByTagName('li');
-const selectedElements = document.getElementsByClassName('selected');
+let taskList = document.getElementById('lista-tarefas');
+let textInput = document.getElementById('texto-tarefa');
+let taskItem = document.getElementsByTagName('li');
+let selectedElements = document.getElementsByClassName('selected');
 let target = '';
 // criar uma função que irá adicionar uma nova tarefa ao receber o click no botão.
 // O texto do item da lista criado, deve ser o texto inserido no text-input.//
@@ -10,7 +10,7 @@ function addTask() {
   if (textInput.value === '') {
     alert('Preencha a caixa de texto com sua tarefa!');
   } else {
-    const li = document.createElement('li');
+    let li = document.createElement('li');
     li.innerHTML = textInput.value;
     li.className = "item-lista";
     taskList.appendChild(li);
@@ -19,7 +19,7 @@ function addTask() {
     li.addEventListener('dblclick', concludeItem);
   }
 }
-const createTask = document.getElementById('criar-tarefa');
+let createTask = document.getElementById('criar-tarefa');
 createTask.addEventListener('click', addTask);
 
 // função para selecionar o item da lista, e pintar o background de cinza.
