@@ -1,9 +1,9 @@
 li {
     cursor: pointer;
 }
-.completed {
+.corClique {
     background-color: rgb(128, 128, 128);
 }
-.riscado {
+.completed {
     text-decoration: line-through;
 }
