@@ -6,6 +6,7 @@ const botaoAdicionar = document.getElementById("criar-tarefa");
 const botaoApagaTudo = document.getElementById("apaga-tudo");
 let lista = document.getElementsByTagName("li");
 const botaoLimparCompleto = document.getElementById("remover-finalizados");
+const botaoRemoverSelecionado = document.getElementById("remover-selecionado");
 
 // adicionando eventos ao apertar Enter nos campos de texto      
 inputTexto.addEventListener("keypress", function(e){
@@ -56,5 +57,9 @@ while(i > 0){
     i--;
   }
 }
-
-
+//adiconando evento ao botao (RemoverSelecionado) para quando houver um Click, chamar a funcao removerTarefaSelecionada()
+botaoRemoverSelecionado.addEventListener("click", removerTarefaSelecionada);
+function removerTarefaSelecionada(){
+  const selected = document.getElementsByClassName("selected");
+    selected[0].remove();
+  }
