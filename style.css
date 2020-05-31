@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(144, 252, 144);
+    color: rgb(4, 92, 4);
+    font-size: 18px;
+    font-family: fantasy;
+    align-items: center;
+    margin: 5%;
+}
+header{
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+#funcionamento{
+    font-size: 1.5em;
+    text-align: center;
+    font-style: italic;
+}
+#texto-tarefa{
+    border-radius: 5px;
+}
+
+.list{
+    cursor: pointer;
+    margin:1%;
+    font-size: 1.2em;
+}
