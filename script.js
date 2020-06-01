@@ -6,7 +6,7 @@ let mover_cima = document.getElementById('mover-cima');
 let mover_baixo = document.getElementById('mover-baixo')
 let input = document.getElementById('texto-tarefa') 
 let lista_tarefas = document.getElementById('lista-tarefas') 
-
+let 
 
 // adicionar items à lista
 
@@ -28,6 +28,7 @@ apaga_tudo.addEventListener('click', apagaFunc);
 function apagaFunc(){
   let items_lista = document.querySelectorAll("#lista-tarefas li");
   for(let i = 0; i < items_lista.length; i++){
-    items_lista[i].innerHTML = '';
+    items_lista[i].remove();
   }
 }
+
