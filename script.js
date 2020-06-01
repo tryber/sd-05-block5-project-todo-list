@@ -13,10 +13,10 @@ function addItemList() {
 
 addButton.addEventListener('click', addItemList);
 
-// Select Element - Change list item bg color to grey when clicked
+// Select Element - Change list item bg color to gray when clicked
 function selectItem(event) {
-  for (item of listOfItems.children) {
-    item.classList.remove('selected');
+  for (let i = 0; i < listOfItems.children.length; i += 1) {
+    listOfItems.children[i].classList.remove('selected');
     if (event.target !== listOfItems) {
       event.target.classList.add('selected');
     }
