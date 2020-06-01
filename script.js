@@ -6,7 +6,7 @@ let textoTarefa = document.getElementById("texto-tarefa");
 criarTarefa.addEventListener("click", function() {
   let perguntaUsuario = document.createElement("li")
   perguntaUsuario.innerText = textoTarefa.value
-  lista.appendChild(perguntaUsuario)
+  listaTarefa.appendChild(perguntaUsuario)
   textoTarefa.value = null
  })
 
