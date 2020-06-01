@@ -81,7 +81,7 @@ function moveUp() {
   }
 }
 
-const moveUpmoveUpButton = document.getElementById('mover-cima');
+const moveUpButton = document.getElementById('mover-cima');
 moveUpButton.addEventListener('click', moveUp);
 
 // Move items down
