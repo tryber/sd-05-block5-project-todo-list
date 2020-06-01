@@ -26,7 +26,7 @@ function adicionarItem(event){
 apaga_tudo.addEventListener('click', apagaFunc);
 
 function apagaFunc(){
-  let items_lista = document.querySelectorAll('li');
+  let items_lista = document.querySelectorAll("#lista-tarefas li");
   for(let i = 0; i < items_lista.length; i++){
     items_lista[i].innerHTML = '';
   }
