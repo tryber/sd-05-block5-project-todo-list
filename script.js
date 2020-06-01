@@ -9,11 +9,3 @@ criarTarefa.addEventListener("click", function() {
   lista.appendChild(perguntaUsuario);
   text.value = null;
  })
-
- listaTarefa.addEventListener("dblclick", function () {
-   if (selecionado.classList !== undefined) {
-       selecionado.classList.remove("selected")
-   }
-    event.target.classList.add("selected");
-      selecionado = event.target
-  }
