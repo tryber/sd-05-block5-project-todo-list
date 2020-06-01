@@ -1,7 +1,11 @@
-let botao = document.querySelector("#criar-tarefa");
+let adicionar = document.querySelector("#criar-tarefa");
 let ol = document.querySelector("#lista-tarefas");
+let lista = document.querySelectorAll(".list");
+let apagarLista = document.querySelector("#apaga-tudo");
+let apagarFinalizados = document.querySelector("#remover-finalizados");
+console.log(lista); 
 
-botao.addEventListener("click", addList);
+adicionar.addEventListener("click", addList);
 function addList (){
     let input = document.querySelector("#texto-tarefa").value;
     let li = document.createElement("li");
@@ -9,15 +13,15 @@ function addList (){
     li.innerHTML = input;
     ol.appendChild(li);
     document.querySelector("#texto-tarefa").value="";
-}
 
-let lista = document.querySelectorAll(".list");
-console.log(lista); 
+    lista = document.querySelectorAll(".list"); 
+    console.log(lista);
 
 for(let a = 0; a < lista.length; a++){
     lista[a].addEventListener("click",selected);
     lista[a].addEventListener("dblclick",completo);
-    console.log(lista[a]) 
+    console.log(lista[a])
+} 
 }
 function selected (event){
     console.log(event);
@@ -36,5 +40,22 @@ function completo (event){
     event.target.classList.remove('completed');    
     }
 }
+apagarLista.addEventListener("click",apagarLi);
+function apagarLi (){
+    let lis = document.querySelectorAll(".list")
+    for (let c = 0; c < lis.length; c++){
+        if (lis){
+        ol.removeChild(lis[c]);
+        }
+    }
+}
 
-    
+apagarFinalizados.addEventListener("click",apagarCompleto);
+function apagarCompleto (){
+    let compl = document.querySelectorAll(".completed")
+    for (let d = 0; d < compl.length; d++){
+        if (compl){
+        ol.removeChild(compl[d]);
+        }
+    }
+}    
