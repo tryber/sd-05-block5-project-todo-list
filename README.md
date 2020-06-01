@@ -66,7 +66,7 @@ Esta é uma oportunidade de você exercitar sua criatividade e experimentar os c
 
     * Utilize a classe CSS "completed" para adicionar o efeito de letra tachada (riscada) as tarefas finalizadas.
 
-### 10 - Deve haver um botão com `id="apaga-tudo"` que quando clicado deve apagar todos os items da lista.
+### 10 - ~~Deve haver um botão com `id="apaga-tudo"` que quando clicado deve apagar todos os items da lista.~~
 
 ### 11 - Deve haver um botão com `id="remover-finalizados"` que quando clicado remove **somente** os elementos finalizados da sua lista.
 

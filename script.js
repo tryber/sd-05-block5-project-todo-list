@@ -25,9 +25,21 @@ function adicionarItem(event){
 apaga_tudo.addEventListener('click', apagaFunc);
 
 function apagaFunc(){
-  let items_lista = document.querySelectorAll("#lista-tarefas li");
+  let items_lista = document.querySelectorAll('#lista-tarefas li');
   for(let i = 0; i < items_lista.length; i++){
     items_lista[i].remove();
   }
+}
+
+let item = document.getElementsByTagName('li');
+
+// item.addEventListener('click', mudarBg);
+
+lista_tarefas.addEventListener('click', mudarBg);
+
+function mudarBg(event){
+  let target = event.target;
+  let selected = event.target;
+  selected.style.backgroundColor = 'rgb(128,128,128)';
 }
 
