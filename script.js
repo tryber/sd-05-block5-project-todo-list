@@ -52,7 +52,7 @@ btnDeleteCompleted.addEventListener('click', deleteCompleted);
 // Fundo cinza
 const tagLi = document.getElementsByTagName('li');
 
-function getGrey(event) {
+function cinza(event) {
   const liSelected = event.target;
   for (let i = 0; i < tagLi.length; i += 1) {
     if (liSelected === tagLi[i] && !(liSelected.classList.contains('selected'))) {
@@ -63,4 +63,4 @@ function getGrey(event) {
     }
   }
 }
-ol.addEventListener('click', getGrey);
+ol.addEventListener('click', cinza);
