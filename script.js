@@ -15,7 +15,6 @@ const botaoRemoverSelecionado = document.getElementById("remover-selecionado");
 const botaoSalvarTarefas = document.getElementById("salvar-tarefas");
 const botaomoverPraCima = document.getElementById("mover-cima");
 const botaomoverPraBaixo = document.getElementById("mover-baixo");
-
 //implementando funcões e adicionando eventos aos botões.
 // adicionando eventos ao apertar Enter nos campos de texto      
 inputTexto.addEventListener("keypress", function(e){
@@ -23,6 +22,7 @@ inputTexto.addEventListener("keypress", function(e){
          adicionaLista();
      }
  });
+//funcao implementada com ajuda da Renata, Kyle, e Paulo Ricardo
 //adicionando evento ao click do botao (adicionar)  para chamar a funcao adicionaLista()
 botaoAdicionar.addEventListener("click", adicionaLista);
 function adicionaLista(){
@@ -32,6 +32,7 @@ function adicionaLista(){
         inputTexto.value = "";
         inputTexto.focus();
 }
+//funcao implementada com ajuda da Juliete
 //adiconando evento a tag (ol) para quando houver um Click, chamar a funcao selecionaTarefa()
 listaTarefas.addEventListener('click', selecionaTarefa); 
 function selecionaTarefa(event){
@@ -56,6 +57,7 @@ botaoApagaTudo.addEventListener('click', excluirLista);
 function excluirLista(){
     listaTarefas.innerHTML = "";
 }
+//funcao implementada com ajuda da Renata
 //adiconando evento ao botao (LimparCompleto) para quando houver um Click, chamar a funcao exluirTarefaCompleta()
 botaoLimparCompleto.addEventListener('click', excluirTarefaCompleta);
 function excluirTarefaCompleta(){
@@ -72,31 +74,29 @@ function removerTarefaSelecionada(){
   const selected = document.getElementsByClassName("selected");
     selected[0].remove();
   }
+//funcao implementada com ajuda da Renata
 //adiconando evento ao botao (salvarTarefas) para quando houver um Click, chamar a funcao salvarTarefa()
 botaoSalvarTarefas.addEventListener("click", salvarTarefas)
 function salvarTarefas(){
   localStorage.setItem("listaTarefas", document.getElementById("lista-tarefas").innerHTML);
 }
+// Funcionalidade refatorada com a ajuda do Kyle
 //adiconando evento ao botao (moverPraCima) para quando houver um Click, chamar a funcao movePraCima()
 botaomoverPraCima.addEventListener("click", movePraCima);
 function movePraCima(){
-let list = document.getElementsByTagName("li");
-  for (item of list){
-    if ( item.previousElementSibling != null && item.classList.contains("selected")){
-      let caixa = item.previousElementSibling;
-      item.insertAdjacentElement('afterEnd', caixa);
+let itemSelecionado = document.getElementsByClassName("selected")[0];
+    if ( itemSelecionado.previousElementSibling ){
+      let irmaoMaisVelho = itemSelecionado.previousElementSibling;
+      listaTarefas.insertBefore(itemSelecionado, irmaoMaisVelho);
     }
-  }
 }
+// Funcionalidade implementada com a ajuda do Kyle
 //adiconando evento ao botao (moverPraBaixo) para quando houver um Click, chamar a funcao movePraBaixo()
 botaomoverPraBaixo.addEventListener("click", movePraBaixo);
 function movePraBaixo(){
-let list = document.getElementsByTagName("li");
-  for (item of list){
-    if ( item.nextElementSibling != null && item.classList.contains("selected")){
-      let caixa = item.nextElementSibling;
-      item.nextElementSibling = item;
-      item = caixa;
-    }
+  let itemSelecionado = document.getElementsByClassName("selected")[0];
+      if ( itemSelecionado.nextElementSibling ){
+        let irmaoMaisNovo = itemSelecionado.nextElementSibling;
+        irmaoMaisNovo.insertAdjacentElement("afterEnd", itemSelecionado);
+      }
   }
-}
