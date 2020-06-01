@@ -2,9 +2,6 @@
 const addButton = document.getElementById('criar-tarefa');
 const textInput = document.getElementById('texto-tarefa');
 const listOfItems = document.getElementById('lista-tarefas');
-const tagLI = document.getElementsByTagName('li');
-
-addButton.addEventListener('click', addItemList);
 
 function addItemList() {
   const listItems = document.createElement('li');
@@ -13,6 +10,8 @@ function addItemList() {
   textInput.value = '';
   textInput.focus();
 }
+
+addButton.addEventListener('click', addItemList);
 
 // Select Element - Change list item bg color to grey when clicked
 function selectItem(event) {
@@ -58,7 +57,7 @@ deleteCompletedButton.addEventListener('click', deleteCompleted);
 // Save and Load List
 const saveListButton = document.getElementById('salvar-tarefas');
 function saveList() {
-  let itemsList = listOfItems.innerHTML;
+  const itemsList = listOfItems.innerHTML;
   localStorage.setItem('list', itemsList);
 }
 saveListButton.addEventListener('click', saveList);
@@ -82,7 +81,7 @@ function moveUp() {
   }
 }
 
-let moveUpButton = document.getElementById('mover-cima');
+const moveUpmoveUpButton = document.getElementById('mover-cima');
 moveUpButton.addEventListener('click', moveUp);
 
 // Move items down
@@ -99,7 +98,7 @@ function moveDown() {
   }
 }
 
-let moveDownButton = document.getElementById('mover-baixo');
+const moveDownButton = document.getElementById('mover-baixo');
 moveDownButton.addEventListener('click', moveDown);
 
 // Remove selected item
