@@ -19,9 +19,14 @@ header{
 #texto-tarefa{
     border-radius: 5px;
 }
-
 .list{
     cursor: pointer;
     margin:1%;
     font-size: 1.2em;
+}
+.selected{
+    background-color: rgb(128,128,128);
+}
+.completed{
+    text-decoration: line-through;
 }
