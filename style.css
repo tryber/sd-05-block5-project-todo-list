@@ -38,7 +38,7 @@ section{
     background-color: rgb(128,128,128);
 }
 .completed{
-    text-decoration: line-through;
+    text-decoration: line-through solid rgb(0, 0, 0);
 }
 #apaga-tudo{
     background-color: rgb(119, 4, 4);
