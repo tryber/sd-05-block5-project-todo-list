@@ -1,51 +1,51 @@
-//Add item list
-let addButton = document.getElementById("criar-tarefa");
-let textInput = document.getElementById("texto-tarefa");
-let listOfItems = document.getElementById("lista-tarefas");
-let tagLI = document.getElementsByTagName("li");
+// Add item list
+const addButton = document.getElementById('criar-tarefa');
+const textInput = document.getElementById('texto-tarefa');
+const listOfItems = document.getElementById('lista-tarefas');
+const tagLI = document.getElementsByTagName('li');
 
-addButton.addEventListener("click", addItemList);
+addButton.addEventListener('click', addItemList);
 
 function addItemList() {
-  let listItems = document.createElement("li");
+  const listItems = document.createElement('li');
   listOfItems.appendChild(listItems);
   listItems.innerText = textInput.value;
-  textInput.value = "";
+  textInput.value = '';
   textInput.focus();
 }
 
-//Select Element - Change list item bg color to grey when clicked
+// Select Element - Change list item bg color to grey when clicked
 function selectItem(event) {
   for (item of listOfItems.children) {
-    item.classList.remove("selected");
+    item.classList.remove('selected');
     if (event.target !== listOfItems) {
-      event.target.classList.add("selected");
+      event.target.classList.add('selected');
     }
   }
 }
-listOfItems.addEventListener("click", selectItem);
+listOfItems.addEventListener('click', selectItem);
 
-//line-through completed items
+// Line-through completed items
 function completedItems(event) {
-  if (event.target.classList.contains("completed")) {
-    event.target.classList.remove("completed");
+  if (event.target.classList.contains('completed')) {
+    event.target.classList.remove('completed');
   } else if (event.target !== listOfItems) {
-    event.target.classList.add("completed");
+    event.target.classList.add('completed');
   }
 }
-listOfItems.addEventListener("dblclick", completedItems);
+listOfItems.addEventListener('dblclick', completedItems);
 
-//Delete all list items
-let deleteAllButton = document.getElementById("apaga-tudo");
+// Delete all list items
+const deleteAllButton = document.getElementById('apaga-tudo');
 function deleteList() {
-  listOfItems.innerText = "";
+  listOfItems.innerText = '';
 }
 
-deleteAllButton.addEventListener("click", deleteList);
+deleteAllButton.addEventListener('click', deleteList);
 
-//Delete completed items
-let deleteCompletedButton = document.getElementById("remover-finalizados");
-let itemsCompleted = document.getElementsByClassName("completed");
+// Delete completed items
+const deleteCompletedButton = document.getElementById('remover-finalizados');
+const itemsCompleted = document.getElementsByClassName('completed');
 
 function deleteCompleted() {
   for (let i = itemsCompleted.length - 1; i >= 0; i -= 1) {
@@ -53,61 +53,61 @@ function deleteCompleted() {
   }
 }
 
-deleteCompletedButton.addEventListener("click", deleteCompleted);
+deleteCompletedButton.addEventListener('click', deleteCompleted);
 
-//Save and Load List
-let saveListButton = document.getElementById("salvar-tarefas");
+// Save and Load List
+const saveListButton = document.getElementById('salvar-tarefas');
 function saveList() {
   let itemsList = listOfItems.innerHTML;
-  localStorage.setItem("list", itemsList);
+  localStorage.setItem('list', itemsList);
 }
-saveListButton.addEventListener("click", saveList);
+saveListButton.addEventListener('click', saveList);
 
 function loadList() {
-  listOfItems.innerHTML = localStorage.getItem("list");
+  listOfItems.innerHTML = localStorage.getItem('list');
 }
 window.onload = loadList;
 
-//Move items up
+// Move items up
 function moveUp() {
-  const selectedElement = document.querySelector(".selected");
+  const selectedElement = document.querySelector('.selected');
   if (selectedElement !== undefined) {
     if (selectedElement.previousElementSibling !== null) {
       const saveText = selectedElement.previousElementSibling.innerText;
       selectedElement.previousElementSibling.innerText = selectedElement.innerText;
       selectedElement.innerText = saveText;
-      selectedElement.classList.remove("selected");
-      selectedElement.previousElementSibling.classList.add("selected");
+      selectedElement.classList.remove('selected');
+      selectedElement.previousElementSibling.classList.add('selected');
     }
   }
 }
 
-let moveUpButton = document.getElementById("mover-cima");
-moveUpButton.addEventListener("click", moveUp);
+let moveUpButton = document.getElementById('mover-cima');
+moveUpButton.addEventListener('click', moveUp);
 
-//Move items down
+// Move items down
 function moveDown() {
-  const selectedElement = document.querySelector(".selected");
+  const selectedElement = document.querySelector('.selected');
   if (selectedElement !== undefined) {
     if (selectedElement.nextElementSibling !== null) {
       const saveText = selectedElement.nextSibling.innerText;
       selectedElement.nextElementSibling.innerText = selectedElement.innerText;
       selectedElement.innerText = saveText;
-      selectedElement.classList.remove("selected");
-      selectedElement.nextElementSibling.classList.add("selected");
+      selectedElement.classList.remove('selected');
+      selectedElement.nextElementSibling.classList.add('selected');
     }
   }
 }
 
-let moveDownButton = document.getElementById("mover-baixo");
-moveDownButton.addEventListener("click", moveDown);
+let moveDownButton = document.getElementById('mover-baixo');
+moveDownButton.addEventListener('click', moveDown);
 
-//Remove selected item
+// Remove selected item
 
 function removeSelected() {
-  const selectedElement = document.querySelector(".selected");
+  const selectedElement = document.querySelector('.selected');
   selectedElement.remove();
 }
 
-const removeSelectedButton = document.getElementById("remover-selecionado");
-removeSelectedButton.addEventListener("click", removeSelected);
+const removeSelectedButton = document.getElementById('remover-selecionado');
+removeSelectedButton.addEventListener('click', removeSelected);
