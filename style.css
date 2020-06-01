@@ -8,4 +8,9 @@ button {
 
 .completed {
   text-decoration: line-through;
-} 	
+}
+
+li {
+  cursor: pointer;
+  user-select: none;
+  }
