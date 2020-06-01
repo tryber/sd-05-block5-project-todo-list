@@ -1,8 +1,8 @@
 // Feito por Elisangelo
 //Declaracao de variaveis globais
 window.onload = function(){
-  if(localStorage.getItem("listaTarefas") !='undefined'){
-    document.getElementsByTagName("ol")[0].innerHTML = localStorage.getItem("listaTarefas");
+  if(localStorage.getItem("listaTarefas") !==''){
+    document.getElementById("lista-tarefas").innerHTML = localStorage.getItem("listaTarefas");
   }
 }
 let listaTarefas = document.getElementById("lista-tarefas");
@@ -13,6 +13,9 @@ let lista = document.getElementsByTagName("li");
 const botaoLimparCompleto = document.getElementById("remover-finalizados");
 const botaoRemoverSelecionado = document.getElementById("remover-selecionado");
 const botaoSalvarTarefas = document.getElementById("salvar-tarefas");
+const botaomoverPraCima = document.getElementById("mover-cima");
+const botaomoverPraBaixo = document.getElementById("mover-baixo");
+
 //implementando funcões e adicionando eventos aos botões.
 // adicionando eventos ao apertar Enter nos campos de texto      
 inputTexto.addEventListener("keypress", function(e){
@@ -72,6 +75,28 @@ function removerTarefaSelecionada(){
 //adiconando evento ao botao (salvarTarefas) para quando houver um Click, chamar a funcao salvarTarefa()
 botaoSalvarTarefas.addEventListener("click", salvarTarefas)
 function salvarTarefas(){
-  localStorage.setItem("listaTarefas", document.getElementsByTagName("ol")[0].innerHTML);
-
+  localStorage.setItem("listaTarefas", document.getElementById("lista-tarefas").innerHTML);
+}
+//adiconando evento ao botao (moverPraCima) para quando houver um Click, chamar a funcao movePraCima()
+botaomoverPraCima.addEventListener("click", movePraCima);
+function movePraCima(){
+let list = document.getElementsByTagName("li");
+  for (item of list){
+    if ( item.previousElementSibling != null && item.classList.contains("selected")){
+      let caixa = item.previousElementSibling;
+      item.insertAdjacentElement('afterEnd', caixa);
+    }
+  }
+}
+//adiconando evento ao botao (moverPraBaixo) para quando houver um Click, chamar a funcao movePraBaixo()
+botaomoverPraBaixo.addEventListener("click", movePraBaixo);
+function movePraBaixo(){
+let list = document.getElementsByTagName("li");
+  for (item of list){
+    if ( item.nextElementSibling != null && item.classList.contains("selected")){
+      let caixa = item.nextElementSibling;
+      item.nextElementSibling = item;
+      item = caixa;
+    }
+  }
 }
