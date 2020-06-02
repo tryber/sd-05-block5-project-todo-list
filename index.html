@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista de Tarefas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Minha Lista de Tarefas</h1>
+        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+    </header>
+    <section>
+        <div>
+            <input required="required" type="text" id="texto-tarefa" value="">
+        </div>
+        <div id="div-lista-tarefas">
+            <ol id="lista-tarefas">
+                
+            </ol>
+        </div>
+    </section>
+    <section>
+        <div>
+            <button class="botao"  type="button" id="criar-tarefa">Adicionar</button>
+        </div>
+        <div>
+            <button class="botao" type="button" id="apaga-tudo">Limpar Lista</button>
+        </div>
+        <div>
+            <button class="botao" type="button" id="remover-finalizados">Limpar Completos</button>
+        </div>
+        <div>
+            <button class="botao" type="button" id="salvar-tarefas">Salvar Lista</button>
+        </div>
+        <div>
+            <button class="botao" type="button" id="mover-cima"></button>
+        </div>
+        <div>
+            <button class="botao" type="button" id="mover-baixo"></button>
+        </div>
+        <div>
+            <button class="botao" type="button" id="remover-selecionado">X</button>
+        </div>
+    </section>    
+
+    <script src="script.js"></script>
+</body>
+</html>
