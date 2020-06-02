@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(144, 252, 144);
+    background-color: rgb(184, 252, 184);
     color: rgb(4, 92, 4);
     font-size: 18px;
     font-family: fantasy;
@@ -15,6 +15,8 @@ section{
     height: 700px;
     padding:0 10%;
     background-color: rgb(233, 233, 233);
+    border-radius: 10%;
+    position:relative
 }
 #funcionamento{
     font-size: 1.5em;
@@ -25,9 +27,11 @@ section{
     border-radius: 5px;
 }
 #criar-tarefa{
+    margin-left: 20px;
     background-color: rgb(0, 43, 0);
     color: white;
-    width: 10%;
+    font-size: 1em;
+    width: 17%;
 }
 .list{
     cursor: pointer;
@@ -40,17 +44,29 @@ section{
 .completed{
     text-decoration: line-through solid rgb(0, 0, 0);
 }
-#apaga-tudo{
-    background-color: rgb(119, 4, 4);
+#buttonContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    margin: auto 0% 0% 0%;
+    height: 5%;
+    width: 80%;
+
+}
+.button{
     color: white;
-    width: 15%;
+    width: 20%;
     border-radius: 30%;
     margin: 0 10px;
 }
+#apaga-tudo{
+    background-color: rgb(119, 4, 4);
+}
 #remover-finalizados{
     background-color: rgb(207, 83, 11);
-    color: white;
-    width: 15%;
-    border-radius: 30%;
-    margin: 0 10px;
+}
+#salvar-tarefas{
+    background-color: rgb(2, 4, 97);
+}
 }
