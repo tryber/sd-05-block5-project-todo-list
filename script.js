@@ -85,7 +85,7 @@ function salvarTarefas(){
 botaomoverPraCima.addEventListener("click", movePraCima);
 function movePraCima(){
 let itemSelecionado = document.getElementsByClassName("selected")[0];
-    if ( itemSelecionado.previousElementSibling ){
+    if (itemSelecionado.previousElementSibling != undefined){
       let irmaoMaisVelho = itemSelecionado.previousElementSibling;
       listaTarefas.insertBefore(itemSelecionado, irmaoMaisVelho);
     }
@@ -95,7 +95,7 @@ let itemSelecionado = document.getElementsByClassName("selected")[0];
 botaomoverPraBaixo.addEventListener("click", movePraBaixo);
 function movePraBaixo(){
   let itemSelecionado = document.getElementsByClassName("selected")[0];
-      if ( itemSelecionado.nextElementSibling ){
+      if (itemSelecionado.nextElementSibling != undefined){
         let irmaoMaisNovo = itemSelecionado.nextElementSibling;
         irmaoMaisNovo.insertAdjacentElement("afterEnd", itemSelecionado);
       }
