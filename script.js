@@ -15,6 +15,9 @@ function newToDoItem (itemText, completed){
         toDoItem.classList.add('completed');
     }
     orderList.appendChild(toDoItem);
+    toDoItem.addEventListener('click', function(){
+        toDoItem.style.backgroundColor = 'rgb(128,128,128)';
+    });
     toDoItem.addEventListener('dblclick', toggleToDoItemState);
     lista.value='';   
 }
