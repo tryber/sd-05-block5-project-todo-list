@@ -12,11 +12,17 @@ header{
     margin-bottom: 10px;
 }
 section{
-    height: 700px;
-    padding:0 10%;
+    height: auto;
+    padding:0 10% 50px;
     background-color: rgb(233, 233, 233);
     border-radius: 10%;
-    position:relative
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    position:relative;
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
 }
 #funcionamento{
     font-size: 1.5em;
@@ -49,16 +55,31 @@ section{
     justify-content: space-between;
     align-items: flex-end;
     position: absolute;
-    margin: auto 0% 0% 0%;
+    margin: 1% 0% 0% 0%;
     height: 5%;
     width: 80%;
 
 }
-.button{
+.button1{
+    color: white;
+    width: 5%;
+    border-radius: 30%;
+    margin: 0 10px;
+}
+.button2{
     color: white;
     width: 20%;
     border-radius: 30%;
     margin: 0 10px;
+}
+#remover-selecionado{
+    background-color: rgb(119, 4, 4);
+}
+#mover-cima{
+    background-color: rgb(207, 194, 11);
+}
+#mover-baixo{
+    background-color: rgb(207, 194, 11);
 }
 #apaga-tudo{
     background-color: rgb(119, 4, 4);
@@ -68,5 +89,4 @@ section{
 }
 #salvar-tarefas{
     background-color: rgb(2, 4, 97);
-}
 }
