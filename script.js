@@ -66,3 +66,17 @@ function toggleItemState(event) {
     selected.style.textDecoration = 'line-through';
   }
 }
+
+
+// removes completed tasks
+
+remover_finalizados.addEventListener('click', removesCompleted);
+
+function removesCompleted(){
+  let items_lista = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < items_lista.length; i++){
+    if(items_lista[i].classList.contains('completed')){
+      items_lista[i].remove();
+    }
+  }
+}
