@@ -1,11 +1,12 @@
-let criar_tarefa = document.getElementById('criar-tarefa');
-let salvar_tarefas = document.getElementById('salvar-tarefas');
-let remover_finalizados = document.getElementById('remover-finalizados');
-let apaga_tudo = document.getElementById('apaga-tudo');
-let mover_cima = document.getElementById('mover-cima');
-let mover_baixo = document.getElementById('mover-baixo')
-let input = document.getElementById('texto-tarefa') 
-let lista_tarefas = document.getElementById('lista-tarefas') 
+const criar_tarefa = document.getElementById('criar-tarefa');
+const salvar_tarefas = document.getElementById('salvar-tarefas');
+const remover_finalizados = document.getElementById('remover-finalizados');
+const remover_selecionado = document.getElementById('remover-selecionado');
+const apaga_tudo = document.getElementById('apaga-tudo');
+const mover_cima = document.getElementById('mover-cima');
+const mover_baixo = document.getElementById('mover-baixo')
+const input = document.getElementById('texto-tarefa') 
+const lista_tarefas = document.getElementById('lista-tarefas') 
 
 
 // adds items to list
@@ -52,7 +53,7 @@ lista_tarefas.addEventListener('click', selectItem)
 function selectItem(event) {
   let selected = event.target;
   let items_lista = document.querySelectorAll('#lista-tarefas li');
-  for (let i = 0; i < items_lista.length; i++){
+  for (let i = 0; i < items_lista.length; i++) {
     items_lista[i].removeAttribute('id')
   }
   selected.setAttribute('id', 'selected')
@@ -65,7 +66,7 @@ remover_finalizados.addEventListener('click', removesCompleted);
 
 function removesCompleted(){
   let items_lista = document.querySelectorAll('#lista-tarefas li');
-  for (let i = 0; i < items_lista.length; i++){
+  for (let i = 0; i < items_lista.length; i++) {
     if(items_lista[i].classList.contains('completed')){
       items_lista[i].remove();
     }
@@ -86,11 +87,11 @@ function removeSelected() {
 
 // clears list
 
-apaga_tudo.addEventListener('click', apagaFunc);
+apaga_tudo.addEventListener('click', clearAll);
 
-function apagaFunc(){
+function clearAll(){
   let items_lista = document.querySelectorAll('#lista-tarefas li');
-  for(let i = 0; i < items_lista.length; i++){
+  for (let i = 0; i < items_lista.length; i++) {
     items_lista[i].remove();
   }
 }
@@ -98,9 +99,9 @@ function apagaFunc(){
 
 // changes background of selected item
 
-lista_tarefas.addEventListener('click', mudarBg);
+lista_tarefas.addEventListener('click', changeBg);
 
-function mudarBg(event){
+function changeBg(event){
   let target = event.target;
   let selected = event.target;
   selected.style.backgroundColor = 'rgb(128,128,128)';
