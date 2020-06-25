@@ -80,3 +80,42 @@ function removesCompleted(){
     }
   }
 }
+
+
+// adds id to selected item and remove from previous selected
+
+lista_tarefas.addEventListener('click', selectItem)
+
+function selectItem(event) {
+  let selected = event.target;
+  let items_lista = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < items_lista.length; i++){
+    items_lista[i].removeAttribute('id')
+  }
+  selected.setAttribute('id', 'selected')
+}
+
+
+// moves item up and down
+
+mover_cima.addEventListener('click', moveTop)
+
+function moveTop() {
+  let selected = document.getElementById('selected');
+  lista_tarefas.insertBefore(selected, selected.previousSibling)
+}
+
+mover_baixo.addEventListener('click', moveDown)
+
+function moveDown() {
+  // there is not insertAfter function, so we have to do this:
+  // 1 > 2 > 3
+  // selected = 1; nextElement = 2; then nextElement of 2 = 3
+  // insert selected before 3
+  // 2 > 1 > 3
+  let selected = document.getElementById('selected');
+  let nextElement = selected.nextSibling;
+  nextElement = nextElement.nextSibling;
+  lista_tarefas.insertBefore(selected, nextElement)
+}
+
