@@ -36,10 +36,6 @@ header {
   text-align: center;
 }
 
-.parent {
-  display: block;
-}
-
 input#texto-tarefa {
   font-size: 0.8em;
   letter-spacing: 0.1em;
@@ -80,34 +76,12 @@ button:hover {
   background-color: #99B898;
 }
 
-
-
-#salvar-tarefas{
-}
-
-#remover-finalizados{
-}
-
-#apaga-tudo{
-}
-
-#mover-cima{
-}
-
-#mover-baixo{
-}
-
 #lista-tarefas{
   width: 30%;
   float: left;
   margin-top: 5em;
   text-align: justify;
   overflow: hidden;
-}
-
-
-#lista-tarefas ol{
-
 }
 
 #lista-tarefas li {
@@ -119,6 +93,10 @@ button:hover {
 
 #lista-tarefas li, button {
   cursor: pointer;
+}
+
+#selected {
+  font-weight: bold;
 }
 
 #actions{
