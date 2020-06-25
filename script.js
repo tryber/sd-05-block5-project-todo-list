@@ -7,7 +7,7 @@ let mover_baixo = document.getElementById('mover-baixo')
 let input = document.getElementById('texto-tarefa') 
 let lista_tarefas = document.getElementById('lista-tarefas') 
 
-// adicionar items à lista
+// adds items to list
 
 criar_tarefa.addEventListener('click', adicionarItem)
 
@@ -20,7 +20,7 @@ function adicionarItem(event){
   input.value = '';
 }
 
-// zerar lista
+// clear list
 
 apaga_tudo.addEventListener('click', apagaFunc);
 
@@ -33,7 +33,7 @@ function apagaFunc(){
 
 let item = document.getElementsByTagName('li');
 
-// item.addEventListener('click', mudarBg);
+// change background of selected item
 
 lista_tarefas.addEventListener('click', mudarBg);
 
@@ -43,3 +43,15 @@ function mudarBg(event){
   selected.style.backgroundColor = 'rgb(128,128,128)';
 }
 
+// toggles item state, adding or removing completed class
+
+lista_tarefas.addEventListener('click', toggleItemState);
+
+function toggleItemState(event) {
+  let selected = event.target;
+  if (selected.classList.contains('completed')) {
+    selected.classList.remove('completed');
+  } else {
+      selected.classList.add('completed');
+    }
+  }
