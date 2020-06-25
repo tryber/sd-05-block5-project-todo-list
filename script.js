@@ -7,6 +7,7 @@ let mover_baixo = document.getElementById('mover-baixo')
 let input = document.getElementById('texto-tarefa') 
 let lista_tarefas = document.getElementById('lista-tarefas') 
 
+
 // adds items to list
 
 criar_tarefa.addEventListener('click', adicionarItem)
@@ -20,7 +21,8 @@ function adicionarItem(event){
   input.value = '';
 }
 
-// clear list
+
+// clears list
 
 apaga_tudo.addEventListener('click', apagaFunc);
 
@@ -31,9 +33,8 @@ function apagaFunc(){
   }
 }
 
-let item = document.getElementsByTagName('li');
 
-// change background of selected item
+// changes background of selected item
 
 lista_tarefas.addEventListener('click', mudarBg);
 
@@ -43,15 +44,25 @@ function mudarBg(event){
   selected.style.backgroundColor = 'rgb(128,128,128)';
 }
 
-// toggles item state, adding or removing completed class
 
-lista_tarefas.addEventListener('click', toggleItemState);
+// toggles item state
+
+lista_tarefas.addEventListener('dblclick', toggleItemState);
 
 function toggleItemState(event) {
   let selected = event.target;
+
+  // adds 'completed' class
   if (selected.classList.contains('completed')) {
     selected.classList.remove('completed');
   } else {
       selected.classList.add('completed');
     }
+
+  // styles selected item with strikethrough
+  if (selected.style.textDecoration == 'line-through') {
+    selected.style.removeProperty('text-decoration')
+  } else {
+    selected.style.textDecoration = 'line-through';
   }
+}
