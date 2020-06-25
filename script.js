@@ -131,3 +131,15 @@ function moveDown() {
   lista_tarefas.insertBefore(selected, nextElement)
 }
 
+
+// saves list on local storage
+
+function SavesList(){
+  localStorage.setItem('list', listaTarefas.innerHTML);
+  if (localStorage.getItem('list') != null) {
+  listaTarefas = localStorage.getItem('list');
+  console.log(localStorage)
+  }
+}
+
+salvarTarefas.addEventListener('click', SavesList)
