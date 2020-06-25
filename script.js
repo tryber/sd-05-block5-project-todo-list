@@ -22,29 +22,6 @@ function adicionarItem(event){
 }
 
 
-// clears list
-
-apaga_tudo.addEventListener('click', apagaFunc);
-
-function apagaFunc(){
-  let items_lista = document.querySelectorAll('#lista-tarefas li');
-  for(let i = 0; i < items_lista.length; i++){
-    items_lista[i].remove();
-  }
-}
-
-
-// changes background of selected item
-
-lista_tarefas.addEventListener('click', mudarBg);
-
-function mudarBg(event){
-  let target = event.target;
-  let selected = event.target;
-  selected.style.backgroundColor = 'rgb(128,128,128)';
-}
-
-
 // toggles item state
 
 lista_tarefas.addEventListener('dblclick', toggleItemState);
@@ -68,6 +45,20 @@ function toggleItemState(event) {
 }
 
 
+// adds id to selected item and remove from previous selected
+
+lista_tarefas.addEventListener('click', selectItem)
+
+function selectItem(event) {
+  let selected = event.target;
+  let items_lista = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < items_lista.length; i++){
+    items_lista[i].removeAttribute('id')
+  }
+  selected.setAttribute('id', 'selected')
+}
+
+
 // removes completed tasks
 
 remover_finalizados.addEventListener('click', removesCompleted);
@@ -82,17 +73,37 @@ function removesCompleted(){
 }
 
 
-// adds id to selected item and remove from previous selected
+// removes selected item
 
-lista_tarefas.addEventListener('click', selectItem)
+remover_selecionado.addEventListener('click', removeSelected)
 
-function selectItem(event) {
-  let selected = event.target;
+function removeSelected() {
+  let selected = document.getElementById('selected');
+  console.log(selected)
+  selected.remove();
+}
+
+
+// clears list
+
+apaga_tudo.addEventListener('click', apagaFunc);
+
+function apagaFunc(){
   let items_lista = document.querySelectorAll('#lista-tarefas li');
-  for (let i = 0; i < items_lista.length; i++){
-    items_lista[i].removeAttribute('id')
+  for(let i = 0; i < items_lista.length; i++){
+    items_lista[i].remove();
   }
-  selected.setAttribute('id', 'selected')
+}
+
+
+// changes background of selected item
+
+lista_tarefas.addEventListener('click', mudarBg);
+
+function mudarBg(event){
+  let target = event.target;
+  let selected = event.target;
+  selected.style.backgroundColor = 'rgb(128,128,128)';
 }
 
 
