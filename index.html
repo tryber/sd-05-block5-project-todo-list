@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Minha Lista de Tarefas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">      <body>
+    <main>
+      <header class="header">Minha Lista de Tarefas</header>
+      <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+      
+      <div class="parent">
+
+        <form id="input_form">
+          <input type="text" id="texto-tarefa" autocomplete="off" placeholder="O que tenho que fazer?"> <!--autocomplete="off" to prevent browser input suggestions, given that the task will probably have nothing to do with them-->     
+          <button id="criar-tarefa">criar tarefa</button>
+        </form>  
+
+        <ol id="lista-tarefas">   
+        </ol>
+      
+        <div id="actions"> 
+
+          <button id="salvar-tarefas">salvar tarefas</button>
+
+          <button id="remover-finalizados">remover finalizadas</button>
+          
+          <button id="remover-selecionado">remover selecionado</button>
+
+          <button id="apaga-tudo">zerar lista</button>
+
+          <button id="mover-cima">▲</button>
+
+          <button id="mover-baixo">▼</button>
+
+        </div>
+
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #99B898;
+  font-size: 1em;
+}
+
+main {
+  display: block;
+  overflow: auto;
+  background-color: #FECEAB;
+  width: 50%;
+  border-radius: 30px;
+  padding: 10% 5% 10% 5%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 10px #888888;
+  margin-bottom: 5%;
+}
+
+header {
+  font-size: 3em;
+  font-family: 'Reenie Beanie', cursive;
+  text-align: center;
+  padding-bottom: 5%;
+  padding-top: 0;
+}
+
+#funcionamento{
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+  margin: 5% 0;
+  text-align: center;
+}
+
+input#texto-tarefa {
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid gray;
+  padding: 0.5em;
+  width: 20em;
+  background: transparent;
+  font-style: italic;
+}
+
+#texto-tarefa:focus{
+  background: rgba(97, 95, 95, 0.205);
+}
+
+#criar-tarefa{
+  margin: 0;
+  margin-left: 2%;
+  width: 20em;
+  float: right;
+}
+
+button {
+  font-size: 0.9em;
+  letter-spacing: 0.1em;  
+  padding:0.35em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border:0.1em solid #99B898;
+  background-color: rgba(255, 220, 196, 0.596);
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #99B898;
+}
+
+#lista-tarefas{
+  width: 30%;
+  float: left;
+  margin-top: 5em;
+  text-align: justify;
+  overflow: hidden;
+}
+
+#lista-tarefas li {
+  list-style-type: none;
+  letter-spacing: 0.1em;  
+  margin-top: 3%;
+  text-align: center;
+}
+
+#lista-tarefas li, button {
+  cursor: pointer;
+}
+
+#selected {
+  font-weight: bold;
+}
+
+#actions{
+  display: flex;
+  float: right;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: auto;
+  align-content: auto;
+  align-items: auto;
+  flex-shrink: 0;
+  margin-top: 5em;
+}
