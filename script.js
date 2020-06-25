@@ -8,6 +8,13 @@ const moverBaixo = document.getElementById('mover-baixo');
 const input = document.getElementById('texto-tarefa');
 let listaTarefas = document.getElementById('lista-tarefas');
 
+window.onload = function() {
+  if (localStorage.getItem('list') !== null) {
+    listaTarefas.innerHTML = localStorage.getItem('list');
+  }
+}
+
+
 // adds items
 
 function adicionarItem(event) {
@@ -133,10 +140,6 @@ moverBaixo.addEventListener('click', moveDown);
 
 function SavesList(){
   localStorage.setItem('list', listaTarefas.innerHTML);
-  if (localStorage.getItem('list') != null) {
-  listaTarefas = localStorage.getItem('list');
-  console.log(localStorage)
-  }
 }
 
 salvarTarefas.addEventListener('click', SavesList)
