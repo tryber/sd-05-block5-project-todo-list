@@ -28,7 +28,7 @@ function criaTarefa() {
 // adicionando o evento de adição de tarefa ao botão:
 const botaoCriarTarefa = document.getElementById('criar-tarefa');
 botaoCriarTarefa.addEventListener('click', criaTarefa);
-// removendo todos os elementos li:
+// criando função que remove todos os elementos li:
 const botaoApagaTudo = document.getElementById('apaga-tudo');
 function apagaTudo () {
   const lista = document.getElementById('lista-tarefas');
@@ -36,5 +36,11 @@ function apagaTudo () {
     lista.firstChild.remove();
   }
 };
-// adicionando o evento de apagar tudo ao botão:
+// adicionando o evento de apagar todos os elementos ao botão:
 botaoApagaTudo.addEventListener('click', apagaTudo);
+// apagando somente os elementos finalizados:
+const botaoApagaFinalizados = document.getElementById('remover-finalizados');
+function apagaFinalizados () {
+  document.querySelector('li.completed').remove();
+};
+botaoApagaFinalizados.addEventListener('click', apagaFinalizados);
