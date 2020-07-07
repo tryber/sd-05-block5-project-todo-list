@@ -27,3 +27,13 @@ function criaTarefa() {
 // adicionando o evento de adição de tarefa ao botão:
 const botaoCriarTarefa = document.getElementById('criar-tarefa');
 botaoCriarTarefa.addEventListener('click', criaTarefa);
+// removendo todos os elementos li:
+const botaoApagaTudo = document.getElementById('apaga-tudo');
+function apagaTudo () {
+  const lista = document.getElementById('lista-tarefas');
+  while (lista.firstChild) {
+    lista.firstChild.remove();
+  }
+};
+// adicionando o evento de apagar tudo ao botão:
+botaoApagaTudo.addEventListener('click', apagaTudo);
