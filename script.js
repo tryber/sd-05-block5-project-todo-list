@@ -20,6 +20,7 @@ function criaTarefa() {
       if (novaTarefa.className === 'completed') {
         novaTarefa.classList.remove('completed');
         novaTarefa.style.textDecoration = 'none';
+        novaTarefa.style.backgroundColor = 'aliceblue';
       }
     });
   });
