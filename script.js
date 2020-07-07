@@ -10,7 +10,19 @@ function criaTarefa() {
   // mudando a cor do item da lista ao ser clicado:
   novaTarefa.addEventListener('click', function () {
     novaTarefa.style.backgroundColor = 'rgb(128,128,128)';
-  })
+  });
+  // riscar o item com clique duplo:
+  novaTarefa.addEventListener('dblclick', function () {
+    novaTarefa.className = 'completed';
+    novaTarefa.style.textDecoration = 'line-through';
+    // removendo classe completed e risco no item:
+    novaTarefa.addEventListener('dblclick', function () {
+      if (novaTarefa.className === 'completed') {
+        novaTarefa.classList.remove('completed');
+        novaTarefa.style.textDecoration = 'none';
+      }
+    });
+  });
 }
 // adicionando o evento de adição de tarefa ao botão:
 const botaoCriarTarefa = document.getElementById('criar-tarefa');
