@@ -3,6 +3,7 @@ function criaTarefa() {
   const novaTarefa = document.createElement('li');
   novaTarefa.innerHTML = document.getElementById('texto-tarefa').value;
   document.getElementById('lista-tarefas').appendChild(novaTarefa);
+  localStorage.setItem('tarefa', )
   // criando funcionalidade que limpa input após o click:
   document.getElementById('texto-tarefa').value = '';
   // fazendo com que cada novo item da lista receba a maozinha com o passar do mouse:
@@ -30,17 +31,17 @@ const botaoCriarTarefa = document.getElementById('criar-tarefa');
 botaoCriarTarefa.addEventListener('click', criaTarefa);
 // criando função que remove todos os elementos li:
 const botaoApagaTudo = document.getElementById('apaga-tudo');
-function apagaTudo () {
+function apagaTudo() {
   const lista = document.getElementById('lista-tarefas');
   while (lista.firstChild) {
     lista.firstChild.remove();
   }
-};
+}
 // adicionando o evento de apagar todos os elementos ao botão:
 botaoApagaTudo.addEventListener('click', apagaTudo);
 // apagando somente os elementos finalizados:
 const botaoApagaFinalizados = document.getElementById('remover-finalizados');
-function apagaFinalizados () {
+function apagaFinalizados() {
   document.querySelector('li.completed').remove();
-};
+}
 botaoApagaFinalizados.addEventListener('click', apagaFinalizados);

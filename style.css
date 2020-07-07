@@ -1,6 +1,6 @@
 h1 {
   background-color: aquamarine;
-  color:darkslategrey;
+  color: darkslategrey;
   text-align: center;
 }
 
@@ -12,18 +12,18 @@ body {
   background-color: darkgreen;
   border-radius: 4px;
   color: white;
-  padding: 5px 5px;
+  padding: 5px;
 }
 
 .apaga-tudo {
   background-color: crimson;
   border-radius: 4px;
-  padding: 5px 5px;
+  padding: 5px;
 }
 
 .remover-finalizados {
   background-color: darkred;
   border-radius: 4px;
   color: white;
-  padding: 5px 5px;
+  padding: 5px;
 }
