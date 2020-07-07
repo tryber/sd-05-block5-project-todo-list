@@ -3,7 +3,7 @@ function criaTarefa() {
   const novaTarefa = document.createElement('li');
   novaTarefa.innerHTML = document.getElementById('texto-tarefa').value;
   document.getElementById('lista-tarefas').appendChild(novaTarefa);
-  localStorage.setItem('tarefa', )
+  //localStorage.setItem('tarefa', )
   // criando funcionalidade que limpa input após o click:
   document.getElementById('texto-tarefa').value = '';
   // fazendo com que cada novo item da lista receba a maozinha com o passar do mouse:
@@ -43,5 +43,8 @@ botaoApagaTudo.addEventListener('click', apagaTudo);
 const botaoApagaFinalizados = document.getElementById('remover-finalizados');
 function apagaFinalizados() {
   document.querySelector('li.completed').remove();
+  if (document.querySelector('li.completed') = null) {
+    document.querySelector(null).remove();
+  }
 }
 botaoApagaFinalizados.addEventListener('click', apagaFinalizados);
