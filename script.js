@@ -23,6 +23,9 @@ function criaTarefa() {
         novaTarefa.style.textDecoration = 'none';
         novaTarefa.style.backgroundColor = 'aliceblue';
       }
+      else {
+        novaTarefa.className = 'completed';
+      }
     });
   });
 }
@@ -43,8 +46,8 @@ botaoApagaTudo.addEventListener('click', apagaTudo);
 const botaoApagaFinalizados = document.getElementById('remover-finalizados');
 function apagaFinalizados() {
   document.querySelector('li.completed').remove();
-  if (document.querySelector('li.completed') = null) {
+  /* if (document.querySelector('li.completed') = null) {
     document.querySelector(null).remove();
-  }
+  } */
 }
 botaoApagaFinalizados.addEventListener('click', apagaFinalizados);
