@@ -27,3 +27,29 @@ body {
   color: white;
   padding: 5px;
 }
+
+.remover-selecionado {
+  background-color: darkred;
+  border-radius: 4px;
+  color: white;
+  padding: 5px;
+}
+
+.salvar-tarefas {
+  background-color: chartreuse;
+  border-radius: 4px;
+  color: black;
+  padding: 5px;
+}
+
+.mover-cima {
+  background-color: coral;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.mover-baixo {
+  background-color: coral;
+  border-radius: 4px;
+  padding: 5px;
+}

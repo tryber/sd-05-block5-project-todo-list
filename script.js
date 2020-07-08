@@ -3,7 +3,12 @@ let textoInput = document.getElementById('texto-tarefa');
 let botaoCriarTarefa = document.getElementById('criar-tarefa');
 let listaTarefas = document.getElementById('lista-tarefas');
 let botaoApagaTudo = document.getElementById('apaga-tudo');
-let removerFinalizados = document.getElementById('remover-finalizados');
+let botaoRemoverFinalizados = document.getElementById('remover-finalizados');
+let botaoSalvarTarefas = document.getElementById('salvar-tarefas');
+let botaoRemoverSelecionado = document.getElementById('remover-selecionado');
+let botaoPraCima = document.getElementById('mover-cima');
+let botaoPraBaixo = document.getElementById('mover-baixo');
+
 // criando o item li:
 // esta função adiciona o itemLi como filho da lista de tarefas
 // e limpa a entrada de texto
@@ -16,6 +21,7 @@ function criaItem () {
 }
 // evento que cria tarefa:
 botaoCriarTarefa.addEventListener('click', criaItem);
+
 
 
 
