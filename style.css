@@ -15,6 +15,14 @@ body {
   padding: 5px;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
+.selected {
+  background-color: rgb(128,128,128);
+}
+
 .apaga-tudo {
   background-color: crimson;
   border-radius: 4px;

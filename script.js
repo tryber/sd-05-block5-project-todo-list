@@ -13,7 +13,7 @@ let botaoPraBaixo = document.getElementById('mover-baixo');
 // esta função adiciona o itemLi como filho da lista de tarefas
 // e limpa a entrada de texto
 function criaItem () {
-  let itemLi = document.createElement('li');
+  const itemLi = document.createElement('li');
   itemLi.innerHTML = textoInput.value;
   listaTarefas.appendChild(itemLi);
   textoInput.value = '';
@@ -21,6 +21,38 @@ function criaItem () {
 }
 // evento que cria tarefa:
 botaoCriarTarefa.addEventListener('click', criaItem);
+
+function atribuiClasseCompleted(evento) {
+  let itemClicado = evento.target;
+  if (!(itemClicado.classList.contains('completed'))) {
+    itemClicado.classList.add('completed');
+  }
+  else {
+    itemClicado.classLint.remove('completed');
+  }
+}
+listaTarefas.addEventListener('dblclick', atribuiClasseCompleted);
+
+function apagaTudo() {
+  while (listaTarefas.firstChild) {
+    listaTarefas.firstChild.remove();
+  }
+}
+botaoApagaTudo.addEventListener('click', apagaTudo);
+
+let listaItens = document.getElementsByTagName('li');
+function fundoCinza (ev) {
+  let itemSelecionado = ev.target;
+  for (let i = 0; i < listaItens.length; i += 1) {
+    if (itemSelecionado === listaItens[i] && !(itemSelecionado.classList.contains("selected"))) {
+      listaItens[i].classList.add("selected");
+    }
+    else if (itemSelecionado === listaItens[i] && itemSelecionado.classList.contains("selected")) {
+      listaItens[i].classList.remove("selected");
+    }
+  }
+}
+listaTarefas.addEventListener('click', fundoCinza);
 
 
 
