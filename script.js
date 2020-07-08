@@ -12,6 +12,7 @@ function criaItem () {
   itemLi.innerHTML = textoInput.value;
   listaTarefas.appendChild(itemLi);
   textoInput.value = '';
+  itemLi.style.cursor = 'pointer'
 }
 // evento que cria tarefa:
 botaoCriarTarefa.addEventListener('click', criaItem);
