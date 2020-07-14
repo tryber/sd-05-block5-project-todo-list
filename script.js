@@ -18,106 +18,87 @@ function criaItem () {
   listaTarefas.appendChild(itemLi);
   textoInput.value = '';
   itemLi.style.cursor = 'pointer'
+  textoInput.focus(); //FAZ O CURSOS DE DIGITAR FICAR 'PISCANDO' NO INPUT
+  
 }
-// evento que cria tarefa:
+
+// evento que cria tarefa
 botaoCriarTarefa.addEventListener('click', criaItem);
 
-function atribuiClasseCompleted(evento) {
-  let itemClicado = evento.target;
-  if (!(itemClicado.classList.contains('completed'))) {
-    itemClicado.classList.add('completed');
+// função que atribui a classe selected para o item clicado
+function itemSelecionado(evento) {
+  const item = evento.target;
+  const todasTarefas = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < todasTarefas.length; i += 1) {
+    if (todasTarefas[i].classList.contains('selected')) {
+      todasTarefas[i].classList.remove('selected');
+    }
   }
-  else {
-    itemClicado.classLint.remove('completed');
-  }
+  item.classList.add('selected');
 }
-listaTarefas.addEventListener('dblclick', atribuiClasseCompleted);
 
+// evento que dá a classe selected para o item da lista
+listaTarefas.addEventListener('click', itemSelecionado);
+
+// função que risca o item
+function riscaItem(evento) {
+  const item = evento.target;
+  item.classList.toggle('completed');
+}
+
+// evento que risca o item
+listaTarefas.addEventListener('dblclick', riscaItem);
+
+// função que remove todos os itens da lista
 function apagaTudo() {
-  while (listaTarefas.firstChild) {
-    listaTarefas.firstChild.remove();
+  const todasTarefas = document.getElementById('lista-tarefas');
+  while (todasTarefas.firstChild) {
+    todasTarefas.firstChild.remove();
   }
 }
+
+// evento que apaga todos os itens da lista
 botaoApagaTudo.addEventListener('click', apagaTudo);
 
-let listaItens = document.getElementsByTagName('li');
-function fundoCinza (ev) {
-  let itemSelecionado = ev.target;
-  for (let i = 0; i < listaItens.length; i += 1) {
-    if (itemSelecionado === listaItens[i] && !(itemSelecionado.classList.contains("selected"))) {
-      listaItens[i].classList.add("selected");
-    }
-    else if (itemSelecionado === listaItens[i] && itemSelecionado.classList.contains("selected")) {
-      listaItens[i].classList.remove("selected");
+// função que remove todos os itens com com classe completed
+function removeFinalizados() {
+  const todasTarefas = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < todasTarefas.length; i += 1) {
+    if (todasTarefas[i].classList.contains('completed')) {
+      todasTarefas[i].remove();
     }
   }
 }
-listaTarefas.addEventListener('click', fundoCinza);
 
+// evento que remove todos os itens com com classe completed
+botaoRemoverFinalizados.addEventListener('click', removeFinalizados);
 
-
-
-
-/*
-// criando função que incluirá uma tarefa à lista:
-function criaTarefa() {
-  // criando o elemento li:
-  const novaTarefa = document.createElement('li');
-  // adicionando ao li o texto do input:
-  novaTarefa.innerHTML = document.getElementById('texto-tarefa').value;
-  // adicionando o elemento li como filho da ol:
-  document.getElementById('lista-tarefas').appendChild(novaTarefa);
-  // localStorage.setItem('tarefa', )
-  // funcionalidade que limpa input após o click:
-  document.getElementById('texto-tarefa').value = '';
-  // fazendo com que cada novo item da lista receba a maozinha com o passar do mouse:
-  novaTarefa.style.cursor = 'pointer';
-  // mudando a cor do item da lista ao ser clicado:
-  novaTarefa.addEventListener('click', function () {
-    novaTarefa.style.backgroundColor = 'rgb(128,128,128)';
-  });
-  // riscar o item com clique duplo:
-  novaTarefa.addEventListener('dblclick', riscaLi);
-  function riscaLi () {
-    novaTarefa.className = 'completed';
-    novaTarefa.style.textDecoration = 'line-through';
-  }
-  // removendo classe completed e risco no item clicado novamente:
-  novaTarefa.addEventListener('dblclick', removeRisco);
-  function  removeRisco () {
-    if (novaTarefa.className === 'completed') {
-      novaTarefa.classList.remove('completed');
-      novaTarefa.style.textDecoration = 'none';
-      novaTarefa.style.backgroundColor = 'aliceblue';
+// função que remove somente o item selecionado
+function removeSelecionado() {
+  const todasTarefas = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < todasTarefas.length; i += 1) {
+    if (todasTarefas[i].classList.contains('selected')) {
+      todasTarefas[i].remove();
     }
-  }
 }
-// colocando o evento de adição de tarefa ao botão:
-const botaoCriarTarefa = document.getElementById('criar-tarefa');
-botaoCriarTarefa.addEventListener('click', criaTarefa);
-// criando função que remove todos os elementos li:
-const botaoApagaTudo = document.getElementById('apaga-tudo');
-function apagaTudo() {
-  const lista = document.getElementById('lista-tarefas');
-  while (lista.firstChild) {
-    lista.firstChild.remove();
-  }
 }
-// colocando o evento de apagar todos os elementos ao botão:
-botaoApagaTudo.addEventListener('click', apagaTudo);
-// função que apague somente os elementos finalizados:
-const botaoApagaFinalizados = document.getElementById('remover-finalizados');
-function apagaFinalizados() {
-  const tarefaFinalizada = document.querySelector('li.completed');
-  document.querySelector('li.completed').remove();
-  // apagar elemento que já perdeu a classe completed:
-  if (document.querySelector('li').className !== 'completed') {
-    document.querySelector('li').className = 'completed';
-    document.querySelector('li.completed').remove();
-    //document.querySelector(null).remove();
-  }
-}
-botaoApagaFinalizados.addEventListener('click', apagaFinalizados);
 
-// COLOCAR UM IF/ELSE DENTRO DA FUNÇÃO QUE APAGA OS ITENS FINALIZADOS E NÃO NA FUNÇÃO QUE REMOVE A CLASSE COMPLETED
-*/
+// evento que remove somente o item selecionado
+botaoRemoverSelecionado.addEventListener('click', removeSelecionado);
+
+// função para salvar as tarefas no local storage
+function salvaTarefas() {
+  const todasTarefas = document.getElementById('lista-tarefas').innerHTML;
+  localStorage.setItem('todas as tarefas', todasTarefas);
+}
+
+// evento para salvar as tarefas no local storage
+botaoSalvarTarefas.addEventListener('click', salvaTarefas);
+
+// ao carregar a página os itens salvos no local storage aparecerão
+window.onload = recuperaTarefas;
+
+// função que recupera os itens salvos no local storage
+function recuperaTarefas() {
+  document.getElementById('lista-tarefas').innerHTML = localStorage.getItem('todas as tarefas');
+}
