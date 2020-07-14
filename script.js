@@ -25,7 +25,7 @@ function criaItem() {
 botaoCriarTarefa.addEventListener('click', criaItem);
 
 // função que atribui a classe selected para o item clicado
-function itemSelecionado(evento) {
+function atribuiSelected(evento) {
   const item = evento.target;
   const todasTarefas = document.querySelectorAll('#lista-tarefas li');
   for (let i = 0; i < todasTarefas.length; i += 1) {
@@ -37,7 +37,7 @@ function itemSelecionado(evento) {
 }
 
 // evento que dá a classe selected para o item da lista
-listaTarefas.addEventListener('click', itemSelecionado);
+listaTarefas.addEventListener('click', atribuiSelected);
 
 // função que risca o item
 function riscaItem(evento) {
