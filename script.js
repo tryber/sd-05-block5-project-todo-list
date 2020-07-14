@@ -1,25 +1,24 @@
 // declarando as variaveis e botoes:
-let textoInput = document.getElementById('texto-tarefa');
-let botaoCriarTarefa = document.getElementById('criar-tarefa');
-let listaTarefas = document.getElementById('lista-tarefas');
-let botaoApagaTudo = document.getElementById('apaga-tudo');
-let botaoRemoverFinalizados = document.getElementById('remover-finalizados');
-let botaoSalvarTarefas = document.getElementById('salvar-tarefas');
-let botaoRemoverSelecionado = document.getElementById('remover-selecionado');
-let botaoPraCima = document.getElementById('mover-cima');
-let botaoPraBaixo = document.getElementById('mover-baixo');
+const textoInput = document.getElementById('texto-tarefa');
+const botaoCriarTarefa = document.getElementById('criar-tarefa');
+const listaTarefas = document.getElementById('lista-tarefas');
+const botaoApagaTudo = document.getElementById('apaga-tudo');
+const botaoRemoverFinalizados = document.getElementById('remover-finalizados');
+const botaoSalvarTarefas = document.getElementById('salvar-tarefas');
+const botaoRemoverSelecionado = document.getElementById('remover-selecionado');
+const botaoPraCima = document.getElementById('mover-cima');
+const botaoPraBaixo = document.getElementById('mover-baixo');
 
 // criando o item li:
 // esta função adiciona o itemLi como filho da lista de tarefas
 // e limpa a entrada de texto
-function criaItem () {
+function criaItem() {
   const itemLi = document.createElement('li');
   itemLi.innerHTML = textoInput.value;
   listaTarefas.appendChild(itemLi);
   textoInput.value = '';
-  itemLi.style.cursor = 'pointer'
-  textoInput.focus(); //FAZ O CURSOS DE DIGITAR FICAR 'PISCANDO' NO INPUT
-  
+  itemLi.style.cursor = 'pointer';
+  textoInput.focus(); // faz o cursor ficar piscando no input
 }
 
 // evento que cria tarefa
@@ -80,7 +79,7 @@ function removeSelecionado() {
     if (todasTarefas[i].classList.contains('selected')) {
       todasTarefas[i].remove();
     }
-}
+  }
 }
 
 // evento que remove somente o item selecionado
@@ -95,13 +94,13 @@ function salvaTarefas() {
 // evento para salvar as tarefas no local storage
 botaoSalvarTarefas.addEventListener('click', salvaTarefas);
 
-// ao carregar a página os itens salvos no local storage aparecerão
-window.onload = recuperaTarefas;
-
 // função que recupera os itens salvos no local storage
 function recuperaTarefas() {
   document.getElementById('lista-tarefas').innerHTML = localStorage.getItem('todas as tarefas');
 }
+
+// ao carregar a página os itens salvos no local storage aparecerão
+window.onload = recuperaTarefas;
 
 // criando uma função que verifica a quantidade de itens com classe selected
 let quantSelecionados = 0;
@@ -115,14 +114,13 @@ function verificaSelecionados() {
   }
 }
 
-// função que move um item selecionado para cima, usando a verificação da função 
+// função que move um item selecionado para cima, usando a verificação da função
 // criada acima (verificaSelecionados)
 function moveAcima() {
   verificaSelecionados();
   if (quantSelecionados !== 1) {
     alert('Selecione um item para mover');
-  }
-  else {
+  } else {
     const itemSelecionado = document.getElementsByClassName('selected')[0];
     if (itemSelecionado.previousElementSibling !== null) {
       const itemAcima = itemSelecionado.previousElementSibling;
@@ -138,14 +136,13 @@ function moveAcima() {
 // evento que move um item selecionado para cima
 botaoPraCima.addEventListener('click', moveAcima);
 
-// função que move um item selecionado para baixo, usando a verificação da função 
+// função que move um item selecionado para baixo, usando a verificação da função
 // criada acima (verificaSelecionados)
 function moveAbaixo() {
   verificaSelecionados();
   if (quantSelecionados !== 1) {
     alert('Selecione um item para mover');
-  }
-  else {
+  } else {
     const itemSelecionado = document.getElementsByClassName('selected')[0];
     if (itemSelecionado.nextElementSibling !== null) {
       const itemAbaixo = itemSelecionado.nextElementSibling;
