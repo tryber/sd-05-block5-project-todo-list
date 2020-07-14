@@ -102,3 +102,61 @@ window.onload = recuperaTarefas;
 function recuperaTarefas() {
   document.getElementById('lista-tarefas').innerHTML = localStorage.getItem('todas as tarefas');
 }
+
+// criando uma função que verifica a quantidade de itens com classe selected
+let quantSelecionados = 0;
+function verificaSelecionados() {
+  quantSelecionados = 0;
+  const todasTarefas = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < todasTarefas.length; i += 1) {
+    if (todasTarefas[i].classList.contains('selected')) {
+      quantSelecionados += 1;
+    }
+  }
+}
+
+// função que move um item selecionado para cima, usando a verificação da função 
+// criada acima (verificaSelecionados)
+function moveAcima() {
+  verificaSelecionados();
+  if (quantSelecionados !== 1) {
+    alert('Selecione um item para mover');
+  }
+  else {
+    const itemSelecionado = document.getElementsByClassName('selected')[0];
+    if (itemSelecionado.previousElementSibling !== null) {
+      const itemAcima = itemSelecionado.previousElementSibling;
+      const textoItemAcima = itemAcima.innerHTML;
+      itemAcima.innerHTML = itemSelecionado.innerHTML;
+      itemSelecionado.innerHTML = textoItemAcima;
+      itemSelecionado.classList.remove('selected');
+      itemAcima.classList.add('selected');
+    }
+  }
+}
+
+// evento que move um item selecionado para cima
+botaoPraCima.addEventListener('click', moveAcima);
+
+// função que move um item selecionado para baixo, usando a verificação da função 
+// criada acima (verificaSelecionados)
+function moveAbaixo() {
+  verificaSelecionados();
+  if (quantSelecionados !== 1) {
+    alert('Selecione um item para mover');
+  }
+  else {
+    const itemSelecionado = document.getElementsByClassName('selected')[0];
+    if (itemSelecionado.nextElementSibling !== null) {
+      const itemAbaixo = itemSelecionado.nextElementSibling;
+      const textoItemAbaixo = itemAbaixo.innerHTML;
+      itemAbaixo.innerHTML = itemSelecionado.innerHTML;
+      itemSelecionado.innerHTML = textoItemAbaixo;
+      itemSelecionado.classList.remove('selected');
+      itemAbaixo.classList.add('selected');
+    }
+  }
+}
+
+// evento que move um item selecionado para baixo
+botaoPraBaixo.addEventListener('click', moveAbaixo);
