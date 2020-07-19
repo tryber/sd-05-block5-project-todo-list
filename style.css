@@ -1,0 +1,19 @@
+button {
+  cursor: pointer;
+}
+
+li {
+  cursor: pointer;
+}
+
+.texto-tarefa {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: gray;
+}
+
+.completed {
+  text-decoration: line-through;
+}
