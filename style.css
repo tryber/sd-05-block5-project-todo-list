@@ -1,0 +1,19 @@
+button {
+  cursor: pointer;
+}
+
+.task {
+  cursor: pointer;
+}
+
+#texto-tarefa {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: rgb(128, 128, 128);
+}
+
+.completed {
+  text-decoration: line-through;
+}
