@@ -50,8 +50,8 @@ document
       document.getElementById('lista-tarefas').innerHTML);
   });
 if (window.localStorage.getItem('lista')) {
-  document.querySelector(
-    '.lista-tarefas').innerHTML = window.localStorage.getItem('lista');
+  document.getElementById(
+    'lista-tarefas').innerHTML = window.localStorage.getItem('lista');
   document.querySelectorAll('li').forEach(function (li) {
     addSelected(li);
   });
@@ -78,8 +78,8 @@ function moveDown() {
   const selected = document.querySelector('.selected');
   return toDoList.insertBefore(
     selected,
-    selected.nextElementSibling.nextElementSibling
+    selected.nextElementSibling.nextElementSibling,
   );
-};
+}
 const down = document.getElementById('mover-baixo');
 down.onclick = moveDown;
