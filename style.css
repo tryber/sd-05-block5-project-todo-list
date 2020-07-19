@@ -2,11 +2,11 @@ button {
   cursor: pointer;
 }
 
-.task {
+li {
   cursor: pointer;
 }
 
-#texto-tarefa {
+.texto-tarefa {
   cursor: pointer;
 }
 
