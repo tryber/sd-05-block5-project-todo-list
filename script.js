@@ -96,4 +96,5 @@ function trocaBaixo() {
     }
   }
 }
+const moveBaixo = document.getElementById('mover-baixo');
 moveBaixo.addEventListener('click', trocaBaixo); 
