@@ -47,13 +47,11 @@ document
   .addEventListener('click', function () {
     localStorage.setItem(
       'lista',
-      document.getElementById('lista-tarefas').innerHTML
-    );
+      document.getElementById('lista-tarefas').innerHTML);
   });
 if (window.localStorage.getItem('lista')) {
   document.querySelector(
-    '.lista-tarefas'
-  ).innerHTML = window.localStorage.getItem('lista');
+    '.lista-tarefas').innerHTML = window.localStorage.getItem('lista');
   document.querySelectorAll('li').forEach(function (li) {
     addSelected(li);
   });
@@ -82,6 +80,6 @@ function moveDown() {
     selected,
     selected.nextElementSibling.nextElementSibling
   );
-}
+};
 const down = document.getElementById('mover-baixo');
 down.onclick = moveDown;
