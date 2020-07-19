@@ -10,8 +10,8 @@ function addSelected(element) {
 }
 
 function addItem() {
-  let li = document.createElement('li');
-  let input = document.getElementById('texto-tarefa');
+  const li = document.createElement('li');
+  const input = document.getElementById('texto-tarefa');
   const list = document.getElementById('lista-tarefas');
   const text = document.createTextNode(input.value);
   addSelected(li);
@@ -34,7 +34,7 @@ clearAll.addEventListener('click', deleteButton);
 
 function removeCompleted() {
   document.querySelectorAll('li').forEach(function (i) {
-    if (i.classList.contains("completed")) {
+    if (i.classList.contains('completed')) {
       i.remove();
     }
   });
