@@ -74,12 +74,26 @@ function moveUp() {
 const up = document.getElementById('mover-cima');
 up.onclick = moveUp;
 
-function moveDown() {
-  const selected = document.querySelector('.selected');
-  return toDoList.insertBefore(
-    selected,
-    selected.nextElementSibling.nextElementSibling,
-  );
+function trocaBaixo() {
+  if (selected.classList !== undefined) {
+    // verifica se tem algum elemento selecionado para troca
+    const quemTroca = document.getElementsByClassName('selected')[0];
+    // define variavel com o elemento a ser trocado de posição
+    if (quemTroca.nextElementSibling !== null) {
+      // verifica se existe um elemento abaixo da task
+      // assim se for a ultima tarefa na lista n faz nada
+      const aux = quemTroca.nextElementSibling.innerText; // salva o innerText do elemento
+      // abaixo em uma variavel auxiliar
+      quemTroca.nextElementSibling.innerText = quemTroca.innerText;
+      // define o innerText do elemento abaixo com o conteudo do selecionado
+      quemTroca.innerText = aux; // define o innerText do elemento selecinado
+      // com o salvo anteriormente na variavel auxiliar
+      // agora o texto da task selecionada e a task abaixo ja foram invertidos
+      quemTroca.classList.remove('selected'); // remove a seleção da task
+      quemTroca.nextElementSibling.classList.add('selected'); // passa a seleção da task pro elemento abaixo
+      // faz com que você continue com o mesmo valor selecionado apos a inversão dos conteudos
+      selected = document.getElementsByClassName('selected')[0]; // define o novo elemento selecionado na variavel usada por outras funções
+    }
+  }
 }
-const down = document.getElementById('mover-baixo');
-down.onclick = moveDown;
+moveBaixo.addEventListener('click', trocaBaixo); 
